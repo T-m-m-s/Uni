@@ -1,0 +1,12 @@
+<!ELEMENT address-book (entry+)>
+<!ELEMENT entry (name,address?,tel+,email*)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (street,region,postal-code,locality?,country)>
+<!ELEMENT tel (#PCDATA)>
+<!ELEMENT email EMPTY>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT region (#PCDATA)>
+<!ELEMENT postal-code (#PCDATA)>
+<!ELEMENT locality (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ATTLIST email address CDATA #REQUIRED>

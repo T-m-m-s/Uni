@@ -1,0 +1,366 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{float}
+
+\title{Sistemi Operativi}
+\author{Tommaso Trentin}
+\date{June 2025}
+
+\begin{document}
+
+\newpage
+\tableofcontents
+\newpage
+\section{Generalità}
+\subsection{Gestione}
+Problematiche da affrontare:
+\begin{itemize}
+    \item \textbf{allocazione} singoli job / processi in memoria
+    \item \textbf{protezione} spazio di indirizzamento
+    \item \textbf{condivisione} spazio di indirizzamento
+    \item gestione \textbf{swapping}
+\end{itemize}
+\textbf{Vincolo di funzionamento}: per essere eseguito un programma deve essere portato in memoria e \textit{trasformato} in un processo:
+\begin{itemize}
+    \item CPU preleva istruzioni da eseguire da memoria in base a valore del P.C.
+    \item ogni istruzione decodificata, può prevedere prelievo di operandi dalla memoria
+    \item al termine di esecuzione dell’istruzione risultato può dover essere scritto in memoria
+    \item al termine del processo la “sua” memoria viene rilasciata
+\end{itemize}
+\subsection{Indirizzi di memoria}
+Trasformazione programma in processo implica assunzioni di diversa semantica di indirizzi e spazio di memoria $\rightarrow$ introduzione distinzione tra \textbf{spazio indirizzi logici} e \textbf{spazio indirizzi fisici}.
+\subsubsection{Binding degli indirizzi}
+\begin{itemize}
+    \item indirizzi del programma sorgente sono simbolici
+    \item durante compilazione si associano a indirizzi simbolici indirizzi \textbf{rilocabili}
+    \item in fase collegamento o caricamento si associano a indirizzi rilocabili indirizzi assoluti
+\end{itemize}
+\includegraphics[width=0.6\textwidth]{OS_images/BInding_Indirizzi.png} \\
+\textbf{Il binding di dati/istruzioni a indirizzi assoluti può avvenire in diversi momenti:} 
+\begin{itemize}
+    \item Al tempo di compilazione (\textit{binding statico al compile time}):
+        \begin{itemize}
+            \item Se si conosce a priori la posizione in memoria, si può generare un \textbf{codice assoluto}.
+            \item Se si vuole cambiare posizione, è necessario \textbf{ricompilare}.
+        \end{itemize}
+    \item Al tempo di caricamento (\textit{binding statico al load time}):
+        \begin{itemize}
+            \item Serve generare un \textbf{codice rilocabile} (ripositionabile).
+            \item Gli indirizzi sono \textbf{relativi} all’inizio del programma.
+            \item Per cambiare posizione, basta \textbf{ricaricare}.
+        \end{itemize}
+    \item Al tempo di esecuzione (\textit{binding dinamico al run time}):
+        \begin{itemize}
+            \item Il binding è \textbf{posticipato}, il processo può essere spostato anche durante l’esecuzione.
+            \item Richiede \textbf{supporto hardware} (es. registri base e limite).
+        \end{itemize}
+\end{itemize}
+\includegraphics[width=0.6\textwidth]{OS_images/Binding_Indirizzi2.png} \\
+Un HW particolare effettua il binding dinamico: la \textbf{MMU}
+\subsubsection{MMU}
+Contenuto di un particolare registro \textbf{registro di rilocazione} viene aggiunto a ogni indirizzo riferito da un processo, con l'indirizzo risultante si accede alla memoria: \\
+\includegraphics[width:0.6\textwidth]{OS_images/Semplice_MMU.png}
+\subsubsection{Caricamento}
+\begin{itemize}
+    \item Statico: intero codice caricato in memoria per procedere all'esecuzione
+    \item Dinamico: cerca di migliorare utilizzo della memoria centrale
+        \begin{itemize}
+            \item moduli di codice caricati al momento del primo utilizzo
+            \item conseguenza: parti di codice non utilizzate non vengono caricate $\rightarrow$ "risparmio" memoria
+            \item tecnica utile con codici suddivisibili in parti che gestiscono casi specifici (error handling)
+        \end{itemize}
+\end{itemize}
+Solitamente caricamento dinamico richiede intervento minimo da parte del S.O. (può essere realizzato a livello di linguaggio/programma)
+\subsubsection{Collegamento}
+\begin{itemize}
+    \item Statico: tutti i riferimenti del codice definiti prima del'avvio dell'esecuzione. Immagine del processo contiene interamente il codice di eventuali librerie
+    \item Dinamico: utilizzato solamente per il codice delle librerie
+        \begin{itemize}
+            \item linking posticipato al tempo di esecuzione
+            \item conseguenza: codice del programma non include codice delle librerie, ma solo dei riferimenti (\textit{stub})
+            \item stub indica dove trovare codice della libreria alla prima necessità (una volta caricata stub viene rimpiazzato con sua locazione in memoria)
+            \item tutti i processi eseguono un'istanza dello stesso codice di librerie (singola copia in memoria) 
+        \end{itemize}
+\end{itemize}
+Linking dinamico richiede intervento essenziale del S.O. (può interessare spazi di memoria di processi diversi).
+\subsubsection{Swapping}
+Tecnica che permette di rimuovere un processo da memoria principale e spostarlo in memoria secondaria (\textbf{swapped out}), in seguitoquesto potrà essere ricaricato in memoria principale (\textbf{swapped in}). \\
+\includegraphics[width=0.6\textwidth]{OS_images/Swapping.png}
+\begin{itemize}
+    \item tempo di swapping proporzionale a ammontare dei dati trasferiti
+    \item sensato in caso di multiprogrammazione (altrimenti dovrebbe essere attivato ad ogni context switch)
+    \item di norma è necessario supporto a binding dinamico per poter ri-locare i processi al momento dello swap-in
+    \item con binding statico invece va ricaricato il processo sempre nella stessa posizione
+    \item moderni S.O. contemplano lo swapping (in qualche forma)
+\end{itemize}
+La tecnica definita finora è detta \textbf{swapping standard}, mentre alcuni S.O. ne adottano forme diverse:
+\begin{itemize}
+    \item per evitare di trasferire intero processo molti S.O. moderni effettuano swapping solo su porzioni del processo (\textit{pagine}) $\rightarrow$ tecnica connessa a uso della \textit{paginazione}
+    \item S.O. di dispositivi mobili non operano swapping di processi, poiché:
+        \begin{itemize}
+            \item memoria di solito è flash, assenza di HD
+            \item memoria flash presenta un limite al numero di scritture, swapping degraderebbe la memoria
+        \end{itemize}
+    \item se si necessita liberare memoria il S.O., invece di effettuare swapping, richiede a app di rinunciare a parte di memoria allocata (o sottrae a app pagine di memoria non allocate / termina la app)
+\end{itemize}
+\subsubsection{Considerazioni}
+\begin{itemize}
+    \item in presenza di multiprogrammazione è impossibile fissare staticamente locazione ove processi vengono caricati
+    \item presenza di swapping impone impiego di rilocazione dinamica
+\end{itemize}
+Sono necessarie tecniche specifiche per gestione memoria principale, in caso il programma sia \textbf{interamente} caricato in memoria principale le tecniche "main" sono:
+\begin{itemize}
+    \item Allocazione contigua
+    \item Paginazione 
+    \item Segmentazione
+    \item Segmentazione Paginata
+\end{itemize}
+\section{Allocazione Contigua}
+\subsection{Concetti Generali}
+\begin{itemize}
+    \item processi allocati in memoria in posizioni \textbf{contigue} (ogni processo occupa un'\textbf{unica} sezione di memoria pari alla sua dimensione)
+    \item la memoria viene suddivisa in due "zone":
+        \begin{itemize}
+            \item una utilizzata dal S.O. (contenente vettore delle interruzioni)
+            \item una dedicata ai processi utente
+        \end{itemize}
+    \item memoria quindi suddivisa in partizioni disgiunte (ognuna accoglierrà un processo), due varianti:
+        \begin{itemize}
+            \item Allocazione contigua con \textbf{partizioni fisse}
+            \item Allocazione contigua con \textbf{partizioni variabili}
+        \end{itemize}
+\end{itemize}
+\subsection{Partizioni Fisse}
+\begin{minipage}{0.45\textwidth}
+\begin{itemize}
+    \item Memoria suddivisa in un insieme di partizioni di dimensioni prefissate (non necessariamente uguali)
+    \item Scelta di quante partizioni / dimensioni viene fatta una volta per tutte
+    \item Un processo viene caricato in una partizione in grado di contenerlo interamente
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+    \includegraphics[width=\textwidth]{OS_images/Partizioni_Fisse.png}
+\end{minipage}
+\subsubsection{Allocazione della Memoria}
+Long-term scheduling determina partizione in cui caricare un processo, esistono due tecniche base:
+\begin{itemize}
+    \item una coda per ciascuna partizione:
+        \begin{itemize}
+            \item alla creazione un processo viene assegnato a coda relativa alla partizione più piccola in grado di contenerlo
+            \item limitata flessibilità (possono esserci più processi in coda e partizioni non utilizzate)
+        \end{itemize}
+    \item una coda singola: processo allocato nella partizione libera più piccola tra quelle in grado di contenerlo (in caso non esistano $\rightarrow$ swap-out)
+\end{itemize}
+\includegraphics[width=\textwidth]{OS_images/PF_Malloc.png}
+\subsubsection{Supporto per Rilocazione}
+MMU consiste di registri base e limite: \\
+\includegraphics[width=0.6\textwidth]{OS_images/Registri_MMU.png}
+\subsubsection{Valutazione}
+\begin{itemize}
+    \item Vantaggi
+        \begin{itemize}
+            \item semplice da implementare
+            \item basso carico di gestione da parte di S.O.
+        \end{itemize}
+    \item Svantaggi
+        \begin{itemize}
+            \item grado di multiprogrammazione fissato
+            \item si genera \textbf{frammentazione}
+                \begin{itemize}
+                    \item \textit{interna} (se dimensione della partizione superiore a dimensione del processo che vi si carica)
+                    \item \textit{esterna} (se vi sono partizioni non utilizzato perché non soddisfano esigenze dei processi in coda)
+                \end{itemize}
+        \end{itemize}
+\end{itemize}
+\subsection{Partizioni variabili}
+Si vorrebbe partizionare memoria in parti di dimensioni corrispondenti a dimensioni dei processi che verranno caricati, ottenendo così eliminazione della frammentazione interna. Questo risultato si ottiene non fissando a priori numero e dimensioni delle partizioni.
+\subsubsection{Allocazione della Memoria}
+Si vede la memoria come un insieme di \textbf{buchi} (hole), ognuno di questi è una sezione di memoria. S.O. mantiene informazioni su partizioni assegnate e buchi disponibili. Un processo viene allocato in uno dei buchi in grado di contenerlo. \\
+Dato che possono esserci più buchi quando un processo deve essere caricato c'è il problema di scegliere in che buco allocarlo, 3 soluzioni:
+\begin{itemize}
+    \item First-Fit (si occupa primo buco abbastanza grande che si trova)
+    \item Best-Fit (si occupa buco più piccolo tra quelli in grado di contenre il processo)
+    \item Worst-Fit (si occupa buco più grande)
+\end{itemize}
+\subsubsection{Supporto per Rilocazione}
+MMU con stessa struttura della tecnica con partizioni fisse
+\subsubsection{Valutazione}
+\begin{itemize}
+    \item Vantaggi
+        \begin{itemize}
+            \item non esiste frammentazione interna
+            \item grado di multiprogrammazione non prefissato
+        \end{itemize}
+    \item Svantaggi
+        \begin{itemize}
+            \item frammentazione esterna può essere problematica
+        \end{itemize}
+\end{itemize}
+\subsubsection{Compattazione}
+Soluzione a problema della frammentazione esterna: rilocare processi e compattare soazio libero ottenendo unico buco (possibile solo con rilocazione dimanica) \\
+\includegraphics[width=0.6\textwidth]{OS_images/Comp_VS_Frag_Mem.png}
+\subsection{Buddy System}
+Compromesso tra partizioni fisse e variabili. Sia $2^m$ dimensione del più piccolo buco che si vuole allocare e $2^M$ tutta la memoria, allora:
+\begin{itemize}
+    \item memoria vista come insieme di liste di blocchi di dimensione $2^k$ con $m \leq k \leq M$
+    \item memoria disponibile è quindi insieme di blocchi di dimensione $2^i$ (per ogni i)
+    \item all'inizio la lista dei blocchi di dimensione $2^M$ coniene un solo blocco (tutta la memoria) mentre altre liste sono vuote
+    \item quando giunge richiesta di dimensione $s$, si crea blocco con dimensione sufficiente (potenza di 2):
+        \begin{itemize}
+            \item se $2^{M-1} < s \leq 2^M$ si alloca intera memoria
+            \item altrimenti blocco di dimensione $2^M$ viene diviso in due blocchi di dimensione $2^{M-1}$ e si verifica se $2^{M-2} < s < 2^{M-1}$, ...
+        \end{itemize}
+    \item quando un processo rilascia suo blocco questo viene inserito nell'opportuna lista di blocchi liberi
+    \item quando due blocchi adiacenti di dimensione $2^i$ si liberano, possono essere fusi in un blocco di dimensione $2^{i+1}$
+\end{itemize}
+\subsubsection{Valutazione}
+\begin{itemize}
+    \item Vantaggi: compattazione si effettua scorrendo lista dei blocchi
+    \item presenza di frammentazione interna (non è detto che processi abbiano sempre dimensione $2^i$)
+\end{itemize}
+\includegraphics[width=0.6\textwidth]{OS_images/Buddy_System_Example.png}
+\section{Paginazione}
+\subsection{Generalità}
+Introdotta per eliminare frammentazione esterna.
+\begin{itemize}
+    \item Idea: permettere che un processo \textbf{non sia allocato in modo contiguo}
+    \item memoria fisica organizzata in blocchi di dimensione fissa (\textbf{frame})
+    \item memoria logica organizzata in blocchi della stessa dimensione detti \textbf{pagine}
+    \item S.O. tiene traccia dei frame liberi
+    \item per caricare un processo che occupa $n$ pagine si devono usare $n$ frame liberi
+    \item traduzione degli indirizzi basata su \textbf{page table} (una per processo)
+    \item solo frammentazione interna e solo nell'ultima pagina di ogni processo
+\end{itemize}
+\subsection{Architettura}
+Indirizzo logico viene diviso in due parti:
+\begin{itemize}
+    \item \textbf{Numero di pagina} $p$: indice nella page table per determinare numero del frame in memoria fisica
+    \item \textbf{Offset (spiazzamento)} $d$: combinato con numero del frame determina indirizzo fisico
+\end{itemize}
+\includegraphics[width=0.6\textwidth]{OS_images/Paginazione.png} \\
+Si tiene traccia di frame liberi / occupati con una \textbf{tabella dei frame}: \\
+\includegraphics[width=0.6\textwidth]{OS_images/Frame_Table.png}
+\subsubsection{Gestione dei processi}
+Gestione processi si complica in quanto: \begin{itemize}
+    \item \textbf{per ogni processo} va gestita una page table: nel PCB si inserisce un puntatore a page table
+    \item context switch diventa più oneroso (vanno garantite informazioni sulla paginazione)
+    \item swapping ifluenza contenuto della tabella dei frame
+\end{itemize}
+\subsection{Page Table}
+Può essere realizzata in più modi:
+\begin{itemize}
+    \item insieme di registri dedicati
+        \begin{itemize}
+            \item efficiente ma non adattabile con tabelle grandi
+            \item context switch più complesso
+        \end{itemize}
+    \item tabella in memoria
+        \begin{itemize}
+            \item localizza tramite \textbf{page-table base register (PTBR)}
+            \item un solo registro da gestire in context switch
+            \item difetto:per accedere ogni indirizzo servono \textit{due} accessi a memoria
+        \end{itemize}
+    \item utilizzo di cache speciale (\textbf{translationlook-aside buffer (TLB)}), memoria associativa key-value
+\end{itemize}
+\subsubsection{Page Table con TLB}
+\begin{itemize}
+    \item TLB contiene solo \textit{parte} della page table
+    \item per tradurre un indirizzo si accede alla TLB
+    \item in caso di \textbf{TLB-miss} si dovrà accedere alla vera tabella in memoria
+    \item gestione di quale parte della tabella duplicare nella TLB è fatta con tecniche usate per gestire la cache (FIFO, LRU, ...)
+    \item percentuale di volre che si verifica un \textbf{TLB-hit} è detta \textbf{hit ratio}
+    \item durante context switch la TLB va svuotata
+\end{itemize}
+\includegraphics[width=0.6\textwidth]{OS_images/Page_Table_TLB.png}
+\subsubsection{Protezione}
+Ad ogni elemento della table si associa un \textbf{bit di validità} per individuare quali pagine sono nello spazio logico del processo.\\
+Altri bit possono essere nella table per indicare che un particolare frame può essere oggetto di lettura, scrittura,... da parte di un processo.
+\subsubsection{Struttura}
+\begin{itemize}
+    \item \textbf{Paginazione Gerarchica} $\rightarrow$ anche tabella delle pagine viene paginata. Esempio di organizzazione \textbf{a 2 livelli}: la parte "numero di pagina" $p$ dell'indirizzo logico è a sua volta divisa in due porzioni $p1$ e $p2$ \\
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{OS_images/Gerarchia1.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.5\textwidth}
+        \includegraphics[width=\textwidth]{OS_images/Gerarchia2.png}
+    \end{minipage}
+    Sono possibili organizzazioni con \textbf{più livelli} (architetture ARM usano paginazione gerarchica fino a 4 livelli) \\
+    \textbf{Esempio}: considera indirizzi logici di 32 bit con pagine da 4K, l'indirizzo è suddiviso in:
+        \begin{itemize}
+            \item 20 bit per numero di pagina
+            \item 12 bit di offset all'interno di una pagina ($d$)
+        \end{itemize}
+    Dato che anche page table è paginata (supponiamo in pagine di 1K), i 20 bit sono divisi in:
+        \begin{itemize}
+            \item 10 bit per outer-table ($p_1$)
+            \item 10 bit per offset ($p_1$) all'interno della pagina della page table
+        \end{itemize}
+    \item \textbf{Page Table con Hashing} $\rightarrow$ in caso di aumento di livelli in paginazione gerarchica aumenta numero di accessi a memoria necessari per tradurre un indirizzo, una soluzione può essere l'uso di \textbf{organizzazione hash}:
+    \includegraphics[width=0.6\textwidth]{OS_images/Page_Table_HASH.png}
+    \item \textbf{Page Table Invertita} $\rightarrow$ in caso di dimensione della table troppo grande (anche rispetto a numero di frame fisici a disposizione)
+        \begin{itemize}
+            \item tabella che memorizza solamente informazioni su pagine realmente utilizzate da processi
+            \item unica per tutto il sistema
+            \item un'entry per ogni frame fisico ($i$), questa contiene indirizzo logico della pagina ($p$) caricata in quel frame e indicazione del processo possessore ($pid$)
+        \end{itemize}
+    \includegraphics[width=0.6\textwidth]{OS_images/Page_Table_Invertita.png} \\
+    \textbf{Minor memoria occupata} per la table ma \textbf{maggior tempo di traduzione}: va cercata coppia $(pid, p)$ nella tabella ormai ordinata rispetto a indirizzi fisici ($i$) $\rightarrow$ rimedio: implementare inverted page table con hashing.
+\end{itemize}
+\subsubsection{Pagine Condivise}
+Tecniche viste permettono di mappare pagine logiche in pagine fisiche ma anche di \textbf{mappare diverse pagine logiche nella stessa pagina fisica}:
+\begin{itemize}
+    \item si permette condivisione di dati
+    \item si permette condivisione di codice (evitando ripetizioni di codice comune come editor, librerie dinamiche, compilatori...)
+    \item codice condiviso deve essere \textbf{rientrante}: non in grado di auto-modificarsi
+\end{itemize}
+\includegraphics[width=0.6\textwidth]{OS_images/Pag_Cond_Example.png}
+\section{Segmentazione}
+\subsection{Generalità}
+Tecniche finora viste sono accomunate da considerazione della memoria come unico vettore di locazioni
+\begin{itemize}
+    \item utente tende a imporre una struttura alla memoria: insieme di \textbf{segmenti}, ognuno con \textbf{nome}, \textbf{dimensione}, e \textbf{specifica funzione} (main program, codice procedura, stack, libreria...)
+    \item indirizzi possono essere specificati fornendo nome del segmento e offset al suo interno
+    \item riferimenti interni al segmento sono relativi all'inizio dello stesso
+    \item \textbf{compilatore} compila programma dell'utente generando opportuni segmenti, altri possono essere introdotti dal \textbf{linker}, il \textbf{loader} fornisce "nomi" ai segmenti
+\end{itemize}
+\includegraphics[width=0.6\textwidth]{OS_images/Segmentazione.png} \\
+Struttura logica del programma e sua allocazione
+\subsection{Architettura}
+\begin{itemize}
+    \item Programma visto come insieme di segmenti (non per forza della stessa dimensione) %PEFFOH
+    \item ogni segmento allocato in una porzione \textit{contigua} di memoria fisica
+    \item traduzione degli indirizzi avviene tramite \textbf{segment table} che, per ogni segmento contiene:
+        \begin{itemize}
+            \item \textbf{base}: indirizzo fisico dell'inizio del segmento
+            \item \textbf{limite}: lunghezza del segmento
+        \end{itemize}
+    \item la segment table è:
+        \begin{itemize}
+            \item nantenuta in registri locali
+            \item o allocata in memoria e gestita traite \textbf{segment-table base register (STBR)} e il \textbf{segment-table length register (STLR)} %STeel Ball Run
+        \end{itemize}
+\end{itemize}
+\includegraphics[width=0.6\textwidth]{OS_images/Arch_Segmentazione.png}
+\subsection{Considerazioni}
+\begin{itemize}
+    \item \textbf{rilocazione è dinamica} (a livello di segmenti)
+    \item si può prevedere \textbf{condivisione di segmenti} (es. librerie)
+    \item allocazione presenta problema della \textbf{frammentazione esterna} (segmenti non hanno tutti stessa dimensione $\rightarrow$ stessi problemi di allocazione contigua)
+    \item per allocare file si usano first-fit, best-fit...
+    \item \textbf{protezione}: per ogni inserimento in segment table si usa un \textbf{bit di validità} e eventuali bit per privilegi / modalità d'accesso
+    \item paginazione \textbf{trasparente all'utente} (necessità del S.O.) mentre segmentazione è \textbf{visibile} (richiesto che utente / compilatore descriva i segmenti)
+\end{itemize}
+\section{Segmentazione Paginata}
+\subsection{Generalità}
+Segmentazione e paginazione possono essere combinate per ottenere in un'unica organizzazione i pregi delle due tecniche:
+\begin{itemize}
+    \item spazio logico segmentato (riflette struttura logica del programma) come nella segmentazione
+    \item ogni \textbf{segmento è paginato} (suddiviso in pagine della dimensione del frame fisico)
+    \item per ogni processo si gestisce \textbf{una segment table} ed un certo numero di page table: \textbf{una per ogni segmento}
+    \item si evita frammentazsione esterna a prezzo di una frammentazione (minore) interna (ultima pagina di ogni segmento)
+\end{itemize}
+\subsection{Architettura}
+\includegraphics[width=0.6\textwidth]{OS_images/Arch_Seg_Paginata.png}
+\end{document}

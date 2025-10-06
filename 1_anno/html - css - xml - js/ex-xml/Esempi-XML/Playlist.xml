@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<!DOCTYPE playlist SYSTEM "Playlist.dtd">
+<playlist name="Preferiti">
+    <track id="t01" genre="rock">
+        <title>Anchor</title>
+        <artist>Skillet</artist>
+        <album>Victorious</album>
+        <file src="anchor.mp3">
+            <encoding>MP3</encoding>
+            <bitrate>160kbps</bitrate>
+        </file>
+        <year>2020</year>
+    </track>
+    <track id="t02">
+        ...
+    </track>
+</playlist>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<title>Esercizio JS 6</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+    <h2>Registrazione</h2>
+    <form onsubmit="return verificaPassword()">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <label for="conferma_password">Conferma Password:</label>
+        <input type="password" id="conferma_password" name="conferma_password" required><br>
+        <input type="submit" value="Registrati">
+    </form>
+    <script>
+        function verificaPassword() {
+            var password = document.getElementById("password").value;
+            var confermaPassword = document.getElementById("conferma_password").value;
+            if (password !== confermaPassword) {
+                alert("Le password non corrispondono.");
+                return false; 
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

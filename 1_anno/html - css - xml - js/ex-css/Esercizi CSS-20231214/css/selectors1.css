@@ -1,0 +1,14 @@
+/*elemento con id note-title*/
+#note-title {
+	color: red;
+}
+
+/*gli elementi a della classe note*/
+a.note {
+	color: rgb(127,63,191);
+}
+
+/*gli elementi a che sono discendenti di un elemento ul*/
+ul a {
+	background-color: hsl(120,25%,75%);
+}

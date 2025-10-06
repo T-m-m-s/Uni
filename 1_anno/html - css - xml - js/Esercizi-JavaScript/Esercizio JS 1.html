@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<title>Esercizio JS 1</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<form>
+		<textarea maxlength="128" name="commenti" id="commenti"></textarea><br>
+		</form>
+	<p id="par"></p>
+	<script>
+		//document.getElementById("pul").onclick = function(){conta_caratteri()};
+		//document.getElementById("pul").addEventListener("click",conta_caratteri);
+		function conta_caratteri() {
+			var stringa_commenti = document.getElementById("commenti");
+			var numero_caratteri = stringa_commenti.value.length;
+			var par = document.getElementById("par");
+			par.innerHTML = numero_caratteri;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname ex-lab-3) (read-case-sensitive #t) (teachpacks ((lib "drawings.ss" "installed-teachpacks"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "drawings.ss" "installed-teachpacks")) #f)))
+;EX-3 / 1--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; (bin-rep->number "+1101") → 13
+; (bin-rep->number "0") → 0
+; (bin-rep->number "10110.011") → 22.375
+; (bin-rep->number "-0.1101001") → -0.8203125
+
+
+(define bin-rep->number  ; Dato un numero (stringa) in rappresentazione binaria, restituisce il numero in base 10
+  (lambda (str)  ; str = numero (stringa) da convertire
+    (let* ((segno (controllasegno str)) (abso (if (or (char=? (string-ref str 0) #\+) (char=? (string-ref str 0) #\-)) (substring str 1) str)) (punto (posizione-punto abso 0)))
+      (cond
+        ((= punto -1) (* segno (cambiobase1 (explode abso) (- (string-length abso) 1))))
+        (else
+          (let ((intera (substring abso 0 punto)) (frazionaria (substring abso (+ punto 1))))
+            (* segno (+ (cambiobase1 (explode intera) (- (string-length intera) 1)) (cambiobase1 (explode frazionaria) -1)))
+          )
+        )
+      )
+    )
+  )
+)
+
+(define controllasegno  ; Controlla il segno del numero
+  (lambda (str)  ; str = numero (stringa) da controllare
+    (cond 
+      ((char=? (string-ref str 0) #\+) 1)
+      ((char=? (string-ref str 0) #\-) -1)
+      (else 1)
+    )
+  )
+)
+
+(define posizione-punto  ; Controlla se e dove si trova il punto nel numero
+  (lambda (str pos)  ; str = numero (stringa) da controllare, pos = contatore per iterazione
+    (cond
+      ((>= pos (string-length str)) -1)
+      ((char=? (string-ref str pos) #\.) pos)
+      (else (posizione-punto str (+ pos 1)))
+    )
+  )
+)
+
+(define cambiobase1  ; Converte da binario a decimale
+  (lambda (str pot)  ; str = numero (stringa) da convertire, pot = potenza di 2
+    (cond 
+      ((empty? str) 0)
+      (else (+ (* (string->number (car str)) (expt 2 pot)) (cambiobase1 (cdr str) (- pot 1))))
+    )
+  )
+)
+
+;EX-3 / 2--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+(define rep->number  ; Dato un numero (stringa) in base scelta, restituisce il numero in base 10
+  (lambda (base str)  ; base = base scelta, str = numero (stringa) da convertire
+    (let* ((segno (controllasegno str)) (abso (if (or (char=? (string-ref str 0) #\+) (char=? (string-ref str 0) #\-)) (substring str 1) str)) (punto (posizione-punto abso 0)))
+      (cond
+        ((= punto -1) (* segno (cambiobase2 abso base (- (string-length abso) 1))))
+        (else
+          (let ((intera (substring abso 0 punto)) (frazionaria (substring abso (+ punto 1))))
+            (* segno (+ (cambiobase2 intera base (- (string-length intera) 1)) (cambiobase2 frazionaria base -1)))
+          )
+        )
+      )
+    )
+  )
+)
+
+(define getValue  ; Restituisce la posizione del carattere nella base
+  (lambda (base char pos)  ; base = base scelta, char = carattere da cercare, pos = posizione carattere
+    (cond
+      ((= (string-length base) 0) 0)
+      ((char=? char (string-ref base 0)) pos)
+      (else (getValue (substring base 1) char (+ pos 1)))
+    )
+  )
+)
+
+(define cambiobase2  ; Converte da base scelta a decimale
+  (lambda (str base pos)  ; str = numero (stringa) da convertire, base = base scelta, pot = potenza di 2
+    (cond 
+      ((= (string-length str) 0) 0)
+      (else (+ (* (getValue base (string-ref str 0) 0) (expt (string-length base) pos)) (cambiobase2 (substring str 1) base (- pos 1))))
+    )
+  )
+)

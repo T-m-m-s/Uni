@@ -1,0 +1,42 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+#header {
+	background-color: #CCC; 
+	padding: 15px;
+}
+#main {
+	background: orange;
+	padding: 15px;
+	width: 50%;
+}
+/*centrato, ma parte del del testo libero finisce coperto*/
+/*#main {
+	position: absolute;
+	top: 100px;
+	left: 25%;
+}*/
+/*centrato, ma il resto del testo viene visualizzato a capo*/
+/*#main {
+	margin: 0px auto;
+}*/
+/*centrato con il resto del testo che fluisce a destra*/
+/*#main {
+	float: left;
+	margin: 0px 2.5% 0px 25%;
+}*/
+/*centrato con il resto del testo che fluisce a sinistra*/
+#main {
+	float: right;
+	margin: 0px 25% 0px 2.5%;
+}
+#free {
+	background: yellow;
+	padding: 15px;
+}
+#footer {
+	clear: left;
+	padding: 15px;
+	background: #CCC;
+}

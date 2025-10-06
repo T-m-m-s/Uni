@@ -1,0 +1,162 @@
+---
+title: "lezione 14"
+author: "Mameli"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Dataset Birthweight
+```{r}
+Birthweight <- read.csv("C:/Users/Utente/OneDrive - Università degli Studi di Udine/Desktop/Didattica/didattica2425/Statistica e Laboratorio IBML/Esercizi IBML/Esempi di Dataset/Baby/Birthweight.csv")
+```
+
+
+```{r}
+table(Birthweight$mage35)
+```
+
+
+```{r}
+barplot(table(Birthweight$mage35)/sum(table(Birthweight$mage35)))
+```
+
+
+```{r}
+table(Birthweight$mage35)/sum(table(Birthweight$mage35))
+```
+
+
+```{r}
+barplot(table(Birthweight$mage35)/sum(table(Birthweight$mage35)),names.arg = c("sotto 35","sopra 35"))
+```
+
+```{r}
+table(Birthweight$lowbwt)/sum(table(Birthweight$lowbwt))
+```
+## Analisi delle due variabili
+$H_0:$ essere sottopeso è indipendente dall'avere una madre con età superiore a 35 anni
+$H_1:$ essere sottopeso non è indipendente dall'avere una madre con età superiore a 35 anni
+
+```{r}
+table(Birthweight$lowbwt,Birthweight$mage35)
+```
+
+
+```{r}
+chisq.test(Birthweight$lowbwt,Birthweight$mage35,simulate.p.value = T)
+```
+
+
+## Dataset Peso
+
+```{r,message=FALSE,error=FALSE,warning=FALSE}
+peso <- read.csv("C:/Users/Utente/Downloads/peso.csv")
+attach(peso)
+
+```
+
+## Analizziamo la variabile peso prima dell'esperimento.
+```{r}
+summary(Peso_prima_esperimento)
+```
+
+```{r}
+library(moments)
+skewness(Peso_prima_esperimento)
+```
+```{r}
+kurtosis(Peso_prima_esperimento)
+```
+
+```{r}
+library(car)
+par(mfrow=c(1,2))
+boxplot(Peso_prima_esperimento)
+qqPlot(Peso_prima_esperimento)
+```
+
+```{r}
+summary(peso_dopo2_settimane)
+```
+
+```{r}
+skewness(peso_dopo2_settimane)
+```
+
+```{r}
+kurtosis(peso_dopo2_settimane)
+```
+
+```{r}
+library(car)
+par(mfrow=c(1,2))
+boxplot(peso_dopo2_settimane)
+qqPlot(peso_dopo2_settimane)
+```
+```{r}
+boxplot(Peso_prima_esperimento,peso_dopo2_settimane)
+```
+
+
+```{r}
+D=Peso_prima_esperimento-peso_dopo2_settimane
+qqPlot(D)
+```
+
+
+## Test per valutare la differenza nelle due popolazioni (si tratta di dati appaiati)
+$\mu_1=$peso medio prima dell'eseperimento
+$\mu_2=$peso medio due settimane dopo l'eseperimento
+
+$H_0:\mu_1=\mu_2$
+$H_1:\mu_1\neq \mu_2$
+
+```{r}
+t.test(Peso_prima_esperimento,peso_dopo2_settimane,paired = T)
+```
+```{r}
+alpha=0.05
+(t_alpha.2=qt(alpha/2,277,lower.tail = F))
+
+## Dataset Cervello
+
+```{r}
+cervello <- read.delim("C:/Users/Utente/OneDrive - Università degli Studi di Udine/Desktop/Didattica/didattica2425/Statistica e Laboratorio IBML/Esercizi IBML/Esempi di Dataset/Esercizi lezione/Cervello/cervello.txt")
+attach(cervello)
+```
+
+
+```{r}
+plot(Peso_cervello,Peso_corporeo)
+```
+
+
+```{r}
+plot(log(Peso_cervello),log(Peso_corporeo))
+```
+
+
+```{r}
+cor(log(Peso_cervello),log(Peso_corporeo))
+```
+
+
+```{r}
+cor(Peso_cervello,Peso_corporeo)
+```
+
+
+```{r}
+qqPlot(Peso_cervello)
+```
+
+
+```{r}
+qqPlot(log(Peso_cervello))
+```
+
+La soluzione è nel file Cervello-soluzione contenuta nella cartella Esercizi>Cervello.

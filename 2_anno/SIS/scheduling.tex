@@ -1,0 +1,343 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{Sistemi Operativi}
+\author{Tommaso Trentin}
+\date{June 2025}
+
+\begin{document}
+
+\newpage
+\tableofcontents
+\newpage
+lololol
+\section{CPU Scheduling}
+\subsection{Scheduling dei Processi}
+\subsubsection{Concetti Generali}
+In generale risolvere un problema di scheduling consiste nel \textbf{mappare} un certo numero di \textbf{compiti} su un (diverso) numero di \textbf{esecutori} in modo da realizzare obbiettivi globali del sistema rispettando \textbf{vincoli} prefissati. \\
+I principali \textbf{eventi} che possono causare uno \textbf{switch di contesto} (e che fanno quindi entrare in gioco lo scheduler) sono:
+\begin{itemize}
+  \item interruzione relativa a timer (termine del quanto di tempo)
+  \item interruzione dovuta a dispositivi I/O
+  \item invocazione di system call (es. exit())
+  \item gestione di segnali
+\end{itemize}
+\subsubsection{Compiti del Dispatcher}
+Lo scheduler sceglie il processo da eseguire, successivamente il dispatcher:
+\begin{itemize}
+    \item effettua il context switch
+    \item inizializza program counter alla prossima istruzione del programma da (continuare a) eseguire
+    \item effettua il passaggio alla modalità utente
+\end{itemize}
+Il tempo per fare ciò viene detto latenza di dispatch.
+\subsubsection{Parametri Generali}
+\begin{itemize}
+    \item numero di processori (1+), omogeneità/disomogeneità dei processori (in tipo, velocità, ISA…)
+    \item staticità/dinamicità insieme dei task
+    \item on-line e off-line scheduling
+    \item  tempi di esecuzione noti a priori o sconosciuti
+    \item presenza o meno di preemption (prelazione)
+    \item presenza o meno di precedenze tra task
+    \item presenza o meno di priorità
+    \item imposizione o meno di scadenze (deadline) su inizio/terminazione task
+    \item presenza o meno di \textbf{obbiettivo} da ottimizzare (tempo di risposta, tempo di completamento, produttività…)
+\end{itemize}
+\subsubsection{Obbiettivi}
+Obbiettivi diversi, spesso antitetici, sono ottimizzazione di:
+\begin{itemize}
+    \item lunghezza dello schedule
+    \item \textbf{tempo di risposta} massimo
+    \item \textbf{tempo di completamento} medio
+    \item tempo di risposta medio
+    \item tempo di attesa
+    \item numero minimo di CPU utilizzate
+    \item produttività (num. task/tempo $\rightarrow$ \textbf{throughput})
+    \item utilizzo della CPU
+    \item massimo ritardo rispetto a eventuali deadline
+\end{itemize}
+\subsubsection{Ctiteri per CPU Scheduling}
+Dal punto di vista \textbf{utente}:
+\begin{itemize}
+    \item minimizzare tempo risposta
+    \item minimizzare tempo completamento
+    \item rispettare deadline
+\end{itemize}
+Dal punto di vista \textbf{sistema}:
+\begin{itemize}
+    \item massimizzare utilizzo CPU
+    \item garantire \textbf{fairness} (problema della \textbf{starvation})
+    \item massimizzare throughput
+    \item riflettere le priorità
+\end{itemize}
+\textbf{\textit{Sia scheduler che dispatcher rappresentano bottleneck per il S.O.}}
+\subsubsection{CPU-burst e I/O-burst}
+Il comportamento tipico di un processo consiste nell'alternare sequenze di operazioni di elaborazione (CPU-burst) a sequenze di operazioni di I/O (I/O burst), terminando con un CPU-burst. \\
+\includegraphics[width=0.4\textwidth]{OS_images/CPU_IO_Burst.png} \\
+Processi CPU-bound avranno pochi CPU-burst lunghi (P1), mentre processi I/O-bound avranno molti CPU-burst brevi (P2): \\
+\includegraphics[width=0.6\textwidth]{OS_images/CPU_IO_Bound.png}
+\subsubsection{Scheduling Preemptive e Non-preemptive}
+Lo schema di scheduling può essere con o senza \textbf{diritto di prelazione}:
+\begin{itemize}
+    \item \textbf{Nonpreemptive scheduling}: processo running continua a detenere la CPU fino a quando termina o la cede
+    \item \textbf{Preemptive scheduling}: processo può essere interrotto (portato a ready) a seguito di un evento “esterno” (scade quanto di tempo, altro processo diventa ready…)
+\end{itemize}
+Nonpreemptive scheduling tipico dei sistemi batch, preemptive scheduling evita che processi “meno importanti” ostacolino quelli critici (comportando però un overhead di gestione)
+\subsection{Algoritmi di Scheduling Processi}
+\subsubsection{FCFS - First Come First Served}
+\begin{itemize}
+    \item Si seleziona il processo che è nella ready-queue da più tempo (processi serviti nell'ordine in cui entrano nella ready-queue)
+    \item Nonpreemptive
+\end{itemize}
+\includegraphics[width=0.6\textwidth]{OS_images/FCFS.png}
+\begin{itemize}
+    \item Vantaggi
+        \begin{itemize}
+            \item Semplice da implementare, non comporta overhead di gestione
+            \item Non ci può essere starvation in quanto tutti i processi ready, prima o poi, ottengono uso CPU
+        \end{itemize}
+    \item Svantaggi
+        \begin{itemize}
+            \item Tempo d’attesa medio molto legato all’ordine di arrivo dei burst
+            \item Tempo di risposta di un processo può essere molto alto anche per processi di breve durata
+            \item Un processo CPU-bound tende a monopolizzare il processore a discapito dei processi I/O-bound
+                \begin{enumerate}
+                    \item Processi I/O-bound terminano burst di I/O e si accodano in ready
+                    \item CPU-bound rilascia la CPU per fare I/O
+                    \item Tutti gli I/O-bound terminano il burst di CPU per fare I/O
+                    \item Il CPU-bound termina l’I/O e torna ready (”prima” degli I/O-bound) e tutto si ripete
+                \end{enumerate}
+            Si tende quindi a sottoutilizzare sia device che CPU (convoy effect)
+        \end{itemize}
+\end{itemize}
+\subsubsection{SJF - Shortest Job First}
+\begin{itemize}
+    \item Si seleziona il processo che avrà il prossimo CPU-burst più breve
+    \item Nonpreemptive
+\end{itemize}
+\includegraphics[width=0.6\textwidth]{OS_images/SJF.png}
+\subsubsection{SRTF - Shortest Remaining Time First}
+\begin{itemize}
+    \item Si seleziona il processo che avrà il prossimo CPU-burst più breve
+    \item Se P1 è running e in ready-queue giunge P2 con durata inferiore al tempo restante di P1, allora P2 sottrae la CPU a P1
+    \item Preemptive
+\end{itemize}
+\includegraphics[width=0.6\textwidth]{OS_images/SRTF.png}
+\subsubsection{Caratteristiche SJF / SRTF}
+\begin{itemize}
+    \item Processi con CPU-burst più breve sopravanzano gli altri
+    \item SJF rappresenta lo scheduling ottimale: realizza il tempo di attesa medio migliore
+    \item Può esserci starvation: i processi con CPU-burst lunghi tendono a restare molto tempo in ready-queue, non garantito ricevano l’uso della CPU in un tempo limitato
+    \item Richiedono di prevedere la durata dei CPU-burst (non sempre possibile determinare queste durate)
+\end{itemize}
+\subsubsection{Stima durata CPU burst}
+La previsione/stima della durata del prossimo CPU-burst di un processo può essere compiuta basandosi sui suoi CPU-burst del passato tramite media esponenziale:
+$$\tau_{n+1} = \alpha t_n + (1 - \alpha)\tau_n$$
+\\
+dove $t_n$ è la durata dell’n-esimo CPU-burst cioè la storia recente, mentre $\tau_n$ rappresenta il contributo della storia remota
+Sviluppando il termine n-esimo si ottiene:
+$$\tau_{n+1} = \alpha tn + (1 - \alpha)\alpha \tau_{n-1} + (1 - \alpha)^2\alpha \tau_{n-2} + \ldots + (1 - \alpha)^{n+1}\tau_0$$
+con $\tau_0$ e $0 \leq \alpha \leq 1$ costanti predefinite. In particolare $\alpha$ permette di modulare il peso della storia recente/remota.
+\subsubsection{HRRF - Highest Response Ratio First}
+\begin{itemize}
+    \item Si seleziona il processo che ha il \textbf{Response Ratio} R maggiore, dove \textbf{R = (ta + ts) / ts} con ta il tempo che il processo ha speso in attesa della CPU e ts la durata prevista del suo CPU-burst
+    \item Nonpreemptive
+\end{itemize}
+\includegraphics[width=0.6\textwidth]{OS_images/HRRF.png}
+\begin{itemize}
+    \item Processi con CPU-burst brevi sono favoriti ma si tiene conto dell’età del processo, processi con tempo di servizio ts lungo guadagnano priorità man mano che invecchiano
+    \item Meccanismo di \textbf{aging}: evita la starvation
+    \item Come SJF e SRTF richiede stime su tempo di servizio richiesto da processi
+\end{itemize}
+\subsubsection{Scheduling con Priorità}
+Viene assegnata una priorità ad ogni processo e CPU viene allocata a processo ready con priorità superiore.
+Nonpreemptive o preemptive (in questo caso un processo ready con priorità superiore sottrae la CPU ad un processo running di priorità inferiore)
+\begin{itemize}
+    \item Gestione delle priorità
+        \begin{itemize}
+            \item Priorità statiche
+                \begin{itemize}
+                    \item priorità assegnata ad un processo resta costante
+                    \item facile implementazione
+                    \item minimo overhead di gestione
+                    \item no adattamento a cambiamenti del carico di sistema
+                \end{itemize}
+            \item Priorità dinamiche
+                \begin{itemize}
+                    \item reattività rispetto a mutazioni del carico di sistema
+                    \item permettono di “seguire” evoluzione del comportamento dei processi
+                    \item maggior overhead per gestione
+                    \item aumento dinamico (solitamente) della priorità ai processi I/O-bound
+                \end{itemize}
+        \end{itemize}
+    \item Priorità e Starvation
+        Starvation = processo P, pur essendo ready, non ottiene mai uso della CPU.\\
+        In una politica con priorità potrebbe verificarsi se venissero continuamente creati processi con priorità superiore a quella di P.\\
+        Per evitare starvation si usa una strategia di aging dei processi (essi tendono a migliorare la loro priorità con il passare del tempo)
+\end{itemize}
+\subsubsection{Round Robin (circolare)}
+Come per FCFS si serve il processo che attende da più tempo \\
+Preemptive usando timer: allo scadere del quale il processo running viene rimesso in ready-queue \\
+\includegraphics[width=0.6\textwidth]{OS_images/RR.png}
+\\
+Processi I/O-bound penalizzati (in generale hanno CPU-burst più brevi del quanto di tempo), burst termina prima della fine del quanto (vengono messi in waiting prima di aver sfruttato tutto tempo a disposizione) \\
+Processi CPU-bound tendono a esaurire il quanto, quindi anche se mix tra CPU e I/O bound è adeguato in media i CPU-bound sfruttano (tendenzialmente) di più la CPU. Vantaggio: evita la starvation
+\subsubsection{Durata quanto di tempo}
+Durata di un quanto è critica per il comportamento del sistema:
+\begin{itemize}
+    \item deve essere sensibilmente superiore al tempo necessario per gestire interruzioni / switch di contesto
+    \item si rilevano buoni risultati se durata del quanto è maggiore della durata di almeno 80\% di CPU-burst
+    \item non può essere troppo lungo $\rightarrow$ penalizza processi I/O-bound (tende ad un FCFS)
+\end{itemize}
+\subsubsection{Scheduling con Code Multiple}
+Più code di processi:
+\begin{itemize}
+    \item processi pratizionati in gruppi disgiunti secondo opportuni criteri (es. processi batch e processi interattivi)
+    \item processi assegnati permanentemente alle code
+    \item ogni coda gestita mediante algoritmo di scheduling più adatto a caratteristiche dei suoi processi
+    \item si deve stabilire uno scheduling di code:
+        \begin{itemize}
+            \item relazione di priorità tra code e strategia preemptive: processo di una coda viene interrotto appena un altro processo entra in una delle code con priorità maggiore
+            \item \textbf{time slicing} a livello delle code: ad ogni coda viene assegnata una percentuale di tempo totale di CPU
+        \end{itemize}
+\end{itemize}
+\subsubsection{Scheduling con Code Multiple -Retroazione}
+Evoluzione delle code multiple:
+\begin{itemize}
+    \item \textbf{Evita starvation}, permettendo ai processi di migrare tra code secondo criteri di \textbf{aging}.
+    \item Solitamente \textbf{preemptive}.
+    \item I processi che utilizzano a lungo la CPU vengono spostati in code con \textbf{priorità più bassa}.
+    \item I processi \textbf{interattivi (I/O-bound)} tendono invece a ricevere \textbf{priorità più alta}.
+    \item Un processo che resta troppo tempo in una coda a bassa priorità può essere \textbf{promosso} a una coda con priorità maggiore (per evitare starvation).
+    \item \textbf{Overhead di gestione} viene bilanciato da una maggiore \textbf{sensibilità e reattività del sistema}.
+\end{itemize}
+\includegraphics[width=0.6\textwidth]{OS_images/Code_Multiple_4.png}
+\\
+Parametri da considerare:
+\begin{itemize}
+    \item Numero code da utilizzare
+    \item Algoritmi di scheduling per ogni coda.
+    \item \textbf{Regole di migrazione} dei processi tra le code (es. un processo preempted può “retrocedere”, mentre l’\textbf{aging} lo fa salire di priorità).
+    \item \textbf{Posizione iniziale} nuovi processi (es. si può scegliere di inserirli direttamente nella coda con priorità più alta).
+\end{itemize}
+\subsubsection{Comparazione tra algoritmi}
+\includegraphics[width=0.8\textwidth]{OS_images/Algorithm_Table.png}
+\subsubsection{Fair Share Scheduling}
+Processi \textbf{partizionati in gruppi} e scheduling avviene mirando a \textbf{equità di trattamento rispetto ai gruppi}:
+\begin{itemize}
+    \item adatto a sistemi multi utente
+    \item adatto in presenza di applicazioni multi-thread e scheduling viene effettuato sui thread
+    \item può trattare diversamente processi di differenti tipologie di utente
+\end{itemize}
+\subsection{Scheduling dei Thread}
+\subsubsection{Kernel-Thread e User-Thread}
+\begin{itemize}
+    \item User Threads (UT)
+        \begin{itemize}
+            \item Gestiti nello spazio utente (user space).
+            \item \textbf{Il kernel non ne è consapevole}.
+            \item Più veloci da creare e gestire.
+            \item \textbf{Problema}: se un thread effettua una system call bloccante, blocca tutti i thread del processo
+            \item \textbf{PROCESS-CONTENTION SCOPE}
+        \end{itemize}
+    \item Kernel Threads (KT)
+        \begin{itemize}
+            \item Gestiti dal kernel, nello spazio kernel.
+            \item Ogni thread è schedulato \textbf{indipendentemente}.
+            \item Più costosi da gestire in termini di performance.
+            \item \textbf{SYSTEM-CONTENTION SCOPE}
+        \end{itemize}
+\end{itemize}
+\subsection{Scheduling per Sistemi Multiprocessore}
+\subsubsection{Scheduling in Sistemi Multiprocessore}
+In linea di principio possono essere adattate le tecniche di scheduling per i casi single-processor anche in presenza di più unità di elaborazione. \\
+Il carico deve però essere distribuito e \textbf{bilanciato}.
+\textbf{Tipologie di multielabolarzione}
+\begin{itemize}
+    \item \textbf{Asimmetrica}: attività di sistema (scheduling, gestione, interruzioni…) affidate tutte a un unico processore \textbf{master server}
+        \begin{itemize}
+            \item codice degli utenti eseguito dagli altri processori
+            \item \textbf{difetto}: master server è un potenziale bottleneck del sistema
+        \end{itemize}
+    \item \textbf{Simmetrica}: ogni processore ha uno scheduler che attinge alla ready-queue che può essere
+        \begin{itemize}
+            \item di sistema: possibili race condition se più processori scelgono stesso task (serve mutua esclusione all’interno di ready-queue $\rightarrow$ possibile bottleneck)
+            \item per-processor: serve un meccanismo per distribuzione/bilanciamento carico tra ready-queue
+        \end{itemize}
+\end{itemize}
+\textbf{Scheduling (Multi)processori Multicore}
+\begin{itemize}
+    \item Processori multicore presentano più core in stesso chip fisico
+    \item S.O. vede ogni core come un processore logico separato
+    \item Ogni core esegue (solitamente) più thread hardware: \textbf{chip multithreading}, \textbf{hyper-threading}
+    \item Presenza di multithreading a livello di core comporta doppio livello di scheduling:
+        \begin{itemize}
+            \item scheduling (hardware) di thread hardware sui core della CPU multicore
+            \item scheduling (software) di thread/processi/task sulle CPU (lo scheduling studiato finora)
+        \end{itemize}         \includegraphics[width=0.6\textwidth]{OS_images/Multi_Core_Scheduling.png}
+\end{itemize}
+\subsubsection{Bilanciamento del Carico}
+Con più unità di elaborazione va massimizzato distribuendo equamente il carico tra i core del sistema, si utilizzano principalmente due tecniche base (non esclusive):
+\begin{itemize}
+    \item Push migration: un processo dedicato controlla periodicamente carico di lavoro assegnato a predecessori $\rightarrow$ sottrae task da CPU overloaded e li riassegna a CPU meno cariche
+    \item Pull migration: ogni processore, quando inattivo, preleva un task da uno dei processori overloaded
+\end{itemize}
+\subsubsection{Sistemi Eterogenei}
+Presenza di diversi processori con caratteristiche non omogenee:
+\begin{itemize}
+    \item diverso tipo (processori grafici / dedicati a task specifici)
+    \item diverso set di istruzioni
+    \item diversa potenza di calcolo / consumo energetico
+\end{itemize}
+Utile in caso si debba dare maggiore importanza a consumo energetico (sistemi embedded…)
+\subsection{Scheduling Real-time}
+\subsubsection{Sistemi Real-Time}
+\begin{itemize}
+    \item Utilizzati in dispositivi di largo consumo (sistemi embedded, player, robotica, domotica)
+    \item Funzionalità devono rispettare vincoli temporali (scadenze, durate, tempi di reazione…)
+    \item Obbiettivo primario rispetto di deadline e vincoli ai tempi di reazione
+    \item Necessitano algoritmi di scheduling specifici
+\end{itemize}
+\textbf{Tipologie di Sistemi Real-Time}:
+\begin{itemize}
+    \item Real-time soft: ai task critici viene concessa precedenza (no violazioni deadline però)
+    \item Real-time hard: task devono necessariamente rispettare deadline
+\end{itemize}
+Solitamente sono event-driven (all’accadere di un evento il sistema reagisce nel minor tempo possibile ed esegue il task richiesto $\rightarrow$ tempo di reazione detto latenza dell’evento)
+\begin{itemize}
+    \item latenza di interruzione: tempo trascorso tra la ricezione dell’interruzione e l’inizio della procedura di gestione
+    \item latenza di dispatch: tempo impiegato dal dispatcher per eseguire lo switch di contesto
+\end{itemize}
+\textbf{Scheduling Sistemi Real-Time}
+\begin{itemize}
+    \item \textbf{Priorità}: scheduling con priorità con prelazione visto in precedenza o varianti per garantire deadline hard e gestire task periodici
+    \item \textbf{Priorità proporzionale a frequenza}: come precedente ma con priorità assegnate staticamente in base a frequenza del task periodico
+    \item \textbf{Earliest Deadline First}: priorità assegnate dinamicamente (prima il task che ha scadenza più vicina, non richiede periodicità)
+    \item \textbf{A quote proporzionali}: assegnata una percentuale del tempo di CPU a ogni applicazione, a ogni richiesta di utilizzo CPU si valuta se ammetterla o meno
+\end{itemize}
+\subsection{Scheduling in UNIX e Linux}
+\subsubsection{Scheduling di UNIX Tradizionale}
+\begin{itemize}
+    \item Utilizza \textbf{code multiple con priorità dinamiche} e algoritmo \textbf{round-robin} per ogni coda.
+    \item \textbf{Preemption} dopo 1 secondo di utilizzo continuato della CPU.
+    \item Ogni processo ha una \textbf{priorità di base} che lo colloca in una banda specifica (es. Swapper, User processes) per ottimizzare l’uso dei dispositivi I/O.
+    \item La priorità viene modificata in base all’utilizzo della CPU e alle preferenze dell’utente (nice), ma rimane nella stessa banda.
+    \item Le priorità sono ricalcolate ogni secondo.
+\end{itemize}
+\subsubsection{Scheduling in O(1) di Linux}
+\begin{itemize}
+    \item Con \textbf{preemption}.
+    \item Basato su \textbf{priorità numeriche} con due gamme:
+        \begin{itemize}
+            \item Priorità alta (es. 0) $\rightarrow$ quanto lungo (200 ms).
+            \item Priorità bassa (es. 140) $\rightarrow$ quanto breve (10 ms).
+        \end{itemize}
+\end{itemize}
+\textbf{Gestione dei Task}
+\begin{itemize}
+    \item \textbf{Task ready}: classificati come \textbf{active} (se hanno tempo residuo) o \textbf{expired} (se hanno esaurito il quanto).
+    \item Il task \textbf{running} diventa \textbf{expired} quando consuma il suo quanto e non può essere rieseguito finché ci sono task active.
+    \item Due array gestiscono task active e expired. La CPU è assegnata al task active con priorità massima.
+    \item Gli array si scambiano i ruoli quando tutti i task \textbf{active} diventano \textbf{expired}.
+\end{itemize}
+
+\end{document}

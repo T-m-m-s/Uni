@@ -1,0 +1,60 @@
+;EX-1 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+; Maschile/Femminile
+
+(define maschile?  ; Restituisce true se la parola passata è maschile
+  (lambda (s)  ; s = stringa da verificare
+    (let ((desinenza (substring s (- (string-length s) 1))))
+      (if (or (string=? desinenza "o" ) (string=? desinenza "i" )) #true #false)
+    )
+  )
+)
+
+; Plurale/Singolare
+
+(define singolare? ; Restituisce true se la parola passata è singolare
+  (lambda (s)  ; s = stringa da verificare
+    (let ((desinenza (substring s (- (string-length s) 1))))
+      (if (or (string=? desinenza "o" ) (string=? desinenza "a" )) #true #false)
+    )
+  )
+)
+
+; Coniugazione
+
+(define are?  ; Restituisce true se il verbo passato è in prima coniugazione
+  (lambda (verbo)  ; verbo = verbo (all'infinito) da verificare
+    (if (string=? (substring verbo (- (string-length verbo) 3)) "are") #true #false)
+  )
+)
+
+(define gestione-verbo  ; Gestisce il verbo in base a singolare/plurale del soggetto e coniugazione
+  (lambda (verbo soggetto)  ; verbo = verbo (all'infinito) da gestire
+    (cond
+      ((singolare? soggetto) (if (are? verbo) (string-append (substring verbo 0 (- (string-length verbo) 2))) (string-append (substring verbo 0 (- (string-length verbo) 3)) "e"))) ; s
+      ((not (singolare? soggetto)) (if (are? verbo) (string-append (substring verbo 0 (- (string-length verbo) 2)) "no") (string-append (substring verbo 0 (- (string-length verbo) 3)) "ono"))) ; p
+    )
+  )
+)
+
+
+; Articoli
+
+(define articolo  ; Restituisce l'articolo corretto in base a singolare/plurale del soggetto
+  (lambda (sostantivo)  ; sostantivo = stringa da verificare
+    (cond
+      ((and (singolare? sostantivo) (maschile? sostantivo)) (string-append "il"))
+      ((and (not (singolare? sostantivo)) (maschile? sostantivo)) (string-append "i"))
+      ((and (singolare? sostantivo) (not (maschile? sostantivo))) (string-append "la"))
+      ((and (not (singolare? sostantivo)) (not (maschile? sostantivo))) (string-append "le"))
+    )
+  )
+)
+
+; Main
+
+(define frase  ; Unisce la frase corretta in base al verbo, al soggetto e al coniugato
+  (lambda (s p c)  ; s = soggetto, p = verbo, c = coniugato
+    (string-append (articolo s) " " s " " (gestione-verbo p s) " " (articolo c) " " c)
+  )
+)

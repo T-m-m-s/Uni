@@ -1,0 +1,49 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+setwd("C:/Uni/Statistica/Lab/Es3")
+temp <- read.csv("temperatura.txt", header=T, sep="")
+attach(temp)
+ciclisti <- read.csv("ciclisti.txt", header=T, sep="")
+attach(ciclisti)
+```
+
+## ES 1.1
+
+```{r}
+barplot(table(Sesso)/sum(table(Sesso)))
+```
+
+```{r}
+tapply(Temperatura, Sesso, summary)
+```
+
+```{r}
+boxplot(Temperatura~Sesso)
+```
+
+```{r}
+ggplot(temp, aes(x = Temperatura, y = after_stat(density), col = Sesso, fill = Sesso)) + geom_histogram() + facet_grid(Sesso~.)
+ggplot(temp, aes(x = Temperatura, y = after_stat(density), col = Sesso, fill = Sesso)) + geom_density() + facet_grid(Sesso~.)
+```
+
+```{r}
+p <- ggplot(temp, aes(y = Temperatura, col = Sesso)) + geom_boxplot() + theme(axis.text.x=element_blank())
+
+p + labs(title = "Temperatura per i due sessi", x = "Sesso")
+```
+
+
+## ES 1.2
+
+```{r}
+print(ciclisti)
+```
+
+```{r}
+(mod <- lm(Car~Center, data = fev))
+summary(mod)
+```
+

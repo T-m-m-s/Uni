@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<title>Esercizio JS 8</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<script>
+		class Studente {
+			constructor(nome, cognome, matricola) {
+					this.nome = nome;
+					this.cognome = cognome;
+					this.matricola = matricola;
+			}
+			dati() {
+				var str;
+				str = "Il numero di matricola di " + this.nome + " " + this.cognome + " è " + this.matricola;
+				return str;
+			}
+		}
+		var studente1 = new Studente("Mario", "Rossi", 438784);
+		var dati_studente1 = studente1.dati();
+		var par = document.createElement("p");
+		par.innerHTML = dati_studente1;
+		document.body.append(par);
+	</script>
+</body>
+</html>

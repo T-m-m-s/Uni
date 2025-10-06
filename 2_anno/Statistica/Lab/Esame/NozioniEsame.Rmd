@@ -1,0 +1,315 @@
+---
+title: "NozioniEsame"
+author: '167340'
+date: "2025-01-24"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# TABLE
+
+## Tabella valori assoluti
+```{r}
+# ... argomento/i da intabulare
+# useNA può essere "no", "ifany", "always"
+# desparse.level 0 (default), 1 (mostra il titolo se è un simbolo), 2 (mostra il titolo)
+# ddn ha come attributo una lista di nomi per le variabili della tabella
+table(..., useNA = "", desparse.level = d, dnn = c(nomi))
+```
+
+## Tabella valori assoluti contingenza
+```{r}
+# x variabile statistica posta in riga
+# y variabile statistica posta in colonna
+table(x,y)
+```
+
+## Tabella valori relativi
+```{r}
+# tab tabella di valori assoluti
+# margin (se specificato) restituisce 1 = freq. di riga, 2 = freq. di colonna
+prop.table(tab, margin = n)
+```
+
+## Frequenze cumulate
+```{r}
+# tab tabella di valori assoluti
+cumsum(tab)
+```
+
+## Frequenza totale
+```{r}
+# tab tabella di valori assoluti
+sum(tab)
+```
+
+## Tabella con frequenze marginali
+```{r}
+# tab tabella di valori assoluti
+addmargins(tab)
+```
+
+
+# STATISTICHE DESCRITTIVE
+
+## Media
+```{r}
+# x vettore numerico
+# na.rm se true non si considerano i valori mancanti
+mean(x, na.rm = FALSE)
+```
+
+
+## Mediana
+```{r}
+# x vettore numerico
+# na.rm se true non si considerano i valori mancanti
+median(x, na.rm = FALSE)
+```
+
+## Differenza interquartile (IQR)
+```{r}
+# x vettore numerico
+# na.rm se true non si considerano i valori mancanti
+# differenza tra 3o e 1o quartile
+IQR(x, na.rm = FALSE)
+```
+
+
+## Varianza
+```{r}
+# x vettore numerico
+# na.rm se true non si considerano i valori mancanti
+var(x, na.rm = FALSE)
+```
+
+## Deviazione standard
+```{r}
+# x vettore numerico
+# na.rm se true non si considerano i valori mancanti
+sd(x, na.rm = FALSE)
+```
+
+## Summary
+```{r}
+# x un argomento nominale/ordinale o cardinale
+# restituisce le principali statistiche descrittive
+summary(x)
+```
+
+
+# TEST STATISTICI
+(alternative possibili = "less", "greater", "two-sided")
+
+## Test media (T di Student)
+
+```{r}
+# Verificare se mu = media attesa
+# Campione singolo
+t.test(var. stat., mu = valore atteso, alternative = "", conf.level = alpha)
+```
+
+```{r}
+# Verificare se mu di x = mu di y
+# Due campioni
+t.test(var. stat. 1, var. stat. 2, alternative = "", conf.level = alpha)
+```
+
+```{r}
+# Verificare media dopo cambiamento = pre cambiamento
+# Campioni appaiati
+t.test(prima, dopo, paired = TRUE, alternative = "", conf.level = alpha)
+```
+
+## Test proporzioni
+```{r}
+# Verificare se proporzione = proporzione attesa
+prop.test(n° successi, n° osservazioni, p = proporzione attesa, alternative = "", conf.level = 0.95)
+```
+
+```{r}
+# Verificare se proporzione 1 = proporzione 2
+prop.test(c(n° successi1, n° successi2), c(n° osservazioni1, n° osservazioni2), alternative = "", conf.level = alpha)
+```
+
+## Test chi-quadro
+```{r}
+chisq.test(observed, expected(?))
+```
+
+
+
+## Test correlazione lineare
+```{r}
+# Verificare assenza di associazione lineare
+cor.test(x = variabile1, y = variabile2$Age, + alternative = "", conf.level = alpha)
+```
+
+# GRAFICI
+
+## Barplot
+
+### Barplot a 1 variabile
+```{r}
+# table(dataset$variabile) elemento da rappresentare
+# cex dimensioni dei vari testi
+# main titolo del grafico
+# horiz se è vero il grafico si dispone in orizzontale
+# col seleziona i colori da utilizzare
+barplot(table(dataset$variabile), horiz=T, col=c(3:6), cex.axis=0.8, cex.names=0.8, main="Grassland Management")
+```
+
+
+### Barplot a due variabili - raggruppate
+```{r}
+# table1 argomento da rappresentare (la prima variabile è la x del grafico, l'altra differenzia le diverse barre)
+# legend.text da i titoli per la legenda
+# beside a vero raggruppa le barre una affanco all'altra
+barplot(table1, col=c(4:6),beside=T,main="Use by Management", legend.text=c("Hay Prod.","Intermediate","Grazing"))
+```
+
+
+### Barplot a due variabili - sovrapposte
+```{r}
+# table1 argomento da rappresentare (la prima variabile è la x del grafico, l'altra differenzia le diverse barre)
+# legend.text da i titoli per la legenda
+# beside a vero raggruppa le barre una sopra l'altra
+barplot(table1, col=c(4:6),beside=T,main="Use by Management", legend.text=c("Hay Prod.","Intermediate","Grazing"))
+```
+
+
+## Q-Q plot
+```{r}
+# Se la distribuzione della variabile ha la forma di una S, la distribuzione è asimmetrica; Se invece è al di sotto o al di sopra della linea, la distribuzione è platicurtica (la densità è maggiore sulle code), o leptocurtica (la densità è maggiore del previsto intorno ai valori centrali).
+# var variabile da verificare
+# qqline linea di una normale ideale
+# se var è normale allora le due linee coincidono
+qqnorm(var)
+grid()               # griglia
+qqline(var, lwd = 2, col = "red")
+```
+
+
+## Plot
+```{r}
+# Se applicato a variabile nominale produce un barplot della stessa
+plot(varnom)
+```
+
+```{r}
+# Se applicato a variabile cardinale produce uno scatterplot della stessa
+plot(varcard)
+```
+
+```{r}
+# Se applicato a variabile cardinale (ma tabulata) produce un diagramma a bastoncini della stessa
+plot(table(varcard))
+```
+
+```{r}
+# Se applicato a due variabili, una nominale e una cardinale produce un boxplot
+plot(varnom, varcard)
+```
+
+## Plot con modello di regresione
+
+Quando usi plot(mod, x) in R, dove mod è un modello di regressione lineare, il valore assegnato a x determina quale grafico diagnostico viene generato. Ecco una panoramica dei grafici più comuni:
+
+### plot(mod, 1): Residui vs. Valori Predetti
+
+Verifica l'eteroschedasticità e l'adeguatezza del modello.
+I residui dovrebbero essere distribuiti casualmente attorno alla linea orizzontale.
+
+### plot(mod, 2): Q-Q Plot dei Residui
+
+Verifica la normalità dei residui.
+I punti dovrebbero seguire approssimativamente una linea retta se i residui sono normalmente distribuiti.
+
+### plot(mod, 3): Scale-Location Plot (o Spread-Location Plot)
+
+Verifica l'eteroschedasticità.
+I punti dovrebbero essere distribuiti casualmente attorno alla linea orizzontale.
+
+### plot(mod, 4): Residui vs. Leverage
+
+Identifica punti influenti.
+Punti con alto leverage e grandi residui possono avere un'influenza significativa sul modello.
+
+# REGRESSIONE
+
+## Verifica grafica mediante q-q plot
+```{r}
+par(mfrow=c(1,2))
+qqnorm(var1,main="var1")
+qqline(var1)
+qqnorm(var2,main="var2")
+qqline(var2)
+```
+
+## Controllo correlazione tra variabili (test di Spearman)
+```{r}
+cor.test(var1,var2,method = "spearman")
+```
+
+## Stima modello regressione lineare + stampa valori principali
+```{r}
+mod = lm(var1 ~ var2,data=dataset)
+summary(mod)
+```
+
+## Rappresentazione grafica retta di regressione
+```{r}
+plot(var1,var2)
+abline(mod,col="red") 
+```
+
+## Calcolo del p-value
+```{r}
+(p_value = summary(mod)$coefficients[2,4])
+```
+
+## Calcolo di R^2
+```{r}
+(R2 = summary(mod)$r.squared)
+```
+
+## Possibile ipotizzare una distribuzione normale per i residui del modello? 
+```{r}
+qqnorm(residuals(mod))
+qqline(residuals(mod), col='red', lwd=2)
+```
+
+## Verifica eteroschedasticità
+```{r}
+plot(mod,1)
+```
+
+## Verifica outliers
+```{r}
+plot(mod,4)
+```
+#NOTAZIONI
+
+## Chi-quadro -- connessione
+Va da 0 a 1
+Più vicino è allo 0 --> più c'è indipendenza
+
+## R^2 -- bontà modello
+Se circa uguale a 1 --> modello buono
+Se circa uguale a 0 --> modello non buono
+
+## Curtosi
+Se circa uguale a 3 --> normocurtica
+Se > 3 --> leptocurtuica
+Se < 3 --> platicurtica
+
+## P-Value
+se p-value ≤ 0.01, si rifiuta H0 con sicurezza;
+se 0.01 < p-value ≤ 0.05, si rifiuta H0 con riserva;
+se 0.05 < p-value ≤ 0.10, c'è incertezza sulla decisione;
+se p-value > 0.10, non si rifiuta H0.
+
+tilde ~

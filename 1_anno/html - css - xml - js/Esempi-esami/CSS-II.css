@@ -1,0 +1,36 @@
+body {
+    width: 960px;
+    height: 600px;
+    margin: auto;
+    position: relative;
+}
+#header, #footer {
+    width: 960px;
+    height: 50px;
+}
+#sinistro {
+    width: 400px;
+    position: absolute;
+    left: 0px;
+    height: 400px;
+}
+#destro {
+    width: 500px;
+    position: absolute;
+    right: 0px;
+    height: 400px;
+}
+#footer {
+    position: absolute;
+    top: 450px;
+}
+p a {
+  color: hsl(120, 100%, 50%);
+}
+li:nth-child(2) {
+    border: solid 2px red;
+}
+a[href*="w3schools"] {
+	font-variant: small-caps;
+    /*text-transform: uppercase;*/
+}

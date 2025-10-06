@@ -1,0 +1,169 @@
+---
+title: "lezione 2"
+author: "Mameli"
+date: "2024-10-16"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+setwd("C:/Users/Utente/OneDrive - Università degli Studi di Udine/Desktop/laboratorio/lezione 2")
+appendiceA <- read.csv("appendiceA.txt", sep="")
+```
+
+```{r}
+library(knitr)
+kable(head(appendiceA))
+```
+```{r}
+#visualizzazione delle prime 10 righe
+appendiceA[1:10,]
+```
+
+
+```{r}
+nrow(appendiceA)
+```
+```{r}
+ncol(appendiceA)-1
+```
+```{r}
+attach(appendiceA)
+class(Sesso)
+Sesso=factor(Sesso)
+levels(Sesso)
+```
+
+```{r}
+#frequenze assolute
+freq_ass=table(Sesso)
+freq_ass
+```
+```{r}
+#frequenze relative
+freq_rel=freq_ass/sum(freq_ass)
+freq_rel
+
+```
+```{r}
+#frequenze percentuali
+freq_perc=freq_rel*100
+freq_perc 
+```
+
+```{r}
+#diagramma a barre
+barplot(freq_rel,col=c("pink","cyan"),xlab="Sesso",ylab="Frequenze relative",main="Frequenze relative della variabile Sesso",ylim=c(0,1))
+```
+
+```{r}
+# diagramma a torta
+pie(freq_rel,col=c("pink","cyan"),main="Diagramma a torta per la variabile Sesso")
+
+```
+# Variabile Peso
+```{r}
+mean(Peso,na.rm=T)
+```
+```{r}
+median(Peso,na.rm=T)
+```
+```{r}
+library(moments)
+skewness(Peso,na.rm = T)
+```
+```{r}
+kurtosis(Peso,na.rm = T)
+```
+```{r}
+n = length(Peso)
+varianza= var(Peso,na.rm=T)*(n-1)/n
+```
+```{r}
+deviazione_standard=sd(Peso)*sqrt((n-1)/n)
+```
+```{r}
+#campo di variazione
+campo_di_variazione=max(Peso)-min(Peso)
+campo_di_variazione
+```
+```{r}
+#campo di variazione
+diff(range(Peso))
+```
+
+```{r}
+quartili=quantile(Peso,probs=c(0.25,0.5,0.75))
+```
+
+```{r}
+#scarto interquartile
+as.numeric(quartili[3]-quartili[1])
+```
+```{r}
+IQR(Peso)
+```
+```{r}
+quantile(Peso,probs=0.01)
+```
+```{r}
+quantile(Peso,probs=0.99)
+```
+```{r}
+summary(Peso)
+```
+# Istogramma
+```{r}
+hist(Peso, probability = T,main="Istogramma della variabile Peso",col="blue")
+#hist(Peso,freq=F)
+```
+```{r}
+hist(Peso, probability = T,main="Istogramma della variabile Peso",col="blue",
+     breaks = seq(80,250,10))
+lines(density(Peso),col="red")
+```
+
+```{r}
+isto=hist(Peso, probability = T,plot = F)
+isto
+```
+
+```{r}
+isto$density
+```
+
+```{r}
+boxplot(Peso,horizontal = T)
+```
+```{r}
+plot(ecdf(Peso))
+```
+
+```{r}
+campodivariazione = function(x){
+  
+  camp = max(x)-min(x)
+  return(camp)
+}
+
+
+#campodivariazione=function(x){
+  
+# max(x)-min(x)
+ 
+#  }
+
+```
+
+
+```{r}
+campodivariazione(Peso)
+```
+
+
+

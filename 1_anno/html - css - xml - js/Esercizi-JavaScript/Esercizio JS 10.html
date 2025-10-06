@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<title>Esercizio JS 10</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<form name="myForm">
+		<fieldset>
+			<legend>Sondaggio</legend>
+			<p><label for="c1"> Nome:<input type="text" name="name" id="c1" required></label></p>
+			<p><label for="c2"> Email:<input type="email" name="email" id="c2" required></label></p>
+			<p>
+				<label for="val">Seleziona la tua valutazione:</label>
+				<select name="valutazione" id="val" required>
+					<option value="">Seleziona un valore</option>
+					<option value="ottimo">Ottimo</option>
+					<option value="buono">Buono</option>
+					<option value="sufficiente">Sufficiente</option>
+					<option value="insufficiente">Insufficiente</option>
+				</select> 
+			</p>
+			<input type="submit" value="Invio" onclick="displayForm()">
+		</fieldset>
+	</form>
+	<script>
+		function displayForm() {
+			var out = "";
+			for (var i=0; i<document.forms["myForm"].length; i++) {
+				if (document.forms["myForm"][i].name){
+					out += document.forms["myForm"][i].name + " = " + document.forms["myForm"][i].value + "\n";
+				}
+			}
+			alert(out);
+		}
+	</script>
+</body>
+</html>

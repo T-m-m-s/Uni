@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Esercizio 10</title>
+  </head>
+  <body>
+    <h1>Registrazione</h1>
+    <form>
+      <label for="name"><b>Nome:</b></label>
+      <input type="text" id="name" name="name"><br><br>
+
+      <label for="email"><b>Email:</b></label>
+      <input type="email" id="email" name="email"><br><br>
+
+      <label for="how"><b>How did you hear about us?</b></label>
+      <select name="how" id="how">
+        <option value="google">Google</option>
+        <option value="friend">Friend</option>
+        <option value="advert">Advert</option>
+        <option value="other">Other</option>
+      </select><br><br>
+
+      <label><b>Would you visit again?</b></label><br><br>
+      <div>
+        <input type="radio" id="yes" name="visit" value="y">
+        <label for="y">Yes</label>
+        <input type="radio" id="no" name="visit" value="n">
+        <label for="n">No</label>
+        <input type="radio" id="maybe" name="visit" value="x">
+        <label for="x">Maybe</label>
+      </div><br>
+
+      <label for="comment"><b>Comments:</b></label><br>
+      <textarea name="comment" rows="4" cols="40"></textarea><br><br>
+
+      <label for="password"><b>Sign me up for email updates</b></label>
+      <input type="checkbox" name="email" value="email" checked><br><br>
+
+      <input type="submit" value="Invia">
+      <input type="reset" value="Resetta">
+    </form>
+  </body>
+</html>

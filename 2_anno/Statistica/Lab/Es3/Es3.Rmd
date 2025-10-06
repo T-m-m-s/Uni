@@ -1,0 +1,64 @@
+---
+title: "esercizi3"
+output: word_document
+date: "2024-10-30"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+setwd("C:/Uni/Statistica/Lab/Es3")
+fev <- read.csv("fev.txt", header=T, sep="")
+attach(fev)
+```
+
+```{r}
+plot(Altezza, FEV)
+```
+
+```{r}
+cor(Altezza, FEV)
+cor(Altezza, FEV, method = "spearman")
+cor(Altezza, FEV, method = "kendall")
+cov(Altezza, FEV)
+ahat <- mean(FEV) - bhat * mean(Altezza)
+bhat <- cov(Altezza, FEV) / var(Altezza)
+
+print(paste("B cappello: ", bhat)) 
+print(paste("A cappello: ", ahat)) 
+```
+```{r}
+(mod <- lm(FEV~Altezza, data = fev))
+summary(mod)
+```
+```{r}
+plot(Altezza, FEV)
+abline(mod)
+```
+
+```{r}
+library(ggplot2)
+ggplot(fev, aes(x = Altezza, y = FEV)) + geom_point() + geom_smooth(method = "lm")
+```
+
+```{r}
+print(paste("Coefficiente di determinazione: ", cor(Altezza, FEV)^2)) 
+print(paste("Estrazione di R^2 dal summary: ", summary(mod)$r.squared)) 
+print("Residui del modello: ")
+residuals(mod)
+print("Valori previsti modo 1")
+(yhat = ahat + bhat * Altezza)
+print("Valori previsti modo 2")
+fitted.values(mod)
+print("A cappello e B cappello")
+coef(mod)
+```
+
+```{r}
+print("Prevedere valore medio di FEV quando Altezza è pari a 184")
+print(paste("Manualmente: ", (ahat + bhat * 184)))
+print(paste("Con funzione (per 184 e 185): ", predict(mod, newdata = data.frame(Altezza = c(184, 185))))) 
+```
+

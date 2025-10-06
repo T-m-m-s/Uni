@@ -1,0 +1,102 @@
+---
+title: "Esame 1"
+author: "Trentin Tommaso 167340"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Il dataset Diamonds.csv contiene dati su 184 diamanti (dimensione in carati, colore, chiarezza, tipo di certificazione, prezzo in dollari di Singapore). Si considerino le variabili colore dei diamanti (Color) e prezzo (Price).
+
+* Si effettui un'analisi descrittiva delle variabili colore dei diamanti e prezzo.
+
+* Si valuti come il colore dei diamanti riferito alle sole modalità "G" ed "H" influisca sul prezzo.
+
+* Interpretare i risultati ottenuti.
+ 
+
+```{r}
+Diamonds_new <- read.csv("Diamonds.csv")
+attach(Diamonds_new)
+Diamonds_new
+```
+
+La variabile Price è una variabile quantitativa mentre la variabile Color è una variabile qualitativa.
+
+## Prezzo
+Effettuiamo l'analisi sulla variabile Prezzo. 
+Effettuiamo il calcolo degli indici di sintesi tramite la funzione summary, dall'output di questa funzione si nota che la media è maggiore della mediana. Dal boxplot si evince che la distribuzione è asimmetrica a destra, infatti il baffo superiore è più lungo rispetto a quello inferiore. Ciò viene confermato anche dal calcolo dell'indice di asimmetria che risulta pari a 0.53.
+
+```{r}
+summary(Diamonds_new$Price)
+boxplot(Diamonds_new$Price)
+```
+
+Dal calcolo dell'indice di curtosi si nota che la distribuzione non è normocurtica infatti il valore è circa 2.24 al di sotto del limite 3.
+
+```{r}
+library(moments)
+skewness(Diamonds_new$Price)
+kurtosis(Diamonds_new$Price)
+```
+
+## Color
+Effettuiamo l'analisi sulla variabile Color, essendo qualitativa possiamo calcolare la tabella delle frequenze e rappresentarla graficamente tramite un diagramma a barre (barplot) o un diagramma a torta.
+Qui utilizziamo un diagramma a barre. Possiamo notare che le modalità F e G sono le più frequenti mentre le modalità D e I sono le meno frequenti.
+Per scopi successivi vediamo anche che si hanno  45 osservazioni che presentano la modalità G e 34 la modalità H.
+
+```{r}
+(freq_ass= table(Diamonds_new$Color))
+(freq_perc=freq_ass/length(Diamonds_new$Color)*100)
+barplot(freq_perc,xlab="Colore",col=c(1,6,7,3,4,0))
+```
+
+
+## Relazione tra la variabile Price e la variabile Color
+Studiamo come varia Price al variare del Color riferito alle sole modalità G e H.
+
+```{r}
+#boxplot(Diamonds_new$Price~Diamonds_new$Color,xlab="Colore",ylab="Prezzo")
+#tapply(Diamonds_new$Price,Diamonds_new$Color,summary)
+price_h=Diamonds_new$Price[Diamonds_new$Color=="H"]
+summary(price_h)
+price_g=Diamonds_new$Price[Diamonds_new$Color=="G"]
+summary(price_g)
+boxplot(price_h,price_g)
+```
+Guardando la media dei Prezzi riferita ai diamanti con Colore G e la media dei Prezzi riferita ai diamanti con colore H si nota che le due medie sono differenti. Per cui si può affermare che c'è differenza fra le due medie.
+Vogliamo vedere se questa differenza è significativa. 
+
+## Test sulle medie di due popolazioni indipendenti
+Effettuiamo quindi un test sulla differenza delle medie di due popolazioni indipendenti.
+
+### Normalità delle due variabili
+Prima verifichiamo se le due variabili hanno una distribuzione normale attraverso i qqplot.
+
+```{r}
+qqnorm(price_h)
+qqline(price_h)
+qqnorm(price_g)
+qqline(price_g)
+```
+
+Dal qqplot si nota che le due variabili non sono normali in quanto i dati non si adattano bene alla retta sia sulla coda destra che sinistra per entrambe le variabili.
+
+### Test sulla rapporto di varianze
+Quindi effettuiamo un test sull'uguaglianza delle varianze. Tale test si può utilizzare anche se le due variabili non sono normali in quanto la dimensione campionaria è sufficentemente grande.
+
+```{r}
+var.test(price_h,price_g) 
+```
+
+Dal test vediamo che le due varianze possono ritenersi significativamente uguali, non c'è ragione di rifiutare l'ipotesi nulla di uguaglianza.
+
+Per cui è possibile effettuare un test sull'uguaglianza delle medie imponendo la condizione che la varianza delle popolazioni sia incognita ma uguale nelle due popolazioni.
+
+```{r}
+t.test(price_h,price_g,var.equal = T)
+```
+
+Infine dal test di uguaglianza delle medie è possibile dedurre che non c'è ragione di rifiutare l'ipotesi nulla di uguaglianza fra le medie. Per cui è possibile affermare che il colore dei diamanti, riferito alle sole due modalità H e G, non influisce sul prezzo.

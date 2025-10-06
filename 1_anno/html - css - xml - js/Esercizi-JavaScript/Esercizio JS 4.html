@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<title>Esercizio JS 4</title>
+	<meta charset="UTF-8">
+	<script>
+		function calcolaSomma() {
+			var numero1 = document.getElementById("numero1").valueAsNumber;
+			var numero2 = document.getElementById("numero2").valueAsNumber;
+			var somma = numero1+numero2;
+			document.getElementById("par1").innerText  = somma;
+			document.getElementById("par2").innerHTML  = "<i>" + somma + "</i>";
+		}
+	</script>
+</head>
+<body>
+	<input type="number" name="n1" id="numero1"><br>
+	<input type="number" name="n2" id="numero2"><br>
+	<input type="button" value="Calcola Somma" onclick="calcolaSomma()">
+	<p id="par1"></p>
+	<p id="par2"></p>
+</body>
+</html>

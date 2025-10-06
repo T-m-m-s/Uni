@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <title>Esercizio 11</title>
+    <body>
+        <form action="pay.php" method="get">
+            <fieldset>
+                <legend>Contact information</legend>
+                <ul>
+                    <li><input type="radio" name="title" id="k" required>King</li>
+                    <li><input type="radio" name="title" id="q" required>Queen</li>
+                    <li><input type="radio" name="title" id="j" required>Joker</li>
+                </ul>
+                Name: <input type="text" name="name" required><br>
+                Email: <input type="email" name="email" required><br>
+                Password: <input type="password" name="password" required><br>
+            </fieldset>
+            <fieldset>
+                Card type: 
+                <select name="card" id="card" required>
+                    <option value="visa">Visa</option>
+                    <option value="mastercard">Mastercard</option>
+                    <option value="american_express">American Express</option>
+                </select><br>
+                Card number: <input type="number" name="card_number" required><br>
+                Expiration date: <input type="date" name="expiration_date" required>
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Validate the payment</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+---
+title: "EsAffitti"
+output: word_document
+date: "2024-10-09"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## ES1
+```{r}
+A <- c(5, 1, 12, 40)
+A
+secondo <- A[2]
+secondo
+inrange <- A[A < 4 | A > 12]
+inrange
+Settori <- rep(c("Agricoltura", "Industria", "Servizi"), each = 4)
+Settori
+agr <- Settori[Settori == "Agricoltura"]
+agr
+```
+##ES2
+```{r}
+B = matrix(c(2, 3, 8, 3, 6, 2, 0, 1, 4), nrow = 3)
+B
+sel1 <- B[1, 3]
+sel1
+sel2 <- B[2,]
+sel2
+```
+
+##ES3
+```{r}
+dataset <- data.frame(
+  nome = c("Rossi M", "Bianchi G", "Nicoletti C", "Marcelli F", "Petrone A"),
+  età = c(32, 39, 46, 28, 51),
+  sesso = c("M", "F", "M", "M", "F"),
+  titolo_di_studio = c("laurea", "laurea", "diploma", "diploma", "diploma"),
+  attività = c("occupato", "occupato", "disoccupato", "studente", "casalinga"),
+  peso = c(72, 55, 79, 63, 64)
+)
+dataset
+
+nicoletti <- subset(dataset, nome == "Nicoletti C")
+nicoletti
+
+mod_sesso <- unique(dataset$sesso)
+mod_sesso
+
+table(dataset$sesso)
+```
+
+##ES4
+```{r}
+affitti
+head(affitti)
+nrow(affitti)
+ncol(affitti)
+colnames(affitti)
+sapply(affitti, class)
+any(is.na(affitti))
+affitti2 <- na.omit(affitti)
+affitti2
+```
+

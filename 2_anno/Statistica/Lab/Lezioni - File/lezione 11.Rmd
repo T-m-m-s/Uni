@@ -1,0 +1,160 @@
+---
+title: "lezione 11"
+author: "Mameli"
+date: '`r Sys.Date()`'
+output: html_document
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+temperatura <- read.delim("C:/Users/Utente/Downloads/temperatura.txt")
+temperatura$Temp_98=ifelse(temperatura$Temperatura>=98,"yes","no")
+attach(temperatura)
+```
+
+
+```{r}
+n1 = sum(Sesso=="U") #numerosità primo campione
+n2 = sum(Sesso=="D") #numerosità secondo campione
+```
+
+
+```{r}
+tab = table(Temp_98,Sesso)
+tab
+
+## proporzione uomini con Temp>98
+p1_hat = tab[2,2]/n1 #numero di successi/ numero di casi totali uomini
+## oppure
+#p1_hat = sum(Temp_98[Sesso=="U"]=="yes")/n1
+## proporzione donne con Temp>98
+p2_hat = tab[2,1]/n2 #numero di successi/ numero di casi totali donne
+#p2_hat = sum(Temp_98[Sesso=="D"]=="yes")/n2
+
+## oppure
+#res=tapply(Temp_98,Sesso,table)
+#p2_hat=res$D[2]/n2
+#p1_hat=res$U[2]/n1
+```
+
+
+```{r}
+## stimatore combinato
+(p_hat=(n1*p1_hat+n2*p2_hat)/(n1+n2))
+```
+```{r}
+(z_oss=(p1_hat-p2_hat)/sqrt(p_hat*(1-p_hat)*(1/n1+1/n2)))
+```
+
+```{r}
+alpha=0.05
+(z_alpha_mezzi=qnorm(alpha/2,lower.tail = F))
+```
+
+## funzione di R
+```{r}
+library(tigerstats)
+# x= numero di successi primo campione e secondo campione
+# n= numerosità primo campione e secondo campione
+proptestGC(x = c(50, 40), n = c(n2, n1), correct = F)
+```
+
+## oppure
+```{r}
+proptestGC(~Sesso+Temp_98, data = temperatura, success = "yes",correct=F)
+```
+
+# Esercizio 3
+Si consideri il file “istruzione.txt”. I dati sono costrituiti da due variabili qualitative che indicano il grado di istruzione e lo stato civile di 20 uomini italiani. Si vuole stabilire se le due variabili siano tra di loro indipendenti.
+
+* Costruire la tabella di contingenza o tabella congiunta.
+
+* Valutare tramite la statistica chi-quadrato se le due variabili sono indipendenti. Utilizzare la funzione chisq.test.
+
+```{r}
+istruzione <- read.csv("C:/Users/Utente/Downloads/istruzione.txt", sep="")
+attach(istruzione)
+```
+
+```{r}
+(tab=table(stato_civile,Istruzione))
+```
+
+```{r}
+(test_chi=chisq.test(tab,simulate.p.value = T))
+```
+
+```{r}
+(k_oss=test_chi$statistic)
+```
+```{r}
+(p_value=test_chi$p.value)
+```
+```{r}
+r = 4#numero di righe tab contingenza
+k = 4#numero di colonne tab contingenza 
+gdl = (r-1)*(k-1)#gradi di libertà
+(chisq_alpha = qchisq(0.05,gdl,lower.tail = F))
+```
+```{r}
+chisq.test(stato_civile,Istruzione)
+```
+```{r}
+fisher.test(tab)
+```
+# Esercizi Test2 es
+## Primo esercizio 
+```{r}
+affitti <- read.csv("C:/Users/Utente/Downloads/affitti.txt", sep="")
+attach(affitti)
+```
+
+## fare il test sull'uguaglianza delle varianze
+```{r}
+(VARIANCE_TEST=var.test(Affitto[Capoluogo=="A"],Affitto[Capoluogo=="B"]))
+```
+```{r}
+(f_oss=VARIANCE_TEST$statistic)
+```
+```{r}
+(f_alpha_mezzi=qf(alpha/2,29,28,lower.tail = F))
+```
+```{r}
+(f_1_meno_alpha_mezzi=qf(1-alpha/2,29,28,lower.tail = F))
+```
+
+
+
+```{r}
+(p_value=VARIANCE_TEST$p.value)
+```
+## Test sull'uguaglianza delle medie
+```{r}
+t.test(Affitto[Capoluogo=="A"],Affitto[Capoluogo=="B"],var.equal = T)
+```
+```{r}
+(t_alpha_mezzi=qt(alpha/2,57,lower.tail = F))
+```
+## Esercizio 2
+```{r}
+plasma <- read.delim("C:/Users/Utente/Downloads/plasma.txt")
+attach(plasma)
+```
+
+```{r}
+t.test(Nadler,Hurley,paired = T)
+```
+```{r}
+(t_alpha_mezzi=qt(alpha/2,98,lower.tail = F))
+```
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+---
+title: "esercizi2-2"
+output: word_document
+date: "2024-10-16"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##ES 1.1
+```{r}
+pesticide <- c('O','O','J','O','J','O','F','O','F','O',
+               'N','F','J','J','F','J','O','J','O','N',
+               'C','O','F','O','F','N','N','B','B','O',
+               'O','N','B','N','B','C','F','J','M','O',
+               'O','F','O','O','J','J','J','O','O','B',
+               'M','M','O','O','O','B','M','C','B','F')
+
+oss <- length(pesticide)
+
+freq_ass<-table(pesticide)
+freq_ass
+freq_rel<-freq_ass/oss
+freq_rel
+barplot(freq_rel, col = "purple", xlab="pesticide", ylab="Frequenze Relative", main="Frequenze Relative della variabile pesticide", ylim=c(0,0.4))
+```
+
+##ES 1.2
+```{r}
+patente <- c('B', 'A', 'B', 'D', 'A1', 'B', 'C', 'B', 'B', 'B', 'B','A1', 'A', 'A', 'B','B', 'C', 'B', 'B', 'B', 'D', 'A1', 'B', 'A','B', 'A', 'C', 'D', 'B', 'B')
+esame <- c('P', 'B', 'P', 'P', 'B', 'B', 'P', 'P', 'P', 'B', 'P', 'P', 'B', 'B', 'B','P', 'P', 'P', 'P', 'P', 'B', 'B', 'P', 'B', 'P', 'B', 'P', 'P', 'P', 'P')
+
+ossp <- length(patente)
+ossr <- length(esame)
+
+freq_assp <- table(patente)
+freq_relp <- freq_assp/ossp
+
+freq_assr <- table(esame)
+freq_relr <- freq_assr/ossr
+
+freq_cong_ass_tot <- table(esame, patente)
+freq_cong_ass_tot
+freq_cong_rel_tot <- prop.table(freq_cong_ass_tot)
+freq_cong_rel_tot
+
+pie(freq_relp, main="Frequenze Relative dei tipi di patente")
+barplot(freq_relp, xlab="Patente", ylab="Frequenze Relative", main="Frequenze Relative dei tipi di patente", ylim=c(0,0.8))
+
+pie(freq_relr, col = c("red", "green"), label = c("Bocciati", "Passati"), main="Frequenze Relative degli esiti")
+barplot(freq_relr, col = c("red", "green"), xlab="Esito", ylab="Frequenze Relative", main="Frequenze Relative degli esiti", ylim=c(0,0.8))
+
+barplot(freq_cong_rel_tot, beside = T, col = c("red", "green"), xlab="Esito", ylab="Frequenze Relative", main="Frequenze Relative degli esiti", ylim=c(0,0.8), legend.text = c("Bocciati", "Passati"))
+```
+
+
+
+##ES 1.4
+```{r}
+library(MASS)
+attach(painters)
+freq_ass <- table(School)
+freq_ass
+freq_rel <- freq_ass/ossp
+freq_rel
+pie(freq_rel, main="Frequenze Relative dei tipi di scuola")
+pie(freq_rel, main="Frequenze Relative dei tipi di scuola", labels = c("Renaissance", "Mannerist", "Seicento", "Venetian", "Lombard", "Sixteenth Century", "Seventeenth Century", "French"))
+barplot(freq_rel, xlab="Scuola", ylab="Frequenze Relative", main="Frequenze Relative dei tipi di scuola", ylim=c(0,0.8))
+```
+

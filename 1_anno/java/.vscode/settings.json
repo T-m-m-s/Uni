@@ -1,0 +1,25 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\giorg\\Downloads\\queens.jar",
+        "c:\\Users\\giorg\\Downloads\\puzzleboard.jar",
+        "c:\\Users\\giorg\\Downloads\\huffman_toolkit.jar",
+        "queens.jar",
+        "puzzleboard.jar",
+        "huffman_toolkit.jar"
+    ],
+    "java.dependency.packagePresentation": "hierarchical",
+    "java.project.sourcePaths": [
+        "ex-lab-lis",
+        "ex-lab-huffman2/Huffman2/src",
+        "ex-lab-huffman1/Huffman/src",
+        "ex-lab-codificajava",
+        "ex-lab-14/Puzzle/src",
+        "ex-lab-13/QueensView/src",
+        "ex-lab-12",
+        "ex-lab-11",
+        "ex-lab-10",
+        "ex-lab-huffman1/Huffman1/src"
+    ],
+    "java.dependency.syncWithFolderExplorer": false
+}

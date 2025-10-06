@@ -1,0 +1,73 @@
+:root {
+  --color-00: #000000;
+  --color-01: #ffffff;
+  --color-1: #0039e6;
+  --color-2: #0052cc;
+  --color-3: #0000ff;
+}
+
+body {
+    background-size: 10%, 10%, 95%;
+    background-position: 5% 5%, 95% 5%, 100% 98%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+}
+
+/*div.text_cell_render{overflow-y:hidden}*/
+
+.slides {
+  width: 90% !important;
+}
+
+.slides section h1, h2 {
+    color: var(--color-2);
+}
+
+.slides div {
+  color: var(--color-00)
+}
+
+.reveal .progress span {
+  background: var(--color-3);
+}
+
+.reveal .slide-number {
+  color: var(--color-2);
+  background: transparent;
+}
+
+.reveal a {
+  color: var(--color-1);
+}
+
+.reveal a:hover {
+  color: var(--color-2);
+  text-shadow: none;
+  border: none; 
+}
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls div.navigate-left, .reveal .controls div.navigate-left.enabled {
+  border-right-color: var(--color-2); }
+
+.reveal .controls div.navigate-right, .reveal .controls div.navigate-right.enabled {
+  border-left-color: var(--color-2); }
+
+.reveal .controls div.navigate-up, .reveal .controls div.navigate-up.enabled {
+  border-bottom-color: var(--color-2); }
+
+.reveal .controls div.navigate-down, .reveal .controls div.navigate-down.enabled {
+  border-top-color: var(--color-2); }
+
+.reveal .controls div.navigate-left.enabled:hover {
+  border-right-color: var(--color-3); }
+
+.reveal .controls div.navigate-right.enabled:hover {
+  border-left-color: var(--color-3); }
+
+.reveal .controls div.navigate-up.enabled:hover {
+  border-bottom-color: var(--color-3); }
+
+.reveal .controls div.navigate-down.enabled:hover {
+  border-top-color: var(--color-3); }

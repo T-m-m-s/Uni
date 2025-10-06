@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE movie-collection SYSTEM "esercizio-xml.dtd">
+<movie-collection>
+  <movie format="DVD">
+    <title>Blade Runner</title>
+    <year>1982</year>
+    <director>
+      <name>Ridley</name>
+      <surname>Scott</surname>
+    </director>
+    <actors>
+      <actor role="leading">
+        <name>Harrison</name>
+        <surname>Ford</surname>
+      </actor>
+      <actor role="supporting">
+        <surname>Young</surname>
+      </actor>
+    </actors>
+  </movie>
+  <movie format="blu-ray">
+    <title>Blade Runner 2049</title>
+    <year>2017</year>
+    <director>
+      <surname>Villeneuve</surname>
+    </director>
+    <actors>
+      <actor role="leading">
+        <surname>Gosling</surname>
+      </actor>
+    </actors>
+  </movie>
+  <movie format="digital">
+    <title>Ready Player One</title>
+    <year>2018</year>
+  </movie>
+</movie-collection>

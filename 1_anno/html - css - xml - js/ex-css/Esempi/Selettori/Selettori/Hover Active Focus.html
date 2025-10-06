@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)http://www.htmlandcssbook.com/code-samples/chapter-12/hover-active-focus.html -->
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Hover Active Focus</title>
+	<style type="text/css">
+		input {
+			padding: 6px 12px 6px 12px;
+			border: 1px solid black;
+			color: white;
+		}
+
+		input.submit:hover {
+			background-color: grey;
+		}
+
+		input.submit:active {
+			background-color: chocolate;
+		}
+
+		input.text {
+			color: lightgray;
+		}
+
+		input.text:focus {
+			color: aqua;
+		}
+	</style>
+</head>
+
+<body cz-shortcut-listen="true">
+	<form>
+		<input type="text" class="text" value="Enter email address...">
+		<input type="submit" class="submit">
+	</form>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+<address-book>
+	<contact>
+		<name>Jack Smith</name>
+		<tel>513-555-3465</tel>
+		<email address='jsmith@email.com'/>
+	</contact>
+	<contact>
+		<name>John Doe</name>
+		<address>34 Fountain Square Plaza Cincinnati, OH
+				45202 US</address>
+		<tel>513-555-8889</tel>
+		<tel>513-555-7098</tel>
+		<email address='jdoe@email.com'/>
+	</contact>
+</address-book>

@@ -1,0 +1,11 @@
+#note-title {
+    color: red;
+}
+
+a.note {
+    color: rgb(50%, 25%, 75%);
+}
+
+li {
+    background-color: hsla(89, 83%, 80%, 0.728); /* Verde poco saturo e molto luminoso */
+}

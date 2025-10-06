@@ -1,0 +1,99 @@
+---
+title: "Esame"
+author: "167340 - Trentin -Tommaso"
+date: "2025-01-28"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Si consideri il file di dati diab.csv contenente la pressione e l’età di 100 individui sui quali è stata testata la presenza del diabete. Si considerino le variabili Pressione e Diabete.
+
+*  Effettuare un’analisi descrittiva delle variabili Pressione e Diabete.
+
+*  Valutare se ci siano differenze tra la Pressione degli individui affetti dal Diabete e gli individui non affetti    dalla patologia.
+
+*  Interpretare e commentare tutti i risultati ottenuti.
+
+
+```{r}
+diab <- read.csv("diab.csv")
+library(moments)
+attach(diab)
+head(diab)
+```
+N.B. Si effettua un attach del dataset per questioni di pulizia di codice, in caso si fossero avuti più dataset differenti questa pratica sarebbe stata sconsigliata in quanto potrebbe portare a confusione durante la selezione di dati.
+
+Dall'osservazione del dataset si evince che la variabile Pressione è una variabile quantitativa, mentre la variabile Diabete è una variabile qualitativa.
+
+# Pressione
+Si effettua il calcolo dei vari indici statistici mediante la funzione summary, si nota come il valore della mediana sia (seppur di poco) superiore al valore della media, è dunque presente un'assimmetria a sinistra confermata dal valore dell'indice di asimmetria (skewness) pari a circa -2.02.
+
+
+```{r}
+summary(Pressione)
+boxplot(Pressione)
+```
+Dal calcolo dell'indice di curtosi si nota che la distribuzione non è normocurtica infatti il valore è circa 8.40 al di sopra del limite 3 (è quindi platicurtica).
+
+```{r}
+skewness(Pressione)
+kurtosis(Pressione)
+```
+
+# Diabete
+
+Esendo Diabete una variabile qualitativa se ne può calcolare la tabella delle frequenze e può essere rappresentata graficamente tramite un barplot. Avendo solamente due possibili modalità si può verificare come l'assenza (0) di diabete sia più comune della presenza (1).
+
+```{r}
+(freq_ass <- table(Diabete))
+(freq_perc=freq_ass/length(Diabete)*100)
+barplot(freq_perc,xlab="Diabete")
+```
+
+
+# Relazione tra le variabili
+
+Si studia il variare della variabile Pressione al variare della variabile Diabete
+
+```{r}
+boxplot(Pressione~Diabete,xlab="Diabete",ylab="Pressione")
+tapply(Pressione,Diabete,summary)
+```
+
+Guardando la media dei valori di Pressione riferiti ai soggetti affetti da Diabete e da quelli che non ne sono affetti si può notare una differenza non irrilevante. Si può quindi affermare che c'è differenza fra le due medie.
+
+# Test sulle medie 
+Si effettua quindi un test sulla differenza delle medie di due popolazioni indipendenti.
+
+## Normalità delle due variabili
+Si verifica innanzitutto se le due variabili hanno una distribuzione normale attraverso i qqplot.
+
+```{r}
+affetti = Pressione[Diabete == 1]
+non_affetti = Pressione[Diabete == 0]
+
+qqnorm(affetti)
+qqline(affetti)
+qqnorm(non_affetti)
+qqline(non_affetti)
+```
+
+Dai qqplot si nota che, se per i soggetti non affetti da Diabete si può affermare che hanno distribuzione approssimabile ad una normale, per i soggetti affetti invece questo non può essere detto completamente, in quanto specialmente alle code la distribuzione si discosta dalla retta.
+
+## Test sulla rapporto di varianze
+Si effettua quindi un test sull'uguaglianza delle varianze, tale test può essere eseguito anche se non entrambe le variabili sono normali in quanto si dispone di una dimensione campionaria sufficientemente grande
+
+```{r}
+var.test(affetti,non_affetti) 
+```
+
+Ottenendo un p-value pari a 0.56 (significativamente maggiore di 0.1), si evince che ci sia una significativa uguaglianza tra le varianze, per cui non si rifiuta l'ipotesi nulla ed è quindi possobile imporre la condizione che la varianza delle popolazioni sia incognita ma uguale nelle due popolazioni nel test per le medie.
+
+```{r}
+t.test(affetti,non_affetti,var.equal = T)
+```
+
+Dai risultati ottenuti (p-value pari a circa 0.58, maggiore di 0.1) è possibile dedurre che non ci sia ragione di rifiutare l'ipotesi nulla di uguaglianza fra le medie. Si arriva quindi alla conclusione che presenza o assenza di Diabete non vadano ad influire significativemente sul livello di pressione di un individuo.

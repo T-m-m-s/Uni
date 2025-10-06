@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .flex-item-right, .flex-item-center, .flex-item-left {
+    background-color: dodgerblue;
+    padding: 10px;
+    flex: 100%;
+  }
+  
+  /* Responsive layout - makes a one column-layout instead of a two-column layout */
+  @media (min-width: 768px) {
+    .flex-item-right, .flex-item-center, .flex-item-left {
+      flex: 50%;
+    }
+  }
+  @media (min-width: 1024px) {
+    .flex-item-right, .flex-item-center, .flex-item-left {
+      flex: 33%;
+    }
+  }

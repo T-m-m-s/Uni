@@ -1,0 +1,95 @@
+---
+title: "esercizi6"
+output: word_document
+date: "2024-11-20"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##ES 6.1
+```{r}
+# Parametri
+p <- 0.88
+n_pop <- 250e6
+n_sample <- 1000
+n_sim <- 1000      
+
+# Creazione della popolazione
+popolazione <- c(rep("supporto", p * n_pop), rep("non_supporto", (1 - p) * n_pop))
+
+# Simulazione
+campione <- sample(popolazione, n_sample, replace = FALSE)
+length(campione)
+
+# Calcolo della proporzione campionaria per il campione estratto
+prop_campione <- mean(campione == "supporto")
+cat("Proporzione campionaria del primo campione:", prop_campione, "\n")
+```
+
+```{r}
+# Simulazione su 1000 campioni
+proporzioni_campioni <- numeric(n_sim)
+for (i in 1:n_sim) {
+  campione <- sample(popolazione, n_sample, replace = FALSE)
+  proporzioni_campioni[i] <- mean(campione == "supporto")
+}
+
+# Calcolo della media e deviazione standard della proporzione campionaria
+media_campionaria <- mean(proporzioni_campioni)
+dev_std_campionaria <- sd(proporzioni_campioni)
+
+cat("Media della proporzione campionaria:", media_campionaria, "\n")
+cat("Deviazione standard della proporzione campionaria:", dev_std_campionaria, "\n")
+
+# Grafico della distribuzione delle proporzioni campionarie
+hist(proporzioni_campioni, breaks = 30, probability = TRUE, main = "Distribuzione della proporzione campionaria",
+     xlab = "Proporzione campionaria", ylab = "Densità", col = "lightblue", border = "black")
+curve(dnorm(x, mean = media_campionaria, sd = dev_std_campionaria), 
+      col = "red", lwd = 2, add = TRUE)
+abline(v = p, col = "blue", lwd = 2, lty = 2)
+legend("topright", legend = c("Distribuzione normale approssimata", "Vera proporzione p=0.88"), 
+       col = c("red", "blue"), lty = c(1, 2), lwd = 2)
+```
+
+```{r}
+# Conclusione
+cat("Conclusioni:\n")
+cat("1. La distribuzione campionaria della proporzione segue approssimativamente una normale.\n")
+cat("2. La media campionaria è vicina alla vera proporzione (p = 0.88), confermando l'accuratezza del campionamento.\n")
+cat("3. La deviazione standard è coerente con la formula teorica sqrt(p * (1 - p) / n).\n")
+```
+##ES 6.2
+
+```{r}
+# Parametri
+n_lanci <- 500    # Numero di lanci
+prob_testa <- 0.7 # Probabilità di ottenere testa
+
+# Simulazione dei lanci
+set.seed(123) # Per la riproducibilità
+lanci <- rbinom(n_lanci, size = 1, prob = prob_testa) # 1 = testa, 0 = croce
+
+# Calcolo della successione della media campionaria
+proporzioni_cumulativa <- cumsum(lanci) / (1:n_lanci)
+```
+
+```{r}
+# Grafico della successione delle proporzioni
+plot(1:n_lanci, proporzioni_cumulativa, type = "l", col = "blue", lwd = 2,
+     xlab = "Numero di lanci", ylab = "Proporzione cumulativa (testa)",
+     main = "Convergenza della proporzione di testa")
+abline(h = prob_testa, col = "red", lwd = 2, lty = 2) # Linea teorica
+legend("right", legend = c("Proporzione cumulativa", "Valore teorico (0.7)"),
+       col = c("blue", "red"), lty = c(1, 2), lwd = 2)
+lanci
+```
+
+```{r}
+# Conclusione
+cat("Conclusione:\n")
+cat("1. La proporzione cumulativa si avvicina al valore atteso di 0.7 all'aumentare del numero di lanci.\n")
+cat("2. Questo risultato è coerente con la legge dei grandi numeri.\n")
+```
+

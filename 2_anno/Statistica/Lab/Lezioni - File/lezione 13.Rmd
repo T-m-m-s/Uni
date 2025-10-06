@@ -1,0 +1,205 @@
+---
+title: "lezione 13"
+author: "Mameli"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Analisi dataset Birthweight
+```{r}
+Birthweight <- read.csv("C:/Users/Utente/OneDrive - Università degli Studi di Udine/Desktop/Didattica/didattica2425/Statistica e Laboratorio IBML/Esercizi IBML/Esempi di Dataset/Baby/Birthweight.csv")
+```
+
+
+```{r}
+#Birthweight$smoker=factor(Birthweight$smoker)
+#levels(Birthweight$smoker)
+#levels(Birthweight$smoker)=c("non fumatrice","fumatrice")
+```
+
+## Analizzare le variabili smoker and Birthweight.
+* Iniziamo con la variabile Smoker
+```{r}
+table(Birthweight$smoker)/sum(table(Birthweight$smoker))
+```
+
+```{r}
+pie(table(Birthweight$smoker)/sum(table(Birthweight$smoker)))
+```
+
+* Analisi della variabile Birthweigth
+```{r}
+summary(Birthweight$Birthweight)
+```
+
+```{r}
+library(moments)
+skewness(Birthweight$Birthweight)
+```
+
+```{r}
+kurtosis(Birthweight$Birthweight)
+```
+
+
+```{r}
+boxplot(Birthweight$Birthweight)
+```
+
+## Analizziamo la variabile Birthweight nei due sottogruppi madri fumatrici e madri non fumatrici
+
+```{r}
+boxplot(Birthweight$Birthweight~Birthweight$smoker,names=c("non fumatrici","fumatrici"),ylab="Peso neonato",xlab="")
+```
+```{r}
+tapply(Birthweight$Birthweight, Birthweight$smoker, summary)
+```
+```{r}
+tapply(Birthweight$Birthweight, Birthweight$smoker, skewness)
+```
+```{r}
+tapply(Birthweight$Birthweight, Birthweight$smoker, kurtosis)
+```
+
+```{r}
+library(car)
+par(mfrow=c(1,2))
+qqPlot(Birthweight$Birthweight[Birthweight$smoker==0])
+qqPlot(Birthweight$Birthweight[Birthweight$smoker==1])
+```
+
+
+## Si valuti come le madri fumatrici influenzino il peso del bambino.
+ $\mu_1$= peso medio del bambino con madre non fumatrice
+ $\mu_2$= peso medio del bambino con madre fumatrice
+ $H_0: \mu_1=\mu_2$
+ $H_1: \mu_1\neq \mu_2$
+
+
+* Prima andiamo a verificare l'uguaglianza delle varianze
+ $\sigma^2_1$= varianza peso del bambino con madre non fumatrice
+ $\sigma^2_2$= varianza peso del bambino con madre fumatrice
+
+ $H_0: \sigma^2_1=\sigma^2_2$
+ $H_1: \sigma^2_1\neq \sigma^2_2$
+
+```{r}
+var.test(Birthweight$Birthweight~Birthweight$smoker)
+## var.test(Birthweight$Birthweight[Birthweight$smoker==0],Birthweight$Birthweight[Birthweight$smoker==1])
+```
+
+
+```{r}
+alpha=0.05
+(f_alpha.2=qf(alpha/2,19,21,lower.tail = F))
+(f_1_meno_alpha.2=qf(1-alpha/2,19,21,lower.tail = F))
+```
+
+* Ora effettuiamo il test sull'uguaglianza delle medie
+
+```{r}
+t.test(Birthweight$Birthweight~Birthweight$smoker,var.equal=T)
+## t.test(Birthweight$Birthweight[Birthweight$smoker==0],Birthweight$Birthweight[Birthweight$smoker==1],var.equal=T)
+```
+
+```{r}
+(t_alpha.2=qt(alpha/2,40,lower.tail = F))
+```
+
+# Analizziamo le variabili Length e mheigth
+* Analisi della variabile Length
+```{r}
+summary(Birthweight$Length)
+```
+
+```{r}
+skewness(Birthweight$Length)
+```
+
+```{r}
+kurtosis(Birthweight$Length)
+```
+
+```{r}
+boxplot(Birthweight$Length)
+```
+
+```{r}
+hist(Birthweight$Length,prob=T)
+curve(dnorm(x,mean(Birthweight$Length),sd(Birthweight$Length)),add=T,col="red")
+lines(density(Birthweight$Length))
+```
+
+```{r}
+qqPlot(Birthweight$Length)
+```
+
+* Analizziamo la variabile mheigth
+```{r}
+summary(Birthweight$mheight)
+```
+
+```{r}
+skewness(Birthweight$mheight)
+```
+
+```{r}
+kurtosis(Birthweight$mheight)
+```
+
+```{r}
+boxplot(Birthweight$mheight)
+```
+
+```{r}
+qqPlot(Birthweight$mheight)
+```
+
+## Analisi di correlazione
+```{r}
+cor(Birthweight$mheight,Birthweight$Length)
+```
+
+```{r}
+cor.test(Birthweight$mheight,Birthweight$Length,method="kendall")
+```
+
+## Analisi di regressione
+Vogliamo studiare il modello $Length=a+b*mheigth+\epsilon$.
+
+```{r}
+mod = lm(Length~mheight,data=Birthweight)
+```
+
+```{r}
+summary(mod)
+```
+
+Il modello stimato è $\widehat{Length}=15.33419+0.21890*mheight$
+
+```{r}
+plot(Birthweight$mheight,Birthweight$Length)
+abline(mod,col="blue")
+```
+
+## Diagnostiche
+```{r}
+par(mfrow=c(1,3))
+plot(mod,1)
+plot(mod,2)
+plot(mod,4)
+```
+
+```{r}
+par(mfrow=c(1,1))
+qqPlot(residuals(mod))
+```
+
+```{r}
+t.test(residuals(mod),mu=0)
+```
+

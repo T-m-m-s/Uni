@@ -1,0 +1,10 @@
+<!ELEMENT bibliography (book+)>
+<!ELEMENT book (author+,title,subtitle?,year,publisher)>
+<!ELEMENT author (name?,surname)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT surname (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT subtitle (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ATTLIST book isbn CDATA #REQUIRED>

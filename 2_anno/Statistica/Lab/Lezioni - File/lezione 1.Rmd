@@ -1,0 +1,211 @@
+---
+title: "Funzioni base di R"
+output:
+  html_document:
+    df_print: paged
+date: ''
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)    # For knitting document and include_graphics function
+library(ggplot2)  # For plotting
+library(png)  
+```
+
+#
+*  Vettore contenente i numeri da 1 a 10 
+```{r}
+seq(1,10)
+```
+
+oppure 
+```{r}
+1:10
+```
+
+* Vettore contenente i numeri da 1 a 10 con passo 0.1
+```{r}
+seq(1,10,0.1)
+```
+
+* Vettore contenente il numero 1 ripetuto 4 volte 
+```{r}
+rep(1,4)
+```
+
+* Costruire il vettore A contenente i numeri 1, 2, 3, 10.
+
+```{r}
+A=c(1,2,3,10)
+A
+```
+
+
+* Seleziona il secondo elemento del vettore $A$.
+
+```{r}
+A[2]
+```
+
+
+* Costruire il vettore categoriale contenente le stringhe "Ciao", "a","tutti".
+
+```{r}
+a=c("Ciao", "a","tutti")
+a
+```
+
+
+
+# 
+* Costruire la seguente matrice:
+
+\[
+B=\begin{bmatrix}
+2 & 1 & 0\\
+1 & 3 & 1\\
+8 & 2 & 4
+\end{bmatrix}
+\]
+
+```{r}
+B=matrix(c(2,1,0,1,3,1,8,2,4),byrow=T,nrow=3)
+B
+```
+
+oppure 
+```{r}
+B=matrix(c(2,1,8,1,3,2,0,1,4),nrow=3)
+B
+```
+
+* Individuare l'elemento della prima riga e terza colonna nella matrice $B$.
+
+```{r}
+B[1,3]
+```
+
+* Seleziona tutti gli elementi della prima colonna della matrice $B$.
+
+```{r}
+B[,1]
+```
+
+
+* Seleziona tutti gli elementi della seconda riga della matrice $B$.
+
+```{r}
+B[2,]
+```
+
+* Selezionare tutti gli elementi della seconda e della terza riga della matrice $B$.
+
+```{r}
+B[c(2,3),]
+```
+
+oppure 
+```{r}
+B[2:3,]
+```
+
+
+* Selezionare tutti gli elementi della prima e della seconda colonna della matrice $B$.
+
+```{r}
+B[,c(1,2)]
+```
+
+oppure
+```{r}
+B[,1:2]
+```
+
+#
+* Costruire il dataset:
+
+```{r,echo=FALSE}
+include_graphics("tab.png")
+```
+
+
+```{r}
+nome=c("Rossi M","Bianchi G","Nicoletti C","Marcelli F","Petrone A")
+età=c(32,39,46,28,51)
+sesso=c("M","F","M","M","F")
+titolo_di_studio=c("laurea","laurea","diploma","diploma","diploma")
+attività=c("occupato","occupato","disoccupato","studente","casalinga")
+peso=c(72,55,79,63,64)
+data = data.frame(nome,età,sesso,titolo_di_studio,attività,peso)
+head(data)
+```
+
+* modalità della variabile sesso.
+
+```{r}
+levels(factor(data$sesso))
+```
+
+
+#
+* Importare su R il file "affitti.txt" .
+```{r}
+affitti <- read.csv("affitti.txt", row.names=1, sep="")#il file deve essere presente nella working directory
+```
+
+* selezionare la variabile Capoluogo
+```{r}
+affitti$Capoluogo
+```
+
+oppure 
+```{r}
+attach(affitti)
+Capoluogo
+```
+
+
+* visualizzare le prime righe del dataset
+
+```{r}
+head(affitti)
+```
+
+
+* numero di osservazioni contenute nel dataset
+
+```{r}
+nrow(affitti)
+```
+
+* numero di variabili contenute nel dataset
+
+```{r}
+ncol(affitti)
+```
+
+* il nome delle variabili del dataset
+
+```{r}
+names(affitti)
+```
+
+
+* Verificare se sono presenti dei dati mancanti
+
+```{r}
+is.na(affitti$Affitto)
+```
+
+```{r}
+is.na(affitti$Capoluogo)
+```
+
+* Eliminare i dati mancanti.
+
+```{r}
+affitti2=na.omit(affitti)
+affitti2
+```
+

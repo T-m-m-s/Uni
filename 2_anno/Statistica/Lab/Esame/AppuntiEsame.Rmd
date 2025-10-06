@@ -1,0 +1,1654 @@
+---
+title: "AppuntiEsame"
+author: '167340'
+date: "2025-01-21"
+output:
+  word_document: default
+  pdf_document:
+    latex_engine: xelatex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)    # For knitting document and include_graphics function
+library(ggplot2)  # For plotting
+library(png)
+```
+
+# MATRICI
+
+Costruire una matrice A: $$
+B=\begin{bmatrix}
+2 & 1 & 0\\
+1 & 3 & 1\\
+8 & 2 & 4
+\end{bmatrix}
+$$
+
+```{r}
+A=matrix(c(2,1,0,1,3,1,8,2,4),byrow=T,nrow=3)
+A
+```
+
+```{r}
+# individuare l'elemento della prima riga e terza colonna nella matrice.
+A[1,3]
+```
+
+```{r}
+# seleziona tutti gli elementi della prima colonna della matrice.
+A[,1]
+```
+
+```{r}
+# seleziona tutti gli elementi della seconda riga della matrice.
+A[2,]
+```
+
+```{r}
+# selezionare tutti gli elementi della seconda e della terza riga della matrice.
+A[2:3,]
+```
+
+```{r}
+# selezionare tutti gli elementi della prima e della seconda colonna della matrice.
+A[,1:2]
+```
+
+# CREARE DATASET
+
+```{r}
+# creazione dataset date liste di dati
+nome=c("Rossi M","Bianchi G","Nicoletti C","Marcelli F","Petrone A")
+età=c(32,39,46,28,51)
+sesso=c("M","F","M","M","F")
+titolo_di_studio=c("laurea","laurea","diploma","diploma","diploma")
+attività=c("occupato","occupato","disoccupato","studente","casalinga")
+peso=c(72,55,79,63,64)
+data = data.frame(nome,età,sesso,titolo_di_studio,attività,peso)
+head(data)
+```
+
+```{r}
+# modalità della variabile sesso.
+levels(factor(data$sesso))
+```
+
+# IMPORTARE DATASET
+
+```{r}
+# importare su R il file "affitti.txt" .
+affitti <- read.csv("affitti.txt", row.names=1, sep="")
+# il file deve essere presente nella working directory
+```
+
+# PRIME OPERAZIONI - AFFITTI
+
+selezionare la variabile Capoluogo
+
+```{r}
+affitti$Capoluogo
+```
+
+oppure
+
+```{r}
+attach(affitti)
+Capoluogo
+```
+
+```{r}
+# visualizzare le prime righe del dataset
+head(affitti)
+```
+
+```{r}
+# numero di osservazioni contenute nel dataset
+nrow(affitti)
+```
+
+```{r}
+# numero di variabili contenute nel dataset
+ncol(affitti)
+```
+
+```{r}
+# il nome delle variabili del dataset
+names(affitti)
+```
+
+```{r}
+# verificare se sono presenti dei dati mancanti
+is.na(affitti$Affitto)
+
+is.na(affitti$Capoluogo)
+```
+
+```{r}
+# eliminare i dati mancanti.
+affitti2=na.omit(affitti)
+affitti2
+```
+
+# OPERAZIONI DATASET - APPENDICE
+
+```{r}
+appendiceA <- read.csv("appendiceA.txt", sep="")
+attach(appendiceA)
+```
+
+##Head
+
+```{r}
+# visualizzazione head
+head(appendiceA)
+```
+
+```{r}
+# visualizzazione delle prime 10 righe
+appendiceA[1:10,]
+```
+
+```{r}
+# numero di righe
+nrow(appendiceA)
+```
+
+```{r}
+# numero di colonne
+ncol(appendiceA)
+```
+
+##Frequenze
+
+```{r}
+# frequenze assolute
+freq_ass=table(Sesso)
+freq_ass
+```
+
+```{r}
+# frequenze relative
+freq_rel=freq_ass/sum(freq_ass)
+freq_rel
+
+```
+
+```{r}
+# frequenze percentuali
+freq_perc=freq_rel*100
+freq_perc 
+```
+
+##Variabili statistiche
+
+```{r}
+# media
+mean(Peso,na.rm=T)
+```
+
+```{r}
+# mediana
+median(Peso,na.rm=T)
+```
+
+```{r}
+# skewness
+library(moments)
+skewness(Peso,na.rm = T)
+```
+
+```{r}
+# curtosi
+kurtosis(Peso,na.rm = T)
+```
+
+```{r}
+# varianza
+n = length(Peso)
+varianza= var(Peso,na.rm=T)*(n-1)/n
+```
+
+```{r}
+# standard deviation
+deviazione_standard=sd(Peso)*sqrt((n-1)/n)
+```
+
+```{r}
+# campo di variazione
+campo_di_variazione=max(Peso)-min(Peso)
+campo_di_variazione
+```
+
+```{r}
+# campo di variazione
+diff(range(Peso))
+```
+
+##Quantili
+
+```{r}
+# quantili
+quartili=quantile(Peso,probs=c(0.25,0.5,0.75))
+```
+
+```{r}
+# scarto interquartile
+as.numeric(quartili[3]-quartili[1])
+```
+
+```{r}
+IQR(Peso)
+```
+
+```{r}
+quantile(Peso,probs=0.01)
+```
+
+```{r}
+quantile(Peso,probs=0.99)
+```
+
+## Tutto Insieme
+
+```{r}
+summary(Peso)
+```
+
+##Diagrammi
+
+```{r}
+# diagramma a barre
+barplot(freq_rel,col=c("pink","cyan"),xlab="Sesso",ylab="Frequenze relative",main="Frequenze relative della variabile Sesso",ylim=c(0,1))
+```
+
+```{r}
+# diagramma a torta
+pie(freq_rel,col=c("pink","cyan"),main="Diagramma a torta per la variabile Sesso")
+
+```
+
+```{r}
+# istogramma
+hist(Peso, probability = T,main="Istogramma della variabile Peso",col="blue")
+#hist(Peso,freq=F)
+```
+
+```{r}
+# istogramma + linea di densità
+hist(Peso, probability = T,main="Istogramma della variabile Peso",col="blue",
+     breaks = seq(80,250,10))
+lines(density(Peso),col="red")
+```
+
+```{r}
+# dati istogramma senza grafico
+isto=hist(Peso, probability = T,plot = F)
+isto
+```
+
+```{r}
+# densità per ogni colonna
+isto$density
+```
+
+```{r}
+# boxplot base (il più forte)
+boxplot(Peso,horizontal = T)
+```
+
+```{r}
+# funzione di distribuzione empirica
+plot(ecdf(Peso))
+```
+
+```{r}
+# campo di variazione con funzione
+campodivariazione = function(x){
+  camp = max(x)-min(x)
+  return(camp)
+}
+
+campodivariazione(Peso)
+```
+
+# ESERCIZIO PATENTI
+
+##Creazione dataset + frequenze
+
+```{r}
+# creazione variabili
+patente <- c('B', 'A', 'B', 'D', 'A1', 'B', 'C', 'B', 'B', 'B', 'B','A1', 'A', 'A', 'B','B', 'C', 'B', 'B', 'B', 'D', 'A1', 'B', 'A','B', 'A', 'C', 'D', 'B', 'B')
+esame <- c('P', 'B', 'P', 'P', 'B', 'B', 'P', 'P', 'P', 'B', 'P', 'P', 'B', 'B', 'B','P', 'P', 'P', 'P', 'P', 'B', 'B', 'P', 'B', 'P', 'B', 'P', 'P', 'P', 'P')
+```
+
+```{r}
+# frequenze assolute e relative delle due variabili
+FA_patente=table(patente)
+n = length(patente)
+#n = sum(FA_patente)
+FR_patente=FA_patente/n
+FR_patente
+
+FA_esame=table(esame)
+n = length(esame)
+#n =sum(FA_esame)
+FR_esame=FA_esame/n
+FR_esame
+```
+
+```{r}
+# diagrammi a barre delle due variabili
+barplot(FR_patente)
+barplot(FR_esame)
+```
+
+```{r}
+# frequenze assolute e relative congiunte
+FA_cong=table(esame,patente)
+FA_cong
+
+FR_cong=FA_cong/n
+FR_cong
+```
+
+## [!] Freq marginali per riga (variabile esame)
+
+```{r}
+apply(FA_cong,1,sum)
+```
+
+```{r}
+# oppure
+margin.table(FA_cong,1)
+```
+
+## [!] Freq marginali per colonna (variabile patente)
+
+```{r}
+apply(FA_cong,2,sum)
+```
+
+```{r}
+#oppure
+margin.table(FA_cong,2)
+```
+
+## Indice chi-quadrato
+
+```{r}
+chi_quadro = function(tab){
+  
+  xtot = margin.table(tab,1) # marginali di riga
+  ytot = margin.table(tab,2) # marginali di colonna
+  
+  n = sum(tab)
+  
+  freq_attese = (xtot%*%t(ytot))/n
+  
+  # in tab ci sono le frequenze osservate
+  chi_q= sum(((tab-freq_attese)^2)/freq_attese)
+  
+  return(chi_q)
+}
+
+chi_quadro(FA_cong)
+```
+
+```{r}
+# oppure
+summary(FA_cong)
+```
+
+```{r}
+# oppure
+chisq.test(FA_cong)
+```
+
+## Chi-quadro normalizzato
+
+```{r}
+# numero di colonne (numero modalità della variabile patente)
+s = length(levels(as.factor(patente)))
+# numero di righe (numero di modalità della variabile esame)
+r = length(levels(as.factor(esame)))
+chi_quadro(FA_cong)/(n*min((r-1),(s-1)))
+```
+
+## Diagramma a barra multiplo
+
+```{r}
+freq.rel <- FA_cong/apply(FA_cong,1,sum)
+
+barplot(freq.rel,beside = T,col=c(2,3),legend.text = c("B","P"))
+```
+
+# ESERCIZIO NEGOZI
+
+```{r}
+# importare dataset
+negozi <- read.csv("negozi.txt", row.names=1, sep="")
+attach(negozi)
+```
+
+## [!] Misure di posizione
+
+```{r}
+# misure di posizione per la percentuale di femmine nei due Paesi
+
+perc_femm_usa = perc_fem[stato=="USA"]
+perc_femm_viet = perc_fem[stato=="VIETNAM"]
+
+summary(perc_femm_usa)
+
+summary(perc_femm_viet)
+```
+
+```{r}
+# oppure
+tapply(perc_fem, stato, mean)
+
+tapply(perc_fem, stato, summary)
+```
+
+## [!] Misure di dispersione
+
+```{r}
+# deviazione standard
+sd(perc_femm_usa)
+sd(perc_femm_viet)
+```
+
+```{r}
+# oppure
+tapply(perc_fem, stato, sd)
+```
+
+```{r}
+# varianza
+var(perc_femm_usa)
+var(perc_femm_viet)
+```
+
+```{r}
+#oppure
+tapply(perc_fem, stato, var)
+```
+
+```{r}
+# scarto interquartile
+IQR(perc_femm_usa)
+IQR(perc_femm_viet)
+```
+
+```{r}
+# oppure
+tapply(perc_fem, stato, IQR)
+```
+
+```{r}
+# boxplot
+boxplot(perc_fem~stato,col=c(2,3))
+```
+
+```{r}
+# istogramma
+par(mfrow=c(1,2))
+hist(perc_femm_usa,prob=T)
+hist(perc_femm_viet,prob=T)
+```
+
+# ESERCIZIO FEV
+
+```{r}
+# importare datset
+fev <- read.csv("fev.txt", header=T, sep="")
+attach(fev)
+```
+
+```{r}
+# diagramma di dispersione o scatterplot
+plot(Altezza,FEV)
+```
+
+## [!] Coefficienti di correlazione
+
+```{r}
+# coefficiente di correlazione lineare di Pearson
+cor(Altezza,FEV)
+```
+
+```{r}
+# coefficiente di correlazione lineare di Spearman
+cor(Altezza,FEV,method="spearman")
+```
+
+```{r}
+# coefficiente di correlazione lineare di Kendall
+cor(Altezza,FEV,method="kendall")
+```
+
+## [!] Regressione
+
+```{r}
+# covarianza fra due variabili
+cov(Altezza,FEV)
+```
+
+```{r}
+# b cappello
+(bhat=cov(Altezza,FEV)/var(Altezza))
+```
+
+```{r}
+#a cappello
+(ahat=mean(FEV)-bhat*mean(Altezza))
+```
+
+```{r}
+# modello lineare
+(mod=lm(FEV~Altezza,data=fev))
+# mod=lm(fev$FEV~fev$Altezza)
+
+summary(mod)
+```
+
+```{r}
+# plot della retta
+plot(Altezza,FEV)
+abline(mod)
+```
+
+```{r}
+# plot della retta con ggplot
+library(ggplot2)
+
+ggplot(fev,aes(x=Altezza,y=FEV))+
+  geom_point()+
+  geom_smooth(method="lm")
+```
+
+## Coefficiente di correlazione lineare
+
+```{r}
+# calcolo coefficiente
+cor(Altezza,FEV)^2
+```
+
+```{r}
+# estrazione di R^2 da summary
+summary(mod)$r.squared
+```
+
+```{r}
+# residui del modello
+residuals(mod)
+```
+
+## Valori previsti
+
+```{r}
+# calcolo dei valori previsti con a e b cappello
+yhat=ahat+bhat*Altezza
+yhat
+```
+
+```{r}
+# calcolo dei valori previsti con a e b cappello
+fitted.values(mod)
+```
+
+## Coefficienti di regressione lineare
+
+```{r}
+# calcolo coefficienti (intercept è FEV quando altezza = 0, Altezza = quanto varia
+# FEV al variare)
+coef(mod)
+```
+
+## [!] Previsione valore risposta dato valore indipendente x
+
+```{r}
+# previsione con a e b cappello
+ahat+bhat*184
+```
+
+```{r}
+# previsione con comando
+predict(mod,newdata = data.frame(Altezza=184))
+```
+
+```{r}
+# previsioni per 2 valori x e y
+predict(mod,newdata = data.frame(Altezza=c(184,185)))
+```
+
+# ESERCIZIO TEMPERATURA
+
+```{r}
+# importare dataset
+temperatura <- read.delim("temperatura.txt")
+attach(temperatura)
+```
+
+```{r}
+table(Sesso)
+```
+
+```{r}
+# summary per entrambi i sessi
+tapply(Temperatura, Sesso, summary)
+```
+
+## [!] Grafici
+
+```{r}
+# boxplot
+boxplot(Temperatura~Sesso)
+```
+
+```{r}
+# Istogramma con ggplot
+ggplot(temperatura,aes(x=Temperatura,y=after_stat(density),col=Sesso,fill=Sesso))+
+  geom_histogram()+
+  facet_grid(Sesso~.)
+```
+
+```{r}
+# Boxplot con ggplot
+ggplot(temperatura,aes(y=Temperatura,col=Sesso,fill=Sesso))+geom_boxplot()+labs(title="Temperatura al variare del sesso",x="sesso")+theme(axis.text.x=element_blank(),axis.ticks = element_blank())
+```
+
+```{r}
+# Densità stimata con ggplot
+ggplot(temperatura,aes(x=Temperatura,y=after_stat(density),col=Sesso,fill=Sesso))+geom_density()+facet_grid(Sesso~.)
+```
+
+# PROBABILITÀ - BASE
+
+## Probabilità semplice
+
+```{r}
+#In una classe con 24 studenti, 7 studenti indossano jeans, 4 indossano pantaloncini, 8 indossano gonne e gli altri indossano leggings. Se selezioniamo casualmente 3 studenti senza sostituzione, qual è la probabilità che uno degli studenti selezionati indossi dei leggings e gli altri due indossino dei jeans. Tieni presente che queste sono opzioni di abbigliamento che si escludono a vicenda.
+choose(7,2)*choose(5,1)/choose(24,3)
+```
+
+```{r}
+#Una lotteria è costituita da 500 biglietti, di cui 6 vincenti. Si scelgono a caso 12 biglietti. Si vuole determinare la probabilità di A = “un biglietto è vincente”.
+choose(6,1)*choose(494,11)/choose(500,12)
+```
+
+## [!] Valori attesi
+
+```{r}
+#Sia X una variabile casuale con supporto SX=[−1,+∞) e funzione di densità fX(x)=ke−x, se x∈SX , e nulla altrove, con k l’opportuna costante di normalizzazione. Si determini la costante k e si calcoli il valore atteso (Utilizzare la funzione integrate). Si calcolino la moda (Utilizzare la funzione optimize) e la mediana (Utilizzare la funzione uniroot). Rappresentare la funzione di densità e la funzione di ripartizione.
+to_integrate = function(x){
+  exp(-x)
+}
+
+(k=1/integrate(to_integrate,-1,Inf)$value)
+
+densita = function(x){
+  k = 1/integrate(to_integrate,-1,Inf)$value
+  k*exp(-x)
+}
+
+curve(densita(x),-1,100,col="red")
+
+# valore atteso 
+atteso = function(x){
+  x*densita(x)  
+}
+
+(valore_atteso = integrate(atteso,-1,Inf)$value)
+
+## Moda
+(moda=optimise(densita,c(-1,100),maximum = T)$maximum)
+```
+
+## [!] Funzioni di ripartizione
+
+```{r}
+# con calcolo teorico integrale
+funz_rip = function(x){
+  1-exp(-x-1)
+}
+
+# calcolo con integrate
+funz_rip2 = function(x){
+  integrate(densita,-1,x)$value
+}
+
+funz_rip2_vect = Vectorize(funz_rip2,"x")
+```
+
+## rappresentazione funzione di ripartizione
+
+```{r}
+curve(funz_rip(x),-1,100,col="red")
+
+
+curve(funz_rip2_vect(x),add=T,col="blue")
+```
+
+## [!] Mediana
+
+```{r}
+# con calcolo teorico
+(mediana=-1-log(0.5))
+
+## con la funzione di R uniroot
+to_solve = function(x){
+  funz_rip2(x)-0.5
+}
+
+(mediana=uniroot(to_solve,c(-1,100))$root)
+```
+
+# MODELLI PROBABILISTICI
+
+## Binomiale
+
+```{r}
+# Un magazzino si rifornisce ogni settimana di un prodotto. La probabilità che nella settimana la domanda del prodotto superi lo stock del magazzino è pari a 0,013. Sia X il numero di volte durante l’anno (52 settimane) in cui la domanda ha superato lo stock di prodotto.
+
+n = 52
+p = 0.013
+
+# Qual è la probabilità che durante l’anno non venga mai superato lo stock?
+
+# P(X=0)
+dbinom(0,size=n,prob=p)
+
+
+# Qual è la probabilità che nell’anno lo stock venga superato al massimo 2 volte?
+
+# P(X<=2)=P(X=0)+P(X=1)+P(X=2)
+dbinom(0,n,p)+dbinom(1,n,p)+dbinom(2,n,p)
+
+# oppure
+sum(dbinom(0:2,n,p))
+
+# oppure
+pbinom(2,n,p)
+
+
+# Rappresentazione funzione di probabilità
+x = 0:52
+plot(x,dbinom(x,n,p),type="h",col="blue",xlab="x",ylab="Probabilità")
+
+
+# Rappresentazione funzione di ripartizione
+x = 0:52
+plot(x,pbinom(x,n,p),type="s",col="blue",xlab="x",ylim=c(0,1),xlim=c(-5,52))
+segments(-5,0,0,0,col="blue")
+```
+
+## Poisson
+
+```{r}
+# Il periodo di vita in giorni delle particelle emesse da una sostanza radioattiva è una variabile di Poisson con media 3.8.
+
+# X~Pois(lambda) vogliamo caloclare P(X<=2)
+lambda=3.8
+ppois(2,lambda)
+
+# oppure
+sum(dpois(0:2,lambda))
+```
+
+## Geometrico
+
+```{r}
+# Una macchina produce uno speciale transistor, componente necessario nella costruzione dei computer. La macchina ha un tasso di errori del 2%, ovvero produce 2 pezzi difettosi ogni 100, in media. Il processo di produzione è tale che i vari pezzi possono essere considerati mutuamente indipendenti.
+
+p = 0.02# probabilità di successo, prob di essere difettoso
+x = 9 # numero di fallimenti prima di arrivare al successo
+
+# Qual è la probabilità che il decimo transistor prodotto sia il primo a essere difettoso?
+
+# X~Geom(p) X conta il numero di insuccessi necessari al primo successo
+p*(1-p)^x
+dgeom(x,p)
+```
+
+## Uniforme
+
+```{r}
+# Da una ricerca riguardante gli allevamenti di bestiame si è osservato che la distribuzione del Peso di bovini appartenenti alla classe 300-400 kg (estremi inclusi) può essere ben approssimata da una distribuzione uniforme continua.
+
+# X = Peso dei bovini appertenenti all'intervallo 300-400Kg
+# X~U(300,400)
+
+# Calcolare la probabilità di osservare un bovino con un peso tra 310kg e 350kg.
+
+#P(310<=X<=350)
+punif(350,300,400)-punif(310,300,400)
+
+# Densità dell'uniforme tra 300 e 400
+curve(dunif(x,300,400),300,400,col="red",ylab="densità",xlab="Peso")
+
+# Estrazione di 15 bovini con un peso compreso tra 300 e 400 Kg
+set.seed(100)
+runif(15,300,400)
+```
+
+## Esponenziale
+
+```{r}
+# Il tempo che mediamente trascorre tra l’apertura di uno sportello pubblico e l’arrivo del primo utente è di 4 minuti. Si proponga un modello probabilistico ragionevole per la variabile casuale X che descrive il tempo tra l’apertura dello sportello e l’arrivo del primo utente. Si determini la probabilità che il tempo d’attesa del primo utente superi i 10 minuti.
+
+# X = tempo in minuti tra apertura sportello e arrivo primo utente
+# lambda = 1/media
+# X~Exp(lambda)
+
+lambda = 1/4
+
+# P(X>10)=1-P(X<=10)
+1-pexp(10, rate = lambda)
+```
+
+## Normale
+
+```{r}
+# Il voto ottenuto al appello d’esame di Statistica segue una distribuzione normale con media μ=23 e varianza σ2=9.
+
+# X=Voto di statistica X~N(mu=23,sigma^2=9)
+mu = 23
+sigma = sqrt(9)
+
+
+# Determinare la probabilità di prendere un voto maggiore di 21 e inferiore a 25.
+
+# P(21<=X<=25)
+pnorm(25, mean = mu, sd = sigma)-pnorm(21, mean = mu, sd = sigma)
+
+# Visuaizzare risultato
+library(tigerstats)
+pnormGC(c(21,25),mean=mu,sd=sigma,region="between",graph = T)
+
+
+# Determinare la probabilità di prendere un voto maggiore di 28. 
+
+# P(X>28) = 1-P(X<=28)
+1-pnorm(28,mu,sigma)
+
+# oppure
+pnormGC(28,mu,sigma,graph=T,region="above")
+
+
+# Trovare il voto corrispondente al 95%.
+
+# quantile d'ordine 95%
+qnorm(0.95,mu,sigma)
+
+
+# Rappresentare la densità di probabilità.
+x=seq(mu-3*sigma,mu+3*sigma,0.01)
+plot(x,dnorm(x,mu,sigma),col=2,main="Densità normale",ylab="",type = "l")
+
+#oppure
+curve(dnorm(x,mu,sigma),mu-3*sigma,mu+3*sigma,col="red",ylab="densità",xlab="Voto")
+```
+
+# STATISTICHE CAMPIONARIE
+
+## Campionaria
+
+```{r}
+# Supponiamo che la percentuale di americani che sostengono l’espansione dell’energia solare sia p=0.88, il parametro di interesse. Dopo aver estratto un campione di 1000 americani dalla popolazione vogliamo studiare l’andamento della proporzione campionaria.
+
+N = 250000000
+p = 0.88
+n = 1000
+
+# Crea un insieme di 250 milioni di risposte, di cui l’88% sono “supporto” e il restante sono “non supporto”.
+risposte = c(rep("Supporto",N*p), rep("Non Supporto",N*(1-p)))
+
+# Estrai dalla popolazione 1000 risposte senza sostituzione.
+campione = sample(risposte,1000)
+
+# Calcolare la proporzione campionaria.
+(phat = sum(campione=="Supporto")/1000)
+
+# oppure
+mean(campione=="Supporto")
+
+# oppure
+as.numeric(table(campione)[2]/1000)
+
+# Ripeti l’operazione 1000 volte e rappresenta tramite un grafico il risultato della simulazione, aggiungi sul grafico anche la vera proporzione p=0.88. Cosa puoi concludere?
+
+n_camp = 1000
+p_hat = NULL
+
+# Calcolo proporzione campionaria
+for(i in 1:n_camp){
+  campione = sample(risposte,1000)
+  p_hat[i] = mean(campione=="Supporto")
+}
+
+# Grafico di confronto
+plot(1:1000,p_hat,type="l")
+abline(h=p,col="red")
+```
+
+```{r}
+# media della proporzione campionaria
+mean(p_hat)
+
+# Varianza della propo campionaria
+var(p_hat)
+
+# Vera varianza
+p*(1-p)/n_camp
+
+# Istogramma della distribuzione della proporzione campionaria + curva che approssima la distribuzione
+hist(p_hat,prob=T)
+curve(dnorm(x,mean=p,sd=sqrt(p*(1-p)/n_camp)),add=T,col=2)
+```
+
+## Binomiale
+
+```{r}
+p = 0.7 # probabilità di ottenere testa
+n = 500 # lanci moneta truccata
+
+# Simulare 500 lanci della moneta truccata in cui la probabilità di ottenere testa è pari a 0.7.
+set.seed(06)
+campione = rbinom(n,prob=p,size=1)
+# 1 successo è Testa
+# 0 insuccesso è Croce
+
+# Si calcoli la successione di valori della media campionaria (Calcolare la proporzione di casi in cui si ottiene testa) ottenuta a partire da 2 osservazioni fino a 500.
+phat = cumsum(campione)/(1:n)
+```
+
+```{r}
+# Rappresentare su un grafico tali successioni, confrontandole con il valore atteso secondo la teoria.
+plot(1:n,phat,type="l")
+abline(h=p,col="red")
+```
+
+## Uniforme
+
+```{r}
+# Si studi l’andamento della legge della somma e della media campionaria di n variabili aleatorie indipendenti, ciascuna con legge Uniforme nell’intervallo [0,1], al variare di n (n>50).
+
+#Si simulino N=1000 realizzazioni della media e della somma di n=50,100,200,500 variabili aleatorie, Uniforme nell’intervallo [0,1].
+
+N = 1000 # numero di campioni
+n = c(50,100,200,500)#numerosità campionarie
+
+media = matrix(0,ncol = 4,nrow = N)
+somma = matrix(0,ncol = 4,nrow = N)
+
+for(j in 1:4){
+  for(i in 1:N){
+    dat = runif(n[j],0,1)
+    media[i,j] = mean(dat)
+    somma[i,j] = sum(dat)
+  }
+}
+```
+
+```{r}
+# Studiare la gaussianità della distribuzione delle medie con un istogramma e aggiungere la densità delle v.a. gaussiane relative all’approssimazione normale per le varie numerosità campionarie.
+par(mfrow=c(2,2))
+
+hist(media[,1], prob=T,main="n = 50",xlab="")
+curve(dnorm(x,0.5,sqrt(1/(50*12))),col="red",add=T)
+
+hist(media[,2], prob=T,main="n = 100",xlab="")
+curve(dnorm(x,0.5,sqrt(1/(100*12))),col="red",add=T)
+
+hist(media[,3], prob=T,main="n = 200",xlab="")
+curve(dnorm(x,0.5,sqrt(1/(200*12))),col="red",add=T)
+
+hist(media[,4], prob=T,main="n = 500",xlab="")
+curve(dnorm(x,0.5,sqrt(1/(500*12))),col="red",add=T)
+```
+
+```{r}
+# Studiare la gaussianità della distribuzione delle somme con un istogramma e aggiungere la densità delle v.a. gaussiane relative all’approssimazione normale per le varie numerosità campionarie.
+par(mfrow=c(2,2))
+
+hist(somma[,1], prob=T,main="n = 50",xlab="")
+curve(dnorm(x,50*0.5,sqrt(50/12)),col="red",add=T)
+
+hist(somma[,2], prob=T,main="n = 100",xlab="")
+curve(dnorm(x,100*0.5,sqrt(100/12)),col="red",add=T)
+
+hist(somma[,3], prob=T,main="n = 200",xlab="")
+curve(dnorm(x,200*0.5,sqrt(200/12)),col="red",add=T)
+
+hist(somma[,4], prob=T,main="n = 500",xlab="")
+curve(dnorm(x,500*0.5,sqrt(500/12)),col="red",add=T)
+```
+
+```{r}
+# Studiare la gaussianità della distribuzione delle somme con il QQ plot.
+par(mfrow=c(2,2))
+
+qqnorm(somma[,1], main="n = 50",xlab="")
+qqline(somma[,1],col="blue")
+
+qqnorm(somma[,2], main="n = 100",xlab="")
+qqline(somma[,2],col="blue")
+
+qqnorm(somma[,3], main="n = 200",xlab="")
+qqline(somma[,3],col="blue")
+
+qqnorm(somma[,4], main="n = 500",xlab="")
+qqline(somma[,4],col="blue")
+```
+
+```{r}
+# oppure
+library(car)
+qqPlot(media[,1])
+```
+
+# INTERVALLI DI CONFIDENZA
+
+```{r}
+# Si consideri il data-base REDDITI relativo a un campione di 12690 individui percettori di reddito in Italia nel 2000. I dati sono tratti dal campione della Banca d’Italia per l’indagine sui bilanci delle famiglie anno 2000.
+library(readxl)
+REDDITI <- read_excel("REDDITI.xls")
+attach(REDDITI)
+
+# Analizzare la variabile Reddito netto.
+summary('Reddito Netto')
+```
+
+## Rappresentazione grafica
+
+```{r}
+par(mfrow=c(1,2))
+boxplot(`Reddito Netto`)
+hist(`Reddito Netto`,prob=T)
+lines(density(`Reddito Netto`),col="red")
+```
+
+```{r}
+library(car)
+qqPlot(`Reddito Netto`)
+```
+
+## Variabili numeriche
+
+```{r}
+# Summary
+summary(`Reddito Netto`)
+```
+
+```{r}
+# Skewness
+library(moments)
+skewness(`Reddito Netto`)
+```
+
+```{r}
+# Curtosi
+kurtosis(`Reddito Netto`)
+```
+
+## Intervallo di confidenza
+
+```{r}
+# Formula generica
+intervallo_conf = function(x,alpha){
+  n = length(x)
+  xbar = mean(x)
+  s = sd(x)
+  t_alpha_mezzi = qt(1-alpha/2,n-1)
+  # t_alpha_mezzi =qt(alpha/2,n-1,lower.tail=F)
+  primo_estremo = xbar-t_alpha_mezzi*s/sqrt(n)
+  secondo_estremo = xbar+t_alpha_mezzi*s/sqrt(n)
+  return(list(primo=primo_estremo,secondo=secondo_estremo))
+}
+```
+
+```{r}
+# Stimare l’intervallo di confidenza al 95% per il reddito medio.
+intervallo_conf(`Reddito Netto`,0.05)
+```
+
+```{r}
+# I.C. Varianza
+intervallo_conf_varianza = function(x,alpha){
+  n = length(x)
+  s2_c = var(x)
+  chi2_alpha_mezzi = qchisq(alpha/2,n-1,lower.tail = F)
+  chi2_1meno_alpha_mezzi = qchisq(1-alpha/2,n-1,lower.tail = F)
+  primo_estremo = (n-1)*s2_c/chi2_alpha_mezzi
+  secondo_estremo = (n-1)*s2_c/chi2_1meno_alpha_mezzi
+  return(list(primo=primo_estremo,secondo=secondo_estremo))
+}
+```
+
+```{r}
+# Stimare l’intervallo di confidenza al 90% per la varianza del reddito.
+intervallo_conf_varianza(`Reddito Netto`,alpha = 0.10)
+```
+
+```{r}
+# I.C. Proporzioni
+intervallo_conf_prop = function(x,alpha){
+  phat = mean(x)
+  n = length(x)
+  z_alpha_mezzi = qnorm(alpha/2,lower.tail = F)
+  primo_estremo = phat-z_alpha_mezzi*sqrt(phat*(1-phat)/n)
+  secondo_estremo = phat+z_alpha_mezzi*sqrt(phat*(1-phat)/n)
+  return(list(primo=primo_estremo,secondo=secondo_estremo))
+}
+```
+
+```{r}
+# Stimare l’intervallo di confidenza al 95% per la proporzione di individui di sesso maschile.
+intervallo_conf_prop(SEX,0.05)
+```
+
+## Stimare l’intervallo di confidenza per due classi
+
+```{r}
+tapply(`Reddito Netto`, SEX, intervallo_conf,alpha=0.05)
+```
+
+```{r}
+# Summary
+tapply(`Reddito Netto`, SEX, summary)
+```
+
+```{r}
+# Skewness
+tapply(`Reddito Netto`, SEX, skewness)
+```
+
+```{r}
+# Curtosi
+tapply(`Reddito Netto`, SEX, kurtosis)
+```
+
+## Visualizzazione
+
+```{r}
+# Boxplot
+boxplot(`Reddito Netto`~SEX)
+```
+
+```{r}
+# Q-Q Plot
+par(mfrow=c(1,2))
+qqnorm(`Reddito Netto`[SEX==1],main="M")
+qqline(`Reddito Netto`[SEX==1],col="cyan")
+
+
+qqnorm(`Reddito Netto`[SEX==0],main="F")
+qqline(`Reddito Netto`[SEX==0],col="pink")
+```
+
+# TEST - 1
+
+## Es. 1
+
+```{r}
+#Si consideri il file “glucosio.txt”. I dati consistono nella misura della concentrazione di glucosio nel sangue [mmol/l] in un gruppo di 40 studenti di medicina .
+glucosio <- read.csv("glucosio.txt", sep="")
+attach(glucosio)
+```
+
+```{r}
+# Verificare la normalità dei dati.
+summary(Glucosio)
+```
+
+```{r}
+# Skewness
+library(moments)
+skewness(Glucosio)
+```
+
+```{r}
+# Curtosi
+kurtosis(Glucosio)
+```
+
+```{r}
+# Visualizzazione
+par(mfrow=c(1,3))
+hist(Glucosio,prob=T,main="Istogramma")
+curve(dnorm(x,mean(Glucosio),sd(Glucosio)),add=T,col=2)
+
+boxplot(Glucosio,main="Boxplot")
+
+
+qqnorm(Glucosio,main="QQplot")
+qqline(Glucosio)
+```
+
+### I.C. Media
+
+```{r}
+# Si costruisca un intervallo di confidenza di livello 99% per la vera media della concentrazione di glucosio nel sangue.
+intervallo_media = function(x,alpha){
+  n = length(x)
+  t_alpha_mezzi= qt(alpha/2,n-1,lower.tail = F)
+  primo = mean(x)-t_alpha_mezzi*sd(x)/sqrt(n)
+  secondo = mean(x)+t_alpha_mezzi*sd(x)/sqrt(n)
+  return(list(primo_estremo=primo,secondo_estremo=secondo))
+}
+```
+
+```{r}
+intervallo_media(Glucosio,alpha=0.01)
+```
+
+```{r}
+# Si esegua il seguente test d’ipotesi H0:mu=4 contro H1:mu!=4 per decidere se la vera concentrazione media di glucosio nel sangue (mu) è pari a 4 mmol/litro. Calcolare il p-value del test.
+mu0 = 4
+alpha = 0.05
+n = length(Glucosio)
+
+# Formula matematica
+(t_alpha_mezzi= qt(alpha/2,n-1,lower.tail = F))
+```
+
+```{r}
+(t_oss = (mean(Glucosio)-mu0)/(sd(Glucosio)/sqrt(n)))
+```
+
+```{r}
+(p_value=2*min(pt(t_oss,n-1),1-pt(t_oss,n-1)))
+```
+
+### Test
+
+```{r}
+# Con funzione test
+t.test(Glucosio,mu=mu0,alternative = "two.sided",conf.level = 0.95)
+```
+
+```{r}
+# Calcolo della statistica test per verificare l’ipotesi: H0:varianza=1 contro H1:varianza!=1. Calcolare il p-value del test.
+n = length(Glucosio)
+sigma2_0 = 1# valore di sigma^2 sotto l'ipotesi nulla
+(k_oss = (n-1)*var(Glucosio)/sigma2_0)
+```
+
+```{r}
+# Matematicamente
+alpha = 0.05
+(chiquadro_1meno_alpha_mezzi = qchisq(1-alpha/2,n-1,lower.tail = F))
+```
+
+```{r}
+(chiquadro_alpha_mezzi = qchisq(alpha/2,n-1,lower.tail = F))
+```
+
+```{r}
+k_oss < chiquadro_1meno_alpha_mezzi | k_oss>chiquadro_alpha_mezzi
+```
+
+```{r}
+(p_value = 2*min(pchisq(k_oss,n-1),1-pchisq(k_oss,n-1)))
+```
+
+### VarTest
+
+```{r}
+# Con funzione di r varTest
+library(EnvStats)
+varTest(Glucosio,alternative = "two.sided",conf.level = 0.95,sigma.squared = sigma2_0)
+```
+
+## Es. 2
+
+```{r}
+# Luca invita a casa 30 amici per festeggiare il suo diciottesimo compleanno. La variabile “età”, riportata di seguito, contiene le età di tutti gli invitati. Possiamo affermare che almeno il 60% degli invitati è già maggiorenne?
+età = c(13, 15, 19, 20, 22, 16, 17, 14, 18, 18 ,19, 20,23, 24, 21, 25, 23, 14,
+       13, 17, 18,19, 15,19,20,21,22,23,27,25)
+età
+```
+
+```{r}
+# Stima della proporzione di maggiorenni
+maggiorenni = età[età>=18]
+
+(phat = length(maggiorenni)/length(età))
+```
+
+```{r}
+# Calcolo dell’intervallo di confidenza a livello 95% per la proporzione di maggiorenni p.
+alpha = 0.05
+p0 = 0.6
+n = length(età)
+zalpha_mezzi=qnorm(1-alpha/2)
+
+# 1° Estremo
+(primo_estremo = phat-zalpha_mezzi*sqrt((phat*(1-phat)/n)))
+
+# 2° Estremo
+(secondo_estremo = phat+zalpha_mezzi*sqrt((phat*(1-phat)/n)))
+```
+
+```{r}
+# Calcolo della statistica test per verificare l’ipotesi: H0:p=0.6 contro H1:p>0.6.
+
+# Formule matematiche
+(z_oss= (phat-p0)/sqrt(p0*(1-p0)/n))
+```
+
+```{r}
+# Verifica regione rifiuto
+zalpha = qnorm(1-alpha)
+z_oss>zalpha
+```
+
+```{r}
+# P-Value del test
+(p_value=1-pnorm(z_oss))
+```
+
+### Prop.Test
+
+```{r}
+# funzione prop.test
+successi = length(maggiorenni)
+
+prop.test(successi,n,alternative = "greater",conf.level = 1-alpha,p=p0,correct = F)
+```
+
+# TEST - 2
+
+## Esercizio 1
+
+```{r include=FALSE}
+#Si consideri il file “temperatura.txt”. I dati rappresentano 130 osservazioni di 3 variabili: Temperatura, Sesso e Frequenza cardiaca; la variabile Temperatura si riferisce alla temperatura corporea di 130 pazienti (espressa in gradi Fahrenheit), la variabile Sesso indica il sesso del paziente (U=uomo,D=donna) e la variabile Freq_cardiaca indica la frequenza cardiaca, espressa in battiti al minuto. Stabilire se vi siano delle differenze nella temperatura corporea dovute al sesso del soggetto.
+temperatura <- read.delim("temperatura.txt")
+attach(temperatura)
+```
+
+### Verifica normalità
+
+```{r}
+## i due campioni distinti per sesso
+temp.m <- Temperatura[which(Sesso=='U')]
+temp.f <- Temperatura[which(Sesso=='D')]
+(n <- length(temp.m))
+```
+
+```{r}
+length(temp.f)
+```
+
+```{r}
+# media uomini
+(media.m <- mean(temp.m))
+```
+
+```{r}
+# media donne
+(media.f <- mean(temp.f))
+```
+
+```{r}
+boxplot(Temperatura~Sesso)
+```
+
+```{r}
+par(mfrow=c(2,1))
+qqnorm(temp.m, main='Normal Probability Plot (Uomini)', xlab="Quantili empirici ",ylab="Quantili teorici")
+qqline(temp.m,col="red",lwd=2)
+qqnorm(temp.f, main='Normal Probability Plot (Donne)', xlab="Quantili empirici ",ylab="Quantili teorici")
+qqline(temp.f,col="red",lwd=2)
+```
+
+### Test sulle varianze
+
+#### Matematicamente
+
+```{r}
+# varianza uomini
+var(temp.m)
+```
+
+```{r}
+# varianza donne
+var(temp.f)
+```
+
+```{r}
+#parametri del test
+alpha <- 0.05
+(f.alpha1 <- qf(alpha/2,n-1,n-1))
+(f.alpha2 <- qf(1-alpha/2,n-1,n-1))
+       
+#calcolo della statistica test 
+(F_oss <- var(temp.m)/var(temp.f))
+     
+#esito del test
+F_oss < f.alpha1 | F_oss > f.alpha2
+```
+
+```{r}
+#calcolo p-value
+pvalue <- 2*min(pf(F_oss,n-1,n-1), 1-pf(F_oss,n-1,n-1))
+pvalue
+```
+
+#### Con funzione test
+
+```{r}
+var.test(temp.m, temp.f,alternative = 'two.sided', conf.level = 1-alpha)
+```
+
+### Test sulle medie
+
+#### Matematicamente
+
+```{r}
+# differenza campionaria
+diff.camp <- media.f - media.m
+
+# varianza comune
+var.pooled <- ((n - 1)*var(temp.m) + (n - 1)*var(temp.f))/(2*n - 2)
+alpha <- 0.05
+t.alpha.2 <- qt(1-alpha/2, 2*n-2)
+
+# calcolo della statistica test:
+(T_oss <- diff.camp/sqrt(2*var.pooled/n))
+```
+
+```{r}
+#esito del test
+T_oss < t.alpha.2 | T_oss > t.alpha.2
+```
+
+```{r}
+#calcolo del p-value
+(pvalue <- 2*min(pt(T_oss,2*n-2),(1 - pt(T_oss,2*n-2))))
+```
+
+#### Con funzione test
+
+```{r}
+t.test(temp.f, temp.m, mu = 0, var.equal = TRUE, conf.level = 1-alpha)
+```
+
+## Esercizio 2
+
+```{r include=FALSE}
+#Si consideri il file “saturazione.txt”. I dati consistono nella misura della saturazione dell’ossigeno in 72 soggetti effettuata due diversi metodi di misura (Pos e Osm). Si esegua un’opportuna analisi statistica per decidere se esiste differenza statistica tra i due differenti metodi di misura clinica.
+saturazione <- read.delim("saturazione.txt")
+attach(saturazione)
+n <- length(Pos)
+```
+
+```{r}
+# media pos
+mean(Pos)
+```
+
+```{r}
+# media osm
+mean(Osm)
+```
+
+```{r}
+# differenza
+diff <- Pos - Osm
+```
+
+### Verifica normalità
+
+```{r}
+# si deduce che al centro è approssimabile alla normalità, ma a causa delle code che si distaccano non ne soddisfa pienamente i requisiti 
+qqnorm(diff)
+qqline(diff,col="red",lwd=2)
+```
+
+### Verificare esistenza di differenza statistica.
+
+#### Matematicamente
+
+```{r}
+alpha = 0.01
+(t.alpha.2 = qt(1-alpha/2,n-1))
+media.diff = mean(diff)
+dev.std.diff = sd(diff)
+
+# calcolo statistica test
+(T_oss = media.diff/(dev.std.diff/sqrt(n)))
+```
+
+```{r}
+# esito del test
+T_oss > t.alpha.2 | T_oss < t.alpha.2
+```
+
+```{r}
+# calcolo del p-value
+(pvalue = 2*min(pt(T_oss,n-1),1-pt(T_oss,n-1)))
+```
+
+#### Con funzione test
+
+```{r}
+# paired indica la dipendenza tra le variabili
+t.test(Pos, Osm, paired = TRUE, conf.level = 1-alpha)
+```
+
+## Esercizio 3
+
+```{r include=FALSE}
+# Si consideri il file “istruzione.txt”. I dati sono costrituiti da due variabili qualitative che indicano il grado di istruzione e lo stato civile di 20 uomini italiani. Si vuole stabilire se le due variabili siano tra di loro indipendenti.
+istruzione <- read.table(file="istruzione.txt", header=T)
+attach(istruzione)
+n <- dim(istruzione)
+```
+
+### [!] Tabella contingenza
+
+```{r}
+table(istruzione)
+```
+
+### Valutazione indipendenza con chi-quadro
+
+```{r}
+chisq.test(table(istruzione))
+```
+
+```{r}
+# oppure
+chisq.test(stato_civile, Istruzione)
+```
+
+```{r}
+# con test simulati
+chisq.test(stato_civile, Istruzione,simulate.p.value = T)
+```
+
+# REGRESSIONE
+
+## Esercizio 1
+
+```{r include=FALSE}
+#Si consideri il file “ciclisti.txt”: in questo insieme di dati sono state considerate dieci strade con pista ciclabile ed è stata misurata la distanza tra la linea di mezzeria e un ciclista sulla pista ciclabile. In queste stesse dieci strade `e stata determinata la distanza tra lo stesso ciclista e una macchina passante per la strada considerata. Le variabili oggetto di studio sono quindi Center (distanza tra la linea di mezzaria e un ciclista sulla pista ciclabile [piedi]) e Car (distanza tra lo stesso ciclista e una macchina passante per la strada considerata [piedi]). Si esegua un’analisi dei dati per vedere se è possibile spiegare mediante un modello di regressione lineare la variabile Car come funzione della variabile Center.
+ciclisti <- read.csv("ciclisti.txt", sep="")
+attach(ciclisti)
+n = dim(ciclisti)
+```
+
+### Rappresentazione grafica relazione
+
+```{r}
+plot(Center,Car)
+```
+
+## Terstare normalità variabili
+
+```{r}
+# Rappresentazione grafica
+par(mfrow=c(1,2))
+qqnorm(Car,main="Car")
+qqline(Car)
+qqnorm(Center,main="Center")
+qqline(Center)
+```
+
+### Controllo significatività relaione
+
+```{r}
+cor.test(Car,Center,method = "spearman")
+```
+
+### Stima modello regressione lineare
+
+```{r}
+mod = lm(Car ~ Center,data=ciclisti)
+summary(mod)
+```
+
+```{r}
+# Rappresentazione grafica retta di regressione
+plot(Center,Car)
+abline(mod,col="red") 
+```
+
+### Test significatività variabile Center
+
+```{r}
+(p_value = summary(mod)$coefficients[2,4])
+```
+
+### Il modello si adatta bene ai dati?
+
+```{r}
+(R2 = summary(mod)$r.squared)
+```
+
+### E’ possibile ipotizzare una distribuzione normale per i residui del modello?
+
+```{r}
+qqnorm(residuals(mod))
+qqline(residuals(mod), col='red', lwd=2)
+```
+
+```{r}
+# oppure
+plot(mod,2)
+```
+
+### Verifica eteroschedasticità
+
+```{r}
+plot(mod,1)
+```
+
+### Verifica outliers
+
+```{r}
+plot(mod,4)
+```

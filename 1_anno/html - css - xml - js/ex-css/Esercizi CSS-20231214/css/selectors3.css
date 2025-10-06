@@ -1,0 +1,10 @@
+/*gli elementi a, discendenti di un elemento ul, che non siano della classe note*/
+ul a:not(.note) {
+	text-decoration: none;
+}
+
+/*la prima lettera degli elementi h1*/
+h1::first-letter {
+	letter-spacing: 0.25em;
+	text-shadow: 5px 5px 5px purple;
+}

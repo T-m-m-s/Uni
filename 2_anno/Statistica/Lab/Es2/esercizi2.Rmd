@@ -1,0 +1,120 @@
+---
+title: "esercizio2"
+output: html_document
+date: "2024-10-16"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Parte 1
+
+```{r}
+setwd("C:/Uni/Statistica/Lab/Es2")
+appendiceA <- read.csv("appendiceA.txt", header=T, sep="")
+```
+
+```{r}
+##Visualizzare le prime righe del dataset
+library(knitr)
+head(appendiceA)
+kable(head(appendiceA))
+```
+
+```{r}
+##Quante osservazioni contiene il dataset?
+oss<-nrow(appendiceA)
+oss
+```
+```{r}
+##Quante variabili contiene il dataset?
+var<-ncol(appendiceA)-1
+var
+```
+
+```{r}
+##Di che tipo è la variabile sesso?
+attach(appendiceA)
+class(Sesso)
+Sesso = factor(Sesso)
+levels(Sesso)
+```
+```{r}
+##Calcolare la frequenza assoluta e relativa della variabile sesso
+freq_ass<-table(Sesso)
+freq_ass
+freq_rel<-freq_ass/oss
+freq_rel
+```
+
+```{r}
+##Costruire un diagramma a barre e un diagramma a torta per la variabile province. Utilizzare le funzioni barplot e pie.
+barplot(freq_rel, col = c("orange", "red"), xlab="Sesso", ylab="Frequenze Relative", main="Frequenze Relative della variabile Sesso", ylim=c(0,1))
+pie(freq_rel, col = c("orange", "red"), main="Frequenze Relative della variabile Sesso")
+```
+
+```{r}
+##Variabile Peso
+media = mean(Peso, na.rm = T)
+media
+mediana = median(Peso, na.rm = T)
+mediana
+library(moments)
+skewness = skewness(Peso, na.rm = T)
+skewness
+curtosi = kurtosis(Peso, na.rm = T)
+curtosi
+varianza = var(Peso, na.rm = T)*(oss-1)/oss
+varianza
+deviazione_standard = sd(Peso)*sqrt((oss-1)/oss)
+deviazione_standard
+campo_variazione1 = max(Peso) - min(Peso)
+campo_variazione1
+campo_variazione2 = diff(range(Peso))
+campo_variazione2
+quartili = quantile(Peso, probs = c(0.25, 0.5, 0.75))
+IQR1 = as.numeric(quartili[3] - quartili[1])
+IQR1
+IQR2 = IQR(Peso)
+IQR2
+summary(Peso)
+```
+```{r}
+hist(Peso, probability = T, main = "Istogramma variabile peso", col="purple", breaks = seq(80,250,10))
+lines(density(Peso), col = "red")
+hist(Peso, probability = T, plot = F)
+boxplot(Peso, horizontal = T, col = "purple")
+plot(ecdf(Peso))
+```
+
+
+
+##Parte 2
+
+```{r}
+vitaminaD <- read.csv("vitaminaD.txt", header=T, sep="")
+```
+
+```{r}
+##Quante osservazioni contiene il dataset?
+oss = nrow(vitaminaD)
+oss
+
+##Quante variabili contiene il dataset?
+var = ncol(vitaminaD)
+var
+
+##Di che tipo è la variabile sesso?
+class(vitaminaD$Vitamina_D)
+
+##Calcolare la media della variabile Vitamina_D.
+media = mean(vitaminaD$Vitamina_D)
+media
+
+##Calcolare il minimo, il massimo e il campo di variazione della variabile (Utilizzare la funzione range).
+
+max = max(vitaminaD$Vitamina_D)
+min = min(vitaminaD$Vitamina_D)
+```
+

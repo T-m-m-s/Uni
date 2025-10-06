@@ -1,0 +1,221 @@
+---
+title: "lezione 12"
+author: "Mameli"
+date: "`r Sys.Date()`"
+output:
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+ciclisti <- read.csv("C:/Users/Utente/OneDrive - Università degli Studi di Udine/Desktop/Didattica/didattica2425/Statistica e Laboratorio IBML/Esercizi IBML/11) Regressione/ciclisti.txt", sep="")
+attach(ciclisti)
+```
+
+```{r}
+plot(Center,Car)
+```
+
+```{r}
+cor(Center,Car)
+```
+
+## Ipotesi di normalità
+```{r}
+summary(ciclisti)
+```
+```{r}
+par(mfrow=c(1,2))
+boxplot(Center,main="Center")
+boxplot(Car,main="Car")
+```
+```{r}
+library(moments)
+skewness(Car)
+```
+```{r}
+skewness(Center)
+```
+```{r}
+kurtosis(Car)
+```
+
+```{r}
+kurtosis(Center)
+```
+```{r}
+library(car)
+par(mfrow=c(1,2))
+qqPlot(Car,main="Car")
+qqPlot(Center,main="Center")
+
+```
+## Test sulla correlazione
+
+```{r}
+n = length(Center)
+(t_oss=cor(Center,Car)*sqrt(n-2)/sqrt(1-cor(Center,Car)^2))
+alpha=0.05
+(t_alpha_mezzi = qt(alpha/2,n-2,lower.tail = F)) 
+```
+```{r}
+(p_value=2*min(pt(t_oss,n-2),1-pt(t_oss,n-2)))
+```
+```{r}
+cor.test(Center,Car,alternative = "two.sided")
+```
+
+## Modello di regressione lineare semplice
+```{r}
+mod=lm(Car~Center,data=ciclisti)
+```
+
+```{r}
+summary(mod)
+```
+```{r}
+(bhat=cov(Center,Car)/var(Center))
+```
+```{r}
+(ahat=mean(Car)-bhat*mean(Center))
+```
+```{r}
+plot(Center,Car)
+abline(mod,col="red")
+```
+
+
+```{r}
+cor(Car,Center)^2
+```
+```{r}
+1-var(residuals(mod))/var(Car)
+```
+```{r}
+summary(mod)$r.squared
+```
+
+```{r}
+coefficients(mod)
+```
+```{r}
+summary(mod)$coefficients
+```
+```{r}
+summary(mod)$coefficients[1,1]
+```
+```{r}
+predict(mod)
+```
+
+```{r}
+predict(mod)-Car
+```
+```{r}
+residuals(mod)
+```
+```{r}
+predict(mod,newdata=data.frame(Center=c(5,4.5)))
+```
+```{r}
+coefficients(mod)[1]+coefficients(mod)[2]*c(5,4.5)
+```
+## Normalità dei residui
+```{r}
+qqPlot(residuals(mod))
+```
+```{r}
+plot(mod,2)
+```
+
+```{r}
+plot(mod,4)
+```
+
+```{r}
+plot(mod,1)
+```
+```{r}
+t.test(residuals(mod),mu=0)
+```
+## Esercizio file Esercizi Regressione_es
+```{r}
+library(readxl)
+Alcool_data<- read_excel("C:/Users/Utente/OneDrive - Università degli Studi di Udine/Desktop/Didattica/didattica2425/Statistica e Laboratorio IBML/Esercizi IBML/11) Regressione/Alcool.xls")
+```
+
+```{r}
+plot(Alcool_data$Tabacco,Alcool_data$Alcool,ylab="Alcool",xlab="Tabacco")
+```
+
+```{r}
+library(ggplot2)
+ggplot(Alcool_data,aes(x=Tabacco,y=Alcool))+
+  geom_point()+
+  geom_smooth(method="lm")
+```
+
+```{r}
+cor(Alcool_data$Alcool,Alcool_data$Tabacco)
+```
+
+```{r}
+par(mfrow=c(1,2))
+boxplot(Alcool_data$Alcool,main="Alcool")
+boxplot(Alcool_data$Tabacco,main="Tabacco")
+```
+```{r}
+summary(Alcool_data[,2:3])
+```
+
+
+
+```{r}
+library(moments)
+skewness(Alcool_data$Alcool)
+skewness(Alcool_data$Tabacco)
+```
+
+```{r}
+kurtosis(Alcool_data$Alcool)
+```
+
+```{r}
+kurtosis(Alcool_data$Tabacco)
+```
+```{r}
+library(car)
+par(mfrow=c(1,2))
+qqPlot(Alcool_data$Alcool,main="Alcool")
+qqPlot(Alcool_data$Tabacco,main="Tabacco")
+
+```
+## Test di correlazione di Pearson
+```{r}
+cor.test(Alcool_data$Alcool,Alcool_data$Tabacco)
+```
+## Spesa_Alcool=a+b*Spesa_Tabacco
+```{r}
+mod=lm(Alcool~Tabacco,data=Alcool_data)
+summary(mod)
+```
+Il modello di regressione $\widehat{Spesa Alcool}=2.0412+1.0059*Tabacco$
+
+
+```{r}
+plot(mod,1)
+```
+```{r}
+#plot(mod,2)
+qqPlot(residuals(mod))
+```
+```{r}
+plot(mod,4)
+```
+```{r}
+t.test(residuals(mod),mu=0)
+```
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Esercizo 1</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form>
+            <textarea rows="6" cols="50" name="comment" id="comment" maxlength="128"></textarea><br>
+            <button type="button" value="Invia" id="pul" onclick="contaCaratteri()">Invia</button>
+        </form>
+        <p id="par"></p>
+        <script>
+            document.getElementById("pul").onclick = function(){contaCaratteri()};
+            function contaCaratteri(){
+                var comment = document.getElementById("comment");
+                var numChar = comment.value.length;
+                document.getElementById("par").innerHTML = numChar;
+            }
+        </script>
+    </body>
+</html>

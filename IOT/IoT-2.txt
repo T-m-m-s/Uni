@@ -1,0 +1,66 @@
+Scenario applicativo standard dell'Io T
+- Dispositivi (con sensori e ricevitori/trasmettitori wireless)
+- Network Backbone (collega componenti)
+- Applicazioni SW (elaborano dati/prendono decisioni)
+
+Tipologie sensori (input)/attuatori (output)
+- Semplici -> sensori temperatura, potenziometri, GPS
+- Intelligenti -> spesso dotati di unità di calcolo, memorizzazione interna e comunicazione
+
+Tipologie di rete
+- Big Three (hub-and-spoke)
+ - Cellular Network (WAN)
+ - Wi-Fi (LAN)
+ - Bluetooth (PAN)
+
+- Altre soluzioni
+ - Mesh network (P-2-P)
+  - Bluetooth Mash Networking
+  - ZigBee
+  - ZWave Alliance
+ - Soluzioni a brevetto/chiuse
+  - LoRa Alliance
+  - Sigfox
+  - Link Labs
+  - On-Ramp Wireless (Ingenu)
+  - iota Tracker
+
+Dati - 3 Sfide
+- Raccogliere i dati (data harvesting/ingestion) -> connettere i dispositivi
+- Memorizzare i dati (data storage) -> DBaaS, soluzioni cloud-based
+- Analizzare i dati (data analysis) -> far fruttare i dati memorizzati
+
+Aree Principali delle Applicazioni IoT
+- Home (consumer)
+ - Domotica
+ - Smart Clothing
+ - Smart Shopping
+ - Smart Cars
+- Enterprise
+ - Smart Office / Manufacturing / Warehousing / Transportation
+ - Industry 4.0
+- Gorvernment
+ - Smart Medicine
+ - Smart City
+ - Smart Walfare
+ - Smart World
+
+IoT Stakeholder (beneficiari)
+ - Aziende di Telecomunicazioni
+ - Aziende di soluzioni per Networking
+ - Aziende Hi-Tech (chip, HW, batterie, servizi cloud, SW)
+ - Aziende in generale (automazione, manutenzione predittiva)
+ - Big Player (Google, Apple, Microsoft, IBM)
+
+Smart Shopping
+- Check slides
+
+Smart Clothing
+Qualunque oggetto indossabile dotato di indirizzo IP e trasmettitore
+Applicato per sorveglianza medica, stima dell'attività fisica, sistemi di sicurezza
+
+IoV - Internet of Veichles
+- Da 30 a 100+ centraline a bordo collegate a sensori per sicurezza, assistenza alla guida, affidabilità, comfort
+- Collegamento in rete per monitoraggio traffico, calcolo percorso ottimale
+- Nel futuro -> self driving car
+

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE bibliography SYSTEM "esercizio-xml.dtd">
+<bibliography>
+  <book isbn="978-0367670566">
+    <author>
+      <name>Ian</name>
+      <surname>Millington</surname>
+    </author>
+    <title> AI for Games</title>
+    <year>2020</year>
+    <publisher>CRC Press</publisher>
+  </book>
+  <book isbn="978-1138363052">
+    <author>
+      <surname>Egenfeldt-Nielsen</surname>
+    </author>
+    <author>
+      <surname>Smith</surname>
+    </author>
+    <author>
+      <surname>Tosca</surname>
+    </author>
+    <title>Understanding Video Games</title>
+    <subtitle>The Essential Introduction</subtitle>
+    <year>2019</year>
+    <publisher>Routledge</publisher>
+  </book>
+</bibliography>

@@ -1,0 +1,9 @@
+Sviluppo Personale
+- Codice difficilmente riutilizzato in futuro da altri utenti
+- Non necessario documentare il progetto
+- Non necessari alti livelli di qualità
+
+Sviluppo professionale
+- Software verrà usato da altre persone diverse dagli sviluppatori
+- Sviluppo in team -> software probabilmente sarà modificato/mantenuto da altri sviluppatori
+- Necessarie caratteristiche di qualità

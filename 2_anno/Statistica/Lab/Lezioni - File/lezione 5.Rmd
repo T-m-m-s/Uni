@@ -1,0 +1,119 @@
+---
+title: "lezione 5"
+author: "Mameli"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Ezsercizi probabilità
+## Esercizio 1 
+```{r}
+choose(7,2)*choose(5,1)/choose(24,3)
+```
+## Esercizio 2
+```{r}
+(pA= choose(6,1)*choose(494,11)/choose(500,12))
+```
+## Esercizio 3
+
+```{r}
+to_integrate = function(x){
+  
+  exp(-x)
+  
+}
+```
+
+```{r}
+(k=1/integrate(to_integrate,-1,Inf)$value)
+
+```
+```{r}
+densita = function(x){
+  
+k = 1/integrate(to_integrate,-1,Inf)$value
+  
+k*exp(-x)
+  
+  
+}
+```
+
+```{r}
+curve(densita(x),-1,100,col="red")
+```
+## Valore atteso 
+```{r}
+atteso = function(x){
+  
+x*densita(x)  
+  
+}
+
+(valore_atteso = integrate(atteso,-1,Inf)$value)
+```
+
+## Moda
+
+```{r}
+(moda=optimise(densita,c(-1,100),maximum = T)$maximum)
+```
+## con calcolo teorico integrale
+```{r}
+funz_rip = function(x){
+  
+  1-exp(-x-1)
+  
+}
+```
+
+
+## calcolo con integrate
+
+```{r}
+funz_rip2 = function(x){
+  
+  
+  integrate(densita,-1,x)$value
+  
+}
+
+funz_rip2_vect = Vectorize(funz_rip2,"x")
+
+```
+
+## rappresentazione funzione di ripartizione
+```{r}
+curve(funz_rip(x),-1,100,col="red")
+
+
+curve(funz_rip2_vect(x),add=T,col="blue")
+```
+## con il calcolo teorico
+```{r}
+(mediana=-1-log(0.5))
+```
+
+## con la funzione di R uniroot
+```{r}
+to_solve = function(x){
+  
+  funz_rip2(x)-0.5
+  
+}
+
+
+(mediana=uniroot(to_solve,c(-1,100))$root)
+```
+
+
+
+
+
+
+
+

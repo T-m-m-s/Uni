@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<title>Esercizio JS 2</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<form>
+		<textarea name="commenti" id="commenti" maxlength="128"></textarea><br>
+	</form>
+	<p id="par"></p>
+	<script>
+		document.getElementById("commenti").addEventListener("input",conta_caratteri);
+		document.getElementById("commenti").addEventListener("input",maiuscolo);
+		function maiuscolo() {
+			var inp = document.getElementById("commenti").value.toUpperCase();
+			document.getElementById("commenti").value = inp;
+		}
+		function conta_caratteri() {
+			var stringa_commenti = document.getElementById("commenti");
+			var numero_caratteri = stringa_commenti.value.length;
+			var par = document.getElementById("par");
+			par.innerHTML = 128-numero_caratteri;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+semaphore turno1;
+semaphore turno2;
+semaphore valuta;
+
+
+G1(){
+	wait(turno1)
+	//pesca
+	signal(turno2)
+	wait(valuta)
+	//valuta
+	signal(turno1)
+}
+
+G2(){
+	wait(turno2)
+	//pesca
+	signal(valuta)
+	//valuta
+}
+
+main(){
+	sem_init(&turno1, 0, 1)
+	sem_init(&turno2, 0, 0)
+	sem_init(&valuta, 0, 0)
+
+	pthread t1, t2;
+	pthread_create(&t1, NULL, G1, NULL);
+	pthread_create(&t2, NULL, G2, NULL);
+
+	pthread_join(t1, NULL);
+	pthread_join(t2, NULL);
+
+	sem_destroy(&turno1);
+	sem_destroy(&turno2);
+	sem_destroy(&valuta);
+
+	return EXIT_SUCCESS;
+}

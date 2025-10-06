@@ -1,0 +1,58 @@
+* {
+	color: Orange;
+}
+h1, h2 {
+	color: Red;
+}
+.note {
+	color: LightBlue;
+}
+p.note {
+	color: Aqua;
+}
+a.note {
+	color: Green;
+}
+#introduction {
+	color: Red;
+}
+a {
+	color: Aqua;
+}
+li>a {
+	color: Salmon;
+}
+ul a {
+	color: Brown;
+}
+h1+p {
+	color: Gray;
+}
+h1~p {
+	color: Yellow;
+}
+h1~p {
+	color: Yellow !important;
+}
+p[class] {
+	color: CadetBlue;
+}
+[href="#top"] {
+	color: Brown;
+
+}
+a[href$=".html"] {
+	color: Lime;
+}
+a[href^="mailto"] {
+	color: Red;
+}
+p:not(.note) {
+	color: Pink;
+}
+h1::first-letter {
+	color: Lime;
+}
+p::first-line {
+	color: LightBlue;
+}

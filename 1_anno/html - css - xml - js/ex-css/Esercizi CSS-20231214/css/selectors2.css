@@ -1,0 +1,14 @@
+/*gli elementi a figli di elementi li successivi al primo*/
+li+li>a{
+	font-family: 'Courier New', Courier, monospace;
+}
+
+/*gli elementi a che puntano al dominio example.org*/
+a[href$="example.org"] {
+	font-style: italic;
+}
+
+/*l'elemento a dentro il primo elemento li di suo padre*/
+li:first-child a {
+	font-size: 2em;
+}

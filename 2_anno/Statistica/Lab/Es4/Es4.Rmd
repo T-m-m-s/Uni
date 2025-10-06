@@ -1,0 +1,97 @@
+---
+title: "esercizi4"
+output: word_document
+date: "2024-10-30"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## ES 4.1
+```{r}
+# Numero totale di studenti
+n_total <- 24
+
+# Studenti che indossano ogni tipo di abbigliamento
+n_jeans <- 7
+n_pantaloncini <- 4
+n_gonne <- 8
+n_leggings <- n_total - (n_jeans + n_pantaloncini + n_gonne)
+
+# Combinazioni totali per scegliere 3 studenti su 24
+total_combinations <- choose(n_total, 3)
+
+# Combinazioni favorevoli: 1 studente con leggings e 2 con jeans
+favorable_combinations <- choose(n_leggings, 1) * choose(n_jeans, 2)
+
+# Probabilità
+probability <- favorable_combinations / total_combinations
+probability
+```
+## ES 4.2
+```{r}
+# Numero totale di biglietti
+n_total <- 500
+
+# Numero di biglietti vincenti
+n_vincenti <- 6
+
+# Numero di biglietti non vincenti
+n_non_vincenti <- n_total - n_vincenti
+
+# Numero di biglietti scelti
+n_scelti <- 12
+
+# Combinazioni totali per scegliere 12 biglietti su 500
+total_combinations <- choose(n_total, n_scelti)
+
+# Combinazioni favorevoli: 1 biglietto vincente e 11 non vincenti
+favorable_combinations <- choose(n_vincenti, 1) * choose(n_non_vincenti, 11)
+
+# Probabilità dell'evento A
+probability <- favorable_combinations / total_combinations
+probability
+
+```
+
+
+## ES 4.3
+
+## ES 4.3
+```{r}
+to_integrate <- function(x){ exp(-x) }
+
+# Determinazione della costante di normalizzazione k
+k <- 1 / integrate(to_integrate, lower = -1, upper = Inf)$value
+
+# Rappresentazione grafica della funzione di densità
+curve(k * to_integrate(x), from = -1, to = 100, col = "blue", ylab = "f_X(x)", xlab = "x", main = "Funzione di densità di X")
+
+# Calcolo del valore atteso E[X]
+expected_value <- integrate(function(x) x * k * to_integrate(x), lower = -1, upper = Inf)$value
+expected_value
+
+# Calcolo della moda di X, con limite superiore finito
+mode_value <- optimize(function(x) -k * to_integrate(x), lower = -1, upper = 5)$minimum
+mode_value
+
+# Calcolo della mediana di X (trovare m tale che F_X(m) = 0.5)
+median_value <- uniroot(function(m) integrate(function(x) k * to_integrate(x), lower = -1, upper = m)$value - 0.5, lower = -1, upper = 10)$root
+median_value   
+
+# Rappresentazione grafica della funzione di ripartizione
+F_X <- function(x) {
+  if (x < -1) {
+    return(0)
+  } else {
+    return(integrate(function(t) k * exp(-t), lower = -1, upper = x)$value)
+  }
+}
+
+F_X_vect = Vectorize(F_X, "x")
+
+curve(F_X_vect(x), -1, 100, col="red")
+
+
+```

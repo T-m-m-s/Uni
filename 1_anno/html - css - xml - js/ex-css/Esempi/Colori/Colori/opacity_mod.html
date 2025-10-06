@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Opacity</title>
+		<style type="text/css">
+			div {
+				width: 100px;
+				height: 100px;
+				margin: 40px;
+				display: inline-block;
+				background-color: #ee3e80;}
+			div.child {
+				position: relative;
+				top: 20px;
+				left: 20px;
+				margin: 20px;}
+			div.one {				background-color: hsl(100,75%,40%);				opacity: 0.5;}			div.two {				background-color: hsla(100,75%,40%,0.5);}
+			p	{
+				padding: 20px;
+				color: rgb(255,255,255);
+			}
+		</style>
+	</head>
+	<body>
+		<div><div class="child one"><p>Testo di prova 1</p></div></div>
+		<div><div class="child two"><p>Testo di prova 2</p></div></div>
+	</body>
+</html>

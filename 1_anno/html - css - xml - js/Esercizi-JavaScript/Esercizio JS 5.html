@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Esercizio JS 5</title>
+	<meta charset="UTF-8">
+	<script>
+		function myFunction() {
+			var str = document.getElementById("un");
+			if (str.value.length < 3) {
+				document.getElementById("par").innerHTML  = "Inserire almeno 3 caratteri";
+			} else {
+				document.getElementById("par").innerHTML  = "";
+			}
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<fieldset>
+		<legend>Crea un account</legend>
+			username: <input type="text" name="u" onchange="myFunction()" id="un"><br>
+			password: <input type="password" name="p"><br>
+			email: <input type="email" name="e"><br>
+			<input type="submit" value="Invio">
+		</fieldset>
+	</form>
+	<p id="par"></p>
+</body>
+</html>

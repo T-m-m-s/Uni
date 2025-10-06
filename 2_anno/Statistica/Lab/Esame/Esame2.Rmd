@@ -1,0 +1,118 @@
+---
+title: "Analisi dataset Diamonds"
+author: "Nome e Cognome, Matricola"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Il dataset Diamonds.csv contiene dati su 184 diamanti (dimensione in carati, colore, chiarezza, tipo di certificazione, prezzo in dollari di Singapore). Si considerino le variabili dimensione in carati (Size) e prezzo dei diamanti (in dollari).
+
+*    Si effettui un’analisi descrittiva delle variabili prezzo e dimensione dei diamanti.
+
+*    Si studi la relazione tra le due variabili.
+
+*    Interpretare i risultati ottenuti.
+
+```{r}
+Diamonds_new <- read.csv("Diamonds.csv")
+View(Diamonds_new)
+attach(Diamonds_new)
+```
+Si tratta di due variabili di tipo quantitativo.
+Effettuiamo un'analisi descrittiva per le due variabili.
+
+## Size
+Iniziamo con la variabile Size. Effettuiamo il calcolo degli indici di sintesi tramite la funzione summary, dall'output di questa funzione si nota che la media è leggermente maggiore della mediana. Dal boxplot si evince che la distribuzione è simmetrica. Ciò viene confermato anche dal calcolo dell'indice di asimmetria (attraverso la funzione skewness presente nel pacchetto moments) che risulta molto vicino a zero.
+
+```{r}
+summary(Diamonds_new$Size)
+boxplot(Diamonds_new$Size)
+```
+
+Dal calcolo dell'indice di curtosi (attraverso la funzione kurtosis) si nota che la distribuzione non è normocurtica infatti il valore è circa 1.89 al di sotto del limite 3.
+
+```{r}
+library(moments)
+skewness(Diamonds_new$Size)
+kurtosis(Diamonds_new$Size)
+```
+## Price
+Effettuiamo ora l'analisi sulla variabile Price. 
+Effettuiamo il calcolo degli indici di sintesi, dall'output di questa funzione si nota che la media è maggiore della mediana. Dal boxplot si evince che la distribuzione è asimmetrica a destra, infatti il baffo superiore è più lungo rispetto a quello inferiore. Ciò viene confermato anche dal calcolo dell'indice di asimmetria che risulta pari a 0.53.
+
+```{r}
+summary(Diamonds_new$Price)
+boxplot(Diamonds_new$Price)
+```
+
+
+Dal calcolo dell'indice di curtosi si nota  anche in questo caso che la distribuzione non è normocurtica infatti il valore è circa 2.24 al di sotto del limite 3.
+
+```{r}
+skewness(Diamonds_new$Price)
+kurtosis(Diamonds_new$Price)
+```
+Quindi ora verifichiamo se le due variabili Size e Price possano ritenersi normalmente distribuite effettuando un grafico qqplot, cioè un grafico quantile-quantile.
+Dai qqplot si evince che entrambe le variabili non sono distribuite normalmente, si può vedere infatti che nelle code per entrambe le variabili i punti si discostano dalla retta.
+
+```{r}
+par(mfrow=c(1,2))
+qqnorm(Diamonds_new$Size,main="Dimensione")
+qqline(Diamonds_new$Size)
+qqnorm(Diamonds_new$Price,main="Prezzo")
+qqline(Diamonds_new$Price)
+```
+
+Quindi rappresentiamo graficamente le due varibili attraverso un grafico di dispersione dal quale si nota che la variabile prezzo cresce al crescere della variabile Size e che esiste una forta correlazione lineare positiva fra le due variabili.
+
+```{r}
+plot(Diamonds_new$Size,Diamonds_new$Price)
+```
+
+## Analisi di correlazione
+Effettuiamo quindi un test di correlazione per verificare se la correlazione tra le due variabili è significativamente diversa da zero. Poichè le due variabili non sono normalmente distribuite effettiamo un test sulla significatività della correlazione utilizzando il metodo di Spearman (si può utilizzare anche Kendall).
+
+```{r}
+cor.test(Diamonds_new$Size,Diamonds_new$Price,method="spearman")
+```
+Dal test possiamo concludere che la correlazione fra le due variabili è significativamente diversa da zero. Quindi c'è una significativa forte correlazione lineare positiva tra le due variabili. 
+
+## Analisi della regressione
+
+Effettuiamo quindi un'analisi di regressione sulle due variabili. Vogliamo studiare la relazione tra il Price e la Size, come il Price varia al variare della variabile Size attraverso il modello di regressione lineare: 
+
+$$Price=a+b*Size+\epsilon.$$
+Utilizziamo la funzione lm per stimare il modello di regressione lineare. Dall'output si ricava che la retta di regressione stimata è data da 
+
+$$Price=-2273.6+11544.5*Size.$$
+Quindi possiamo dire che per un diamante di Size=0 si ha mediamente un Price=-2273.6, quindi l'intercetta non ha senso.
+
+Inoltre il coefficiente angolare rappresenta la variazione media di Price ad ogni variazione unitaria della Size. Cioè mediamente Price aumenta di 11544.5 per ogni variazione unitaria di Size.
+
+```{r}
+mod = lm(Price~Size,data=Diamonds_new)
+summary(mod)
+```
+Dall'output possiamo vedere inoltre che l'$R^2$ è uguale a 0.914, quindi ciò significa che il 91,4% della variabilità di Price è spiegato dalla variabilità di Size.
+Infine dai test di significatività del coefficiente angolare si può vedere che il coefficiente angolare b è significativamente diverso da zero.
+
+Aggiungiamo quindi al diagramma di dispersione la retta di regressione:
+
+```{r}
+plot(Diamonds_new$Size,Diamonds_new$Price,xlab="Dimensione",ylab="Prezzo")
+abline(mod,col=2)
+```
+
+In ultima analisi verifichiamo che le ipotesi alla base del modello di regressione lineare siano soddisfate attraverso un' analisi grafica dei residui.
+Dal primo grafico dei quantili contro i valori stimati possiamo notare che l'ipotesi di omoschedasticità non è soddisfata in quanto i punti del grafico sembrano disporsi a forma di imbuto. Dal secondo grafico il qqplot dei residui notiamo che i residui del modello sembrano adattarsi bene a una distribuzione normale in quanto i punti si dispongo sulla retta eccetto per i 3 valori sulla coda di destra che potrebbero essere degli eventuali outliers. L'ultimo grafico della distanza di Cook indica che i 3 valori del grafico precedente non sono effettivamente outliers in quanto la distanza di Cook è inferiore a 0.2.
+
+
+```{r}
+par(mfrow=c(1,3))
+plot(mod,which=1)
+plot(mod,which=2)
+plot(mod,which=4)
+```

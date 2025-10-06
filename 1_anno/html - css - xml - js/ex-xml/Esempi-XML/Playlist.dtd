@@ -1,0 +1,13 @@
+<!ELEMENT playlist (track+)>
+<!ELEMENT track (title, artist+, album?, file, year)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT artist (#PCDATA)>
+<!ELEMENT album (#PCDATA)>
+<!ELEMENT file (encoding, bitrate)>
+<!ELEMENT encoding (#PCDATA)>
+<!ELEMENT bitrate (#PCDATA)>
+<!ATTLIST track id ID #IMPLIED
+    genre ( rock | pop | jazz | blues | other) 'other'>
+<!ATTLIST file src CDATA #REQUIRED>
+<!ATTLIST playlist name CDATA #REQUIRED>
+<!ELEMENT year (#PCDATA)>

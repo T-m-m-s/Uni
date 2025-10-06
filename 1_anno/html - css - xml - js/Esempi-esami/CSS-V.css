@@ -1,0 +1,44 @@
+body {
+    width: 1200px;
+    height: 700px;
+    margin: auto;
+    position: relative;
+}
+#header {
+    width: 1200px;
+    height: 100px;
+}
+#sinistro {
+    width: 500px;
+    position: absolute;
+    left: 0px;
+    height: 300px;
+}
+#destro {
+    width: 400px;
+    position: absolute;
+    right: 0px;
+    height: 400px;
+}
+#footer {
+    width: 1200px;
+    height: 200px;
+    position: absolute;
+    top: 500px;
+}
+body div
+{
+    box-sizing: border-box;
+    border: dashed 5px black;
+}
+body div:first-child
+{
+    border-bottom: none;
+}
+body div:last-child
+{
+    border-top: none;
+}
+a[href*="w3schools"] {
+	letter-spacing: 0.2em;
+}

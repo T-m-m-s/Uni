@@ -1,0 +1,7 @@
+; EX-2 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+(set-puzzle-shift-step!)
+
+(glue-tiles (glue-tiles larger-tile (shift-right smaller-tile 2)) (shift-down (shift-right (half-turn (glue-tiles larger-tile (shift-right smaller-tile 2))) 2) 1))
+
+(glue-tiles (shift-down (shift-right (glue-tiles (shift-down smaller-tile 4) larger-tile) 2) 1) (half-turn (glue-tiles (shift-down smaller-tile 4) larger-tile)))

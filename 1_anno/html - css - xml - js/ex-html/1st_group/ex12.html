@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <title>Esercizio 12</title>
+    <body>
+        <form action="pay.php" method="get">
+            <fieldset>
+                <legend>Modulo nuovo ordine</legend>
+                <label for="name">Nome: </label>
+                <input type="text" name="name" required>
+                <label for="address">Indirizzo: </label>
+                <input type="text" name="address" required><br>
+                <label for="cap">CAP: </label>
+                <input type="text" name="cap" required>
+                <label for="city">Città: </label>
+                <input type="text" name="city" required>
+                <label for="state">Stato: </label>
+                <input type="text" name="state" required><br>
+                <label for="personal_code">Codice personale: </label>
+                <input type="text" name="personal_code" pattern="[0-9]{8}" required>
+                <hr>
+                <label for="type"><b>Tipo di capo: </b></label>
+                <select name="type" id="type" required>
+                    <option value="1">Capo1</option>
+                    <option value="2">Capo2</option>
+                    <option value="3">Capo3</option>
+                    <option value="4">Capo4</option>
+                </select>
+                <label for="size"><b>Dimensione: </b></label>
+                <input type="radio" name="size" id="xl">XL
+                <input type="radio" name="size" id="l">L
+                <input type="radio" name="size" id="m">M
+                <input type="radio" name="size" id="s">S <br><br>
+                <label for="payment"><b>Tipo di pagamento: </b></label>
+                <select name="payment" id="payment" required>
+                    <option value="1">Contrassegno</option>
+                    <option value="2">Bonifico</option>
+                    <option value="3">Carta di credito</option>
+                </select>
+                <hr>
+                <button type="submit" class="btn btn-primary">Invia Ordine</button>
+                <button type="reset" class="btn btn-primary">Resetta</button>
+            </fieldset>
+        </form>
+    </body>
+</html>

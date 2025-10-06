@@ -1,0 +1,24 @@
+---
+title: "esercizi2-3"
+output: word_document
+date: "2024-10-16"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+attach(negozi)
+tapply(perc_fem, stato, summary)
+tapply(perc_fem, stato, sd)
+tapply(perc_fem, stato, var)
+tapply(perc_fem, stato, IQR)
+boxplot(perc_fem~stato)
+par(mfrow=c(1,2))
+perc_fem_usa = subset(perc_fem, stato == "USA")
+hist(perc_fem_usa, prob = T)
+perc_fem_viet = subset(perc_fem, stato == "VIETNAM")
+hist(perc_fem_viet, prob = T)
+```
+

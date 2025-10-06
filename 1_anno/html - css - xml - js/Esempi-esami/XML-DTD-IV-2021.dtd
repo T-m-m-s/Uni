@@ -1,0 +1,11 @@
+<!ELEMENT movie-collection (movie+)>
+<!ELEMENT movie (title,year,director?,actors?)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT director (name?,surname)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT surname (#PCDATA)>
+<!ELEMENT actors (actor+)>
+<!ELEMENT actor (name?,surname)>
+<!ATTLIST actor role (leading|supporting) #IMPLIED>
+<!ATTLIST movie format (blu-ray|DVD|digital) #REQUIRED>

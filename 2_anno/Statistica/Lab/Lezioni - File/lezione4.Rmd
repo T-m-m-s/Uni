@@ -1,0 +1,147 @@
+---
+title: "lezione 4"
+author: "Mameli"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+fev <- read.csv("C:/Users/Utente/OneDrive - Università degli Studi di Udine/Desktop/Didattica/didattica2425/Statistica e Laboratorio IBML/Esercizi IBML/04) Statistica multivariata/fev.txt", sep="")
+
+attach(fev)
+```
+
+
+## diagramma di dispersione o scatterplot
+```{r}
+plot(Altezza,FEV)
+```
+
+## coefficiente di correlazione lineare di Pearson
+```{r}
+cor(Altezza,FEV)
+```
+## coefficiente di correlazione di Spearman
+```{r}
+cor(Altezza,FEV,method="spearman")
+```
+## coefficiente di correlazione di Kendall
+```{r}
+cor(Altezza,FEV,method="kendall")
+```
+## covarianza fra due variabili
+```{r} 
+cov(Altezza,FEV)
+```
+
+```{r}
+(bhat=cov(Altezza,FEV)/var(Altezza))
+```
+
+```{r}
+(ahat=mean(FEV)-bhat*mean(Altezza))
+```
+
+```{r}
+(mod=lm(FEV~Altezza,data=fev))
+# mod=lm(fev$FEV~fev$Altezza)
+```
+
+```{r}
+summary(mod)
+```
+## retta di regressione
+
+```{r}
+plot(Altezza,FEV)
+abline(mod)
+```
+
+```{r}
+library(ggplot2)
+
+ggplot(fev,aes(x=Altezza,y=FEV))+
+  geom_point()+
+  geom_smooth(method="lm")
+```
+## coefficiente di determinazione
+```{r}
+cor(Altezza,FEV)^2
+```
+## estrazione di R^2 dal summary
+```{r}
+summary(mod)$r.squared
+```
+
+## residui del modello
+```{r}
+residuals(mod)
+```
+## valori previsti
+```{r}
+yhat=ahat+bhat*Altezza
+yhat
+```
+
+```{r}
+fitted.values(mod)
+```
+
+## estrazione stime dal modello
+```{r}
+coef(mod)
+```
+## Prevedere il valore medio di FEV quando l'altezza è pari a 184
+```{r}
+ahat+bhat*184
+```
+
+```{r}
+predict(mod,newdata = data.frame(Altezza=184))
+```
+## Prevedere il valore medio di FEV quando l'altezza è pari a 184 e per 185
+
+
+```{r}
+predict(mod,newdata = data.frame(Altezza=c(184,185)))
+```
+## Esercizio Temperatura
+
+```{r}
+temperatura <- read.delim("C:/Users/Utente/OneDrive - Università degli Studi di Udine/Desktop/Didattica/didattica2425/Statistica e Laboratorio IBML/Esercizi IBML/03) Variabili quantitative/temperatura.txt")
+attach(temperatura)
+```
+
+```{r}
+table(Sesso)
+```
+
+```{r}
+tapply(Temperatura, Sesso, summary)
+```
+
+```{r}
+boxplot(Temperatura~Sesso)
+```
+
+## Istogramma con ggplot
+```{r}
+ggplot(temperatura,aes(x=Temperatura,y=after_stat(density),col=Sesso,fill=Sesso))+
+  geom_histogram()+
+  facet_grid(Sesso~.)
+```
+
+## Boxplot con ggplot
+```{r}
+ggplot(temperatura,aes(y=Temperatura,col=Sesso,fill=Sesso))+geom_boxplot()+labs(title="Temperatura al variare del sesso",x="sesso")+theme(axis.text.x=element_blank(),axis.ticks = element_blank())
+```
+
+## Densità stimata con ggplot
+```{r}
+ggplot(temperatura,aes(x=Temperatura,y=after_stat(density),col=Sesso,fill=Sesso))+geom_density()+facet_grid(Sesso~.)
+```
+

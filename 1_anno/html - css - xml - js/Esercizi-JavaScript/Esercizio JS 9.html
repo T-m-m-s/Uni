@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<title>Esercizio JS 9</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+    <h1>Lista delle Attività</h1>
+    <ul id="lista"></ul>
+    <input type="text" id="nuova" placeholder="Nuova attività">
+    <button onclick="aggiungiAttivita()">Aggiungi</button>
+    <script>
+        const lista = document.getElementById("lista");
+        const nuova = document.getElementById("nuova");
+        function aggiungiAttivita() {
+			const el_li = document.createElement("li");
+			el_li.textContent = nuova.value;
+			lista.appendChild(el_li);
+			nuova.value = "";
+        }
+    </script>
+</body>
+</html>

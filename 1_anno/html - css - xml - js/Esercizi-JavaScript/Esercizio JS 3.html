@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<title>Esercizio JS 3</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<script>
+		var n = 100;
+		document.write("<h1>Successione di Fibonacci con " + n + " elementi</h1>");
+		var Fn2 = 0;
+		var Fn1 = 1;
+		var F;
+		for (i = 0; i < n; i++) {
+			F = Fn2+Fn1;
+			document.write("<b>" + F + "</b><br>");
+			Fn2 = Fn1;
+			Fn1 = F;
+		}
+	</script>
+</body>
+</html>

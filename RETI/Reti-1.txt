@@ -1,0 +1,100 @@
+Reliability
+Reti dovrebbero nascondere errori
+- Bit persi -> bit errors (da 1 a 0 e viceversa) / burst errors (più errori consecutivi)
+- Pacchetti persi (congestion)
+- Link / Node failures
+- Messaggi con ritardi
+- Messaggi consegnati in ordine errato
+- Sniffing
+
+Network Architecture
+Reti sono complesse -> difficile implementare tutte le loro funzioni con un solo codice / hardware -> più semplice implementare una architettura a strati (layered)
+Ogni layer costruisce basandosi sul layer inferiore, aggiungendo funzionalità
+Protocollo -> insieme di regole che permette comunicazione tra due layer -> scambio informazioni per determinare funzionalità da implementare
+
+Protocol Graph
+- Nodi sono i protocolli e i link sono le relazioni di "depends-on"
+- RRP (request-reply protocol)
+- MSP (message stream protocol)
+- HHP (host-to-host protocol)
+
+Encapsulation
+- Principio fondamentale architetture a layer
+- Ogni layer necessita informazioni per implementare le sue funzionalità ai layer superiori
+- Informazioni (Protocol Data Unit - PDU) -> header (extra data) + payload / Service Data Unit - SDU (messaggio effettivo)
+- Il PDU diventaa l'SDU del protocollo inferiore
+- Protocollo non deve controllare i dati interamente, ma solo l'header
+
+_____________________________________________________________________________________________________________________________________________________________________________
+
+Architettura ISO OSI
+
+- Higher Layers
+
+ - Application Layer
+  - Standardizza i comuni tipi di scambi
+  - Human-Machine interface -> Formatta il messaggio
+
+ - Presentation Layer
+  - Si occupa di compressione, conversione, crittazione / decrittazione dati
+
+ - Session Layer
+  - Mette a disposizone name space, autenticazione, coordinazione e informazioni generali tra differenti stream di trasporto parte di una singola applicazione
+
+ - Transport Layer
+  - Implementa un canale processo-processo
+  - I dati trasmessi in questo layer vengono denominati datagram o segmenti
+  - Controllo di errori end-to-end
+
+-Lower Layers
+
+ - Network Layer
+  - Gestisce il routing tra i nodi di una rete packet-switched
+  - I dati trasmessi in questo layer vengono denominati packet
+  - Nodi identificati univocamente mediante indirizzo IP
+
+ - Data Link Layer
+  - Raggruppa bit in frame
+  - Protocollo implementato mediante adattatori network e device driver di sistema
+  - Frame solitamente trasmessi da host a host
+  - Controllo di eventuale presenza di errori
+
+ - Physical Layer
+  - Trasmissione di bit raw mediante un link di comunicazione
+  - Encoding decoding avviene a questo layer
+
+_____________________________________________________________________________________________________________________________________________________________________________
+
+Switch di livello 1 - Repeater
+Connette due dispositivi fisici dello stesso tipo, che appariranno come un singolo dispositivo
+I dati trasmessi sono bit
+
+
+Switch di livello 2 - Bridge / Switch
+Connette due link che possono essere di tipi differenti, che appariranno come un singolo dispositivo
+I dati trasmessi sono frame, ogni frame ricevuto viene controllato per eventuali errori e poi ritrasmesso
+
+
+Switch di livello 3 - Router
+Connette due frammenti di rete di tipi differenti, che appariranno come una singola rete
+I dati trasmessi sono pacchetti
+Network header non cambiato ma
+
+
+Switch di livello 4 - Proxy
+
+
+** FIX WITH SLIDES **
+
+_____________________________________________________________________________________________________________________________________________________________________________
+
+Architettura TCP/IP
+Più semplice di ISO OSI -> Application Layer copre Application, Presentation e Session / Network Interface Layer copre Data-Link e Physical
+- Definito da ETF
+-
+ -
+ -
+ -
+
+** FIX WITH SLIDES **
+

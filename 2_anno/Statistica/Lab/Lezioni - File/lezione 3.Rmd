@@ -1,0 +1,197 @@
+---
+title: "lezione 3"
+author: "Mameli"
+date: "2024-10-23"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Esercizio 1.2 delle variabili qualitative e Esercizio 1.1 del file statistica_descrittiva_multivariata_es_guidato
+
+```{r}
+patente <- c('B', 'A', 'B', 'D', 'A1', 'B', 'C', 'B', 'B', 'B', 'B','A1', 'A', 'A', 'B','B', 'C', 'B', 'B', 'B', 'D', 'A1', 'B', 'A','B', 'A', 'C', 'D', 'B', 'B')
+esame <- c('P', 'B', 'P', 'P', 'B', 'B', 'P', 'P', 'P', 'B', 'P', 'P', 'B', 'B', 'B','P', 'P', 'P', 'P', 'P', 'B', 'B', 'P', 'B', 'P', 'B', 'P', 'P', 'P', 'P')
+```
+
+
+* Calcolare le frequenze assolute e relative delle due variabili
+
+```{r}
+FA_patente=table(patente)
+n = length(patente)
+#n = sum(FA_patente)
+FR_patente=FA_patente/n
+FR_patente
+```
+
+```{r}
+FA_esame=table(esame)
+n = length(esame)
+#n =sum(FA_esame)
+FR_esame=FA_esame/n
+FR_esame
+```
+
+```{r}
+barplot(FR_patente)
+```
+
+```{r}
+barplot(FR_esame)
+```
+```{r}
+FA_cong=table(esame,patente)
+FA_cong
+```
+
+```{r}
+FR_cong=FA_cong/n
+FR_cong
+```
+
+## freq marginali per riga (variabile esame)
+```{r}
+apply(FA_cong,1,sum)
+```
+## oppure
+```{r}
+margin.table(FA_cong,1)
+```
+
+
+
+## freq marginali per colonna (variabile patente)
+```{r}
+apply(FA_cong,2,sum)
+```
+## oppure
+```{r}
+margin.table(FA_cong,2)
+```
+
+## Indice chi-quadrato
+```{r}
+chi_quadro = function(tab){
+  
+  xtot = margin.table(tab,1)#marginali di riga
+  ytot = margin.table(tab,2)#marginali di colonna
+  
+  n = sum(tab)
+  
+  freq_attese = (xtot%*%t(ytot))/n
+  
+  #in tab ci sono le frequenze osservate
+  chi_q= sum(((tab-freq_attese)^2)/freq_attese)
+  
+  return(chi_q)
+}
+
+chi_quadro(FA_cong)
+```
+
+## oppure
+```{r}
+summary(FA_cong)
+```
+## oppure
+
+```{r}
+chisq.test(FA_cong)
+```
+## chi-quadro normalizzato
+```{r}
+#numero di colonne (numero modalità della variabile patente)
+s = length(levels(as.factor(patente)))
+#numero di righe (numero di modalità della variabile esame)
+r = length(levels(as.factor(esame)))
+chi_quadro(FA_cong)/(n*min((r-1),(s-1)))
+```
+## diagramma a barra multiplo
+```{r}
+freq.rel <- FA_cong/apply(FA_cong,1,sum)
+
+barplot(freq.rel,beside = T,col=c(2,3),legend.text = c("B","P"))
+```
+
+
+
+## Esercizio 1.2 variabili quantitative e Esercizio 1.2 del file statistica_descrittiva_multivariata_es_guidato
+
+```{r}
+negozi <- read.csv("C:/Users/Utente/OneDrive - Università degli Studi di Udine/Desktop/Didattica/didattica2425/Statistica e Laboratorio IBML/Esercizi IBML/03) Variabili quantitative/negozi.txt", sep="")
+attach(negozi)
+```
+
+```{r}
+perc_femm_usa=perc_fem[stato=="USA"]
+perc_femm_viet = perc_fem[stato=="VIETNAM"]
+```
+
+* Misure di posizione per la percentuale di femmine nei due Paesi
+
+```{r}
+summary(perc_femm_usa)
+```
+
+```{r}
+summary(perc_femm_viet)
+```
+
+## oppure
+```{r}
+tapply(perc_fem, stato, mean)
+```
+
+```{r}
+tapply(perc_fem, stato, summary)
+```
+
+* Misure di dispersione per la percentuale di femmine
+## Deviazione standard
+```{r}
+sd(perc_femm_usa)
+sd(perc_femm_viet)
+```
+## oppure
+```{r}
+tapply(perc_fem, stato, sd)
+```
+## Varianza
+```{r}
+var(perc_femm_usa)
+var(perc_femm_viet)
+```
+
+```{r}
+tapply(perc_fem, stato, var)
+```
+## Scarto interquartile
+
+```{r}
+IQR(perc_femm_usa)
+IQR(perc_femm_viet)
+```
+
+##oppure
+```{r}
+tapply(perc_fem, stato, IQR)
+```
+
+
+* Boxplot della percentuale di femmine nei due Paesi
+```{r}
+boxplot(perc_fem~stato,col=c(2,3))
+```
+
+* Istogramma per le percentuali di femmine nei due stati
+
+```{r}
+par(mfrow=c(1,2))
+hist(perc_femm_usa,prob=T)
+hist(perc_femm_viet,prob=T)
+```
+
+

@@ -1,0 +1,162 @@
+---
+title: "lezione 8"
+author: "Mameli"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## 
+Si consideri il data-base REDDITI relativo a un campione di 12690 individui percettori di reddito in Italia nel 2000. I dati sono tratti dal campione della Banca d’Italia per l’indagine sui bilanci delle famiglie anno 2000.
+
+
+```{r}
+library(readxl)
+REDDITI <- read_excel("C:/Users/Utente/Downloads/REDDITI.xls")
+```
+
+## Analizzare la variabile Reddito Netto
+* Rappresentazioni grafiche
+```{r}
+attach(REDDITI)
+par(mfrow=c(1,2))
+boxplot(`Reddito Netto`)
+hist(`Reddito Netto`,prob=T)
+lines(density(`Reddito Netto`),col="red")
+```
+
+* indici numerici
+```{r}
+summary(`Reddito Netto`)
+```
+```{r}
+library(moments)
+skewness(`Reddito Netto`)
+```
+
+
+```{r}
+kurtosis(`Reddito Netto`)
+```
+```{r}
+library(car)
+qqPlot(`Reddito Netto`)
+```
+
+## Intervallo di confidenza per il Reddito netto medio
+
+```{r}
+intervallo_conf = function(x,alpha){
+  
+  n = length(x)
+  
+  xbar = mean(x)
+  
+  s = sd(x)
+  
+  t_alpha_mezzi = qt(1-alpha/2,n-1)
+  # t_alpha_mezzi =qt(alpha/2,n-1,lower.tail=F)
+  
+  primo_estremo = xbar-t_alpha_mezzi*s/sqrt(n)
+  
+  secondo_estremo = xbar+t_alpha_mezzi*s/sqrt(n)
+  
+  return(list(primo=primo_estremo,secondo=secondo_estremo))
+  
+}
+```
+
+
+```{r}
+intervallo_conf(`Reddito Netto`,0.05)
+```
+## Stimare l’intervallo di confidenza per il reddito medio distintamente per i maschi e per le femmine.
+
+*  Analisi del reddito per i maschi e per le femmine 
+```{r}
+boxplot(`Reddito Netto`~SEX)
+```
+
+
+```{r}
+tapply(`Reddito Netto`, SEX, summary)
+```
+```{r}
+tapply(`Reddito Netto`, SEX, skewness)
+```
+
+```{r}
+tapply(`Reddito Netto`, SEX, kurtosis)
+```
+```{r}
+par(mfrow=c(1,2))
+qqPlot(`Reddito Netto`[SEX==0])
+qqPlot(`Reddito Netto`[SEX==1])
+```
+
+```{r}
+table(SEX)
+```
+
+```{r}
+tapply(`Reddito Netto`, SEX, intervallo_conf,alpha=0.05)
+```
+
+## Stimare l’intervallo di confidenza al 90% per la varianza del reddito
+
+```{r}
+intervallo_conf_varianza = function(x,alpha){
+  
+  n = length(x)
+  
+  s2_c = var(x)
+  
+  chi2_alpha_mezzi = qchisq(alpha/2,n-1,lower.tail = F)
+  
+  chi2_1meno_alpha_mezzi = qchisq(1-alpha/2,n-1,lower.tail = F)
+  
+  primo_estremo = (n-1)*s2_c/chi2_alpha_mezzi
+  
+  secondo_estremo = (n-1)*s2_c/chi2_1meno_alpha_mezzi
+  
+  return(list(primo=primo_estremo,secondo=secondo_estremo))
+}
+```
+
+
+```{r}
+intervallo_conf_varianza(REDDITI$`Reddito Netto`,alpha = 0.10)
+```
+
+
+## Stimare l’intervallo di confidenza al 95% per la proporzione di individui di sesso maschile.
+
+```{r}
+intervallo_conf_prop = function(x,alpha){
+  
+  phat = mean(x)
+  
+  n = length(x)
+  
+  z_alpha_mezzi = qnorm(alpha/2,lower.tail = F)
+  
+  primo_estremo = phat-z_alpha_mezzi*sqrt(phat*(1-phat)/n)
+  secondo_estremo = phat+z_alpha_mezzi*sqrt(phat*(1-phat)/n)
+  
+  
+  return(list(primo=primo_estremo,secondo=secondo_estremo))
+}
+
+```
+
+```{r}
+intervallo_conf_prop(SEX,0.05)
+```
+
+
+
+

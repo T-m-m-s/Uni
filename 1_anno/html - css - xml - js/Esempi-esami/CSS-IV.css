@@ -1,0 +1,34 @@
+body {
+    margin: 5vw;
+}
+
+#header {
+    width: 100%;
+}
+
+#sinistro, #centrale {
+    float: left;
+    width: 25%;
+}
+
+#destro {
+    float: right;
+    width: 40%;
+}
+
+#footer {
+    clear: both;
+    width: 100%;
+}
+
+h1 {
+  color: rgb(127, 77, 255);
+}
+
+a[href*="cssref"] {
+    font-size: 1.3em;
+}
+
+div:not(.noborder) {
+    border: 1px dotted blue;
+}

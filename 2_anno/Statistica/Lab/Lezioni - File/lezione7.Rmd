@@ -1,0 +1,145 @@
+---
+title: "Lezione 7"
+author: "Mameli"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Esercizio 1
+```{r}
+N = 250000000
+p = 0.88
+n = 1000
+
+#creato vettore delle risposte della popolazione
+risposte = c(rep("Supporto",N*p), rep("Non Supporto",N*(1-p)))
+
+# campione di 1000
+
+campione = sample(risposte,1000)
+
+(phat = sum(campione=="Supporto")/1000)
+```
+## oppure
+```{r}
+mean(campione=="Supporto")
+```
+## oppure
+```{r}
+as.numeric(table(campione)[2]/1000)
+```
+
+
+```{r}
+n_camp = 1000
+p_hat = NULL
+#p_hat = numeric(n_camp)
+for(i in 1:n_camp){
+  
+campione = sample(risposte,1000)
+p_hat[i] = mean(campione=="Supporto")
+ 
+}
+```
+
+```{r}
+plot(1:1000,p_hat,type="l")
+abline(h=p,col="red")
+```
+
+
+
+```{r}
+# media della proporzione campionaria
+mean(p_hat)
+```
+```{r}
+#varianza della propo campionaria
+var(p_hat)
+```
+
+```{r}
+#vera varianza
+p*(1-p)/n_camp
+```
+```{r}
+hist(p_hat,prob=T)
+curve(dnorm(x,mean=p,sd=sqrt(p*(1-p)/n_camp)),add=T,col=2)
+```
+## Esercizio 2
+
+```{r}
+p = 0.7 #probabilità di ottenere testa
+n = 500 # lanci moneta truccata
+set.seed(06)
+campione = rbinom(n,prob=p,size=1)#500 lanci di una moneta con prob di successo(testa)= 0.7
+# 1 successo è Testa
+# 0 insuccesso è Croce
+
+
+phat = cumsum(campione)/(1:n)
+```
+
+
+```{r}
+plot(1:n,phat,type="l")
+abline(h=p,col="red")
+```
+
+## Esercizio 3
+
+```{r}
+N = 1000 # numero di campioni
+n = c(50,100,200,500)#numerosità campionarie
+
+medie = matrix(0,ncol = 4,nrow = N)
+somme = matrix(0,ncol = 4,nrow = N)
+
+for(j in 1:4){
+  
+  for(i in 1:N){
+    
+    dat = runif(n[j])
+    medie[i,j] = mean(dat)
+    somme[i,j] = sum(dat)
+  }
+  
+}
+
+```
+
+
+```{r}
+hist(medie[,1],prob=T,main="n=50")
+curve(dnorm(x,0.5,sqrt(1/(12*50))),add=T,col="red")
+```
+```{r}
+hist(medie[,2],prob=T,main="n=100")
+curve(dnorm(x,0.5,sqrt(1/(12*100))),add=T,col="red")
+
+```
+
+```{r}
+hist(somme[,1],prob=T,main="n=50")
+curve(dnorm(x,50/2,sqrt(50/12)),add=T,col="red")
+
+```
+
+## QQplot 
+```{r}
+qqnorm(medie[,1])
+qqline(medie[,1],col="red")
+```
+
+## oppure
+```{r}
+library(car)
+qqPlot(medie[,1])
+```
+
+
+

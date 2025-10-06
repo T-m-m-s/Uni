@@ -1,0 +1,28 @@
+IoT --> oggetti in grado di interagire con ambiente reale e connessi da un'infrastruttura di rete.
+Rientrano nel campo dei Sistemi Distribuiti.
+Concetti chiave:
+- Stessa infrastruttura (a volte stessi protocolli)
+- Focus su macchine/dispositivi/sensori
+- Scarsa interazione con utenti
+- Funzionamento autonomo
+- Alto grado di specializzazione
+
+
+Tratti distintivi di una "cosa"
+- Presenza ricevitore/trasmettitore wireless
+- Presenza indirizzo IP univoco
+- Presenza di sensore o HW in grado di risolvere un compito
+- Capacità di tipo store-and-forward
+- Deve essere low-power e low-bandwidth
+
+
+Connettendo un numero sufficiente di sensori/dispositivi si ottiene un sistema autonomo e coerente.
+
+
+Gartner --> IL PEAK DELL'HYPE
+
+
+
+
+
+

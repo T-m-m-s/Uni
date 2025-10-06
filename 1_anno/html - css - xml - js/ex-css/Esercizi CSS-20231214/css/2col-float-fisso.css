@@ -1,0 +1,29 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+}
+#header {
+	background-color: #CCC; 
+	padding: 15px;
+}
+#main {
+	float: left;
+	width: 650px;
+	margin: 0 20px;
+	background: orange;
+}
+#secondary {
+	float: left;
+	width: 250px;
+	margin: 0 20px 0 0;
+	background: yellow;
+}
+#footer {
+	clear: left;
+	padding: 15px;
+	background: #CCC;
+}
