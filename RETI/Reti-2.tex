@@ -1,0 +1,72 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings, xcolor}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[a4paper, margin = 1.5cm]{geometry}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{parskip}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Basi di Dati - Getting Connected}
+\author{Trentin Tommaso}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+    \newpage
+
+    \section{Prospettiva nel connettere}
+      \subsection{Link}
+        I link più utilizzati si basano su tipi di radiazioni elettromagnetiche propagate attraverso un mezzo o, in certi casi, attraverso lo spazio libero. \\
+        Una caratteristica importante dei link è la \textbf{frequenza} (misurata in Hz, con cui le onde elettromagnetiche oscillano). La distanza tra il punto di massimo e di minimo di un'onda misurato in metri si dice invece \textbf{lunghezza d'onda} \\
+        \subsubsection{Esempio: comunicazione telefonica}
+          \begin{itemize}
+            \item Utilizza frequenze da 300Hz a 3300Hz su cavo di rame;
+            \item Traduce un segnale con frequenza 0-3000Hz alla frequenza utilizzata dal phone link 300-3300Hz;
+            \item La lunghezza di banda per 300Hz attraverso rame è velocità luce su rame / frequenza: $$\sim 2.3*10^8/300=766km$$
+          \end{itemize}
+        \subsubsection{Spettro Elettromagnetico}
+          Inserire immagine \\
+          Utilizzo dei canali evidenziati è regolamentato \\
+      \subsection{Encoding}
+        Piazzare dati (binari) su un segnale è detto encoding, viene effettuato per \textbf{modulazione}, ossia la modifica del segnale base (\textbf{carrier}) definito dai parametri (A,f,\phi), in termini di:
+        \begin{itemize}
+          \item Ampiezza A (ASK);
+          \item Frequenza f (FSK);
+          \item Fase $\phi$ (PSK). 
+        \end{itemize}
+        Inserire immagine \\
+        \textbf{Demodulazione} è operazione inversa (estrarre bit da un segnale modulato). Un dispositivo che modula e demodula segnali è detto \textbf{modem}. \\
+        Queste modulazioni possono essere usate insieme cambiando più di un parametro alla volta, il che permette di effettuare encoding di più dati alla volta, mentre un carrier potrebbe avere più di una sinusoide (ognuna può quindi essere modulata, anche in modi diversi). \\
+        Quanti dati possono essere codificati e trasmessi su un canale?  Vanno considerati due aspetti:
+        \begin{itemize}
+          \item Quanti bit possono essere inseriti in un \textbf{simbolo} (qualsiasi stato assumibile dal link impostato da un transistor e osservato da un receiver);
+          \item Quanti simboli si possono trasmettere in un secondo.
+        \end{itemize}
+        Più velocemente si può cambiare lo stato della linea, più velocemente si possono trasmettere simboli, più velocemente si possono trasmettere dati attraverso il canale. Il numero di simboli trasmessi al secondo è detto \textbf{baud rate} (R) e viene misurato in \textbf{baud = simboli/s} \\
+        \textbf{Teorema di Nyquist-Shannon}: su un canale di larghezza di banda B[Hz] si possono trasmettere simboli ad un rate non maggiore di 2B: \textbf{R = 2B [baud]} \\
+        Se si ha un alfabeto di M simboli il numero di bit che ogni simbolo può rappresentare è $\log_2(M)$. Ad esempio, se si codificano bit con tensione elettrica su un cavo, dato un range di voltaggio, questo range si può dividere in:
+        \begin{itemize}
+          \item 2 livelli $\rightarrow$ 2 simboli $\rightarrow$ 1 bit per simbolo
+          \item r livelli $\rightarrow$ 2 simboli $\rightarrow$ 1 bit per simbolo
+          \item 2 livelli $\rightarrow$ 2 simboli $\rightarrow$ 1 bit per simbolo
+        \end{itemize}
+        To be fixed \\
+        \subsubsection{Rumore sul canale}
+          Segnale randomico N(t) aggiunto al segnale "buono" S(t), causato da rumore termico su cavi, distorsioni, interferenze ecc\dots \\
+          Se il rumore è troppo forte un simbolo pu esser cambiato nel canale e misinterpretato dal decoder. \\
+          Inserire immagine \\
+          Il fattore importante è il rapporto \textbf{signal-to-noise ratio S/N}, entrambi misurati in Watt, quindi S/N è un numero puro, solitamente espresso in decibel e chiamato \textbf{SNR}
+          $$SNR=10*\log_10(S/N) [dB]$$
+        \subsubsection{Teorema Shannon-Hartley}
+
+\end{document}
