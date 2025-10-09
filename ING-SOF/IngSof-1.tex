@@ -1,0 +1,153 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings, xcolor}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[a4paper, margin = 1.5cm]{geometry}
+\usepackage{float}
+\usepackage{amssymb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Modelli di processi SW}
+\author{Trentin Tommaso}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+    \newpage
+
+  \section{Processo vs Modello di processo}
+    Non esiste modello univesale $\rightarrow$ ciascuna organizzazione usa proprio processo (possibilità di usare processi diversi per prodotti diversi).\\
+    Ogni processo comprende attività, sotto-attività, prodotti e persone con responsabilità.\\
+    \textbf{Modello di processo SW:} descrizione semplificata/astratta del processo SW, ci si riferisce a questi modelli con diversi alias (modelli di processo sw / ciclo di vita del sw / paradigmi di processo).\\
+    Descrizioni astratte di alto livello di processi sw che possono essere utilizzate per spiegare diversi approcci allo sviluppo sw.\\
+  \section{Modello si processo SW: Punti di vista}
+    Ogni processo ha diverse descrizioni possibili:
+    \begin{itemize}
+      \item Architetturale $\rightarrow$ descrive sequenza di attività senza fornire dettgli su specifiche attività;
+      \item Data-flow $\rightarrow$ evidenzia trasformazioni dei dati operate da attività del processo;
+      \item Role/action $\rightarrow$ ruoli delle persone coinvolte nel processo e relative responsabilità;
+    \end{itemize}
+  \section{Descrizione del processo SW}
+    Descrizione del processo include:
+    \begin{itemize}
+      \item \textbf{Attività} da svolgere e loro ordine;
+      \item \textbf{Prodotti} risultanti da ciascuna attività;
+      \item \textbf{Ruoli} (persone coinvolte e loro responsabilità)
+      \item \textbf{Pre/Post condizioni} che devono verificarsi prima/dopo un'attività del processo sia svolta. Stabiliscono criteri di transizione per progredire da uno stadio del processo al successivo.
+    \end{itemize}
+  \section{Modello a Cascata (Waterfall)}
+    \begin{itemize}
+      \item Processo \textbf{plan-driven} in cui ciascuna fase segue la successiva, vanno pianificate tutte le attività di processo prima di iniziare sviluppo del SW. Gli output di una fase sono gli input della successiva;
+      \
+      \item Processo \textbf{document-centric} guidato da produzione di documentazione, risultato di una fase è costituito da 1+ documenti approvati e la fase successiva non dovrebbe partire prima della fine della prcedente e del completamento/approvazione dei suoi documenti;
+      \item Processo \textbf{rigido} in cui i prodotti di una fase sono congelati (non modificabili se non innescando processo formale e sistematico di modifica), fine di ogni fase è una \textit{milestone} del processo. Definizione precisa di milestone e output è importante per misurare progresso di un progetto;
+      \item Processo \textbf{monolitico} in cui cliente vede il SW solo a completamento di tutte le fasi, in caso di errori nei requisiti questi vengono rilevati solamente alla fine con costi elevati. Processi non sono lineari ma ciascuna fase scambia feedback con le altre.
+    \end{itemize}
+    \textbf{Vantaggi}
+       \begin{itemize}
+        \item Fasi ben definite;
+        \item Output di ciascuna fase precisamente individuati. 
+      \end{itemize}
+    \textbf{Svantaggi}
+      \begin{itemize}
+        \item Richiede conoscenza immediata / stabilita dei requisiti (difficile in quanto spesso poco chiari anche al cliente)
+        \item Sviluppo di eccessiva documentazione, presso non richiesta;
+        \item Poca flessibilità (difficile gestire necessità di modifiche che emergono durane esecuzione del processo).
+      \end{itemize}
+    Adatto solo se requisiti sono ben chiari fin dall'inizio ed è difficile che cambini durante lo sviluppo, nella realtà pochi SW presentano requisiti stabili.
+    \subsection{Modello a cascata con retroazione}
+      Variazione del modello a cascata con inserimento di \textbf{retroazione}, ossia si verifica correttezza del risultato dell'attività con possibilità di ripetere attività precedente. Introduce dei \textbf{feedback} in ogni fase, in modo da rilevare errori prima della fase successiva, ad ogni feedback corrisponde una \textbf{potenziale modifica dei documenti} dello stadio precedente. 
+      \begin{itemize}
+        \item \textit{Mitiga} monoliticità del modello tradizionale (non necessario attendere termine del processo per modificare il prodotto);
+        \item Non completamente flessibile rispetto a cambiamenti (possono avvenire in qualunque momento del processo)
+        \item Utile quando si prevede che sistema sarà poco soggetto a cambiamenti. 
+      \end{itemize}
+    \subsection{Modello a V}
+    Estensione del modello a cascata in cui attività del ramo superiore (\textbf{progetto}) sono collegate a quelle del ramo inferiore (\textbf{V&V}), in ogni fase del progetto il team definisce il corrispondente piano di test della fase V&V (guidato da un'insieme di piani di test e eseguito da team indipendente da quello di sviluppo), se si trova un errore nella fase di V&V \textbf{si rieseguono fasi di processo correlate}. Modello che può anticipare validazione dei requisiti da parte del cliente e garantire rilevamento precoce di errori. 
+  \section{Modelli Evolutivi - Sviluppo Incrementale}
+    Idea: sviluppare un'implementazione iniziale (partendo da pochi requisiti chiari o da una descrizione sommaria dei requisiti), esporla e perfezionarla attraverso versioni successive (\textbf{incrementi}) fino ad ottenere il sistema richiesto. Attività di specifica, sviluppo e convalida sono intrecciate anziché separate (feedback veloci tra varie attività). 
+    \begin{itemize}
+      \item Versione iniziale che implementa requisiti fondamentali viene espsota a utenti (clienti o loro proxy), feedback ottenibile più facilmente su una demo piuttosto che su documenti. 
+      \item Funzionalità / requisiti ulteriorio vengono implementati in versioni intermedie successive (\textit{solitamente} non mostrate al cliente)
+      \item Ultimo incremento è la versione finale el sistema che viene rilasciata al cliente (corrisponde comunque a un'evoluzione della versione iniziale). 
+    \end{itemize}
+  \section{Modelli Evolutivi - Consegna Incrementale}
+    Sistema non viene consegnato direttamente alla sua forma finale alla fine del progetto, alcuni degli incrementi sviluppati sono consegnati ai clienti e installati nel loro ambiente operativo:
+    \begin{itemize}
+      \item \textbf{Vantaggio}: cliente usa incremento nell'ambiente operativo reale (feedback più realistico);
+      \item \textbf{Limitazione}: utenti devono avere tempo sufficiente per sperimentare nuovi incrementi.
+    \end{itemize}
+    Idea: ogni incremento rilascia parte delle funzionalità richieste, ai requisiti utente vengono assegnati livelli di priorità (requisiti a priorità maggiore vengono rilasciati per primi). I requisiti di un incremento sono congelati dopo che tale incremento è stato consegnato, mentre gli altri possono evolvere. \textbf{Funzionalità comuni a più processi} dovrebbero essere individuate tempestivamene e \textbf{implementate all'inizio del processo}
+    \subsection{Consegna VS Sviluppo Incrementale}
+      \begin{minipage}{0.48\textwidth}
+        \textbf{Sviluppo incrementale}: valutazione della prima versione effettuata da un proxy degli utenti finali in ambiente operativo diverso da quello target, \textit{versioni intermedie solitamente non rilasciate al cliente}. 
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.48\textwidth}
+        \textbf{Consegna incrementale}: valutazione più realistica e rappresentativa dell'utilizzo reale del SW in quanto ciascun incremento può \textit{essere rilasciato agli utenti finali nell'ambiente operativo target}.
+      \end{minipage}
+    \subsection{Consegna e Sviluppo Incrementale}
+      \textbf{Vantaggi}:
+      \begin{itemize}
+        \item Rapido feedback del cliente su versione preliminare del SW invece che su documentazione;
+        \item Possibilità di cambiare requisiti prima della consegna finale del prodotto, riducendo costi di modifica;
+        \item Possibilità di consegnare a clienti versioni preliminari con funzionalità fondamentali già implementate;
+        \item Primi incrementi possono essere utilizzati per dedurre requisiti per incrementi successivi;
+        \item Funzionalità con priorità più elevata sono testate più approfonditamente.
+      \end{itemize}
+      \textbf{Problemi}
+      \begin{itemize}
+        \item Mancanza visibilità processo (anti-economico documentare ogni versione del sistema);
+        \item Sistemi diventano spesso mal strutturati causa continui cambiamenti.
+      \end{itemize}
+      \textbf{Applicabilità}
+      \begin{itemize}
+        \item Componenti di piccole / medie dimensioni (interfaccia utente);
+        \item Sistemi destinati a vita breve;
+        \item Sistemi i cui requisiti probabilmente varieranno durante lo sviluppo.
+      \end{itemize}
+  \section{Modelli Evolutivi - Prototipale}
+    Idea: \textbf{prototipo}, ossia versione iniziale di un intero sistema SW o parte di esso sviluppato rapidamente per contenere costi e sperimentare con il cliente prima della consegna (durante fasi iniziali del processo). Prototipo è \textbf{usa e getta} in quanto va scartato dopo sua validazione in quanto non è una buona base per sviluppare il sistema finale: pur realizzando funzionalità richieste potrebbe non rispettare aspetti fondamentali (prestazioni o standard aziendali) o non essere documentato appropriamente, inoltre rapidità di sviluppo e cambiamenti frequenti potrebbero deteriorarne la qualità. 
+    \begin{itemize}
+      \item Obbiettivi del prototipo devono essere stabiliti esplicitamente all'inizio del processo (altrimenti prototipazione potrebbe risultare inefficace);
+      \item Non tutte le funzionalità del sistema finale devono essere incluse nel prototipo (per ridurre costi prototipazione);
+      \item Necessaria formazione utenti su utilizzo dei prototipi (in quanto non rappresentativi del sistema reale);
+      \item Prototipazione può essere combinata con altri cicli di vita classici (identificazione / validazione / raffinamento requisiti);
+      \item Durante progettazione di un modello a cascata prototipazione può essere usata per valutare \textit{opzioni alternative a progettazione}.
+    \end{itemize}
+    \subsection{Modello Prototipale - Back-To-Back Testing}
+      \begin{minipage}{0.48\textwidth}
+        Prototipo può essere usato durante validazione per controllare che sistema sviluppato si comporti come modellato ne prototipo delle fasi iniziali del progetto.
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.48\textwidth}
+        Inserisci immagine
+      \end{minipage}
+  \section{Modello Orientato al Riuso}
+    Approccio che tende al riuso di componenti SW riutilizzabili ma anche di interi sistemi (COTS - Commercial off the schelf). Sfrutta \textbf{framework di integrazione} per comporre componenti.\textbf{Componenti riutilizzabili e COTS} possono essere configurati per adattare loro comportamento a requisiti utente. 
+    \begin{itemize}
+      \item Requisiti iniziali specificati in maniera non eccessivamente dettagliata;
+      \item Vengono ricercati componenti e sistemi che possono fornire funzionalità richieste, candidati vengono valutati per vedere se soddisfano requisiti essenziali e se sono disponibili per essere utilizzati;
+      \item Requisiti vengono perfezionati utilizzando informazioni sulle applicazioni / componenti trovate, la specifica viene aggiornata con i requisiti perfezionati;
+      \item Se disponibile un sistema pronto all'uso che soddisfa i requisiti, si configura quello per creare il sistema nuovo, altrimenti si configurano i singoli componenti riutilizzabili e si integrano con componenti sviluppati ad hoc per creare il sistema finale. 
+    \end{itemize}
+    \textbf{Vantaggi}:
+    \begin{itemize}
+      \item Riduce quantità di SW ex-novo da sviluppare;
+      \item Costi e rischi ridotti;
+      \item Maggiore velocità nella consegna
+    \end{itemize}
+    \textbf{Svantaggi}:
+    \begin{itemize}
+      \item Sistema potrebbe non soddisfare tutte le reali necessità degli utenti causa compromessi nei requisiti;
+      \item Evoluzione dei componenti riutilizzati non è controllata direttamente.
+    \end{itemize}
+  \section{Modello Trasformazionale}
+\end{document}
