@@ -150,4 +150,26 @@
       \item Evoluzione dei componenti riutilizzati non è controllata direttamente.
     \end{itemize}
   \section{Modello Trasformazionale}
+    Idea: specifiche definite mediante linguaggi formali (spec. algebriche / modelli di stato), utilizzo di tecniche di model checking per provare correttezza. Specifiche formali venfono trasformate automaticamente in codice (correttezza preservata / verifica ottenuta implicitamente)
+    \begin{minipage}{0.48\textwidth}
+      \begin{itemize}
+        \item Requisiti specificati formalmente in fase di analisi (specifiche verificate automaticamente prima di essere trasformate da opportuni strumenti);
+        \item Descrizione formale trasformata man mano in una meno astratta / più dettagliata (manualmente o mediante appositi strumenti);
+        \item Processo di trasformazione può trarre vantaggio da componenti riusabili. 
+      \end{itemize}
+    \end{minipage}
+    \begin{minipage}{0.48\textwidth}
+      Inserisci immagine
+    \end{minipage}
+    \textbf{Problemi}
+    \begin{itemize}
+      \item Necessarie competenze in linguaggi formali;
+      \item Alcune parti del sistema difficili da specificare formalmente;
+      \item Difficoltà del cliente nel convalidare i requisiti. 
+    \end{itemize}
+    \textbf{Applicabilità}
+    \begin{itemize}
+      \item Non adatto per sistemi di grandi dimensioni;
+      \item Utilizzato per parti critiche (dimostrazione validità \textit{by construction}).
+    \end{itemize}
 \end{document}
