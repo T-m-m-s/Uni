@@ -1,0 +1,156 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings, xcolor}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[a4paper, margin = 1.5cm]{geometry}
+\usepackage{float}
+\usepackage{amssymb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Sviluppo Agile del SW}
+\author{Trentin Tommaso}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+  \section{Problema: Instabilità requisiti SW}
+    Molti progetti hanno requisiti \textbf{non chiari, instabili e variabili}, numerose prescrizioni da seguire, quantità di documenti e ecessiva rigidità rendono "pesante" lo sviluppo plan-driven. In molti casi è richiesto un approccio flessibile e "leggero".
+    \subsection{Successi Processi SW Plan-driven}
+      Approcci plan-driven sono fondamentali per sistemi critici:
+      \begin{itemize}
+        \item Team numerosi e geograficamente dislocati da coordinare;
+        \item Processi che durano lunghi periodi;
+        \item SW che sarà usato / mantenuto a lungo. 
+      \end{itemize}
+    \subsection{Insuccessi Processi SW Plan-driven}
+      \begin{itemize}
+        \item Modelli plan-driven si adattano poco al contesto dinamico ed alla necessità di consegna rapida di più progetti;
+        \item Eccessivo overhead;
+        \item Poco flessibili a cambiamenti dei requisiti.
+      \end{itemize}
+  \section{Sviluppo Rapido del SW}
+    Idea: SW deve evolvere rapidamente per riflettere cambiamenti delle necessità dei committenti e utenti finali, deve inoltre essere consegnato presto per essere competitivo sul mercato. \textbf{Rapidità di sviluppo e consegna è spesso il requisito più critico per i sistemi SW}. 
+    *inserire immagine*
+  \section{Agilità}
+    Idea: risoste ai cambiamenti, comunicazione fra stakeholder efficaci, portare il cliente nel team di lavoro per avere un feedback rapido $\rightarrow$ \textbf{Agilità consente di avere rapida, incrementale consegna del SW}
+    \begin{itemize}
+      \item Documentazione minima
+        \begin{itemize}
+          \item Focus sul codice, non sulla progettazione;
+          \item Non vi sono specifiche dettagliate;
+          \item Overhead di documentazione limitati. 
+        \end{itemize}
+      \item Consegna rapida / incrementale
+        \begin{itemize}
+          \item Sistema sviluppato in incrementi;
+          \item Stakeholder coinvolti nella specifica valutazione di ogni incremento.
+        \end{itemize}
+      \item Strumenti di supporto
+        \begin{itemize}
+          \item Utilizzo strumenti al supporto del processo di sviluppo.
+        \end{itemize}
+    \end{itemize}
+    \subsection{Processi Plan-driven e Agili}
+      \begin{minipage}[t]{0.48\textwidth}
+        \textbf{Plan driven}: tutte le attività sono pianificate in anticipo, loro avanzamento è misurato rispetto a quanto previsto dal piano. Fasi del processo SW sono distinte tra loro e gli output di ogni fase sono utili per la successiva.
+      \end{minipage}
+      \hfill
+      \begin{minipage}[t]{0.48\textwidth}
+        \textbf{Agili}: pianificazione incrementale e continua durante sviluppo SW, quindi più facile modificare processo per adeguarsi a modifiche di requisiti del cliente o del prodotto. Requisiti, progettazione e implementazione avvengono assieme.
+      \end{minipage}
+      Pratiche plan driven e agili possono coesistere nello stesso processo: processi agili possono produrre documentazione / includere attività pianificate quando necessario, processi plan-driven possono invece essere incrementali. \textit{Per grandi sistemi occorre trovare un compromesso}. 
+  \section{Principi Agili}
+    \begin{itemize}
+      \item \textbf{Coinvolgimento del cliente}: clienti intervengono ad ogni iterazione del prodotto (valutano e validano iterazione, forniscono eventuali nuovi requisiti / propongono modifiche, assegnano priorità ad ogni requisito richiesto); 
+      \item \textbf{Accettare cambiamenti}: prodotto non pianificato rigidamente, vanno previsti eventuali cambi dei requisiti del sistema;
+      \item \textbf{Mantenere semplicità}: Prodotto e sviluppo devono essere più semplici possibile, possibilmente lavorare attivamente per eliminare complessità del sistema;
+      \item \textbf{Sviluppo incrementale}: SW sviluppato e consegnato incrementalmente, cliente specifica requisiti da includere in ciascun incremento;
+      \item \textbf{Persone, non processi}: Sviluppo non deve essere fortemente prescrittivo, membri del team devono essere liberi di sviluppare secondo propri metodi in modo da sfruttare al meglio capacità dei singoli.
+    \end{itemize}
+    \subsection{Applicabilità Metodi Agili}
+      \begin{itemize}
+        \item Prodotti di \textbf{piccole / medie dimensioni};
+        \item Prodotti \textbf{personalizzati} con chiaro impegno da parte del cliente nell'essere coinvolto;
+        \item Prodotti con \textbf{pochi stakeholder} e regolamenti flessibili;
+        \item Team \textbf{fisicamente visini} con comunicazioni informali / facilitate.
+      \end{itemize}
+    \subsection{Vantaggi sviluppo agile}
+      \begin{itemize}
+        \item Consegne predicibili;
+        \item Rapida risposta a cambiamenti;
+        \item Rischi attenuati;
+        \item Alta produttività; 
+        \item Clienti soddisfatti.
+      \end{itemize}
+  \section{Tecniche Agili}
+    \subsection{Extreme Programming}
+      Metodo agile più conosciuto, spinge normali pratiche di sviluppo a livelli "estremi". 
+      *Inserire immagine*
+      \begin{itemize}
+        \item Approccio iterativo \textit{estremo};
+        \item Piccoli e frequenti incrementi rilasciati al cliente;
+        \item Requisiti espressi come storie utente (semplici scenari usati come base per decidere che funzionalità va inclusa in un incremento del sistema); 
+        \item Scenari divisi in task di sviluppo più semplici, implementati direttamente (no progettazione / documentazione), costituiscono unità principali dell'implementazione; 
+        \item Agilità $\neq$ assenza pianificazione, ma pianificazione flessibile non appesantita da documentazione; 
+        \item Programmatori lavorano a coppie (pair programming), sviluppano test per ogni task prima di scrivere il codice (tutti i test devono essere un successo al momento dell'integrazione al sistema); 
+        \item Cliente deve essere coinvolto nello sviluppo. 
+      \end{itemize}
+      \subsubsection{EP e Principi Agili}
+        \begin{itemize}
+          \item \textbf{Coinvolgimento cliente}: rappresentante del cliente on-site, parte del team di sviluppo;
+          \item \textbf{Accettare cambiamenti}: appena un task è concluso viene integrato al sistema;
+          \item \textbf{Sviluppo incrementale}: piccoli e frequenti rilasci (aggiunta di funzionalità incrementale);
+          \item \textbf{Mantenere semplicità}: progetto più semplice possibile che soddisfi requisiti correnti + costante miglioramento del codice (\textit{refactoring});
+          \item \textbf{Persone, non processi}: programmazione in coppia, proprietà collettiva del codice. 
+        \end{itemize}
+      \subsubsection{Influenza dell'Extreme Programming}
+        EP originale quasi mai adottato in quanto non pratico (richiede cambio radicale del modo di lavorare di un'organizzazione), sue pratiche chiave hanno però ispirato tutti gli approcci agili e vengono implementate nei processi di sviluppo:
+        \begin{itemize}
+          \item Storie utente;
+          \item Refactoring;
+          \item Sviluppo preceduto dai test;
+          \item Pair programming. 
+        \end{itemize}
+    \subsection{Storie utente}
+      Descrivono requisiti degli utenti come scenari d'uso in cui l'utente potrebbe trovarsi, sono scritti da cliente e team su schede che il team di sviluppo suddivide in \textbf{task} da implementare. Task rilevanti sono base per definire pianificazione delle iterazioni e stime dei costi. 
+      \subsubsection{Pro}
+        \begin{itemize}
+          \item Integrano deduzione dei requisiti con lo sviluppo in modo da gestire i cambiamenti nei requisiti;
+          \item Più semplice relazionarsi con storie utente al posto di un tradizionale documento di requisiti;
+          \item Ordinate in base a quelle che possono fornire supporto utile all'azienda;
+          \item Se requisiti cambiano vengono aggiunte story card e storie non ancora realizzate possono essere modificate / scartate. 
+        \end{itemize}
+      \subsubsection{Contro}
+        \begin{itemize}
+          \item Non semplice stabilire se storie utente coprono completamente requisiti del sistema;
+          \item Clienti esperti potrebbero omttere scenari / task considerati ovvi, che però non lo sono per gli sviluppatori (descrizione incompleta requisito).
+        \end{itemize}
+    \subsection{Refactoring}
+      Rinuncia a gestire in anticipo cambiamenti, perché si ritiene che modifiche non si possano prevedere con certezza. Propone invece un continuo miglioramento del codice per rendere più semplice implementazione di eventuali modifiche future (mediante riorganizzazione e riscrittura per migliorare efficenza e comprensibilità).
+      \begin{itemize}
+        \item Team di sviluppo cerca proattivamente aspetti SW da migliorare e implementa miglioramenti immediatamente;
+        \item Miglioramento può riguardare situazioni in cui non vi è necessità immediata;
+        \item Si ritiene che codice di qualità riduca necessità di documentazione e permetta facili modifiche future.
+      \end{itemize}
+      \subsubsection{Esempi}
+        \begin{itemize}
+          \item Rimozione codice duplicato; 
+          \item Rinominare classi, attributi e metodi per renderli più comprensibili;
+          \item Creazione di librerie che contengono codice utile a più classi / progetti. 
+        \end{itemize}
+      \subsubsection{Pro}
+        \begin{itemize}
+          \item Sviluppo incrementale tende a portare a deterioramento del codice: refactoring lo mitiga migliorando struttura e leggibilità;
+          \item Esistenza di tool per automatizzazione alcune operazioni di refactoring. 
+        \end{itemize}
+      \subsubsection{Contro}
+        \begin{itemize}
+          \item Refactoring a livello di codice non basta per supportare un cambiamento, necessaria modifica dell'intera architettura (più costosa);
+          \item Bisogna trovare un compromesso tra tempo dedicato a sviluppo di nuove funzionalità e refactoring.
+        \end{itemize}
+\end{document}
