@@ -69,4 +69,28 @@
           $$SNR=10*\log_10(S/N) [dB]$$
         \subsubsection{Teorema Shannon-Hartley}
 
+  *Aggiungi roba persa*
+  \section{CRC}
+    \begin{itemize}
+      \item Dati $M(x)$ e $C(x), (grado(C)=r)$, si deve trovare un polinomio $R(x)$ con $grado(R)<r$ (es. sequenza R di r bit) da aggiungere in append ai bit rappresentanti $M(x)$, così che $P(x)=(MR)(x)$ è un polinomio divisibile per $C(x)$;
+      \item Va quindi trovato $R(x)$ tale che $P(x)=x^rM(x)+R(x)$ e $P(x)=Q(x)C(x)$ per qualche $Q(x)$;
+      \item Ovvero $x^rM(x) = Q(x)C(x) - R(x) = Q(x)C(x) + R(x)$
+      \item Ovvero $R(x)$ è il resto della divisione $\frac{x^rM(x)}{C(x)}$
+    \end{itemize} 
+    \subsection{Implementazione HW}
+      Un CRC di lunghezza r può essere facilmente computato da un circuito con r registri da 1 bit e delle porte XOR come quanto segue
+      *Implementare immagine*
+    \subsection{Proprietà Polinomio Generatore}
+      \begin{itemize}
+        \item Dato $P(x)$ il messaggio inviato e $P'(x)=P(x)+E(x)$ la stringa ricevuta;
+        \item $E(x)=x^i$ significa che l'i-esimo bit è stato flippato nella posizione corrispondente nel messaggio $P(x)$;
+        \item Si sa che $\frac{P(X)}{C(x)}$ da resto $0$, ma se $\frac{E(x)}{C(x)}$ da resto 0, né $E(x)=0$ né $C(x)$ sono fattori di $E(x)$;
+        \item Quando $C(x)$ è fattore di $E(x)$ si ha un problema (gli errori non vengono rilevati);
+        \item Se è presente un singolo bit d'errore allora $E(x)=x^i$, dove $i$ determina il bit d'errore. Se $C(x)$ contiene due o più termini non potrà mai dividere $E(x)=x^i$, quindi tutti i singoli bit d'errore verranno rilevati. 
+      \end{itemize}
+    \subsection{Reliable Transmission}
+      \begin{itemize}
+        \item CRC usato per \textit{rilevare} errori, non per correggerli (certi codici sono abbastanza solidi da poter correggere errori fino a un certo punto $\rightarrow$ Hamming);
+        \item 
+      \end{itemize}
 \end{document}
