@@ -153,4 +153,52 @@
           \item Refactoring a livello di codice non basta per supportare un cambiamento, necessaria modifica dell'intera architettura (più costosa);
           \item Bisogna trovare un compromesso tra tempo dedicato a sviluppo di nuove funzionalità e refactoring.
         \end{itemize}
+  \section{Tecniche Agili - Sviluppo Preceduto dai Test}
+    In EP il SW è testato dopo ciascun cambiamento:
+    \begin{itemize}
+      \item \textbf{Sviluppo test driven}: casi di test da soddisfare scritti prima del codice $\rightarrow$ \textit{guidano lo sviluppo};
+      \item \textbf{Automatizzazione Test}: strumenti eseguono automaticamente tutti i test a ogni nuova versione;
+      \item \textbf{Coinvolgimento cliente}: cliente coinvolto nello sviluppo test d'accettazione delle storie da implementare nell'iterazione successiva. 
+    \end{itemize}
+    Idea: scrivere test prima del codice chiarisce requisiti da implementare (aspetto cruciale in assenza di specifiche documentate tipo \textit{plan-driven}). Test sono scritti come programmi per essere eseguiti automaticamente, simulano input e leggono output (è possibile esecuzione mentre si programma per fare hotfix). \textbf{Lo sviluppo non può procedere fino al superamento di tutti i test}.
+    \subsection{Automazione Test}
+      \begin{itemize}
+        \item Test scritti come programmi eseguibili, non insismi di dati;
+        \item Programma di test simula immissione di un determinato input (valuta se output ottenuto corrisponde a quello atteso);
+        \item Framework come JUnit facilitano scrittura / esecuzione test;
+        \item Test eseguiti a ogni aggiunta di funzionalità;
+        \item Automatizzazione rende più facile e rappida fase di verifica / validazione.
+      \end{itemize}
+    \subsection{Pro}
+      Scrittura test implica definizione di un'interfaccia e una specifica comportamentale della funzionalità da sviluppare (riduzione possibili incomprensioni / ambiguità / omissioni). 
+    \subsection{Contro}
+      \begin{itemize}
+        \item Pratica onerosa per il cliente;
+        \item Sforzo per tenere aggiornati test interessati alle modifiche del codice;
+        \item Test potrebbero essere incompleti (per varie ragioni non verificano tutti i possibili scenari). 
+      \end{itemize}
+  \section{Tecniche Agili - Pair Programming}
+    Idea: programmatori lavorano in coppie alla stessa postazione (coppie variano continuamente), refactoring viene incoraggiato in quanto spesso benefico per il team. Il SW è di proprietà dell'intero team, i singoli non sono ritenuti responsabili degli errori nel codice (\textit{egoless programming}), è il team che ha responsabilità collettiva della risoluzione dei problemi. 
+    \subsection{Pro}
+      \begin{itemize}
+        \item Aiuta a sviluppare senso di proprietà del codice nel team / diffondere conoscenza nell'ambito del team;
+        \item Permette processo di revisione informale (sviluppatori verificano reciprocamente proprio lavoro);
+        \item Riduce rischi di fallimento dovuti a turn-over. 
+      \end{itemize}
+    \subsection{Contro}
+      Talvolta può essere meno efficiente della programmazione individuale, soprattutto in caso di programmatori esperti.
+  \section{Gestione Agile - Scrum}
+    Metodo agile Scrum (Schwaber e Beedle 2001; Rubin 2013) offre framework per organizzare agilmente progetti / fornire in una certa misura una visibilià esterna suu ciò che sta accandendo all'interno del team di sviluppo SW. 
+    *Inserisci Immagine*
+    \begin{itemize}
+      \item Ogni sprint parte da \textbf{product backlog}, la lista degli elementi (caratteristiche prodotto, requisiti e miglioramento ingegnerizzazione);
+      \item Versione iniziale del backlog può derivare da un documento dei requisiti, da una lista di storie utente. \textit{Backlog non riguarda solo codice, ma anche architettura / documentazione};
+      \item All'inizio di ogni ciclo producr owner stabilisce priorità del backlog per definire elementi più importanti;
+    \item Tutti i membri del team coinvolti nella scelta degli elementi con priorità alta che dovranno essere completati, valutano tempo richiesto per il completamento dei requisiti in base alla \textbf{velocità} (stimata su quella degli sprint precedenti per capire quanto lavoro si riuscirà a svolgere);
+      \item Pianificazione dello sprint porta a \textbf{sprint backlog} (lavoro da svolgere in quello sprint);
+      \item Team ($\sim$7 persone) sceglie chi dovrà lavorare su determinati elementi ed avvia lo sprint($\sim$2-4 settimane);
+      \item Riunioni giornaliere (breve incontro faccia a faccia) del team esaminano avanzamento del lavoro / stabilisce priorità del giorno. ScrumMaster deve garantire che processo Scrum sia eseguito efficientemente, solitamente potrebbe essere un Project Manager;
+      \item Incremento del SW consegnato da uno sprint dovrebbe essere rilasciabile (in uno stato finito senza bisogno di ulteriore lavoro per incorporarlo nel prodotto finale): nella pratica non è sempre realizzabile. 
+      \item Al termine di ogni sprint si tiene riunione di verifica con tutti i membri del team per migliorare il processo ed avere input su prodotto e sul suo stato per revisione dei backlog.
+    \end{itemize}
 \end{document}
