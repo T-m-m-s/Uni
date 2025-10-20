@@ -76,6 +76,6 @@
       Su una certa linea di trasmissione i dati vengono inviati in frame composti da una intestazione di 10 byte comprensiva di CRC e un payload di 1000 byte. Se un frame è errato viene scartato e ritrasmesso. La probabilità di errore per ogni bit è $p=10^(-5)$. Se questi frame vengono usati per trasferire un file da 10 KB qual'è la probabilità che si debba effettuare almeno una trasmissione? \\
       R - $1000B+10B=1010B=8080 [b] \rightarrow$ probabilità trasmissione corretta= $(1-p)^8080=0.922 \rightarrow$ probabilità ritrasmissione= $1-ptc=1-0.922^10=~5\%$ 
     \subsection{Es 8}
-      Su una linea con probabilità di errore per bit di 10^(-4) si trasmettono due frame, ognuno di 500 byte. Qual'è la probabilità che almeno uno arrivi a destinazione senza errori? \\
+      Su una linea con probabilità di errore per bit di $10^(-4)$ si trasmettono due frame, ognuno di 500 byte. Qual'è la probabilità che almeno uno arrivi a destinazione senza errori?
       R - Probabilità un frame con errori= $1-((1-10^(-4))^(500*8))=0.3297$, probabilià almeno uno senza errori: $1-(0.3297^2)=0.8913$
 \end{document}
