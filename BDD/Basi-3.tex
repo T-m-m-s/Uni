@@ -1,0 +1,40 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings, xcolor}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[a4paper, margin = 1.5cm]{geometry}
+\usepackage{float}
+\usepackage{amssymb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{BDD - 21/10/25}
+\author{Trentin Tommaso}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+  \section{Relazioni}
+    \begin{itemize}
+      \item (1-N): Relazioni uno-a-molti, ogni entità compare almeno 1 volta e in genrale N volte come elemento di una coppia della relazione;
+      \item (N-N): Relazioni molti-a-molti; 
+      \item (1-1): Relazioni uno-a-uno
+    \end{itemize}
+    \subsection{Relazioni Ricorsive}
+      Relazioni in cui un'entità appartiene ad una relazione con un'entità dello stesso tipoo (esempio aeroporto di partenza - volo - aeroporto d'arrivo). \textbf{Chiusura transitiva} (es. tutti gli aeroporti verso cui posso volare partendo da TS con 0+ scali)
+    Se ho progettato bene le cose una superchiave esiste sempre ed è l'insieme degli attributi
+    \subsection{Tipo di entità debole}
+      \begin{itemize}
+        \item Alberghi a Udine;
+        \item Vogliamo tenere traccia delle stanze libere negli alberghi;
+        \item Scelgo coppia (numero, albergo) come identificativo dell'entità Stanza
+        \item Stanza è un'\textit{entità debole} - Albergo entità proprietatia
+        \item Relazione Stanza - Albergo è detta \textbf{Relazione identificante}
+      \end{itemize}
+    \subsection{Relazioni ternarie (o di grado superiore)}
+      Relazioni di grado superiore al secondo sono necessarie? 
+\end{document}
