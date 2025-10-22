@@ -1,0 +1,101 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings, xcolor}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[a4paper, margin = 1.5cm]{geometry}
+\usepackage{float}
+\usepackage{amssymb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Analsi, Specifica e Convalida dei Requisiti}
+\author{Trentin Tommaso}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+  \section{Deduzione e Analisi dei Requisiti}
+    Idea - Capire ambiente operativo e come stakeholder potrebbero utilizzare il SW, gli ingegneri dei requisiti devono lavorare con stakeholder per scoprire informazioni su dominio applicatico, funzionalità che sistema dovrebbe fornire loro, prestazioni richieste e altri vincoli operativi.
+    \subsection{Stakeholder}
+      Individuo / gruppo / organizzazione che ha legittimo interesse nel progetto di sviluppo SW, possono includere clienti, utenti finali, team di sviluppo, finanziatori, responsabili aziendali. 
+    \subsection{Difficoltà}
+      Solitamente né fornitore né committente sono in grado (da soli) di estrarre efficacemente i requisiti di un sistema:
+      \begin{itemize}
+        \item Committente non ha necessaria conoscenza dei processi SW pere definire efficacemente i requisiti, non può avere un'idea chiara sugli stessi e può utilizzare termini propri del dominio di appartenenza;
+        \item Differenti stakeholder potrebbero avere requisiti contrastanti;
+        \item Fornitore non ha conoscenza perfertta del dominio applicativo, non può quindi esprimere effettive necessità.
+      \end{itemize}
+    \subsection{Processo}
+      \begin{itemize}
+        \item \textbf{Scoperta e comprensione} - analisti interagiscono con stakeholder per scoprire i loro requsiti;
+        \item \textbf{Classificazione e organizzazione} - requisiti scoperti sono una raccolta non strutturata, quelli tra loro correlati vanno raggruppati in gruppi coerenti (eliminando duplicati); 
+        \item \textbf{Negoziazione e priorità} - dare priorità ai requisiti, trovare e risolvere conflitti mediante negoziazione;
+        \item \textbf{Documentazione} - requisiti vengono documentati e diventano input della successiva iterazione.
+      \end{itemize}
+    \subsection{Tecniche per Estrarre i Requisiti}
+      \begin{itemize}
+        \item \textbf{Interviste} - sia formali che informali, a risposta chiusa o aperta;
+        \item \textbf{Etnografia} - osservare e analizzare le persone nell'ambiente operativo;
+        \item \textbf{Storie / Scenari utente} - testi narrativi che descrivono scenari pratici di utilizzo SW (Storie = alto livello / Scenari = specifiche dettagliate).
+      \end{itemize}
+  \section{Specifica dei Requisiti}
+    Processo di descrizione dei requisiti utente e di sistema in un documento: \textit{requisiti utente} quasi sempre scritti in linguaggio naturale (comprensibili da utenti e clienti senza background tecnico), \textit{requisiti di sistema} in linguaggio naturale o altre notazioni basate su moduli, gradici, modelli matematici (più dettagliati / tecnici). \\ \textbf{In teoria} la specifica requisiti non dovrebbe contenere info su progettazione / implementazione, mentre il progetto dovrebbe descrivere come requisiti sono realizzati\dots \textbf{Nella pratica} requisiti e progetto sono inseparabili, impossibile escludere tutte le informazioni sulla progettazione. 
+    \subsection{Linguaggi per la Specifica}
+      \begin{itemize}
+        \item \textbf{Linguaggio naturale} - requisiti scritti in linguaggio naturale strutturato o semi-strutturato. \textbf{Pro}: espressivo, intuitivo, universale (comprensibile anche da utenti e clienti). \textbf{Contro}: mancanza di chiarezza (possibile ambiguità) e confusione (difficile distinguere varie tipologie di requisiti), possibili soluzioni:
+          \begin{itemize}
+            \item Formato standard coerente / coinciso riduce rischio di omissioni e semplifica controllo dei requisiti;
+            \item Utilizzo coerente del linguaggio ("deve" per requisiti obbligatori e "dovrebbe" per requisiti desiderabili);
+            \item Formattazione coerente del testo per evidenziare punti chiave;
+            \item Evitare linguaggio tecnico;
+            \item Spiegare perché un requisito è necessario e chi lo ha proposto in modo da sapere chi consultare in caso di modifica.
+          \end{itemize}
+        \item \textbf{Modelli grafici} - use case e diagrammi di sequenza;
+        \item \textbf{Specifiche formali} - macchine a stati finiti.
+      \end{itemize}
+      \subsubsection{Specifiche strutturate in template}
+        *Inserire Immagine*
+      \subsubsection{Specifiche tabellari}
+        Utili per specificare calcoli completti senza introdurre ambiguità, permettono di aggiungere informazioni supplementari al linguaggio naturale come tabelle o modelli grafici del sistema; utili per descrivere \textit{situazione alternative}. 
+    \subsection{Documento di Specifica Requisiti di Sistema (SRS)}
+      \begin{itemize}
+        \item Definizione universale requisiti SW (sia utente - RU che di sistema - RS);
+        \item Definisce ciò che sviluppatori dovrebbero implementare;
+        \item Diversi SRS potrebbero essere organizzati in modo diverso;
+        \item Costituisce il punto di convergenza tra punto di vista cliente, utente e sviluppatore;
+      \end{itemize}
+      \subsubsection{Scopi}
+        \begin{itemize}
+          \item Costituire base per successiva progettazione;
+          \item Costituire base per validazione del prodotto finale;
+          \item Costituire base per il contratto;
+          \item Ridurre costi di sviluppo (evitando controversie e ritardi per ambiguità).
+        \end{itemize}
+      \subsubsection{Utilizzatori}
+        Molteplici tipologie d utenti utilizzano l'SRS per diversi scopi: informazioni contenute dipendono dal tipo di sistema e dall'approccio di sviluppo. Varietà di utenti comporta un compromesso sul livello di dettaglio da adottare
+        *Inserire immagine*
+      \subsubsection{Si Utilizza Ancora?}
+        In certi settori la specifica descritta in SRS è ancora obbligatoria (esistono Enti che promulgano specifici standard: ISO, IEEE, UNI\dots che impongono il tipo di documenti da produrre, tra cui l'SRS). In ambeienti meno restrittivi \textit{conviene} produrre un SRS anche non seguendo completamente un template, in seguito vengono definiti i \textbf{casi d'uso} che poi possono essere "incrociati" con i requisiti. 
+  \section{Convalida dei Requisiti}
+    Processo che verifica se specifica dei requisiti definisca il sistema voluto dal cliente con accuratezza e chiarezza (errori nel documento SRS possono portate a costi molto alti se scoperti durante sviluppo o dopo la messa in servizio del sistema), una modidica dei requisiti implica solitamente cambi in progettazione e implementazione. 
+    \subsection{Proprietà da Convalidare}
+      \begin{itemize}
+        \item \textbf{Correttezza/Validità} - ogni requisito soddisfa bisogni espressi dagli utenti;
+        \item \textbf{Completezza} - tutte le funzionalità e i vincoli sono inclusi nelle specifiche;
+        \item \textbf{Realisticità} - requisiti possono essere implementati dati le tecnologie ed il budget disponibie;
+        \item \textbf{Consistenza/Non Ambiguità} - ogni requisito ha una sola interpretazione e non ne contraddice altri;
+        \item \textbf{Verificabilità} - possibile dimostrare che il sistema soddisfi ogni requisito (richiede scrittura di test);
+        \item \textbf{Tracciabilità} - origine di ciascun requisito è chiara e può essere referenziata nello sviluppo futuro. 
+      \end{itemize}
+    \subsection{Tecniche di Validazione}
+      \begin{itemize}
+        \item \textbf{Revisione dei requisiti} - requisiti vanno analizzati da un team di revisori che controllano errori e incoerenze;
+        \item \textbf{Prototipazione} - utenti finali e clienti provano un prorotipo eseguibile del sistema per vedere se soddisfa le loro necessità;
+        \item \textbf{Generazione di test case} - sviluppo di test per verificare se requisiti sono testabili, svelando eventuali problemi. Se un test è difficile o impossibile da progettare, i requisiti saranno difficili da implementare e andranno quindi riconsiderati;
+        \item \textbf{Scenari} - chiariscono modalità operative del sistema;
+      \end{itemize}
+\end{document}

@@ -72,4 +72,35 @@
           \item \textbf{Requisiti esterni}: tutti requisiti che derivano da fattori esterni al sistema e al suo processo di sviluppo (requisiti legislativi da rispettare, requisiti etici che garantiscono accettazione del sistema).
         \end{itemize}
         *Inserire Immagine*
+      \subsubsection{Verificabilità dei Requisiti}
+        Requisiti non funzionali possono essere difficili da definire precisamente, quindi difficili da verificare:
+        \begin{itemize}
+          \item Cliente potrebbe specificarli come \textbf{obiettivi} generici / vaghi, causando problemi agli sviluppatori a causa della libera interpretazione;
+          \item Bisognerebbe descrivere requisiti non funzionali quantitativamente, in modo che possano essere \textbf{verficabili} $\rightarrow$ devono contenere una misura in qualche modo verificabile:
+            \begin{itemize}
+              \item \textit{Velocità} - Transazioni/s, tempi di risposta, tempo di refresh sullo schermo;
+              \item \textit{Dimensione} - MB / numero di chip ROM;
+              \item \textit{Facilità d'uso} - Tempo di addestramento, numero di maschere d'aiuto;
+              \item \textit{Affidabilità} - Tempo medio di funzionamento, portabilità di indisponibilità, tasso di malfunzionamento, disponibilità;
+              \item \textit{Robustezza} - Tempo di riavvio dopo malfunzionamento, percentuale di eventi che causano malfunzionamenti, probabilità di corruzione dati dopo un malfunzionamento;
+              \item \textit{Portabilità} - Percentuale di istruzioni dipendenti dal sistema target, numero di sistemi target.
+            \end{itemize}
+        \end{itemize}
+      \subsubsection{Requisiti di Dominio}
+        Requisiti funzionali / non funzionali e vincoli che derivano dal dominio applicativo del sistema (e non dalle esigenze utente), talvolta ovvie per gli esperti (ma non per gli sviluppatori) e quindi tralasciate. Solitamente espressi nel linguaggio estremamente specializzato del dominio, possono far riferimento a concetti specifici del dominio.
+  \section{Ingegneria dei Requisiti}
+    Idea- 3 attività chiave:
+    \begin{itemize}
+      \item \textbf{Deduzione e analisi dei requisiti} - comprensione requisiti mediante interazione con stakeholder;
+      \item \textbf{Specifica dei requisiti} - traduzione requisiti in specifiche in un formato coerente;
+      \item \textbf{Convalida dei requisiti} - controllo che requisiti corrispondano a richieste cliente.
+    \end{itemize}
+    \subsection{Modello sequienziale}
+      Le tre attività sono \textit{per forza} sequenziali.
+      *Inserire immagine* 
+    \subsection{Modello a spirale}
+      Processo di ingegneria dei requisiti è nella pratica spesso fortemente iterativo (e con fasi interlacciate), viene quindi utilizzato un modello a spirale quando i requisiti sono sviluppati con diversi livelli di dettaglio (generali, utente, sistema). 
+      *Inserire immagine*
+    \subsection{Ingegneria dei requisiti - Metodi agili}
+      Nei metodi agili la specifica dei requisiti non è un'attività separata (considerata parte dello sviluppo), i requisiti sono specificati informalmente per ciascun incremento del sistema, in base alle priorità utente.
 \end{document}
