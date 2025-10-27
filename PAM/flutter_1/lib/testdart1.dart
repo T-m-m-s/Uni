@@ -3,19 +3,19 @@ void main() {
   myPrint(myFunc());
   myPr(
     myFunc(),
-    s2 : "TROIA"
+    s2 : "BRUH"
   );
   myPr(
     myFun()
   );
 }
 
-String myStr = "DIOMERDA";
+String myStr = "SIUM";
 String myFunc() {
   return myStr;
 }
 
-String myFun() => "STA ZITTA puttana!";
+String myFun() => "SIUMMING";
 
 void myPrint(String s1, [String? s2]) {
   if (s2 != null) {

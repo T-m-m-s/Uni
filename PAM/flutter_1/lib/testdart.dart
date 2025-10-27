@@ -14,7 +14,6 @@ void main() {
   print(s2+"\n");
   print(s3+"\n");
   print("SUDO PALLE\n");
-  printPalle();
   // print(_globalString+"!!!\n"); non worka --> variabile privata
 
   List list = [1,2,3];
