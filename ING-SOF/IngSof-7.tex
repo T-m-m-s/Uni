@@ -1,0 +1,69 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings, xcolor}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[a4paper, margin = 1.5cm]{geometry}
+\usepackage{float}
+\usepackage{amssymb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Diagramma dei Casi d'uso}
+\author{Trentin Tommaso}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+  \section{Costruzione}
+    \begin{enumerate}
+      \item Definire confini del sistema;
+      \item Identificare attori;
+      \item Identificare casi d'uso;
+      \item Definire diagramma;
+      \item Strutturare casi d'uso; 
+      \item Descrivere casi d'uso in linguaggio naturale o con diagrammi comportamentali.
+    \end{enumerate}
+    \subsection{Definire confini}
+      Quali responsabilità rientrano nei confini del sistema che stiamo modellando?
+    \subsection{Identificare attori}
+      Identificare attori che interagiscono con il sistema per eseguire qualche compito (attori che necessitano del sistema per svolgere qualche compito e attori cui il sistema si rivolge per svolgere qualche compito), gli attori vanno poi raggruppati secondo ruoli (responsabilità) rispetto al sistema. Vengono anche identificati altri sistemi SW e dispositivi esterni che interagiscono con il sistema per svolgere qualche compito. 
+    \subsection{Identificare casi d'uso}
+      Per ogni attore:
+      \begin{itemize}
+        \item Si identificano compiti e funzioni (di basso livello che l'attore deve essere in grado di eseguire tramite il sistema e compiti che sistema richiede che l'attore esegua); 
+        \item Si raggruppano compiti e funzioni in casi d'uso (devono corrispondere ad un obiettivo specifico per attore o sistema, raggruppano funzioni eseguite in sequenza o innescate dallo stesso evento, deve essere né troppo grande né troppo piccolo); 
+        \item Si da un nome al caso d'uso sintetizzando la funzionalità svolta; 
+        \item Si definisce il diagramma dei casi d'uso:
+          \begin{itemize}
+            \item Deve contenere relazioni fra attori e casi d'uso; 
+            \item Ogni attore deve partecipare a 1+ casi d'uso;
+            \item Ogni caso d'uso deve avera almeno un attore con cui comunica;
+            \item Se due attori partecipano a stessi casi d'uso si considera possibilità di combinarli in un unico attore
+          \end{itemize}
+        \item Si strutturano casi d'uso:
+          \begin{itemize}
+            \item Si identificano relazioni di estensione (specializzando scenari alternatvi e collegando nuovi casi d'uso a quelli di partenza mediante relazione <<extend>>);
+            \item Si identificano relazioni di inclusione (estraendo parti comuni in casi d'uso diversi e collegando casi d'uso che condividono una parte in comune al nuovo caso d'uso rappresentante il comportamento condiviso mediante relazione <<include>>).
+          \end{itemize}
+      \end{itemize}
+  \section{Concetti fonamentali}
+    \subsection{Diagramma UML delle classi}
+      \begin{itemize}
+        \item Diagramma \textbf{strutturale}; 
+        \item Mostra una vista \textbf{statica} del modello (mostra organizzazione del progetto del sistema ma \textit{non mostra informazioni temporali});
+        \item Suoi elementi corrispondono a concetti fondamentali del paradigma OO;
+        \item Il più diffuso attualmente;
+        \item Rappresenta: 
+          \begin{itemize}
+            \item tipi di oggetti (classi) del sistema che corrispondono a entità esistenti nel sistema; 
+            \item relazioni \textit{statiche} tra classi e vincoli che si applicano a tali relazioni;
+            \item caratteristiche delle classi (proprietà = attributi e responsabilità = metodi);
+          \end{itemize}
+      \end{itemize}
+    \subsection{Diagramma delle classi nel processo SW}
+      Può essere utilizzato nella fase di definizione requisiti, consente una vista concettuale delle \textbf{entità} nel dominio del problema e cattura concetti principali del dominio fissando i confini del sistma. Semplice modello architetturale rivolto a comprensione di cosa fa il sistema, non di come lo fa. \\
+      Può essere usato in implementazione, identificando \textbf{classi} del SW r relazioni tra esse, corrisponde a reale struttura del SW poiché ne modella implementazione OO
+\end{document}
