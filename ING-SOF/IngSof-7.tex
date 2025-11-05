@@ -66,4 +66,108 @@
     \subsection{Diagramma delle classi nel processo SW}
       Può essere utilizzato nella fase di definizione requisiti, consente una vista concettuale delle \textbf{entità} nel dominio del problema e cattura concetti principali del dominio fissando i confini del sistma. Semplice modello architetturale rivolto a comprensione di cosa fa il sistema, non di come lo fa. \\
       Può essere usato in implementazione, identificando \textbf{classi} del SW r relazioni tra esse, corrisponde a reale struttura del SW poiché ne modella implementazione OO
+  \section{Sintassi}
+    \subsection{Classe}
+      Descrittore di un insieme di oggetti con stesse proprietà (attributi), comportamento (operazioni) e relazioni con altri oggetti, con lo stesso concetto della programmazione OO. 
+      \begin{itemize}
+        \item Ogni oggetto è istanza di una sola classe; 
+        \item In un dato istante un oggetto ha uno specifico stato (valore dei suoi attributi);
+        \item In base al proprio stato due oggetti possono rispondere diversamente alla stessa operazione.
+      \end{itemize}
+      Una classe è rappresentata da un rettangolo con tre sottosezioni: nome della classe e, opzionalmente (a seconda del livello di dettaglio desiderato), attributi e operazioni. Il nome è al \textbf{singolare} e solitamente in \textbf{UpperCamelCase}.
+      *Inserisci immagine*
+    \subsection{Attributi}
+      \subsubsection{Visibilità}
+        Sono ammessi tre livelli di \textbf{visibilità} degli attributi:
+        \begin{itemize}
+          \item \textbf{+ pubblico}: accesso esteso a tutte le altre classi;
+          \item \textbf{\# protetto}: accesso consentito soltanto a classi che derivano dalla classe originale;
+          \item \textbf{- privato}: soltanto la classe originale può accedere a tali attributi.
+        \end{itemize}
+        Il \textbf{nome} dell'attributo è l'unico parametro obbligatorio, mentre il \textbf{tipo} può essere un tipo primitivo (int, double\dots) oppure il nome di una classe definita nello stesso diagramma (in tal caso l'attributo può essere indicato con un'\textit{associazione}), esso definisce un vincolo sugli oggetti che possono corrispondere all'attributo.\\
+      \subsubsection{Molteplicità}
+        La \textbf{molteplicità} indica il quantitativo degli attributo di un certo tipo, indicando attributi come array o matrici con valore di default 1, il numero minimo e massimo possono essere racchiusi tra parentesi quadre:
+        \begin{itemize}
+          \item \textbf{[1..1]} esattamente 1;
+          \item \textbf{[0..1]} al più 1;
+          \item \textbf{[0..\*]} numero imprecisato;
+          \item \textbf{[1..\*]} almeno 1.
+        \end{itemize}
+        Gli elementi di una molteplicità a più valori sono considerati come un \textit{insieme}, non ordinati (in caso contrario notazione \textbf{{\{ordered\}}}) e non duplicati (in caso contrario notazione \textbf{\{nonunique\}}).
+      \subsubsection{Valori di default e proprietà}
+        \begin{itemize}
+          \item \textbf{valoreDefault} è valore assegnato all'attributo di default, in caso non ne vengano specificati altri durante la creazione; 
+          \item \textbf{\{proprietà\}} indica caratteristiche aggiuntive dell'attributo (ad esempio sola lettura). 
+        \end{itemize}
+    \subsection{Operazioni}
+      Corrispondono a metodi di una classe (operazioni invocabili sugli oggetti istanza della classe), sono azioni che possono essere svolte dalla classe stessa e, solitamente, nei diagrammi non vengono riportate le operazioni che si occupano solamente di modificare attributi (in quanto facilmente deducibili). 
+      \begin{itemize}
+        \item Operazioni invocabili sugli oggetti istanza della classe;
+        \item \textbf{Visibilità} e \textbf{nome} analoghi agli attributi;
+        \item \textbf{tipoRestituito} valore di ritorno;
+        \item \textbf{listaParametri} contiene nome e tipo dei parametri nella forma \textit{direzione nome parametro: tipo = valoreDefault}, con:
+          \begin{itemize}
+            \item \textbf{direzione}: input (in), output (out) o entrambi (inout), valore di default è in; 
+            \item \textbf{nome}, \textbf{tipo} e \textbf{valoreDefault} analoghi a quelli degli attributi.
+          \end{itemize}
+      \end{itemize}
+    \subsection{Responsabilità}
+      Solitamente nei diagrammi \textit{concettuali} che descrivono dominio del sistema non si inseriscono metodi in quanto rappresenterebbero un elemento del dominio della soluzione, in alternativa si possono usare le \textbf{responsabilità} (insieme di funzioni principali che classe dovrebbe garantire, utili per controllare completezza del modello di dominio)
+    \subsection{Note / Testo descrittivo}
+      Commenti aggiuntivi in linguaggio naturale che possono essere utilizzati in in ogni tipo di diagramma UML, simili a commenti in un linguaggio di programmazione. 
+      *Inserisci immagine*
+  \section{Associazioni}
+    Esprime una relazione (fisica o concettuale) tra istanze (oggetti) delle classi, caratterizzata da:
+    \begin{itemize}
+      \item \textbf{nome}: esprime legame semantico tra classi associate;
+      \item evetuale \textbf{ruolo} giocato da ciascuna delle parti associate;
+      \item \textbf{molteplicità} dell'associazione;
+      \item \textbf{verso di navigazione} dell'associazione.
+    \end{itemize}
+    \subsection{Nome}
+      Etichetta dell'associazione, solitamente un verbo, permette di formare frasi di senso compiuto (es. "Una persona possiede un'automobile"), per evitare ambiguità si può specificare direzione dell'associazione.
+    \subsection{Ruolo}
+      Si può specificare \textbf{ruolo} che oggetti di una classe rivestono quando sono collegati da istanze dell'associazione, il ruolo viene specificato sull'estremità dell'associazione prossima alla classe. 
+    \subsection{Molteplicità}
+      Vincola numero di oggetti di una classe che possono partecipare a una associazione in ogni istante, sono riportate sull'estremità dell'associazione prossima alla classe nella forma \textbf{minimo..massimo}
+    \subsection{Verso di navigazione}
+      Indica in che direzione è possibile reperire le informazioni: utile soprattutto nel \textbf{progetto di dettaglio}, rispecchiando una scelta di progetto, non presente (di solito) nei \textbf{progetti concettuali}. 
+    \subsection{Riepilogo}
+      *Inserisci Immagine*
+    \subsection{Associazioni vs Attributi}
+      \begin{itemize}
+        \item Caratteristiche strutturali di una classe devono essere rappresentat sia come associazioni che come attributi di una classe; 
+        \item A differenza dagli attributi, associazioni possono riportare anche molteplicità di entrambe le classi ma sono meno compatte;
+        \item Progettista deve scegliere entità che hanno maggiore importanza e rappresentarle come classi per dar loro più enfasi;
+        \item Consigliabile non appesantire il diagramma con troppe associazioni 1 a 1;
+        \item Si possono usare \textbf{attributi} per concetti secondari (come tipi semplici) e \textbf{associazioni} per classi più significative (la scelta dipende da cosa si vuole enfatizzare nel diagramma). 
+      \end{itemize}
+    \subsection{Implementazione}
+      La rappresentazione più comune di un'associazione o un'attributo di un entità in linguaggi di programmazione OO è tramite un attributo di una classe, se definito un verso di navigazione, la classe origine ha un attributo con:
+      \begin{itemize}
+        \item Nome: ruolo della destinazione; 
+        \item Tipo: la classe di destinazione; 
+        \item Molteplicità: la molteplicità della destinazione.
+      \end{itemize}
+      \subsubsection{Uno a Molti}
+        \begin{itemize}
+          Esempio: una Persona, molte Automobile
+          \item La classe Persona ha un attributo vettore di Automobile;
+          \item La classe Automobile ha un attributo Persona;
+          \item Entrambe: tutte e due le classi permettono di navigare l'altra classe dell'associazione (nessuna freccia o doppia freccia).  
+        \end{itemize}
+      \subsubsection{Uno a Uno}
+        Esempio: uno Studente, un Badge
+        \begin{itemize}
+          \item La classe Badge è implementata avendo un attributo Studente;
+          \item La classe Studente è implementata avendo un attributo Badge;
+          \item Entrambe se bidirezionale.
+        \end{itemize}
+      \subsubsection{Molti a Molti}
+        Esempio: molti Studente, molti Esame
+        \begin{itemize}
+          \item La classe Studente implementata avendo un attributo array di Esame;
+          \item La classe Essame implementata avendo anche un attributo array di Studente;
+          \item Entrambe se bidirezionale.
+        \end{itemize}
 \end{document}
