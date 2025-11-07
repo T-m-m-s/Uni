@@ -84,7 +84,7 @@
           \item \textbf{\# protetto}: accesso consentito soltanto a classi che derivano dalla classe originale;
           \item \textbf{- privato}: soltanto la classe originale può accedere a tali attributi.
         \end{itemize}
-        Il \textbf{nome} dell'attributo è l'unico parametro obbligatorio, mentre il \textbf{tipo} può essere un tipo primitivo (int, double\dots) oppure il nome di una classe definita nello stesso diagramma (in tal caso l'attributo può essere indicato con un'\textit{associazione}), esso definisce un vincolo sugli oggetti che possono corrispondere all'attributo.\\
+        Il \textbf{nome} dell'attributo è l'unico parametro obbligatorio, mentre il \textbf{tipo} può essere un tipo primitivo (int, double\dots) oppure il nome di una classe definita nello stesso diagramma (in tal caso l'attributo può essere indicato con un'\textit{associazione}), esso definisce un vincolo sugli oggetti che possono corrispondere all'attributo.
       \subsubsection{Molteplicità}
         La \textbf{molteplicità} indica il quantitativo degli attributo di un certo tipo, indicando attributi come array o matrici con valore di default 1, il numero minimo e massimo possono essere racchiusi tra parentesi quadre:
         \begin{itemize}
@@ -170,4 +170,53 @@
           \item La classe Essame implementata avendo anche un attributo array di Studente;
           \item Entrambe se bidirezionale.
         \end{itemize}
+  \section{Associazioni Riflessive e Classi Associative}
+    \subsection{Associazioni Riflessive}
+      Associazione che collega una classe con sé stessa (oggetti di una classe possono quindi essere associati ad oggetti appartenenti alla classe stessa). Una cartella può contenere 0 o più sottocartelle (ipoteticamente infinite), una cartella può essere contenuta al massimo in una sola altra cartella.
+    \subsection{Classi Associative}
+      Classe che connette due altre classi e definisce un insieme di caratteristiche proprie della associazione stessa, onguna delle sue istanze rappresenta un'associazione tra due istanze delle classi e contiene specifici valori degli attributi. Dato che caratterizza un'associazione prima di creare un'istanza della classe associativa vanno create le istanze delle classi collegate. 
+      \begin{itemize}
+        \item Rappresentano collegamenti concettuali; 
+        \item Ci può essere solo un'stanza di una specifica classe associativa tra ogni coppia di soggetti associati;
+        \item Per \textit{reificare} (rendere reale) una classe associativa sarà opportuno trasformarla in una classe.
+      \end{itemize}
+      *inserisci immagine*
+  \section{Generalizzazione - Specializzazione}
+    I concetti di generalizzazione e specializzazione in UML sono analoghi a quelli di OO, indicano legami del tipo \textbf{\textit{is-a}} tra le sottoclassi e la superclasse (quest'ultima è un concetto generale, le sottoclassi sono due specializzazioni).
+    \begin{itemize}
+      \item Tipo di associazione rappresentato da una freccia che va da classe specializzata a classe generale;
+      \item Informazioni comuni solitamente mantenute in un solo posto (classe generale), facilitando eventuali modifiche;
+      \item Sottoclassi hanno tutti gli attributi e le operazioni delle classi generali, aggiungendone di più specifici;
+      \item A livello \textbf{concettuale} (analisi requisiti), gen-spec esprime una relazione \textit{is-a} tra un concetto generale e sue specializzazioni;
+      \item A livello di \textbf{dettaglio} (progetto / implementazione) può essere interpretato come:
+        \begin{itemize}
+          \item relazione di \textbf{ereditarietà} tra due classi concrete (classi derivate ereditano attributi e metodi public / protected della classe base);
+          \item relazione di \textbf{realizzazione} tra una classe astratta e una classe concreta (classe base ha solo prototipi di metodi, quella specializzata iplementa metodi sfruttando overriding).
+        \end{itemize}
+    \end{itemize}
+    \subsection{Esempio}
+    *Inserisci Immagine*
+  \section{Contenimento}
+    Tipo speciale di associazione tra classi che rappresenta il legame tra un insime (il "tutto") e le sue parti, ovvero tra un contenitore e il contenuto, questo può essere:
+    \begin{itemize}
+      \item debole, detto \textbf{aggregazione}, se la parte mantiene la sua identità quando entra a far parte del tutto (auto - motore); 
+      \item stretto, detto \textbf{composizione}, se la parte perde la sua identità entrando a far parte del tutto (pane - farina). 
+    \end{itemize}
+    \subsection{Aggregazione}
+      \begin{itemize}
+        \item Lato del "tutto" è detto \textbf{aggregato}; 
+        \item Parti possono esistere indipendentemente dall'aggregato;
+        \item Possibile che più aggregati condividano una stessa parte; 
+        \item Molteplicità dal lato dell'aggregato, quando sottintesa, vale 0..1; 
+        \item \textbf{Ciclo di vita} dell'oggetto contenuto è indipendente da quello del contenitore; 
+        \item Oggetto contenitore non necessariamente responsabile della costruzione e distruzione dell'oggetto contenuto.
+      \end{itemize}
+    \subsection{Composizione}
+      \begin{itemize}
+        \item Parti non esistono senza il tutto: se composito viene distrutto anche le sue parti verranno distrutte (o responsabilità viene ceduta ad un altro oggetto); 
+        \item Composito è responsabile di costruzione / distruzione degli oggetti contenuti;
+        \item Ogni parte può appartenere ad un solo composito per volta;
+        \item Una \textbf{classe} può essere componente di più classi, ma un'\textbf{istanza} di classe componente può essere componente di un solo oggetto composito.
+        \item Molteplicità dal lato del "tutto", quando sottintesa, vale 1 nel caso in cui classe componente ha solo un'altra classe composito (altrimenti se classe componente può essere contenuta in due o più classi composito diverse la molteplicità è 0..1).
+      \end{itemize}
 \end{document}
