@@ -1,18 +1,17 @@
-import 'testclass.dart';
 // import 'package:provider/provider.dart';
 
 void main() {
   int myInt = 13;
   String myString = "palle";
-  String s2 = myString + "!";
-  String s3 = "${myString}!" " palle!";
+  String s2 = "$myString!";
+  String s3 = "$myString!" " palle!";
 
-  var myVar;
+  int myVar;
   myVar = 13;
 
-  print(myString+"\n");
-  print(s2+"\n");
-  print(s3+"\n");
+  print("$myString\n");
+  print("$s2\n");
+  print("$s3\n");
   print("SUDO PALLE\n");
   // print(_globalString+"!!!\n"); non worka --> variabile privata
 
@@ -24,7 +23,7 @@ void main() {
   list.removeAt(3);
   print(list);
 
-  List emptyList = new List.empty(); // List emptyList = []
+  List emptyList = List.empty(); // List emptyList = []
 
   Map map = {
     1 : "sudo",

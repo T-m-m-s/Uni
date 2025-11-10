@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'testclass.dart';
 
 void main() {
@@ -19,4 +20,23 @@ void main() {
   //print(e1.firstName);
   //e1.lastName="GAY";
   //print(e1.getFullName());
+}
+
+class MyScaffold extends StatelessWidget {
+  const MyScaffold({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          children: [
+            Text("ch 1"),
+            Text("ch 2"),
+            Text("ch 3")
+          ],
+        ),
+      ),
+    );
+  }
 }

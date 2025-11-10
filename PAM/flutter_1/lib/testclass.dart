@@ -3,10 +3,10 @@ class Employee {
   String _lastName="";
 
   Employee.bugo(this._firstName,this._lastName);
-  Employee.frank(String firstName, String lastName) : this._firstName = firstName, this._lastName = lastName;
+  Employee.frank(String firstName, String lastName) : _firstName = firstName, _lastName = lastName;
   Employee({required String firstName, String lastName = ""}){
-    this._firstName = firstName;
-    this._lastName = "\'Nasone\' " + lastName;
+    _firstName = firstName;
+    _lastName = "'Nasone' $lastName";
   }
 
   /*Alt+Ins per il generate
@@ -22,6 +22,6 @@ class Employee {
   */
 
   String get fullName{
-    return _firstName.toString() + " " + _lastName.toString();
+    return "$_firstName $_lastName";
   }
 }

@@ -19,7 +19,7 @@ String myFun() => "SIUMMING";
 
 void myPrint(String s1, [String? s2]) {
   if (s2 != null) {
-    print(s1 + " " + s2);
+    print("$s1 $s2");
   } else {
     print(s1);
   }
@@ -27,7 +27,7 @@ void myPrint(String s1, [String? s2]) {
 
 void myPr(String s1, {String? s2}) {
   if (s2 != null) {
-    print(s1 + " " + s2);
+    print("$s1 $s2");
   } else {
     print(s1);
   }
