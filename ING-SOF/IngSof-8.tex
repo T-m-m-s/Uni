@@ -1,0 +1,59 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings, xcolor}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[a4paper, margin = 1.5cm]{geometry}
+\usepackage{float}
+\usepackage{amssymb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Diagramma delle Classi - Costruzione}
+\author{Trentin Tommaso}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+  \section{Livelli di dettaglio}
+    Diagrammi UML possono essere creati in diverse fasi del ciclo di vita, con diversi scopi / livelli di dettaglio:
+    \begin{itemize}
+      \item \textbf{System domain model}: modella entità del dominio del problema che saranno presenti nel sistema (dati di interesse), può contenere le responsabilità delle classi (opzionale); 
+      \item \textbf{System model}: include anche classi che saranno usate per costruire il sistema completo (classi per interfaccia utente, classi associate a parti di architettura, classi di utility), oltre a metodi e informazioni sulla navigabilità. 
+    \end{itemize}
+  \section{Costruzione del System Domain Model}
+    \begin{enumerate}
+      \item Identificare primo insieme di \textbf{classi} candidate; 
+      \item Aggiungere \textbf{associazioni} ed \textbf{attribuuti} delle classi;
+      \item Trovare \textbf{generalizzazioni};
+      \item Trovare principali \textbf{responsabilità} di ogni classe;
+      \item Iterare processo finché modello ottenuto è soddisfacente.
+    \end{enumerate}
+    \subsection{Identificare Classi}
+      Classi dovrebbero corrispondere a entità del dominio del problema, si applicano i concetti di OO: una classe identifica un tipo di dato astratto. Una buona classe:
+      \begin{itemize}
+        \item ha un nome che ne rispecchia l'intento; 
+        \item è un'astrazione che modella un elemento del dominio del problema;
+        \item ha insieme ridotto e ben definito di responsabilità.
+      \end{itemize}
+      \subsubsection{Analisi dei nomi}
+        Semplice tecnica per scoprire le classi del dominio:
+        \begin{enumerate}
+          \item Analizzare documentazione di partenza; 
+          \item Elencare i nomi; 
+          \item Eliminare nomi che:
+            \begin{itemize}
+              \item sono ridondanti; 
+              \item rappresentano / caratterizzano istanze e non classi;
+              \item sono vaghi / generici;
+              \item corrispondono a classi non necessarie al livello considerato.
+            \end{itemize}
+        \end{enumerate}
+    \subsection{Identificare Attributi}
+    \subsection{}
+    \subsection{}
+    \subsection{}
+\end{document}
