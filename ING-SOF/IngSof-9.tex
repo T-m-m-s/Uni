@@ -1,0 +1,63 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings, xcolor}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[a4paper, margin = 1.5cm]{geometry}
+\usepackage{float}
+\usepackage{amssymb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Dipendenze}
+\author{Trentin Tommaso}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+  \section{Dipendenze}
+    Dependency si rappresentano mediante una linea tratteggiata \textbf{unidirezionale} che termina con una freccia dall'oggetto dipendente (\textit{client}) a quello da cui dipende (\textit{provider}).
+    \begin{itemize}
+      \item Si ha una dipendenza tra due classi se la modifica della definizione della classe provider può causare cambiamenti nella classe client; 
+      \item Se provider viene modificato e cambia la sua interfaccia, tale modifica deve coinvolgere anche il client $\rightarrow$ \textit{effetto domino} per sistemi complessi in caso di modifiche potenzialmente onerose. 
+    \end{itemize}
+    \subsection{Tipologie di dipendenza}
+      Per distinguere tipologia di dipendenza UML mette a disposizione stereotipi, indicati con keywords tra <<>>:
+      \begin{itemize}
+        \item \textbf{<<use>>}: client effettua generico uso di qualcosa della destinazione (\textit{dipendenza d'uso generica});
+        \item \textbf{<<call>>}: client invoca un'operazione del provider;
+        \item \textbf{<<create>>}: client crea istanze del provider.
+      \end{itemize}
+    \subsection{Implicazioni}
+      Dipendenze sono individuate solitamente durante progettazione di dettaglio, raramente contribuiscono a modello concettuale:
+      \begin{itemize}
+        \item Durante testing, correttezza del client è vincolaa a qualla del provider; 
+        \item Client non può essere riusato senza provider; 
+        \item Modifiche di provider implicano modifiche di client (\textit{ripple effect} - con troppe dipendenze modificare una classe implica modificarne molte altre).
+      \end{itemize}
+  \section{Interfacce e Classi Astratte}
+    \subsection{Classi ed Operazioni Astratte}
+      Una classe astratta è una classe che non può essere direttamente istanziata poiché ha \textbf{una o più operazioni astratte} (dichiarate ma non implementate), in UML si rappresenta scrivendo nome in corsivo (o con etichetta {abstract}). 
+      *Inserisci Immagine*
+    \subsection{Interfaccia}
+      \begin{itemize}
+        \item Classe priva di implementazione (\textbf{tutte le operazioni sono astratte}); 
+        \item Descrive porzione di comportamento visibile, comune ad un insieme di oggetti; 
+        \item Una o più classi possono fornire implementazione dell'interfaccia; 
+        \item In UML si usa notazione grafica simile alle classi, ma con keyword \textbf{<<interface>>}; 
+        \item Classi che implementano un'interfaccia devono fornire un'implementazione per \textbf{tutti} i metodi dichiarati nell'interfaccia.
+      \end{itemize}
+      *Inserisci Immagine*
+      Idea di base è separare specifica di una funzionalità (interfaccia) dall'implementazione della stessa da parte di una o più classi, con due possibili rappresentazioni:
+      *Inserisci Immagine* 
+    \subsection{Classi e Interfacce}
+      Classi hanno due tipi di rapporti con interfacce:
+      \begin{itemize}
+        \item Classe può \textbf{fornire} interfaccia se è sostituibile ad essa (praticamente la implementa); 
+        \item Classe può \textbf{richiedere} interfaccia se ha bisogno di una sua istanza per funzionare (forma di dipendenza).
+      \end{itemize}
+
+\end{document}
