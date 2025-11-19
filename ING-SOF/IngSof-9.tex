@@ -59,5 +59,36 @@
         \item Classe può \textbf{fornire} interfaccia se è sostituibile ad essa (praticamente la implementa); 
         \item Classe può \textbf{richiedere} interfaccia se ha bisogno di una sua istanza per funzionare (forma di dipendenza).
       \end{itemize}
-
+      \subsubsection{Esempio}
+        *Inserisci Immagine* 
+    \subsection{Notazione Compatta Lollipop}
+      \begin{itemize}
+        \item \textbf{Pallina (lollipop)} rappresenta interfaccia esposta da una classe (realization); 
+        \item \textbf{Semicerchio (socket)} rappresenta servizio richiesto (dipendenza).
+      \end{itemize}
+      *Inserisci Immagine*
+  \section{Vincoli}
+    Attraverso associazioni, molteplicità, attributi e generalizzazioni si esprimono i vincoli più importanti delle classi, UML permette la definizione di vincoli nel diagramma mediante i suoi costrutti base o mediante classi \textbf{tra parentesi graffe} in diversi linguaggi:
+    \begin{itemize}
+      \item linguaggio naturale; 
+      \item linguaggio di programmazione;
+      \item linguaggi formali specifici (OCL).
+    \end{itemize}
+    *Inserisci Immagine*
+    \subsection{Object Constraint Language}
+      Linguaggio di specifica progettato per specificare vincoli nei moduli SW, un'espessione OCL specifica un vincolo (predicato logico) sul sistema che deve assumere valore vero. Gli statements OCL sono costruiti in 3 parti:
+      \begin{itemize}
+        \item \textbf{Contesto} - specifica elemento del modello UML a cui si applica (classe, associazione, attributo);
+        \item \textbf{Regola} - specifica tipo di vincolo, può essere invariante \textbf{inv} (deve essere sempre vero), precondizione \textbf{pre} (deve essere vero prima dell'esecuzione di un'operazione da parte della classe) o postcondizione \textbf{post};
+        \item \textbf{Espressione} - definisce il vincolo
+      \end{itemize}
+      \subsubsection{Sintassi}
+        \[
+          \text{context }\langle \text{Contesto} \rangle\ \langle \text{Regola} \rangle : \langle \text{Espressione} \rangle
+        \]
+      \subsubsection{Vantaggi / Svantaggi}
+      \begin{itemize}
+        \item \textbf{Vantaggi}: notazione formale evita ambiguità del linguaggio naturale, dai vincoli formali è possibile generare automaticamente casi di test;
+        \item \textbf{Svantaggi}: OCL può generare incongruenze se chi lo scrive / legge non sonosce bene OCL.
+      \end{itemize}
 \end{document}
