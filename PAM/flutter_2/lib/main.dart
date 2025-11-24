@@ -142,6 +142,7 @@ class _MyScaffold extends State<MyScaffold> {
                     },
                   ),
                   TextFormField(
+                    autovalidateMode: AutovalidateMode.onUnfocus,
                     obscureText: true,
                     decoration: InputDecoration(
                       hintText: "password",
@@ -163,6 +164,14 @@ class _MyScaffold extends State<MyScaffold> {
                         _formKey.currentState!.save();
                         print("Email: " + this.email.toString());
                         print("Password: " + this.password.toString());
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context){
+                                return SecondScreen();
+                              }
+                          )
+                        );
                       };
                     },
                     child: Text("Login"),
@@ -214,5 +223,24 @@ class MyApp extends StatelessWidget {
       );
     }
     return Text("Palle sudate");
+  }
+}
+
+class SecondScreen extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Boia can"),
+      ),
+      body: Center(
+        child: ElevatedButton(
+            onPressed: (){
+              Navigator.pop(context);
+            },
+            child: Text("Go back")
+        ),
+      ),
+    );
   }
 }
