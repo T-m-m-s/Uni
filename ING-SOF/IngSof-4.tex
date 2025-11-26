@@ -18,6 +18,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
+  \maketitle
+  \tableofcontents
+  \newpage
   \section{Deduzione e Analisi dei Requisiti}
     Idea - Capire ambiente operativo e come stakeholder potrebbero utilizzare il SW, gli ingegneri dei requisiti devono lavorare con stakeholder per scoprire informazioni su dominio applicatico, funzionalità che sistema dovrebbe fornire loro, prestazioni richieste e altri vincoli operativi.
     \subsection{Stakeholder}
@@ -58,7 +61,6 @@
         \item \textbf{Specifiche formali} - macchine a stati finiti.
       \end{itemize}
       \subsubsection{Specifiche strutturate in template}
-        *Inserire Immagine*
       \subsubsection{Specifiche tabellari}
         Utili per specificare calcoli completti senza introdurre ambiguità, permettono di aggiungere informazioni supplementari al linguaggio naturale come tabelle o modelli grafici del sistema; utili per descrivere \textit{situazione alternative}. 
     \subsection{Documento di Specifica Requisiti di Sistema (SRS)}
@@ -77,7 +79,11 @@
         \end{itemize}
       \subsubsection{Utilizzatori}
         Molteplici tipologie d utenti utilizzano l'SRS per diversi scopi: informazioni contenute dipendono dal tipo di sistema e dall'approccio di sviluppo. Varietà di utenti comporta un compromesso sul livello di dettaglio da adottare
-        *Inserire immagine*
+        \begin{figure}[h!]
+          \begin{center}
+            \includegraphics[width=0.5\textwidth]{figures/srs_usr.png}
+          \end{center}
+        \end{figure}
       \subsubsection{Si Utilizza Ancora?}
         In certi settori la specifica descritta in SRS è ancora obbligatoria (esistono Enti che promulgano specifici standard: ISO, IEEE, UNI\dots che impongono il tipo di documenti da produrre, tra cui l'SRS). In ambeienti meno restrittivi \textit{conviene} produrre un SRS anche non seguendo completamente un template, in seguito vengono definiti i \textbf{casi d'uso} che poi possono essere "incrociati" con i requisiti. 
   \section{Convalida dei Requisiti}

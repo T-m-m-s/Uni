@@ -16,7 +16,11 @@
 \title{Diagramma dei Casi d'uso}
 \author{Trentin Tommaso}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
+  \maketitle
+  \tableofcontents
+  \newpage
   \section{Costruzione}
     \begin{enumerate}
       \item Definire confini del sistema;
@@ -75,7 +79,11 @@
         \item In base al proprio stato due oggetti possono rispondere diversamente alla stessa operazione.
       \end{itemize}
       Una classe è rappresentata da un rettangolo con tre sottosezioni: nome della classe e, opzionalmente (a seconda del livello di dettaglio desiderato), attributi e operazioni. Il nome è al \textbf{singolare} e solitamente in \textbf{UpperCamelCase}.
-      *Inserisci immagine*
+      \begin{figure}[h!]
+        \begin{center}
+          \includegraphics[width=0.5\textwidth]{figures/class.png}
+        \end{center}
+      \end{figure}
     \subsection{Attributi}
       \subsubsection{Visibilità}
         Sono ammessi tre livelli di \textbf{visibilità} degli attributi:
@@ -115,7 +123,11 @@
       Solitamente nei diagrammi \textit{concettuali} che descrivono dominio del sistema non si inseriscono metodi in quanto rappresenterebbero un elemento del dominio della soluzione, in alternativa si possono usare le \textbf{responsabilità} (insieme di funzioni principali che classe dovrebbe garantire, utili per controllare completezza del modello di dominio)
     \subsection{Note / Testo descrittivo}
       Commenti aggiuntivi in linguaggio naturale che possono essere utilizzati in in ogni tipo di diagramma UML, simili a commenti in un linguaggio di programmazione. 
-      *Inserisci immagine*
+      \begin{figure}[h!]
+        \begin{center}
+          \includegraphics[width=0.5\textwidth]{figures/comment.png}
+        \end{center}
+      \end{figure}
   \section{Associazioni}
     Esprime una relazione (fisica o concettuale) tra istanze (oggetti) delle classi, caratterizzata da:
     \begin{itemize}
@@ -133,7 +145,11 @@
     \subsection{Verso di navigazione}
       Indica in che direzione è possibile reperire le informazioni: utile soprattutto nel \textbf{progetto di dettaglio}, rispecchiando una scelta di progetto, non presente (di solito) nei \textbf{progetti concettuali}. 
     \subsection{Riepilogo}
-      *Inserisci Immagine*
+      \begin{figure}[h!]
+        \begin{center}
+          \includegraphics[width=0.5\textwidth]{figures/ass_riep.png}
+        \end{center}
+      \end{figure}
     \subsection{Associazioni vs Attributi}
       \begin{itemize}
         \item Caratteristiche strutturali di una classe devono essere rappresentat sia come associazioni che come attributi di una classe; 
@@ -180,7 +196,11 @@
         \item Ci può essere solo un'stanza di una specifica classe associativa tra ogni coppia di soggetti associati;
         \item Per \textit{reificare} (rendere reale) una classe associativa sarà opportuno trasformarla in una classe.
       \end{itemize}
-      *inserisci immagine*
+      \begin{figure}[h!]
+        \begin{center}
+          \includegraphics[width=0.5\textwidth]{figures/cl_ass.png}
+        \end{center}
+      \end{figure}
   \section{Generalizzazione - Specializzazione}
     I concetti di generalizzazione e specializzazione in UML sono analoghi a quelli di OO, indicano legami del tipo \textbf{\textit{is-a}} tra le sottoclassi e la superclasse (quest'ultima è un concetto generale, le sottoclassi sono due specializzazioni).
     \begin{itemize}
@@ -195,7 +215,11 @@
         \end{itemize}
     \end{itemize}
     \subsection{Esempio}
-    *Inserisci Immagine*
+      \begin{figure}[h!]
+        \begin{center}
+          \includegraphics[width=0.5\textwidth]{figures/gen_ex.png}
+        \end{center}
+      \end{figure}
   \section{Contenimento}
     Tipo speciale di associazione tra classi che rappresenta il legame tra un insime (il "tutto") e le sue parti, ovvero tra un contenitore e il contenuto, questo può essere:
     \begin{itemize}

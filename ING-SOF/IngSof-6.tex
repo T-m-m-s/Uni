@@ -18,6 +18,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
+  \maketitle
+  \tableofcontents
+  \newpage
   \section{Definizione}
     Diagramma \textbf{comportamentale} modella comportamento esterno del sistema senza specificare come viene realizzato (modella interazione tra sistema e agenti esterni). 
     \begin{itemize}
@@ -29,6 +32,11 @@
       \item Comportamento del sistma analizzato dal punto di vista dei possibili utenti;
       \item Si presta quindi ad essere compilato a valle di interviste al committente.
     \end{itemize}
+    \begin{figure}[h!]
+      \begin{center}
+        \includegraphics[width=0.5\textwidth]{figures/uml_cu.png}
+      \end{center}
+    \end{figure}
     \subsection{Scenari e Casi d'uso}
       \begin{itemize}
         \item \textbf{Scenario}: sequenza di passi che caratterizzano una particolare interazione utente / sistema; 
@@ -42,7 +50,11 @@
         \item I possibili utenti sono \textbf{attori} nello scenario
       \end{itemize}
   \section{Diagramma dei casi d'uso}
-    *inserire immagine*
+    \begin{figure}[h!]
+      \begin{center}
+        \includegraphics[width=0.5\textwidth]{figures/uml_leg.png}
+      \end{center}
+    \end{figure}
     \subsection{Subject (confini del sistema)}
       \begin{itemize}
         \item Rappresenta limite tra ciò che è interno al sistema da sviluppare e ciò che è esterno ad esso (è il perimetro che delimita il sistema); 
@@ -107,21 +119,37 @@
         \item Freccia parte dall'attore specializzato e punta all'attore generale; 
         \item Generalizzazione tra attori permette di estrarre ruoli comuni a più attori e semplificare diagrammi.
       \end{itemize}
-      *Inserisci imamgine*
+      \begin{figure}[h!]
+        \begin{center}
+          \includegraphics[width=0.5\textwidth]{figures/att_gen.png}
+        \end{center}
+      \end{figure}
     \subsection{Relazioni fra Casi d'uso}
       \subsubsection{Generalizzazione fra Casi d'uso}
         Simile a generalizzazione fra classi in POO, caso d'uso generale (talvolta astratto) rappresenta diversi casi d'uso simili, mentre uno specializzato eredita comportamento / significato del generale fornendo i dettagli specifici dei casi d'uso simili, può inoltre \textbf{aggiungere passi} o \textbf{modificare il comportamento} del generale. 
-        *Inserire Immagine*
+        \begin{figure}[h!]
+          \begin{center}
+            \includegraphics[width=0.5\textwidth]{figures/cu_gen.png}
+          \end{center}
+        \end{figure}
       \subsubsection{Inclusione fra Casi d'uso}
         Formalizza i casi in cui più casi d'uso \textit{includono} una serie di azioni comuni, ponedo il \textbf{comportamento comune a più casi d'uso} come un caso d'uso incluso nei casi d'uso di partenza. Il caso d'uso base è \textit{incompleto} senza il caso incluso.
         \begin{itemize}
           \item Inclusione non contiene informazioni su ordine dei casi d'uso; 
           \item Caso incluso è una sequenza di azioni eseguita una o più volte dai casi includenti.
         \end{itemize}
-        *Inserisci Immagine*
+        \begin{figure}[h!]
+          \begin{center}
+            \includegraphics[width=0.5\textwidth]{figures/cu_inc.png}
+          \end{center}
+        \end{figure}
       \subsubsection{Inclusione e Generalizzazione}
         Se caso d'uso generale include un'altro caso d'uso, tutte le sue specializzazioni "ereditano" tale inclusione. 
-        *Inserisci Immagine*
+        \begin{figure}[h!]
+          \begin{center}
+            \includegraphics[width=0.5\textwidth]{figures/cu_inc_gen.png}
+          \end{center}
+        \end{figure}
       \subsubsection{Estensione dei Casi d'uso}
         Modella una sequenza opzionale di eventi / casi eccezionali, ciascuna estensione definisce nuovo caso d'uso che estende caso d'uso di partenza e ne varia comportamento "normale". Nel caso d'uso base si agganciano ad uno o più \textbf{eXtension Points} (XP) le condizioni che fanno scattare l'estensione. 
         \begin{itemize}
@@ -132,7 +160,11 @@
           \item Caso d'uso base si può svolgere anche senza casi d'uso di estensione (a differenza degli include); 
           \item Creando estensioni separate descrizione del caso base rimane semplice. 
         \end{itemize}
-        *Inserisci immgine* 
+        \begin{figure}[h!]
+          \begin{center}
+            \includegraphics[width=0.5\textwidth]{figures/cu_ext.png}
+          \end{center}
+        \end{figure}
     \subsection{Errori Tipici con Casi d'uso}
       \begin{itemize}
         \item Dragrammi troppo complessi con molti casi d'uso (ad es. diagrammi di flusso): casi d'uso rappresentano sequenze di azioni, non singole azioni; 
@@ -145,7 +177,11 @@
       \end{itemize}
     \subsection{Tracciabilità}
       Importante incrociare i requisiti funzionali e i casi d'uso per verificare la reciproca copertura: ogni requisito dev'essere coperto da almeno un caso d'uso e viceversa, tale informazione va riportata nella \textbf{matrice di tracciabiltà}. 
-      *Inserisci Immagine*
+      \begin{figure}[h!]
+        \begin{center}
+          \includegraphics[width=0.5\textwidth]{figures/cu_tra.png}
+        \end{center}
+      \end{figure}
     \subsection{Prodotto Finale}
       Analisi dei casi d'uso produce un \textbf{diagramma} dei casi d'uso e descrizioni di tutti gli \textbf{scenari} e di tutti i casi d'uso. 
       \begin{itemize}
