@@ -13,11 +13,15 @@
 \usepackage{amssymb}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Dipendenze}
+\title{Diagramma Classi - Aspetti Avanzati}
 \author{Trentin Tommaso}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
+  \maketitle
+  \tableofcontents
+  \newpage
+
   \section{Dipendenze}
     Dependency si rappresentano mediante una linea tratteggiata \textbf{unidirezionale} che termina con una freccia dall'oggetto dipendente (\textit{client}) a quello da cui dipende (\textit{provider}).
     \begin{itemize}
@@ -41,7 +45,12 @@
   \section{Interfacce e Classi Astratte}
     \subsection{Classi ed Operazioni Astratte}
       Una classe astratta è una classe che non può essere direttamente istanziata poiché ha \textbf{una o più operazioni astratte} (dichiarate ma non implementate), in UML si rappresenta scrivendo nome in corsivo (o con etichetta {abstract}). 
-      *Inserisci Immagine*
+      \begin{figure}[h!]
+        \begin{center}
+          \includegraphics[width=0.5\textwidth]{figures/abs_cl.png}
+        \end{center}
+      \end{figure}
+*
     \subsection{Interfaccia}
       \begin{itemize}
         \item Classe priva di implementazione (\textbf{tutte le operazioni sono astratte}); 
@@ -50,9 +59,12 @@
         \item In UML si usa notazione grafica simile alle classi, ma con keyword \textbf{<<interface>>}; 
         \item Classi che implementano un'interfaccia devono fornire un'implementazione per \textbf{tutti} i metodi dichiarati nell'interfaccia.
       \end{itemize}
-      *Inserisci Immagine*
       Idea di base è separare specifica di una funzionalità (interfaccia) dall'implementazione della stessa da parte di una o più classi, con due possibili rappresentazioni:
-      *Inserisci Immagine* 
+      \begin{figure}[h!]
+        \begin{center}
+          \includegraphics[width=0.5\textwidth]{figures/interface.png}
+        \end{center}
+      \end{figure}
     \subsection{Classi e Interfacce}
       Classi hanno due tipi di rapporti con interfacce:
       \begin{itemize}
@@ -60,13 +72,21 @@
         \item Classe può \textbf{richiedere} interfaccia se ha bisogno di una sua istanza per funzionare (forma di dipendenza).
       \end{itemize}
       \subsubsection{Esempio}
-        *Inserisci Immagine* 
+        \begin{figure}[h!]
+          \begin{center}
+            \includegraphics[width=0.5\textwidth]{figures/cl_int.png}
+          \end{center}
+        \end{figure}
     \subsection{Notazione Compatta Lollipop}
       \begin{itemize}
         \item \textbf{Pallina (lollipop)} rappresenta interfaccia esposta da una classe (realization); 
         \item \textbf{Semicerchio (socket)} rappresenta servizio richiesto (dipendenza).
       \end{itemize}
-      *Inserisci Immagine*
+      \begin{figure}[h!]
+        \begin{center}
+          \includegraphics[width=0.5\textwidth]{figures/lollipop.png}
+        \end{center}
+      \end{figure}
   \section{Vincoli}
     Attraverso associazioni, molteplicità, attributi e generalizzazioni si esprimono i vincoli più importanti delle classi, UML permette la definizione di vincoli nel diagramma mediante i suoi costrutti base o mediante classi \textbf{tra parentesi graffe} in diversi linguaggi:
     \begin{itemize}
@@ -74,7 +94,11 @@
       \item linguaggio di programmazione;
       \item linguaggi formali specifici (OCL).
     \end{itemize}
-    *Inserisci Immagine*
+      \begin{figure}[h!]
+        \begin{center}
+          \includegraphics[width=0.5\textwidth]{figures/vin_ex.png}
+        \end{center}
+      \end{figure}
     \subsection{Object Constraint Language}
       Linguaggio di specifica progettato per specificare vincoli nei moduli SW, un'espessione OCL specifica un vincolo (predicato logico) sul sistema che deve assumere valore vero. Gli statements OCL sono costruiti in 3 parti:
       \begin{itemize}

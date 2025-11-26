@@ -18,6 +18,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
+  \maketitle
+  \tableofcontents
+  \newpage
+  
   \section{Livelli di dettaglio}
     Diagrammi UML possono essere creati in diverse fasi del ciclo di vita, con diversi scopi / livelli di dettaglio:
     \begin{itemize}
@@ -94,7 +98,11 @@
         \item Se una responsabilità non può essere attribuita ad alcuna delle classi esistenti, probabilmente ne va creata una nuova; 
         \item Responsabilità di creare istanze di una classe non può essere attribuita alla classe stessa, ma ad una classe ad essa collegata (stessa cosa per collections tipo lista, catalogo... di); 
       \end{itemize}
-      *Inserisci Immagine*
+      \begin{figure}[h!]
+        \begin{center}
+          \includegraphics[width=0.5\textwidth]{figures/resp_es.png}
+        \end{center}
+      \end{figure}
       \subsubsection{Class Responsibility Collaboration (CRC) Cards}
         Metodo alternativo per ottenere diagramma delle classi:
         \begin{enumerate}
@@ -103,9 +111,17 @@
           \item Si sistemano le card su una board per creare il Class diagram;
           \item Si disegnano linee corrispondenti ad associazioni e generalizzazioni.
         \end{enumerate}
-        *Inserisci Immagine*
+        \begin{figure}[h!]
+          \begin{center}
+            \includegraphics[width=0.5\textwidth]{figures/crc_es.png}
+          \end{center}
+        \end{figure}
   \section{System Domain Model}
     Nel progetto di dettaglio bisogna passare dalle responsabilità alle operazioni necessarie a realizzare le responsabilità di ciascuna classe: ognuna di queste può essere realizzata attraverso molteplici operazioni. Le operazioni che implementano una responsabilità sono normalmente dichiarate \textit{public}, mentre altri metodi che collaborano a realizzarle devono essere dichiarate, se possibile, \textit{private}. 
     \subsection{Esempio}
-    *Inserisci Immagine*
+      \begin{figure}[h!]
+        \begin{center}
+          \includegraphics[width=0.5\textwidth]{figures/sdm_es.png}
+        \end{center}
+      \end{figure}
 \end{document}
