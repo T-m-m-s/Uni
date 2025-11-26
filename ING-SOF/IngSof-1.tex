@@ -18,9 +18,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-    \maketitle
-    \tableofcontents
-    \newpage
+  \maketitle
+  \tableofcontents
+  \newpage
 
   \section{Processo vs Modello di processo}
     Non esiste modello univesale $\rightarrow$ ciascuna organizzazione usa proprio processo (possibilità di usare processi diversi per prodotti diversi).\\
@@ -45,7 +45,6 @@
   \section{Modello a Cascata (Waterfall)}
     \begin{itemize}
       \item Processo \textbf{plan-driven} in cui ciascuna fase segue la successiva, vanno pianificate tutte le attività di processo prima di iniziare sviluppo del SW. Gli output di una fase sono gli input della successiva;
-      \
       \item Processo \textbf{document-centric} guidato da produzione di documentazione, risultato di una fase è costituito da 1+ documenti approvati e la fase successiva non dovrebbe partire prima della fine della prcedente e del completamento/approvazione dei suoi documenti;
       \item Processo \textbf{rigido} in cui i prodotti di una fase sono congelati (non modificabili se non innescando processo formale e sistematico di modifica), fine di ogni fase è una \textit{milestone} del processo. Definizione precisa di milestone e output è importante per misurare progresso di un progetto;
       \item Processo \textbf{monolitico} in cui cliente vede il SW solo a completamento di tutte le fasi, in caso di errori nei requisiti questi vengono rilevati solamente alla fine con costi elevati. Processi non sono lineari ma ciascuna fase scambia feedback con le altre.
@@ -62,6 +61,11 @@
         \item Poca flessibilità (difficile gestire necessità di modifiche che emergono durane esecuzione del processo).
       \end{itemize}
     Adatto solo se requisiti sono ben chiari fin dall'inizio ed è difficile che cambini durante lo sviluppo, nella realtà pochi SW presentano requisiti stabili.
+    \begin{figure}[h!]
+      \begin{center}
+        \includegraphics[width=0.5\textwidth]{figures/mod_cascata.png}
+      \end{center}
+    \end{figure}
     \subsection{Modello a cascata con retroazione}
       Variazione del modello a cascata con inserimento di \textbf{retroazione}, ossia si verifica correttezza del risultato dell'attività con possibilità di ripetere attività precedente. Introduce dei \textbf{feedback} in ogni fase, in modo da rilevare errori prima della fase successiva, ad ogni feedback corrisponde una \textbf{potenziale modifica dei documenti} dello stadio precedente. 
       \begin{itemize}
@@ -71,6 +75,11 @@
       \end{itemize}
     \subsection{Modello a V}
     Estensione del modello a cascata in cui attività del ramo superiore (\textbf{progetto}) sono collegate a quelle del ramo inferiore (\textbf{V&V}), in ogni fase del progetto il team definisce il corrispondente piano di test della fase V&V (guidato da un'insieme di piani di test e eseguito da team indipendente da quello di sviluppo), se si trova un errore nella fase di V&V \textbf{si rieseguono fasi di processo correlate}. Modello che può anticipare validazione dei requisiti da parte del cliente e garantire rilevamento precoce di errori. 
+    \begin{figure}[h!]
+      \begin{center}
+        \includegraphics[width=0.5\textwidth]{figures/mod_v.png}
+      \end{center}
+    \end{figure}
   \section{Modelli Evolutivi - Sviluppo Incrementale}
     Idea: sviluppare un'implementazione iniziale (partendo da pochi requisiti chiari o da una descrizione sommaria dei requisiti), esporla e perfezionarla attraverso versioni successive (\textbf{incrementi}) fino ad ottenere il sistema richiesto. Attività di specifica, sviluppo e convalida sono intrecciate anziché separate (feedback veloci tra varie attività). 
     \begin{itemize}
@@ -78,6 +87,11 @@
       \item Funzionalità / requisiti ulteriorio vengono implementati in versioni intermedie successive (\textit{solitamente} non mostrate al cliente)
       \item Ultimo incremento è la versione finale el sistema che viene rilasciata al cliente (corrisponde comunque a un'evoluzione della versione iniziale). 
     \end{itemize}
+    \begin{figure}[h!]
+      \begin{center}
+        \includegraphics[width=0.5\textwidth]{figures/mod_sv_in.png}
+      \end{center}
+    \end{figure}
   \section{Modelli Evolutivi - Consegna Incrementale}
     Sistema non viene consegnato direttamente alla sua forma finale alla fine del progetto, alcuni degli incrementi sviluppati sono consegnati ai clienti e installati nel loro ambiente operativo:
     \begin{itemize}
@@ -85,6 +99,11 @@
       \item \textbf{Limitazione}: utenti devono avere tempo sufficiente per sperimentare nuovi incrementi.
     \end{itemize}
     Idea: ogni incremento rilascia parte delle funzionalità richieste, ai requisiti utente vengono assegnati livelli di priorità (requisiti a priorità maggiore vengono rilasciati per primi). I requisiti di un incremento sono congelati dopo che tale incremento è stato consegnato, mentre gli altri possono evolvere. \textbf{Funzionalità comuni a più processi} dovrebbero essere individuate tempestivamene e \textbf{implementate all'inizio del processo}
+    \begin{figure}[h!]
+      \begin{center}
+        \includegraphics[width=0.5\textwidth]{figures/mod_co_in.png}
+      \end{center}
+    \end{figure}
     \subsection{Consegna VS Sviluppo Incrementale}
       \begin{minipage}{0.48\textwidth}
         \textbf{Sviluppo incrementale}: valutazione della prima versione effettuata da un proxy degli utenti finali in ambiente operativo diverso da quello target, \textit{versioni intermedie solitamente non rilasciate al cliente}. 
@@ -122,13 +141,21 @@
       \item Prototipazione può essere combinata con altri cicli di vita classici (identificazione / validazione / raffinamento requisiti);
       \item Durante progettazione di un modello a cascata prototipazione può essere usata per valutare \textit{opzioni alternative a progettazione}.
     \end{itemize}
+    \begin{figure}[h!]
+      \begin{center}
+        \includegraphics[width=0.5\textwidth]{figures/mod_pr.png}
+      \end{center}
+    \end{figure}
+
     \subsection{Modello Prototipale - Back-To-Back Testing}
-      \begin{minipage}{0.48\textwidth}
+      \noindent % <--- Add this to ensure the first minipage isn't indented
+      \begin{minipage}{0.58\textwidth}
         Prototipo può essere usato durante validazione per controllare che sistema sviluppato si comporti come modellato ne prototipo delle fasi iniziali del progetto.
       \end{minipage}
       \hfill
-      \begin{minipage}{0.48\textwidth}
-        Inserisci immagine
+      \begin{minipage}{0.38\textwidth}
+        \centering % Use this instead of \begin{center} to save vertical space
+        \includegraphics[height=5cm, keepaspectratio]{figures/mod_pr_b2b.png}
       \end{minipage}
   \section{Modello Orientato al Riuso}
     Approccio che tende al riuso di componenti SW riutilizzabili ma anche di interi sistemi (COTS - Commercial off the schelf). Sfrutta \textbf{framework di integrazione} per comporre componenti.\textbf{Componenti riutilizzabili e COTS} possono essere configurati per adattare loro comportamento a requisiti utente. 
@@ -149,6 +176,12 @@
       \item Sistema potrebbe non soddisfare tutte le reali necessità degli utenti causa compromessi nei requisiti;
       \item Evoluzione dei componenti riutilizzati non è controllata direttamente.
     \end{itemize}
+    \begin{figure}[h!]
+      \begin{center}
+        \includegraphics[width=0.5\textwidth]{figures/mod_riu.png}
+      \end{center}
+    \end{figure}
+
   \section{Modello Trasformazionale}
     Idea: specifiche definite mediante linguaggi formali (spec. algebriche / modelli di stato), utilizzo di tecniche di model checking per provare correttezza. Specifiche formali venfono trasformate automaticamente in codice (correttezza preservata / verifica ottenuta implicitamente)
     \begin{minipage}{0.48\textwidth}
@@ -172,4 +205,10 @@
       \item Non adatto per sistemi di grandi dimensioni;
       \item Utilizzato per parti critiche (dimostrazione validità \textit{by construction}).
     \end{itemize}
+    \begin{figure}[h!]
+      \begin{center}
+        \includegraphics[width=0.5\textwidth]{figures/mod_tra.png}
+      \end{center}
+    \end{figure}
+
 \end{document}
