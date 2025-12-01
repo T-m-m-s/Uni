@@ -1,64 +1,95 @@
+import 'dart:convert'; // Importante per JSON
 import 'package:flutter/material.dart';
-import 'package:open_file/open_file.dart'; // Assicurati che questo import ci sia
+import 'package:open_file/open_file.dart';
+import 'package:shared_preferences/shared_preferences.dart'; // Importante
 import '../models/character.dart';
 import '../services/pdf_service.dart';
 
 class CharacterProvider with ChangeNotifier {
-  // 1. LA LISTA DEI PERSONAGGI
-  final List<Character> _characters = [];
+  List<Character> _characters = [];
   final PdfService _pdfService = PdfService();
 
-  // Getter per leggere la lista
   List<Character> get characters => _characters;
 
-  // --- METODO MANCANTE (AGGIUNTO ORA) ---
-  // Questo è il metodo che il tuo Editor sta cercando di chiamare
+  // COSTRUTTORE: Carica i dati appena l'app parte
+  CharacterProvider() {
+    loadData();
+  }
+
+  // --- LOGICA DI SALVATAGGIO/CARICAMENTO ---
+
+  Future<void> loadData() async {
+    final prefs = await SharedPreferences.getInstance();
+    // Cerchiamo se c'è una lista salvata con la chiave 'saved_characters'
+    final String? dataString = prefs.getString('saved_characters');
+
+    if (dataString != null) {
+      // Decodifichiamo: Stringa -> Lista di JSON -> Lista di Character
+      final List<dynamic> jsonList = json.decode(dataString);
+      _characters = jsonList.map((jsonItem) => Character.fromJson(jsonItem)).toList();
+      notifyListeners(); // Avvisa la UI che i dati sono arrivati
+    }
+  }
+
+  Future<void> saveData() async {
+    final prefs = await SharedPreferences.getInstance();
+    // Codifichiamo: Lista di Character -> Lista di JSON -> Stringa
+    final String dataString = json.encode(_characters.map((e) => e.toJson()).toList());
+    await prefs.setString('saved_characters', dataString);
+  }
+
+  // ------------------------------------------
+
   void addCharacter(Character newChar) {
     _characters.add(newChar);
-    notifyListeners(); // Avvisa la UI di aggiornarsi
+    saveData(); // <--- SALVA ORA
+    notifyListeners();
   }
-  // --------------------------------------
 
-  // Metodo per rimuovere un personaggio
   void removeCharacter(int index) {
     _characters.removeAt(index);
+    saveData(); // <--- SALVA ORA
     notifyListeners();
   }
 
-  // Metodo Test: Aggiunge un personaggio finto
+  // Il metodo dummy lo teniamo per test, ma ora salva anche lui!
   void addDummyCharacter() {
-    _characters.add(
-      Character(
-        name: "Eroe Test ${_characters.length + 1}",
-        charClass: "Guerriero",
-        level: 1,
-        strength: 16,
-      ),
-    );
+    _characters.add(Character(
+      name: "Eroe Test ${_characters.length + 1}",
+      charClass: "Guerriero",
+      level: 1,
+      strength: 16,
+    ));
+    saveData();
     notifyListeners();
   }
 
-  // Metodo Export PDF
+  void updateCharacter(Character char) {
+    // Poiché 'char' è un riferimento all'oggetto nella lista,
+    // modificarlo modifica anche la lista. Dobbiamo solo salvare su disco.
+    saveData();
+    notifyListeners();
+  }
+
+  // Metodo Export PDF (Invariato)
   Future<void> exportCharacterPdf(Character char) async {
     try {
-      // Calcoli preliminari (es. modificatori)
       String strMod = char.getModifier(char.strength);
       String dexMod = char.getModifier(char.dexterity);
 
-      // Mappatura Dati
       Map<String, String> dataMap = {
         'CharacterName': char.name,
         'CharacterName 2': char.name,
         'ClassLevel': '${char.charClass} ${char.level}',
         'PlayerName': 'Giocatore',
-        'Race ': char.race, // Ora usiamo la razza vera dell'oggetto
+        'Race ': char.race,
+        'Background': char.background, // Ora salviamo anche questo!
 
         'STR': char.strength.toString(),
         'DEX': char.dexterity.toString(),
         'STRmod': strMod,
         'DEXmod': dexMod,
 
-        // Esempi di valori fissi (da collegare al modello in futuro)
         'HPMax': char.hpMax.toString(),
         'HPCurrent': char.hpMax.toString(),
       };
@@ -67,6 +98,7 @@ class CharacterProvider with ChangeNotifier {
       final file = await _pdfService.fillPDF(dataMap, fileName);
 
       await OpenFile.open(file.path);
+
     } catch (e) {
       print("Errore export: $e");
     }

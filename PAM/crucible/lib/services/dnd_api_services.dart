@@ -23,4 +23,25 @@ class DndApiService {
       return [];
     }
   }
+
+  // Cerca equipaggiamento (Per ora focalizzato sulle armi)
+  Future<List<dynamic>> searchEquipment(String query) async {
+    if (query.length < 3) return [];
+
+    // Cerchiamo nell'endpoint delle armi
+    final url = Uri.parse('$_baseUrl/weapons/?search=$query');
+
+    try {
+      final response = await http.get(url);
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        return data['results'];
+      } else {
+        return [];
+      }
+    } catch (e) {
+      print('Errore API Equipment: $e');
+      return [];
+    }
+  }
 }

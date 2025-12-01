@@ -75,6 +75,8 @@ class _CharacterEditorScreenState extends State<CharacterEditorScreen>
       name: _nameCtrl.text,
       charClass: _classCtrl.text,
       race: _raceCtrl.text,
+      background: _backgroundCtrl.text,
+      physicalTraits: _physicalCtrl.text,
       level: 1, // Default lvl 1
       strength: _str,
       dexterity: _dex,
