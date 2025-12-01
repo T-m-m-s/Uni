@@ -1,47 +1,72 @@
 import 'package:flutter/material.dart';
-import 'package:open_file/open_file.dart'; // Assicurati di avere questo import
+import 'package:open_file/open_file.dart'; // Assicurati che questo import ci sia
 import '../models/character.dart';
 import '../services/pdf_service.dart';
 
 class CharacterProvider with ChangeNotifier {
-  Character _character = Character();
+  // 1. LA LISTA DEI PERSONAGGI
+  final List<Character> _characters = [];
   final PdfService _pdfService = PdfService();
 
-  Character get character => _character;
+  // Getter per leggere la lista
+  List<Character> get characters => _characters;
 
-  void updateName(String newName) {
-    _character.name = newName;
+  // --- METODO MANCANTE (AGGIUNTO ORA) ---
+  // Questo è il metodo che il tuo Editor sta cercando di chiamare
+  void addCharacter(Character newChar) {
+    _characters.add(newChar);
+    notifyListeners(); // Avvisa la UI di aggiornarsi
+  }
+  // --------------------------------------
+
+  // Metodo per rimuovere un personaggio
+  void removeCharacter(int index) {
+    _characters.removeAt(index);
     notifyListeners();
   }
 
-  void updateStrength(String val) {
-    _character.strength = int.tryParse(val) ?? 10;
+  // Metodo Test: Aggiunge un personaggio finto
+  void addDummyCharacter() {
+    _characters.add(
+      Character(
+        name: "Eroe Test ${_characters.length + 1}",
+        charClass: "Guerriero",
+        level: 1,
+        strength: 16,
+      ),
+    );
     notifyListeners();
   }
 
-  // Funzione Export aggiornata
-  Future<void> exportPdf() async {
+  // Metodo Export PDF
+  Future<void> exportCharacterPdf(Character char) async {
     try {
-      // 1. Creiamo la Mappa qui! (Mapping Model -> PDF Fields)
+      // Calcoli preliminari (es. modificatori)
+      String strMod = char.getModifier(char.strength);
+      String dexMod = char.getModifier(char.dexterity);
+
+      // Mappatura Dati
       Map<String, String> dataMap = {
-        'CharacterName': _character.name,
-        'ClassLevel': '${_character.charClass} ${_character.level}',
-        'STR': _character.strength.toString(),
-        'DEX': _character.dexterity.toString(),
-        'STRmod': _character.getModifier(_character.strength),
-        'DEXmod': _character.getModifier(_character.dexterity),
-        // Aggiungi qui altri campi man mano che espandi l'app
+        'CharacterName': char.name,
+        'CharacterName 2': char.name,
+        'ClassLevel': '${char.charClass} ${char.level}',
+        'PlayerName': 'Giocatore',
+        'Race ': char.race, // Ora usiamo la razza vera dell'oggetto
+
+        'STR': char.strength.toString(),
+        'DEX': char.dexterity.toString(),
+        'STRmod': strMod,
+        'DEXmod': dexMod,
+
+        // Esempi di valori fissi (da collegare al modello in futuro)
+        'HPMax': char.hpMax.toString(),
+        'HPCurrent': char.hpMax.toString(),
       };
 
-      // 2. Chiamiamo il servizio generico
-      final file = await _pdfService.fillPDF(
-          dataMap,
-          'scheda_${_character.name.replaceAll(' ', '_')}' // Nome file dinamico
-      );
+      final fileName = 'scheda_${char.name.replaceAll(' ', '_')}';
+      final file = await _pdfService.fillPDF(dataMap, fileName);
 
-      // 3. Apri il file
       await OpenFile.open(file.path);
-
     } catch (e) {
       print("Errore export: $e");
     }
