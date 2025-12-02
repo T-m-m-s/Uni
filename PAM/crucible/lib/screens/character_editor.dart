@@ -38,10 +38,10 @@ class _CharacterEditorScreenState extends State<CharacterEditorScreen>
   final TextEditingController _traitsCtrl = TextEditingController();
 
   // Tab 4: Inventario (Lista semplice di stringhe per ora)
-  List<String> _inventory = [];
+  final List<String> _inventory = [];
 
   // Tab 5: Spells
-  List<String> _spells = [];
+  final List<String> _spells = [];
 
   @override
   void initState() {
