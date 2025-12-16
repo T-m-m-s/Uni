@@ -1,0 +1,57 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings, xcolor}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[a4paper, margin = 1.5cm]{geometry}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{listings}
+
+\lstset{
+frame = shadowbox,
+basicstyle = \small\ttfamily,
+mathescape = true,
+numbers = left,
+commentstyle = \itshape\color{gray}
+columns = flexible,
+keepspaces = true,
+moredelim = [l]{//}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Activity Diagram}
+\author{Trentin Tommaso}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+  \maketitle
+  \tableofcontents
+  \newpage
+  
+  \section{Notazioni}
+    \subsection{Diagrammi di attività}
+      Estensione di diagrammi di flusso che introduce esecuzioni concorrenti e permette di modellare logica procedurale di un algoritmo ma anche processi di business / workflow esistenti nella realtà da modellare.
+    \subsection{Attività / Azioni}
+      \begin{itemize}
+        \item \textbf{Attività} corrisponde a insiseme coerente di azioni elaborative compiute dal sistema;
+        \item \textbf{Azione} èun'unità di lavoro atomica all'interno dell'attività, un AD rappresenta una singola attività composta da azioni.
+      \end{itemize}
+    \subsection{Flussi}
+      \begin{itemize}
+        \item Modellato mediante frecce entranti / uscenti che collegano le attività, per convenzione ingresso coincide con inizio e uscita con completamento dell'operazione; 
+        \item Nodi iniziali e finali indicano inizio e fine dell'elaborazione;
+        \item Se esistono più nodi iniziali di un'attività, i flussi cominciano simultaneamente e vengono eseguiti in parallelo. 
+      \end{itemize}
+      \begin{figure}[htpb]
+          \centering
+          \includegraphics[width=0.8\linewidth]{figures/flu.png}
+      \end{figure}
+\end{document}
+
