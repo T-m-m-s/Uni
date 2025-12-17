@@ -108,4 +108,65 @@ moredelim = [l]{//}
           \includegraphics[width=0.8\linewidth]{figures/swimlanes.png}
       \end{figure}
   \section{Segnali}
+    Diversi eventi a cui possono corrispondere le azioni, un segnale indica un qualsiasi evento asincrono proveniente da processi esterni che influenza l'esecuzione di un'\textit{attività}.
+    \subsection{Tipi di segnali}
+      \begin{itemize}
+          \item \textbf{Invio segnale}: invio di un segnale asincrono;
+          \item \textbf{Accetta evento}: aspetta il verificarsi dell'evento specificato e viene attivato una volta ricevuto l'evento, permettendo al flusso di proseguire;
+          \item \textbf{Accetta evento temporale}: genera eventi secondo sua espressione temporale.
+      \end{itemize}
+      \begin{figure}[htpb]
+          \centering
+        \includegraphics[width=0.6\linewidth]{figures/sig.png}
+      \end{figure}
+      \subsubsection{Esempio}
+        \begin{figure}[htpb]
+            \centering
+            \includegraphics[width=0.8\linewidth]{figures/sig_es.png}
+        \end{figure}
+  \section{Pin / Trasformazioni}
+    \textbf{Pin} utilizzati per esprimere parametri delle azioni, corrispondono ai box dei parametri delle sottoattività.
+    \begin{figure}[htpb]
+        \centering
+        \includegraphics[width=0.8\linewidth]{figures/pin.png}
+    \end{figure}
+  \section{Invocazioni multiple / Regioni di espansione}
+    \subsection{Invocazioni multiple}
+      Output di un'azione può provocare esecuzione multipla di 1+ azioni successie, la lista di argomenti in input e quella di output sono riportate agli estremi dell'azione (output possono essere < input).
+      Se l'azione da invocare più volre è una sola si usa la seguente notazione:
+      \begin{figure}[htpb]
+          \centering
+          \includegraphics[width=0.8\linewidth]{figures/inv_mul_1.png}
+      \end{figure}
+    \subsection{Regioni di espansione}
+      Contraddistingue un'area dell'activity diagram in cui azioni contenute vengono ripetute una volta per ciascun elemento di una collezione: se queste azioni vengono svolte in parallelo si usa keyword \textit{<<concurrent>>}, altrimenti si suppone l'esecuzione sia esponenziale (in notazione compatta è parallela di default).
+      \begin{figure}[htpb]
+          \centering
+          \includegraphics[width=0.8\linewidth]{figures/inv_mul_2.png}
+      \end{figure}
+    \subsection{Fine di un flusso}
+      Simbolo di \textit{fine flusso} vieene usato per indicare fine di un flusso che termina senza determinare la fine di un'attività, permettendo a regioni di espansione di agire come filtri (producendo in output collezioni di dimensioni inferiori rispetto agli input).
+      \begin{figure}[htpb]
+          \centering
+          \includegraphics[width=0.5\linewidth]{figures/inv_mul_3.png}
+      \end{figure}
+  \section{Conclusioni}
+    \subsection{Vantaggi}
+      \begin{itemize}
+          \item Supportano descrizione di comportamenti paralleli mediante fork e join; 
+          \item Compatibili con diagrammi di flusso; 
+          \item Permettono descrizione di processi / workflow.
+      \end{itemize}
+    \subsection{Svantaggi}
+      \begin{itemize}
+          \item Meno diffusi dello pseudocodice per descrivere logica comportamentale; 
+          \item Possono esere riutilizzati per descrivere scenari di casi d'uso ma possono risultare poco comprensibili a non esperti.
+      \end{itemize}
+    \subsection{Activity diagram durante Analisi dei requisiti}
+      \begin{itemize}
+        \item Durante fase di analisi, un AD può modellare flusso di uno use case, quest'ultimi possono essere descritti come insieme di scenari alternativi in linguaggio naturale (descrizione limitata per azioni in parallelo);
+        \item  Gli AD rappresentano più scenari di uno use case (più scenari paralleli che si sincronizzano); 
+        \item In progettazione di alto livello modellano interazione tra entità nella risoluzione di un problema;
+        \item In progettazione di dettaglio modellano un algoritmo da implementare (possono anche modellare algoritmi concorrenti).
+      \end{itemize}
 \end{document}
