@@ -51,7 +51,7 @@ moredelim = [l]{//}
       \end{itemize}
       \begin{figure}[htpb]
           \centering
-          \includegraphics[width=0.8\linewidth]{figures/flu.png}
+          \includegraphics[width=0.5\linewidth]{figures/flu.png}
       \end{figure}
     \subsection{Branch}
       \begin{itemize}
@@ -61,21 +61,44 @@ moredelim = [l]{//}
       \end{itemize}
       \begin{figure}[htpb]
           \centering
-          \includegraphics[width=0.8\linewidth]{figures/fl_br.png}
+          \includegraphics[width=0.35\linewidth]{figures/fl_br.png}
       \end{figure}
     \subsection{Merge}
       Segnala fine del comportamento condizionale iniziato da una \textbf{branch}, ha più archi entranti e uno uscente.
       \begin{figure}[htpb]
           \centering
-          \includegraphics[width=0.8\linewidth]{figures/fl_me.png}
+          \includegraphics[width=0.5\linewidth]{figures/fl_me.png}
       \end{figure}
     \subsection{Fork / Join}
+      \noindent
+      \begin{minipage}[c]{0.68\linewidth}
+          \begin{itemize}
+              \item \textbf{Fork} rappresenta biforcazione del flusso tra 2+ thread (un arco entrante e più uscenti, rappresentanti thread paralleli eseguiti concorrentemente); 
+              \item \textbf{Join} è duale del fork, sincronizza più flussi concorrenti (più archi entranti e uno uscente).
+              \item Presenza di un \textit{fork} indica che l'ordine di esecuzione tra i flussi non è rilevante (possono anche avvenire in parallelo); 
+              \item Presena di \textit{join} indica che attività successiva può essere eseguita \textbf{solo} quando tutti i flussi in entrata sono terminati (altrimenti eseguita appena arriva il primo dei flussi di entrata).
+          \end{itemize}
+      \end{minipage}
+      \hfill
+      \begin{minipage}[c]{0.28\linewidth}
+          \centering
+          \includegraphics[width=\linewidth]{figures/fl_fo_jo_2.png}
+      \end{minipage}
+      \subsubsection{Esempi}
+        \begin{figure}[htpb]
+          \centering
+          \includegraphics[width=0.8\linewidth]{figures/fl_es.png}
+        \end{figure}
+  \section{Scomposizione di un'azione}
+    Nella notazione precedente non è rappresentato quale parte del SW è responsabile di determinate azioni, inoltre in caso di attività complesse il diagramma è difficile da leggere.
+    \subsection{Macroattività / Sottoattività}
       \begin{itemize}
-          \item \textbf{Fork} rappresenta biforcazione del flusso tra 2+ thread (un arco entrante e più uscenti, rappresentanti thread paralleli eseguiti concorrentemente); 
-          \item \textbf{Join} è duale del fork, sincronizza più flussi concorrenti (più archi entranti e uno uscente).
-          \begin{figure}[htpb]
-              \centering
-              \includegraphics[width=0.8\linewidth]{figures/fl_fo_jo.png}
-          \end{figure}
+          \item Per supportare diversi livelli di astrazione si possono racchiudere porzioni di un'attività complessa in macroattività; 
+          \item Le azioni delle macroattività vengono dettagliate in grafici separati; 
+          \item Macroattività vengono indicate con simbolo del rastrello all'interno del rettangolo.
       \end{itemize}
+      \begin{figure}[htpb]
+          \centering
+          \includegraphics[width=0.8\linewidth]{figures/macro.png}
+      \end{figure}
 \end{document}
