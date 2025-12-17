@@ -82,12 +82,12 @@ moredelim = [l]{//}
       \hfill
       \begin{minipage}[c]{0.28\linewidth}
           \centering
-          \includegraphics[width=\linewidth]{figures/fl_fo_jo_2.png}
+          \includegraphics[width=0.8\linewidth]{figures/fl_fo_jo_2.png}
       \end{minipage}
-      \subsubsection{Esempi}
+      \subsubsection{Esempio}
         \begin{figure}[htpb]
           \centering
-          \includegraphics[width=0.8\linewidth]{figures/fl_es.png}
+          \includegraphics[width=0.6\linewidth]{figures/fl_es.png}
         \end{figure}
   \section{Scomposizione di un'azione}
     Nella notazione precedente non è rappresentato quale parte del SW è responsabile di determinate azioni, inoltre in caso di attività complesse il diagramma è difficile da leggere.
@@ -99,6 +99,13 @@ moredelim = [l]{//}
       \end{itemize}
       \begin{figure}[htpb]
           \centering
-          \includegraphics[width=0.8\linewidth]{figures/macro.png}
+          \includegraphics[width=0.6\linewidth]{figures/macro.png}
       \end{figure}
+    \subsection{Partizioni}
+      Esprimono quale classe / oggetto è responsabile per ciascuna azione o quale organizzazione esegue ciascuna azione del processo di business. Il diagramma può essere \textit{diviso} in partizioni da linee verticali (\textbf{swimlanes}) assegnate a ciascun responsabile.
+      \begin{figure}[htpb]
+          \centering
+          \includegraphics[width=0.8\linewidth]{figures/swimlanes.png}
+      \end{figure}
+  \section{Segnali}
 \end{document}
