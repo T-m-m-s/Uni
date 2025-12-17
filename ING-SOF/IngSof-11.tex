@@ -53,5 +53,29 @@ moredelim = [l]{//}
           \centering
           \includegraphics[width=0.8\linewidth]{figures/flu.png}
       \end{figure}
+    \subsection{Branch}
+      \begin{itemize}
+          \item Azione di decisione, corrisponde ad un IF con un arco entrante e più archi uscenti; 
+          \item Ciascun arco etichettato con condizione booleana (condizioni devono esssere mutualmente esclusive); 
+          \item Dopo una decisione si deve intraprendere uno solo dei flussi uscenti.
+      \end{itemize}
+      \begin{figure}[htpb]
+          \centering
+          \includegraphics[width=0.8\linewidth]{figures/fl_br.png}
+      \end{figure}
+    \subsection{Merge}
+      Segnala fine del comportamento condizionale iniziato da una \textbf{branch}, ha più archi entranti e uno uscente.
+      \begin{figure}[htpb]
+          \centering
+          \includegraphics[width=0.8\linewidth]{figures/fl_me.png}
+      \end{figure}
+    \subsection{Fork / Join}
+      \begin{itemize}
+          \item \textbf{Fork} rappresenta biforcazione del flusso tra 2+ thread (un arco entrante e più uscenti, rappresentanti thread paralleli eseguiti concorrentemente); 
+          \item \textbf{Join} è duale del fork, sincronizza più flussi concorrenti (più archi entranti e uno uscente).
+          \begin{figure}[htpb]
+              \centering
+              \includegraphics[width=0.8\linewidth]{figures/fl_fo_jo.png}
+          \end{figure}
+      \end{itemize}
 \end{document}
-
