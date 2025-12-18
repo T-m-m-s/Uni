@@ -1,0 +1,63 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings, xcolor}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[a4paper, margin = 1.5cm]{geometry}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{listings}
+
+\lstset{
+frame = shadowbox,
+basicstyle = \small\ttfamily,
+mathescape = true,
+numbers = left,
+commentstyle = \itshape\color{gray}
+columns = flexible,
+keepspaces = true,
+moredelim = [l]{//}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Progettazione Architetturale del SW}
+\author{Trentin Tommaso}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+  \maketitle
+  \tableofcontents
+  \newpage
+
+  \section{Progettazione del SW}
+    La progettazione architetturale si colloca nella fase di Progettazione del sistema ed ha un \textbf{ruolo chiave nello sviluppo}, rappresentando il collegamento critico tra ingegneria dei requisiti e progettazione di dettaglio dei componenti.
+    \subsection{Finalità}
+      Progettare = seguire un processo di risoluzione mirando a descrivere un modo:
+      \begin{itemize}
+          \item per implementare requisiti funzionali; 
+          \item rispettando vincoli dei requisiti non funzionali; 
+          \item in conformità con principi di buona qualità.
+      \end{itemize}
+    \subsection{Decisioni di progettazione}
+      Progettista affronta una sereie di problemi di progettazione, ognuno di questi ha normalmente alcune soluzioni alternative (\textbf{design options}). \\ 
+      Progettista effettua una serie di \textbf{design decision} oer risolvere il problema scegliendo la \textit{migliore} alternativa possibile in base a requisiti sistema e background / esperienza architetti. \\
+      \noindent
+        \begin{minipage}[c]{0.38\linewidth}
+            \textbf{Design space}: insieme possibili progetti che saranno implementabili scegliendo tra varie alternative.
+        \end{minipage}
+        \hfill
+        \begin{minipage}[c]{0.58\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{figures/des_dec.png}
+        \end{minipage}
+      \subsubsection{Top-Down}
+        Si parte da progettazione della struttura ad altissimo livello del sistema, per poi procedere gradualmente più nel dettaglio riguardo aspetti di più basso livello (es. definizione architettura SW e tipo di DB impiegato -> definire formato di dati, algoritmi usati, interfacce utente).
+      \subsubsection{Bottom-Up}
+\end{document}
+
