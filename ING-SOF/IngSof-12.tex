@@ -14,6 +14,7 @@
 \usepackage{amssymb}
 \usepackage{parskip}
 \usepackage{listings}
+\usepackage{caption}
 
 \lstset{
 frame = shadowbox,
@@ -122,5 +123,115 @@ moredelim = [l]{//}
             \item Repo gestisce tutti i dati concorrentemente (controllo accessi / backup);
             \item Semplice integrazione di nuovi componenti che si conformano al modello dati condiviso
         \end{itemize}
-\end{document}
+      \subsubsection{Svantaggi}
+        \begin{itemize}
+            \item Rende difficile la distribuzione su più macchine (ridondanza e inconsistenza a causa del dover mantenere coerenti / aggiornate copie degli stessi dati);
+            \item Repository è \textbf{single point of failure} (tutti suoi problemi influiscono su tutto il sistema);
+            \item Difficile integrazione di componenti non conformi al modello dati comune.
+        \end{itemize}
+    \subsection{Pattern client-server}
+      Architettura \textbf{distribuita} in cui ciascun servizio viene fornito da un server separato al cui i client accedomo per utilizzarne i servizi.
+      \begin{figure}[htpb]
+          \centering
+          \includegraphics[width=0.8\linewidth]{figures/arch_cl_se.png}
+      \end{figure}
+      \subsubsection{Vantaggi}
+        \begin{itemize}
+            \item Server possono essere distribuiti su una rete;
+            \item Server e servizi sono indipendenti / possono essere modificati senza intaccare altre parti del sistema;
+            \item Facile aggiunta / integrazione di nuovi server al sistema.
+        \end{itemize}
+      \subsubsection{Svantaggi}
+        \begin{itemize}
+            \item Ciascun servizio costituisce un \textbf{single point of failure}, ma potrebbe essere replicato su più server;
+            \item Prestazioni potrebbero dipendere da canali di comunicazione (congestione rete);
+            \item Possibili problemi di gestione in caso di server proprietari di organizzazioni diverse.
+        \end{itemize}
+      \subsubsection{Componenti}
+        Ogni applicazione viene suddivisa logicamente in 3 parti:
+        \begin{itemize}
+            \item \textbf{Presentazione} - gestione UI (eventi grafici, controlli su input...);
+            \item \textbf{Logica applicativa} - logica e regole che definiscono elaborazione dei dati per rispondere alle richieste utente;
+            \item \textbf{Gestione dei dati persistenti} - memorizzazione / gestione dei dati a lungo termine.
+        \end{itemize}
+        La distribuzione fisico-logica di queste componenti porta a classficazione delle architetture:
+        \begin{itemize}
+            \item \textbf{2-Tier}: suddivisa in \textit{client} e \textit{server}, la logica applicativa può essere distribuita tra i due;
+            \item \textbf{3-Tier}: i tre livelli sono separati -> presentazione su \textit{client}, logica applicativa su un \textit{application server} e gestione dei dati su un \textit{database server} (scelta tipica per app web scalabili);
+            \item \textbf{n-Tier}: utilizza ulteriori divisioni logico-fisiche aggiungendo livelli come \textit{Cache Layer} per ottimizzare prestazioni e \textit{Security Layer} per autenticazioni / autorizzazioni centralizzate (ideale per sistemi complessi - microservizi o app su cloud).
+        \end{itemize}
+      \subsubsection{Esempi}
+        \noindent
+          \begin{minipage}[c]{0.48\linewidth}
+              \centering
+              \includegraphics[width=0.8\linewidth]{figures/arch_cl_se_2.png}
 
+              \captionof{figure}{Esempio 2-Tier}
+          \end{minipage}
+          \hfill
+          \begin{minipage}[c]{0.48\linewidth}
+              \centering
+              \includegraphics[width=0.8\linewidth]{figures/arch_cl_se_3.png}
+
+              \captionof{figure}{Esempio 3-Tier}
+          \end{minipage}
+    \subsection{Pattern pipe-and-filter}
+      Ciascun componente di elaborazione (filtro) è discreto e fornisce un output effettuando una trasformazione (in sequenza o in parallelo) dei dati in input. I dati fluiscono (singoli o in batch) attraverso una sequenza di componenti per essere elaborati.
+      \begin{figure}[htpb]
+          \centering
+          \includegraphics[width=0.8\linewidth]{figures/arch_bat.png}
+      \end{figure}
+      \subsubsection{Vantaggi}
+        \begin{itemize}
+            \item Evoluzione del sistema semplice mediante modifica / aggiunta di trasformazioni;
+            \item Possibile riutilizzo trasformazioni;
+            \item Possibile progettare separatamente componenti.
+        \end{itemize}
+      \subsubsection{Svantaggi}
+        \begin{itemize}
+            \item Trasformazioni successive devono rispettare formato concordato per trasferimento dati;
+            \item Possibile non poter riusare componenti dati incompatibili / introdurre overhead per traduzione formato;
+            \item Interazione con utenti limitata (interfacce con utenti solitamente non forniscono input come semplici flussi sequenziali continui).
+        \end{itemize}
+    \subsection{Pattern model-view-controller (MVC)}
+      \noindent
+        \begin{minipage}[c]{0.58\linewidth}
+            Nasce da necessità di visualizzare dati generici mediante GUI usando rappresentazioni diverse, consente realizzazione di architettura che permette separazione dei componenti di presentazione da quelli che gestiscono i dati.
+        \end{minipage}
+        \hfill
+        \begin{minipage}[c]{0.38\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{figures/arch_mvc_1.png}
+        \end{minipage}
+      \begin{itemize}
+          \item \textbf{model} contiene classi in cui istanze rappresentano dati da visualizzare / manipolare (forniscono anche i metodi per fare ciò);
+          \item \textbf{view} contiene oggetti per presentare dati contenuti nel \textit{model} all'utente;
+          \item \textbf{controller} contiene oggetti che controllano / gestiscono interazione dell'utente con \textit{view} e \textit{model}.
+      \end{itemize}
+      \begin{figure}[htpb]
+          \centering
+          \includegraphics[width=0.6\linewidth]{figures/arch_mvc_2.png}
+      \end{figure}
+      \subsubsection{Aggiornamento dati}
+        \begin{enumerate}
+            \item In risposta a evento x il metodo \textbf{handleEvent()} viene invocato sul \textit{Controller};
+            \item \textit{Controller} esamina stato di \textit{Model} e invoca suo metodo per cambiare il suo stato (\textbf{changeState()});
+            \item \textit{Model} cambia lo stato e notifica lo notifica a tute le \textit{View} registrate (\textbf{notify()});
+            \item Ogni \textit{View} registrata viene notificaa invocando suo metodo \textbf{update()}, la \textit{View} esamina lo stato di \textit{Model} mediante metodo \textbf{getState()}.
+        \end{enumerate}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.4\linewidth]{figures/arch_mvc_ag.png}
+        \end{figure}
+      \subsubsection{Selezione schermata}
+        \begin{enumerate}
+            \item Utente seleziona una pagina da mostrare mediante \textit{View};
+            \item \textit{View} delega a \textit{Controller} tramite invocazione del suo metodo \textbf{processSelectPage()};
+            \item \textit{Controller} decide e/o compone pagina da visualizzare, comunicandola poi a \textit{View} invocando suo metodo \textbf{showSelectPage()};
+            \item \textit{View} costruisce e presenta all'utente la schermata richiesta, con eventuale controllo su possibili modifiche in \textit{Model} invocando metodo \textbf{getState()}.
+        \end{enumerate}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{figures/arch_mvc_sel.png}
+        \end{figure}
+\end{document}
