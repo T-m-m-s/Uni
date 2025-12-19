@@ -90,7 +90,37 @@ moredelim = [l]{//}
     \subsection{Concetto di pattern}
       Soluzioni a problemi di progettazione comuni e ricorrenti che si incontrano in applicazioni reali, un pattern architetturale descrive l'organizzazione del sistema che è stata utilizzata in diversi sistemi SW. Vantaggiosi in quanto permettono:
       \begin{itemize}
-          \item \textbf{Riuso}
+          \item \textbf{Riuso} di conoscenza ed esperienza di progettazione in quanto problemi sono raramente nuovi e unici;
+          \item \textbf{Presentazione e comunicazione} in quanto stabiliscono una terminologia comune e condivisa, forniscono una prospettiva di alto livello del sistema e permettono comprensione / discussione del progetto senza dover gestire troppo presto i dettagli.
       \end{itemize}
+    \subsection{Pattern multi-layer}
+      Decomposizione \textit{gerarchica} del sistema in un insieme ordinato di layer (sottoinsiemi che forniscono servizi correlati), ogni layer può essere a sua volta stratificato in layer più astratti.
+      \begin{figure}[htpb]
+          \centering
+          \includegraphics[width=0.8\linewidth]{figures/arch_ml.png}
+      \end{figure}
+      Fornisce:
+      \begin{itemize}
+          \item \textbf{separazione}: solitamente elementi che forniscono servizi correlati sono raggruppati nello stesso layer, separati da altri servizi;
+          \item \textbf{indipendenza}: possibile progettare uno strato indipendentemente da altri (rispettando le interfacce).
+      \end{itemize}
+      Grazie a separazione e indipendenza, se si modifica interfaccia / si aggiungono funzionalità ad uno strato, solo strati adiacenti vengono influenzati. Questa è quindi una soluzione ideale per sistemi multipiattaforma (dipendenze della macchina localizzate in strati specifici).
+    \subsection{Pattern repository}
+      Utilizzato in casi di diversi sottosistemmi con grandi quantità di dati da condividere e memorzzare per molto tempo, questi vengono salvati / gestiti in un database centrale (\textbf{repository}) il cui accesso è consentito a tutti i sottosistemi.
+      \begin{itemize}
+          \item Tutti i sottosistemi devono operare con un modello dati concordato;
+          \item Repo è accessibile a tutti i componenti del sistema;
+          \item Componenti scambiano dati solo mediante la repo.
+      \end{itemize}
+      \begin{figure}[htpb]
+          \centering
+          \includegraphics[width=0.8\linewidth]{figures/arch_repo.png}
+      \end{figure}
+      \subsubsection{Vantaggi}
+        \begin{itemize}
+            \item Possibile indipendenza tra i componenti (non devono trasmettere dati direttamente tra loro e non devono per forza sapere dell'esistenza degli altri);
+            \item Repo gestisce tutti i dati concorrentemente (controllo accessi / backup);
+            \item Semplice integrazione di nuovi componenti che si conformano al modello dati condiviso
+        \end{itemize}
 \end{document}
 
