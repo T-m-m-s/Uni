@@ -74,7 +74,7 @@
         \item Utile quando si prevede che sistema sarà poco soggetto a cambiamenti. 
       \end{itemize}
     \subsection{Modello a V}
-    Estensione del modello a cascata in cui attività del ramo superiore (\textbf{progetto}) sono collegate a quelle del ramo inferiore (\textbf{V&V}), in ogni fase del progetto il team definisce il corrispondente piano di test della fase V&V (guidato da un'insieme di piani di test e eseguito da team indipendente da quello di sviluppo), se si trova un errore nella fase di V&V \textbf{si rieseguono fasi di processo correlate}. Modello che può anticipare validazione dei requisiti da parte del cliente e garantire rilevamento precoce di errori. 
+    Estensione del modello a cascata in cui attività del ramo superiore (\textbf{progetto}) sono collegate a quelle del ramo inferiore (\textbf{V\&V}), in ogni fase del progetto il team definisce il corrispondente piano di test della fase V&V (guidato da un'insieme di piani di test e eseguito da team indipendente da quello di sviluppo), se si trova un errore nella fase di V&V \textbf{si rieseguono fasi di processo correlate}. Modello che può anticipare validazione dei requisiti da parte del cliente e garantire rilevamento precoce di errori. 
     \begin{figure}[h!]
       \begin{center}
         \includegraphics[width=0.5\textwidth]{figures/mod_v.png}
@@ -148,13 +148,13 @@
     \end{figure}
 
     \subsection{Modello Prototipale - Back-To-Back Testing}
-      \noindent % <--- Add this to ensure the first minipage isn't indented
+      \noindent
       \begin{minipage}{0.58\textwidth}
         Prototipo può essere usato durante validazione per controllare che sistema sviluppato si comporti come modellato ne prototipo delle fasi iniziali del progetto.
       \end{minipage}
       \hfill
       \begin{minipage}{0.38\textwidth}
-        \centering % Use this instead of \begin{center} to save vertical space
+        \centering
         \includegraphics[height=5cm, keepaspectratio]{figures/mod_pr_b2b.png}
       \end{minipage}
   \section{Modello Orientato al Riuso}
@@ -184,16 +184,11 @@
 
   \section{Modello Trasformazionale}
     Idea: specifiche definite mediante linguaggi formali (spec. algebriche / modelli di stato), utilizzo di tecniche di model checking per provare correttezza. Specifiche formali venfono trasformate automaticamente in codice (correttezza preservata / verifica ottenuta implicitamente)
-    \begin{minipage}{0.48\textwidth}
-      \begin{itemize}
-        \item Requisiti specificati formalmente in fase di analisi (specifiche verificate automaticamente prima di essere trasformate da opportuni strumenti);
-        \item Descrizione formale trasformata man mano in una meno astratta / più dettagliata (manualmente o mediante appositi strumenti);
-        \item Processo di trasformazione può trarre vantaggio da componenti riusabili. 
-      \end{itemize}
-    \end{minipage}
-    \begin{minipage}{0.48\textwidth}
-      Inserisci immagine
-    \end{minipage}
+    \begin{itemize}
+      \item Requisiti specificati formalmente in fase di analisi (specifiche verificate automaticamente prima di essere trasformate da opportuni strumenti);
+      \item Descrizione formale trasformata man mano in una meno astratta / più dettagliata (manualmente o mediante appositi strumenti);
+      \item Processo di trasformazione può trarre vantaggio da componenti riusabili. 
+    \end{itemize}
     \textbf{Problemi}
     \begin{itemize}
       \item Necessarie competenze in linguaggi formali;
@@ -210,5 +205,4 @@
         \includegraphics[width=0.5\textwidth]{figures/mod_tra.png}
       \end{center}
     \end{figure}
-
 \end{document}

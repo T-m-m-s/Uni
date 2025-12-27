@@ -76,7 +76,7 @@
         \end{itemize}
         \begin{figure}[h!]
           \begin{center}
-            \includegraphics[width=0.5\textwidth]{figures/req-nf.png}
+            \includegraphics[width=0.5\textwidth]{./figures/req_nf.png}
           \end{center}
         \end{figure}
       \subsubsection{Verificabilità dei Requisiti}
@@ -85,8 +85,8 @@
           \item Cliente potrebbe specificarli come \textbf{obiettivi} generici / vaghi, causando problemi agli sviluppatori a causa della libera interpretazione;
           \item Bisognerebbe descrivere requisiti non funzionali quantitativamente, in modo che possano essere \textbf{verficabili} $\rightarrow$ devono contenere una misura in qualche modo verificabile:
             \begin{itemize}
-              \item \textit{Velocità} - Transazioni/s, tempi di risposta, tempo di refresh sullo schermo;
-              \item \textit{Dimensione} - MB / numero di chip ROM;
+              \item \textit{Velocità} - Transazioni\/s, tempi di risposta, tempo di refresh sullo schermo;
+              \item \textit{Dimensione} - MB \/ numero di chip ROM;
               \item \textit{Facilità d'uso} - Tempo di addestramento, numero di maschere d'aiuto;
               \item \textit{Affidabilità} - Tempo medio di funzionamento, portabilità di indisponibilità, tasso di malfunzionamento, disponibilità;
               \item \textit{Robustezza} - Tempo di riavvio dopo malfunzionamento, percentuale di eventi che causano malfunzionamenti, probabilità di corruzione dati dopo un malfunzionamento;
@@ -102,12 +102,18 @@
       \item \textbf{Specifica dei requisiti} - traduzione requisiti in specifiche in un formato coerente;
       \item \textbf{Convalida dei requisiti} - controllo che requisiti corrispondano a richieste cliente.
     \end{itemize}
-    \subsection{Modello sequienziale}
+    \subsection{Modello sequenziale}
       Le tre attività sono \textit{per forza} sequenziali.
-      *Inserire immagine* 
+      \begin{figure}[htpb]
+          \centering
+          \includegraphics[width=0.7\linewidth]{figures/mod_seq.png}
+      \end{figure}
     \subsection{Modello a spirale}
       Processo di ingegneria dei requisiti è nella pratica spesso fortemente iterativo (e con fasi interlacciate), viene quindi utilizzato un modello a spirale quando i requisiti sono sviluppati con diversi livelli di dettaglio (generali, utente, sistema). 
-      *Inserire immagine*
+      \begin{figure}[htpb]
+          \centering
+          \includegraphics[width=0.6\linewidth]{figures/mod_spir.png}
+      \end{figure}
     \subsection{Ingegneria dei requisiti - Metodi agili}
       Nei metodi agili la specifica dei requisiti non è un'attività separata (considerata parte dello sviluppo), i requisiti sono specificati informalmente per ciascun incremento del sistema, in base alle priorità utente.
 \end{document}
