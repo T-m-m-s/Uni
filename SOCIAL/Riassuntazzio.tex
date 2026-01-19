@@ -255,7 +255,8 @@ moredelim = [l]{//}
     \end{itemize}
     Ogni pagina $u$ ha il suo valore PageRank $r(u)$, la pagina $v$ riceve dalla pagina $u$ una porzione del suo PageRank uguale alla porzione ricevuta da tutte le altre pagine citate da $u$: $\frac{r(u)}{\abs{O(u)}}$
     \subsubsection{PageRank - vettori e matrici}
-      Si possono collezionare tutti i valori PageRank di tutte le pagine $u_i$ in un vettore $r=[r(u_0), r(u_1), ..., r(u_n)$
+      Si possono collezionare tutti i valori PageRank di tutte le pagine $u_i$ in un vettore $r=[r(u_0), r(u_1), ..., r(u_n)$ 
+      \\
       \noindent
         \begin{minipage}[t]{0.48\linewidth}
           Si costruiscono i vettori $r$ \textbf{iterativamente, tutti assieme}. Per andare da $r_0$ iniziale a $r_1$ mediante una matrice \textbf{P} tale che $r_{i+1}=r_i\times P$
@@ -263,7 +264,7 @@ moredelim = [l]{//}
         \hfill
         \begin{minipage}[c]{0.48\linewidth}
             \centering
-            \includegraphics[width=0.7\linewidth]{figures/p_rank_m.png}
+            \includegraphics[width=0.5\linewidth]{figures/p_rank_m.png}
         \end{minipage}
     \subsubsection{Markov chain}
       Dato un grafo / matrice di adiacenza con $n$ stati si ha una matrice $n\times n$ P con le probabilità di transizione. A ciascun istante di tempo la catena di Markov è in uno degli $n$ stati.
@@ -273,4 +274,36 @@ moredelim = [l]{//}
           \centering
           \includegraphics[width=0.7\linewidth]{figures/mar_ch.png}
       \end{figure}
+      Si può rappresentare la posizione corrente in uno stato $i$ con un vettore $x=(x_1,...,x_n)$ dove tutti i componenti hanno valore 0 tranne l'$i$-esimo che ha valore 1 e rappresenta la posizione nello stato $i$.
+      \\
+      Il vettore di probabilità nel prossimo step si può trovare guardando la matrice P alla $i$-esima riga, in modo da controllare le probabilità per procedere al prossimo stato partendo da $i$.
+    \subsubsection{Markov chain - autovettore}
+      Quindi, per ogni step $x_{i+1}=x_i\times P$ ma stiamo cercando una distribuzione stabile $x_{i+1}=x_i$, cerchiamo quindi $x$ tale che $x=x\times P$ ($x$ autovettore di $P$).
+      \\
+      Per ogni catena \textbf{ergodica} (\textbf{fortemente connessa} e in cui in ogni step si può \textbf{essere in ogni stato} con probabilità > 0) ogni stato ha un rate di visite a lungo termine per cui viene visitato proporzionalmente.
+    \subsubsection{Teleporting}
+      Nella pratica (Web) non sempre si hanno situazioni ergodiche, ma navigando si potrebbe "saltare" ad un'altra pagina random: "ciascuna pagina è collegata con qualsiasi altra pagina" (con basse probabilità).
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.6\linewidth]{figures/telep.png}
+      \end{figure}
+    \subsubsection{PageRank - implementazione}
+      Catena di Markov, ogni pagina ha una propria probabilità per cui, durante il percorso random tra le pagine, l'utente si trovi lì
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.4\linewidth]{figures/pr_impl.png}
+      \end{figure}
+      \begin{enumerate}
+          \item Costruzione matrice $P'$ (matrice di adiacenza $P$ + teleporting (ergodic));
+          \item Inizio da vettore di probabilità $r_0$;
+          \item $r_{i+1}=r_i\times P$;
+          \item Se $\abs{r_{i+1}-r_i} < \epsilon$ stoppa, altrimenti ripeti;
+          \item Il vettore $r$ trovato ($r=r\times P'$, o $r~r\times P'$) è il PageRank di tutte le pagine, e ~ l'autovettore di $P'$.
+      \end{enumerate}
+  \subsection{HITS}
+    Idea: costruire 2 set di pagine collegati:
+    \begin{itemize}
+        \item \textbf{Hub pages (H)} contenenti (buoni) link ad altre pagine (yahoo, buoni bookmark,...);
+        \item \textbf{Authority pages (A)} con persone / entità ben organizzate nel web (w3c, Knuth's homepage,...).
+    \end{itemize}
 \end{document}
