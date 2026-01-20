@@ -306,4 +306,120 @@ moredelim = [l]{//}
         \item \textbf{Hub pages (H)} contenenti (buoni) link ad altre pagine (yahoo, buoni bookmark,...);
         \item \textbf{Authority pages (A)} con persone / entità ben organizzate nel web (w3c, Knuth's homepage,...).
     \end{itemize}
+    L'algorito lavora su un set ristretto di pagine Root Set (\textit{RS}), che si espande con:
+    \begin{itemize}
+        \item $I(v)$ in-pages (tutte le pagine $u$ tali che $\exists v\in RS,  u \rightarrow v$);
+        \item $O(v)$ out-pages (tutte le pagine $u$ tali che $\exists v\in RS,  v \rightarrow u$).
+    \end{itemize}
+    Si ottiene così il Base Set (\textit{BS}) con buone pagine candidate Hub / Authority e su cui l'algoritmo poi lavora, selezionando H e A mediante un controllo su ogni pagina $x$ in \textit{BS} per i valodi di \textbf{hubness} ($h(x)$) e \textbf{authority} ($a(x)$).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\linewidth]{figures/rs_bs.png}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\linewidth]{figures/rs_bs_ap.png}
+    \end{figure}
+    \subsubsection{Procedimento - "Algoritmo"}
+      \begin{enumerate}
+          \item Assegnazione valori iniziali di $h(x)$ e $a(x)$ a ogni pagina $x$ del $BS$ (inizialmente $h(x)=a(x)=1$);
+          \item Aggiornamento iterativo, con la precedente formula, di $h(x)$ e $a(x)$;
+          \item Stop quando converge ($h(x)$ e $a(x)$ non variano più);
+          \item Alla fine si riconoscono pagine "top hub" e "top authority".
+      \end{enumerate}
+    \subsubsection{HITS - vettori e matrici}
+      Formalizzazione in vettori / matrici come PageRank.
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.7\linewidth]{figures/hits_v_m.png}
+      \end{figure}
+      Per calcolare $h$ dell'i-esimo componente si sommano tutti i componenti corrispondenti alle out-pages di $u_i$ e si sommano, moltiplicando quindi $a$ per \textit{l'i-esima riga della matrice di adiacenza}.
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.3\linewidth]{figures/hits_v_m_mol.png}
+      \end{figure}
+      Quindi, moltiplicando l'i-esima riga di $M$ per $a$ si ottiene l'i-esimo componente di $h$, e moltiplicando tutta $M$ per $a$ si ottiene tutto $h$.
+      $$h=Ma$$
+      e, di conseguenza:
+      $$a=M^Th$$
+    \subsubsection{HITS - autovettori}
+      Se abbiamo
+      \begin{itemize}
+          \item $h=Ma$
+          \item $a=M^Th$
+      \end{itemize}
+      per sostituzione otteniamo
+      \begin{itemize}
+          \item $h=Ma=MM^Th$
+          \item $a=M^Th=M^TMa$
+      \end{itemize}
+      $h$ è quindi l'autovettore di $MM^T$ e $a$ è l'autovettore di $M^TM$.
+    \subsubsection{HITS - $MM^T$}
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.5\linewidth]{figures/mmt.png}
+      \end{figure}
+      Questa matrice rappresenta l'\textbf{Accoppiamento Bibliografico} (Bibliographic Coupling). Ci dice quanto due nodi sono simili basandosi su "chi citano" (o chi linkano).
+      \begin{itemize}
+          \item \textbf{Definizione:} Il valore nella cella $\mathbf{MM}^T[i,j]$ conta il numero di nodi che sono \textbf{co-linkati} da $i$ e da $j$. In altre parole, conta quante destinazioni hanno in comune.
+          \item \textbf{La Logica Matematica:}
+            Il valore aumenta di 1 quando esiste un nodo $k$ che funge da "ponte comune", tale che:
+            $$\mathbf{M}[i,k] = 1 \quad \text{e} \quad \mathbf{M}[j,k] = 1 $$
+            \textit{(Ovvero: $i$ linka $k$ E $j$ linka $k$).}
+          \item \textbf{Esempio (dalla figura):}
+            Consideriamo $\mathbf{MM}^T[4,2]$ (incrocio tra nodo 4 e nodo 2). Il risultato è \textbf{2}.
+            \begin{itemize}
+                \item Il nodo 4 punta verso: 2, \textbf{3}, \textbf{5}.
+                \item Il nodo 2 punta verso: \textbf{3}, \textbf{5}.
+                \item Hanno in comune i nodi \textbf{3} e \textbf{5} $\rightarrow$ Totale: 2 destinazioni comuni.
+            \end{itemize}
+          \item \textbf{Proprietà:}
+            \begin{itemize}
+                \item La matrice è sempre \textbf{simmetrica} ($\mathbf{MM}^T[i,j] = \mathbf{MM}^T[j,i]$).
+                \item Sulla diagonale principale ($\mathbf{MM}^T[i,i]$) troviamo il grado di uscita (out-degree) del nodo $i$, cioè quanti link totali partono da quel nodo.
+            \end{itemize}
+      \end{itemize}
+    \subsubsection{HITS - $M^TM$}
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.5\linewidth]{figures/mtm.png}
+      \end{figure}
+      Questa matrice rappresenta la \textbf{Co-citazione} (Co-citation). È il concetto duale rispetto al precedente: misura la similarità tra due nodi basandosi su "chi li linka" (chi punta a loro).
+      \begin{itemize}
+          \item \textbf{Definizione:} Il valore nella cella $\mathbf{M}^T\mathbf{M}[i,j]$ conta quanti nodi esterni puntano SIA al nodo $i$ CHE al nodo $j$.
+          \item \textbf{La Logica Matematica:}
+            Il valore aumenta di 1 quando esiste un nodo $k$ (una fonte comune) tale che:
+            $$\mathbf{M}[k,i] = 1 \quad \text{e} \quad \mathbf{M}[k,j] = 1 $$
+            \textit{(Ovvero: $k$ linka $i$ E $k$ linka $j$).}
+          \item \textbf{Esempio (dalla figura):}
+            Consideriamo $\mathbf{M}^T\mathbf{M}[3,5]$ (incrocio tra nodo 3 e nodo 5). Il risultato è \textbf{2}.
+            \begin{itemize}
+                \item Chi punta al nodo 3? I nodi \textbf{2} e \textbf{4}.
+                \item Chi punta al nodo 5? I nodi \textbf{2} e \textbf{4}.
+                \item I "citanti" in comune sono il \textbf{2} e il \textbf{4} $\rightarrow$ Totale: 2 fonti comuni.
+            \end{itemize}
+          \item \textbf{Proprietà:}
+            \begin{itemize}
+                \item Anche questa matrice è sempre \textbf{simmetrica} ($\mathbf{M}^T\mathbf{M}[i,j] = \mathbf{M}^T\mathbf{M}[j,i]$).
+                \item Sulla diagonale principale ($\mathbf{M}^T\mathbf{M}[i,i]$) troviamo il \textbf{grado di ingresso} (in-degree) del nodo $i$, cioè quanti link totali arrivano a quel nodo.
+            \end{itemize}
+      \end{itemize}
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.8\linewidth]{figures/aut_conf.png}
+      \end{figure}
+  \subsection{PageRank / HITS - confronto}
+    \begin{itemize}
+        \item \textbf{PageRank} (Google)
+          \begin{itemize}
+              \item \textbf{PRO:} Robusto contro lo spam (è difficile farsi linkare da siti autorevoli), indice di qualità valido per l'intero Web.
+              \item \textbf{CONTRO:} Non è specifico per la query (è un valore statico calcolato "offline"), calcolo complesso su grafi immensi.
+          \end{itemize} 
+        \item \textbf{HITS} (Kleinberg)
+          \begin{itemize}
+              \item \textbf{PRO:} Specifico per la query (viene calcolato sul sottografo dei risultati), distingue tra \textit{Hubs} e \textit{Authorities}.
+              \item \textbf{CONTRO:} Facilmente spammabile (basta creare falsi Hub), problemi di convergenza, costo computazionale alto (ma mitigato dal fatto che lavora su grafi piccoli).
+          \end{itemize}
+    \end{itemize}
+
 \end{document}
