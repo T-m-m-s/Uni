@@ -114,7 +114,7 @@ moredelim = [l]{//}
     \textbf{Grado di un nodo $i$} $d_i$: numero di archi collegati a quel nodo (entranti = \textbf{in-degree} $d^{in}_i$, uscenti = \textbf{out-degree} $d^{out}_i$).
     \\
     \textbf{Degree distribution}: per ogni nodo, quanti nodi hanno quel grado:
-    $$p_{grado}=\frac{numNodi_grado}{numNodi}, \sum_{d=0}^{\inf}p_{grado}=1$$
+    $$p_{grado}=\frac{numNodi_grado}{numNodi}, \sum_{d=0}^{\infty}p_{grado}=1$$
     \\
     \textbf{Teorema}: sommatoria dei gradi di un grafo indiretto è 2 volte il numero degli archi
     $$\sum_id_i=2\abs{E}$$
@@ -259,7 +259,7 @@ moredelim = [l]{//}
       \\
       \noindent
         \begin{minipage}[t]{0.48\linewidth}
-          Si costruiscono i vettori $r$ \textbf{iterativamente, tutti assieme}. Per andare da $r_0$ iniziale a $r_1$ mediante una matrice \textbf{P} tale che $r_{i+1}=r_i\times P$
+          Si costruiscono i vettori $r$ \textbf{iterativamente, tutti assieme}. Per andare da $r_0$ iniziale a $r_1$ mediante una matrice \textbf{P} tale che $r_{i+1}=r_i\times P$.
         \end{minipage}
         \hfill
         \begin{minipage}[c]{0.48\linewidth}
@@ -354,7 +354,7 @@ moredelim = [l]{//}
           \item $a=M^Th=M^TMa$
       \end{itemize}
       $h$ è quindi l'autovettore di $MM^T$ e $a$ è l'autovettore di $M^TM$.
-    \subsubsection{HITS - $MM^T$}
+    \subsubsection{HITS - \texorpdfstring{$MM^T$}{MM\textasciicircum T}}
       \begin{figure}[H]
           \centering
           \includegraphics[width=0.5\linewidth]{figures/mmt.png}
@@ -379,7 +379,7 @@ moredelim = [l]{//}
                 \item Sulla diagonale principale ($\mathbf{MM}^T[i,i]$) troviamo il grado di uscita (out-degree) del nodo $i$, cioè quanti link totali partono da quel nodo.
             \end{itemize}
       \end{itemize}
-    \subsubsection{HITS - $M^TM$}
+    \subsubsection{HITS - \texorpdfstring{$M^T M$}{M\textasciicircum T M}}
       \begin{figure}[H]
           \centering
           \includegraphics[width=0.5\linewidth]{figures/mtm.png}
@@ -418,7 +418,7 @@ moredelim = [l]{//}
         \item \textbf{HITS} (Kleinberg)
           \begin{itemize}
               \item \textbf{PRO:} Specifico per la query (viene calcolato sul sottografo dei risultati), distingue tra \textit{Hubs} e \textit{Authorities}.
-              \item \textbf{CONTRO:} Facilmente spammabile (basta creare falsi Hub), problemi di convergenza, costo computazionale alto (ma mitigato dal fatto che lavora su grafi piccoli).
+              \item \textbf{CONTRO:} Facilmente spammabile (basta creare falsi Hub), problemi di convergenza, costo computazionale alto.
           \end{itemize}
     \end{itemize}
 \section{Social Network Analysis - termnologia}
@@ -640,10 +640,15 @@ moredelim = [l]{//}
       Introdotto per determinate misure altrimenti non facilmente calcolabili, invece di fissare il \# di archi, si fissa la \textbf{probabilità p} (indipendente) \textbf{di esistenza archi}
       \begin{itemize}
         \item N° archi (medio): $<m>=\frac{n(n-1)}{2}p=\binom{n}{2}p$;
-        \item Grado medio (tutte le estremità di archi / n° nodi): $<k>=\frac{2<m>}{n}=(n-1)p$, di solito denotato con $c=(n-1)p$ e approssimato con $c=np$, per $n$ grande cambia poco.
-        \item \textbf{Coefficiente di Clustering}: $C=\frac{c}{n-1}$, valore molto basso ($\rightarrow 0$ per $n\rightarrow \infty$)
+        \item Grado medio (tutte le estremità di archi / n° nodi): $<k>=\frac{2<m>}{n}=(n-1)p$, di solito denotato con $c=(n-1)p$ e approssimato con $c=np$, per $n$ grande cambia poco;
+        \item \textbf{Coefficiente di Clustering}: $C=\frac{c}{n-1}$, valore molto basso ($\rightarrow 0$ per $n\rightarrow \infty$);
+        \item \textbf{Diametro} (geodensica più lunga): $l=\frac{\ln n}{\ln c}$, cresce con $n$ e cala con crescere di $c$ (sorprendentmente piccolo, \textbf{small world} effect)
       \end{itemize}
       Da degree distribution e C si evince che non è un modello adeguato a modellazione reti reali.
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.6\linewidth]{figures/tran_fas.png}
+      \end{figure}
     \subsubsection{Differenza}
       Si assomigliano ma $G(n,m)\neq G(n,p)$, nel primo il n° di archi è \textbf{esattamente} $m$, nell'altro è \textbf{in media} $m=p\times n(n-1)/2$.
       \begin{figure}[H]
@@ -663,5 +668,116 @@ moredelim = [l]{//}
       \end{figure}
       Con aumentare di p aumenterà la probabilità di avere una GC?
       \\
+      Siano un grafo casuale con grado medio $c$, un insieme di nodi connesso $S$ e $S'=V-S$ l'insieme complementare (assumiamo $\abs{S}<<\abs{S'}$). Per ogni nodo $v\in S$ con un hop da $v$ visitiamo ~$c$ nodi (con un hop da un qualsiasi nodo di $S$ visito ~$\abs{S}c$ nodi). Se $S$ è piccolo, da $S\rightarrow S'$ con un hop l'insieme dei nodi connessi diventa pi grande di un fattore di $c$.
+      \\
+      Se è la componente connessa più grande, la sua grandezza aumenta sempre e dopo $n$ hop: $c^n\geq 1$, se invece $c<1$ il numero di nodi visitati muore.
+    \subsubsection{Recap}
+      Riguardo a reti reali il modello casuale:
+      \begin{itemize}
+          \item Modella \textbf{bene} lunghezza media dei cammini (bassa, small world);
+          \item \textbf{Sottostima} drasticamente coefficiente di clustering;
+          \item Non hanno distribuzione Power-law, ma \textbf{Poisson}.
+      \end{itemize}
+      Utile per spiegare alcuni fenomeni (small world) ma non tutti.
+  \subsection{Reti small-world}
+    Distanza piccola fra nodi, diametro basso e coefficiente di clustering alto.
+    \subsubsection{Procedura}
+      \begin{enumerate}
+          \item Parto da rete regolare;
+          \item Considero ogni singolo arco;
+          \item Con probabilità $p$ lo ricollego casualmente (con $p$ 0 ho rete regolare, con $p$ 1 ho rete casuale).
+      \end{enumerate}
+    \subsubsection{Reti che ci interessano}
+      Dari $n$ nodi e $c$ n° (medio) di archi per vertice ($\frac{nc}{2}$ archi totali) avremo $n\geq c\geq log(n)\geq 1$:
+      \begin{itemize}
+          \item Con $n\geq 1$ reti grandi con $n$ grande;
+          \item Con $n\geq c$ reti sparse;
+          \item Con $c\geq log(n)\geq 1$ \textit{non così sparse} da rischiare di diventare sconnesse.
+      \end{itemize}
+      Si valutano 2 misure:
+      \begin{itemize}
+          \item \textbf{L}: lunghezza media del cammino (numero di archi) minimo fra 2 nodi della rete. Misura per qunti amici devo passare per raggiungere una persona (globale);
+          \item \textbf{C} coefficiente di Clustering: dato un vertice $v$ considero i suoi $k_v$ vicini e controllo quanti archi trovo fra i vicini (al massimo $k_v(k_v-1)/2$). Sia $C_v=\frac{n archi}{\frac{k_v(k_v-1)}{2}}$ la frazione degli archi effettivamente esistente, quindi \textbf{C} = media di $C_v$ su tutti i vertici della rete. Misura quanto gli amici di una persona sono amici fra di loro (locale).
+      \end{itemize}
+      Casi limite
+      \begin{itemize}
+          \item $p=0$ (regolare):
+            \begin{itemize}
+                \item L(0): $\frac{n}{2c} >> 1$ distanze grandi;
+                \item C(0): $\frac{3}{4}$ "criccoso".
+            \end{itemize}
+          \item $p=1$ (random):
+            \begin{itemize}
+                \item L(1): $\frac{log(n)}{log(c)}$ distanze basse (small world);
+                \item C(1): $\frac{c}{n} << 1$ poco "criccoso".
+            \end{itemize}
+      \end{itemize}
+    \subsubsection{Distribuzione dei gradi}
+      Distribuzione strana con picco e soglia (cutoff) inferiore $p_k=e^{-cp}\frac{(cp)^{k-c}}{(k-c)!}$.
+    \subsubsection{Recap}
+      Reti small-world:
+      \begin{itemize}
+          \item Spiegano effetto small world (non spiegato da reti regolari, "ereditato" da G(n,p));
+          \item Spiega coefficiente di clustering alto (non spiegato da G(n,p), "ereditato" da reti regolari);
+          \item Non spiega distribuzione dei gradi che si trova "in natura" (\textbf{no power-law}, no coda lunga, no hub).
+      \end{itemize}
+  \subsection{Reti scale free}
+    Studio delle distribuzioni di:
+    \begin{itemize}
+      \item \textbf{Outdegree}: $P_{out}(k)$ probabilità che una pagina abbia $k$ outlink;
+      \item \textbf{Indegree}: $P_{in}(k)$ probabilità che una pagina abbia $k$ inlink (più interessante).
+    \end{itemize}
+    Sono entrambe \textbf{power-law}, non poisson.
+    \subsubsection{Diametro}
+      Distanza \textbf{media} fra nodi (lunchezza media del cammino minimo fra 2 nodi della rete), sperimentalmente $<d>=0.35+2.06\times log(N)$ (anche aumentando molto n° nodi, diametro rimane basso $\rightarrow$ \textbf{power law} e \textbf{small-world}).
+  \subsection{Reti con attaccamento preferenziale}
+    \textit{Nuovo modello stocastico}, ad ogni passo aggiungo nuovo nodo e un arco che lo collega ad un nodo preesistente scelto a caso ma con probabilità non uniforme (proporzionale al \textbf{grado} del nodo esistente $P(v_i)=\frac{d_i}{\sum_jd_j}$).
+    \\
+    Come per gradi casuali si possono simulare reti del mondo reale generando un grafo con attaccamento preferenziale (lavorando su grafi indiretti) con un grado atteso $m$ (invece di attaccare nuovo nodo a un unico altro nodo, ne scelgo $m$).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{figures/pref_att.png}
+    \end{figure}
+    \subsubsection{Sul modello scale-free}
+    \textbf{Lunghezze medie} basse, ma \textbf{clustering} basso. Le scale-free hanno distribuzioni \textbf{power law}, in log-log è una retta $f(k)=\frac{C}{k^\alpha}$, ha \textbf{code lunghe} con molti nodi con $k$ basso, ci sono però pochi nodi con grado molto alto (\textbf{hub}).
+  \subsection{Sunto}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{figures/sunto.png}
+    \end{figure}
+    Insomma nessun modello "funziona", ossia crea reti uguali a quelle del mondo reale...
+  \subsection{Attaccamento preferenziale non lineare}
+    $$P(v_i)=\frac{d_i^\alpha}{\sum_jd_j^\alpha}$$
+    \begin{itemize}
+        \item Se $\alpha=1$ è l'attaccamento preferenziale originale;
+        \item Se $\alpha<1$ vantaggio di avere grado alto è inferiore, no long tail, no hub;
+        \item Se $\alpha>1$ vantaggio di avere grado alto è superiore, winner-takes-all (un singolo nodo connesso a tutti).
+    \end{itemize}
+  \subsection{Attrattività}
+    $$P(v_i)=\frac{A+d_i}{\sum_j(A+d_j)}$$
+    \begin{itemize}
+        \item Se $A=0$ è l'attaccamento preferenziale originale;
+        \item Altrimenti evita che nodi con grado 0 non ricevano link, si ottiene sempre una \textbf{power law} con pendenza che varia con $A$.
+    \end{itemize}
+  \subsection{Fitness}
+    $$P(v_i)=\frac{\eta_id_i}{\sum_j(\eta_jd_j)}$$
+    $\eta_i$ rappresenta la fitness del nodo $i$, se $\forall i,j(\eta_i=\eta_j)$ è l'attaccamento preferenziale originale, se i valori di fitness sono in un intervallo limitato: rete con + hub, si elimina dipendenza dal rich-get-richer dei nodi più vecchi, anche i nodi giovani con alta fitness competono. Si ottiene \textbf{sempre} una \textbf{power law}.
+  \subsection{Random Walk}
+    Parte da una piccola rete qualsiasi, ad ogni passo si aggiunge un nuovo nodo $i$, con $m>1$ archi attaccati di cui il primo è collegato con un nodo vecchio $j$ scelto a caso (probabilità \textbf{uniforme}), ogni arco degli $m-1$ restanti viene collegato:
+    \begin{itemize}
+        \item Con probabilità $p$ a \textbf{un vicino} di $j$ scelto a caso;
+        \item Con probabilità $1-p$ a un nodo vecchio qualsiasi scelto a caso;
+    \end{itemize}
+    Con $p$ probabilità che si formi un triangolo.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\linewidth]{figures/rand_wal.png}
+    \end{figure}
+    \subsubsection{FUNZIONA}
+      \begin{itemize}
+          \item \textbf{Degree distribution power law}: quando scelgo un vicino ($p$) tendo a scegliere nodi con grado alto (in quanto attaccamento preferenziale), si formano hub;
+          \item \textbf{Cammini brevi};
+          \item \textbf{Clustering alto}: presenza di triangoli.
+      \end{itemize}
 
 \end{document}
