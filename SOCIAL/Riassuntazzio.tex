@@ -471,4 +471,197 @@ moredelim = [l]{//}
         \item Linee trattegiate: archi mancanti fra vicini;
         \item Linee spesse: vicini connessi (quando nessun vicino è connesso $C=0$, quando tutti sono connessi $C=1$).
     \end{itemize}
+  \subsection{Coefficiente di clustering globale}
+    Misura transitività in grafi indiretti in 3 modi equivalenti:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{figures/clustering_glob_1.png}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{figures/clustering_glob_2.png}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{figures/clustering_glob_es.png}
+    \end{figure}
+\section{Reciprocità}
+  "Se tu mi diventi amico, anche io divento amico tuo", se nodo $v$ è connesso a nodo $u$, $u$ connettendosi a $v$ manifesta reciprocità.
+  \subsection{Calcolo}
+    Conto numero di \textbf{coppie reciproche} nel grafo:
+    \begin{itemize}
+        \item Uso matrice di adiacenza $A$;
+        \item La sommatoria aggiunge 1 per ogni coppia reciproca ($A_{i,j}=A_{j,i}=1$);
+        \item Divido per il numero massimo possibile di coppie reciproche dati gli archi in $E$: $\abs{E}/2$.
+    \end{itemize}
+    $$R=\frac{\sum_{i,j,i<j}A_{i,j}A_{j,i}}{\abs{E}/2}=\frac{2}{\abs{E}}\sum_{i,j,i<j}A_{i,j}A_{j,i}=\frac{2}{\abs{E}}\times \frac{1}{2}Tr(A^2)=\frac{1}{\abs{E}Tr(A^2)=\frac{1}{m}Tr(A^2)}$$
+    $$Tr(A)=A_{1,1}+A_{2,2}+...+A_{n,n}=\sum_{i=1}^nA_{i,i}$$
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{figures/rec_ex.png}
+    \end{figure}
+\section{Bilanciamento}
+  \subsection{Bilanciamento Sociale}
+    Modella la \textbf{coerenza} nelle relazioni amico / nemico, formalmente si ha bilanciamento quando:
+    \begin{itemize}
+        \item amico di amico è amico;
+        \item amico di nemico è nemico;
+        \item nemico di nemico è amico;
+        \item nemico di amico è nemico.
+    \end{itemize}
+    Si modella con reti / grafi di \textbf{'+'} e \textbf{'-'} (signed graph), in cui archi positivi hanno valore +1 e archi negativi hanno valore -1. Un triangolo di nodi $i,j,k$ è bilanciato se $w_{ij}w_{jk}w_{ki}\ge 0$
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{figures/bilanc_es.png}
+    \end{figure}
+  \subsection{Status sociale}
+    Quando un indivuduo è prestigioso all'interno della società: se $X$ ha status più alto di $Y$ e $Y$ più alto di $Z$ allora $X$ dovrebbe avere status più alto di $Z$... questi \textbf{cicli} sono problematici.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{figures/status_es.png}
+    \end{figure}
+\section{Degree distributions reali}
+  \begin{itemize}
+      \item Popolarità siti web:
+        \begin{itemize}
+            \item Tanti siti sono visitati < 1000 volte / mese (poco popolari);
+            \item Pochi siti sono visitati > 1M volte / giorno (molto popolari).
+        \end{itemize}
+      \item Attività utenti:
+        \begin{itemize}
+            \item Utenti di SM sono spesso attivi su pochi siti;
+            \item Alcuni (pochi) individui sono attivi su tanti siti.
+        \end{itemize}
+      \item Prezzi dei prodotti:
+        \begin{itemize}
+            \item Tantissimi prodotti a prezzo basso;
+            \item Pochi prodotti costosi.
+        \end{itemize}
+      \item Amicizia:
+        \begin{itemize}
+            \item Tanti individui con pochi amici;
+            \item Pochi individui con migliaia di amici.
+        \end{itemize}
+      \item Distribuzioni dei gradi:
+        \begin{itemize}
+            \item Tanti nodi con grado basso;
+            \item Pochi nodi con grado alto.
+        \end{itemize}
+  \end{itemize}
+\section{La Legge di Potenza (Power Law)}
+  \subsection{Che cos'è (In parole povere)}
+    La \textbf{Power Law} è una relazione matematica che descrive fenomeni dove eventi "piccoli" sono comunissimi, mentre eventi "giganti" sono rari ma esistono.
+    \begin{itemize}
+        \item \textbf{Formula base:} $f(k) \sim \frac{1}{k^\alpha}$
+        \item \textbf{Significato:} La frequenza decresce molto velocemente man mano che cresce la grandezza ($k$).
+        \item \textbf{Esempio intuitivo:} Pensa ai follower su Instagram.
+        \begin{itemize}
+            \item Miliardi di persone hanno pochi follower (la "coda" lunga del grafico).
+            \item Pochissimi influencer (la "testa") ne hanno milioni.
+        \end{itemize}
+    \end{itemize}
+  \subsection{Il trucco del Grafico Log-Log}
+    Se disegni una Power Law su un grafico normale, ottieni un'\textbf{iperbole} (una curva a forma di "L") difficile da analizzare.
+    Per capire se una rete segue davvero questa legge, si usa la scala logaritmica su entrambi gli assi.
+    \begin{itemize}
+        \item \textbf{La Magia:} Se applichi il logaritmo alla formula $f(k) = C/k^\alpha$, trasformi le moltiplicazioni in addizioni:
+          $$ \log(f(k)) = \log(C) - \alpha \log(k) $$
+        \item \textbf{Risultato:} Questa è l'equazione di una \textbf{retta} ($y = q - mx$).
+        \item \textbf{Regola d'oro:} Se metti i dati su un grafico log-log e vedi una linea dritta che scende, allora sei davanti a una Power Law. La pendenza della retta è l'esponente $\alpha$.
+    \end{itemize}
+  \subsection{Esempi Reali (Dalle Slide)}
+    \begin{itemize}
+        \item \textbf{Telefonate ($1/k^2$):} Pochissimi numeri ricevono milioni di chiamate, la maggioranza ne riceve poche.
+        \item \textbf{Libri ($1/k^3$):} Pochi best-seller vendono milioni di copie, la maggioranza dei libri vende quasi zero.
+        \item \textbf{Citazioni Scientifiche ($1/k^3$):} Pochi paper (tipo quelli di Einstein) sono citati da tutti, la maggior parte dei paper non li legge nessuno.
+        \item \textbf{Social Network ($1/k^2$):} La distribuzione dei follower (in-degree).
+    \end{itemize}
+  \subsection{Nota: Differenza con Zipf}
+    \begin{itemize}
+        \item \textbf{Power Law:} Sull'asse X metti il \textbf{valore} (es. "Quanti hanno 100 amici?").
+        \item \textbf{Zipf:} Sull'asse X metti la \textbf{classifica/rank} (es. "Chi è il 1°, il 2°, il 3° più ricco?").
+    \end{itemize}
+  \subsection{Test}
+    Per capire se rete ha degree distribution power law:
+    \begin{enumerate}
+        \item Calcolare grado $k$ di ogni nodo;
+        \item Calcolare $p_k$, la frazione di nodi con grado $k$;
+        \item Disegnare grafico su scala log-log con $k$ su asse X e $p_k$ su asse Y;
+        \item Se è power law, linea retta.
+    \end{enumerate}
+    NON è un approccio sistematico! Altre distribuzioni potrebbero avere lo stesso pattern.
+  \subsection{Coefficiente di clustering}
+    Nelle reti sociali reali connessioni sono \textbf{molto transitive} (amici di un utente sono amici tra di loro, dormando \textbf{triangoli} con alto clustering).
+\section{Diffusione informazioni}
+  Un rumor si diffonde su una rete sociale, tutti gli utenti lo passano immediatamente a tutti gli amici. Quanti hop servono per raggiungere tutti i nodi?
+  \subsection{Milgram}
+  \noindent
+    \begin{minipage}[c]{0.48\linewidth}
+        Partendo da 296 persone a caso (196 Nebraska / 100 Boston) gli viene chiesto di spedire una lettera via intermediari a un agente di borsa a Boston, potendo spedire solo a persone che conoscevano personalmente. Fra tutte le (64) lettere che arrivarono a destinazione il n° medio di passaggi fu circa 6.
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.48\linewidth}
+        \centering
+        \includegraphics[width=0.8\linewidth]{figures/milgram.png}
+    \end{minipage}
+  \subsection{Dodds}
+    Esperimento di Milgram mandato per email, confermato tasso di risposta e sei gradi di separazione.
+  \subsection{Erdos}
+    Ricerca n° di link per connettere uno scienziato / studioso mediante co-authorship di articoli scientifici, lunghezza dei cammini fra matematici: \textbf{media} 4.65, \textbf{massima} 13.
+  \subsection{Proprietà reti reali}
+    \begin{itemize}
+        \item Solitamente hanno struttura core-periferia: core denso con tanti archi, nodi della periferia con archi verso il core ma non fra di loro,
+        \item Paradosso degli amici: grado dei vicini di un nodo $v$ è più alto del grado di $v$.
+    \end{itemize}
+\section{Modelli delle reti}
+  \textbf{Reti reali} sono troppo grandi per valutarle univocamente, si usano quindi processi stocastici che generano / producono grafi per poterle valutare su una scala inferiore, rendendole più controllabili / analizzabili rispetto alla visione reale.
+  \subsection{Reti regolari}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{figures/reti_reg.png}
+    \end{figure}
+    \begin{itemize}
+        \item \textbf{Distanze} (Average path length / Diametro): spesso \textbf{grandi};
+        \item Coefficiente di \textbf{Clustering}: spesso \textbf{alto};
+        \item \textbf{Distribuzione dei gradi}: spesso con un \textbf{picco}, e spesso 0 altrove;
+        \item \textbf{Connettività}: spesso \textbf{completamente connesse};
+        \item Le reti al mondo raramente sono così, nemmeno quelle artificiali se grandi / complesse.
+    \end{itemize}
+  \subsection{Reti casuali}
+    Grafo con $n$ nodi e archi casuali, studiando tutte le proprietà dei grafi e, nei grafi \textbf{grandi}, il \textbf{limite termodinamico} per $n\rightarrow \infty$. Reti interessanti se suppongo che le amicizie possano scaturire in modo casuale.
+    \subsubsection{Modello G(n,m)}
+      Grafo con \textbf{n nodi} fissati e \textbf{m archi} piazzati a caso fra gli $n$ nodi (solitamente indiretto, senza multi e auto archi).
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.6\linewidth]{figures/gnm.png}
+      \end{figure}
+      Si studia il caso $n\rightarrow \infty$, valutando il \textbf{caso medio}: ciò che succede in media su un insieme di tanti grafi casuali (diametro di G(n,m) = diametro medio di tutti i grafi G(n,m)). Comodo analiticamente per $n$ molto grandi, si valutano proprietà \textbf{tipiche} (più interessanti) e non casi speciali / particolari (meno interessanti).
+    \subsubsection{Modello G(n,p)}
+      Introdotto per determinate misure altrimenti non facilmente calcolabili, invece di fissare il \# di archi, si fissa la \textbf{probabilità p} (indipendente) \textbf{di esistenza archi}
+      \begin{itemize}
+        \item N° archi (medio): $<m>=\frac{n(n-1)}{2}p=\binom{n}{2}p$;
+        \item Grado medio (tutte le estremità di archi / n° nodi): $<k>=\frac{2<m>}{n}=(n-1)p$, di solito denotato con $c=(n-1)p$ e approssimato con $c=np$, per $n$ grande cambia poco.
+        \item \textbf{Coefficiente di Clustering}: $C=\frac{c}{n-1}$, valore molto basso ($\rightarrow 0$ per $n\rightarrow \infty$)
+      \end{itemize}
+      Da degree distribution e C si evince che non è un modello adeguato a modellazione reti reali.
+    \subsubsection{Differenza}
+      Si assomigliano ma $G(n,m)\neq G(n,p)$, nel primo il n° di archi è \textbf{esattamente} $m$, nell'altro è \textbf{in media} $m=p\times n(n-1)/2$.
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.6\linewidth]{figures/gnp.png}
+      \end{figure}
+      Entrambi hanno distribuzione dei gradi di \textbf{Poisson} / \textbf{Bernoulli} (= per $n=\infty$), non proprio simmetrica ma quasi.
+    \subsubsection{G(n,p) connesso?}
+      In generale no (basta un singolo nodo isolato), ma dato che $n\rightarrow \inf$, che ci sia un singolo nodo (o piccole componenti) isolato o meno non importa, basta aggiungere / togliere un arco (nodo) e si sistema. Si valuta invece esistenza "giant component", connessa e che contiene quasi tutti i nodi, e se ne valuta la dimensione:
+      \begin{itemize}
+          \item p = 0: grafo disconnesso - dimensione = 1 - costante a aumentare di $n$;
+          \item p = 1: grafo completo - dimensione = n - aumenta con $n$.
+      \end{itemize}
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.6\linewidth]{figures/comp_gig.png}
+      \end{figure}
+      Con aumentare di p aumenterà la probabilità di avere una GC?
+      \\
+
 \end{document}
