@@ -825,5 +825,137 @@ moredelim = [l]{//}
   \subsection{Herd behavior}
     Network \textbf{completamente osservabile} e ho informazioni \textbf{globali}, questo comportamento descrive quando un \textbf{gruppo di individui} esegue azioni \textbf{altamente correlate} senza piani (tendenza naturale a imitare). Dev'esserci una \textbf{connessione} fra individui e un \textbf{metodo di condivisione} informazioni oppure un modo di osservare individui.
     \subsubsection{Grafo completo}
-      Rappresentazione 
+      Rappresentazione di reti herd dove nodi possono osservare almeno maggior parte degli altri nosi e possono osservare informazioni pubbliche.
+    \subsubsection{Esempio}
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.4\linewidth]{figures/herding.png}
+      \end{figure}
+      Due possibili configurazioni (B/B/R - majority blue o R/R/B - majority red), ogni studente cerca di stimare la \textbf{conditional probability} che sia maj. blue / red data una sua estrazione e la lista delle votazioni degli altri.
+      \begin{itemize}
+        \item P[majority-blue] = P[majority-red] = 1/2;
+        \item P[blue | majority-blue] = P[red | majority-red] = 2/3;
+        \item P[blue | majority-red] = P[red | majority-blue] = 1/3.
+      \end{itemize}
+      \textbf{Bayes's rule}: $p(C|I)=\frac{p(C)\times p(I|C)}{p(I)}$, per cui P[majority-blue | blue] = P[blue | majority-blue] $\times$ P[majority-blue] / P[blue].
+      \\
+      Sapendo che P[blue] = P[blue | majority-blue] $\times$ P[majority-blue] + P[blue | majority-red] $\times$ P[majority-red] = $2/3\times1/2+1/3\times1/2=1/2$ possiamo vedere \textbf{P[majority-blue | blue]} = $(2/3\times1/2)/(1/2)=2/3>1/2$. Se le osservazioni sono \textit{blue, blue}, anche se il terzo studente osserva \textit{red} sarà portato a votare \textit{blue}.
+    \subsubsection{Intervention}
+      Quando una nuova \textbf{informazione privata} viene rilasciata la herd rivaluta le scelte, il che potrebbe portare a risultati completamente diversi.
+  \subsection{Information cascade}
+    Utenti condividono contenuti di altri utenti presenti nella rete, quindi le info si propagano tra vicini:
+    \begin{itemize}
+        \item individui devono essere \textbf{connessi a una rete};
+        \item individui \textbf{osservano} solo \textbf{decisioni} dei \textbf{vicini immediati}.
+    \end{itemize}
+    La rete è un \textbf{grafo diretto} (nodi sono attori e archi appresentano canali di comunicazione tra loro), un nodo può solo influenzare nodi \textbf{a cui è connesso}. Le decisioni sono binarie (Y/N) ed i nodi possono essere \textbf{attivi} (adottano comportamento / decisione del precedente) o \textbf{inattivi} (non hanno ancora adottato). Un nodo attivo può \textbf{attivare} i nodi vicini (si può passare solo da non attivo ad attivo, non viceversa).
+    \subsubsection{Independent Cascade Model (ICM)}
+      Modello cascade \textbf{sender-centric} dove \textbf{ogni} nodo ha la possibilità di attivare i suoi vicini subito dopo la sua attivazione (nodi che attivano sono sender e nodi che vengono attivati sono receivers).
+      \begin{itemize}
+          \item Nodo attivato all'istante $t$;
+          \item All'istante $t+1$ può attivare i suoi vicini;
+          \item Assumiamo che $v$ sia attivato all'istante $t$:
+            \begin{itemize}
+              \item Per ogni vicino $w$ di $v$ c'è probabilità $p_{vw}$ che quel nodo venga attivato all'istante $t+1$;
+              \item $p_{vw}$ può differire per diverse coppie di nodi.
+            \end{itemize}
+          \item Ogni nodo $v$ attivato all'istante $t$ ha una \textbf{singola} possibilità di attivare i suoi vicini (può solo accadere a $t+1$).
+      \end{itemize}
+    \subsubsection{Massimizzare spread di cascade}
+      Trovare il \textbf{più piccolo} set di nodi di una rete tale il loro spread aggregato nella rete sia massimizzato: dato un \textbf{budget} $k$ si deve trovare un \textbf{initial set} $S, \abs{S}=k$ che massimizzi $f(S)$. Sappiamo che le activations sono \textbf{random}: si generano i numeri random per tutti gli archi all'inizio del processo. $f(S)$ è:
+      \begin{itemize}
+          \item \textbf{non negativa};
+          \item \textbf{monotona} - $f(S+v)\geq f(S)$;
+          \item \textbf{submodulare} - sia $N$ un set finito, un set è submodulare se e solo se:
+            \begin{itemize}
+                \item $f:2^N\rightarrow R$;
+                \item $\forall S \subset T \subset N, \forall v\in N \setminus T$;
+                \item $f(S+v)-f(S) \geq f(T+v)-f(T)$;
+            \end{itemize}
+            Ovvero isottoinsiemi più piccoli ci guadagnano di più.
+      \end{itemize}
+    \subsubsection{Problemi}
+      Trovare un element set $S$ per il quale $f(S)$ è massimizzato e \textbf{NP-hard}. Posso usare un \textbf{greedy algorithm} che partendo da un empty set $S$ per $k$ iterazioni ad ogni passo aggiunge as $S$ un nodo $v$ che massimizza $f(S\cup{v})-f(S)$
+  \subsection{Epidemics}
+    Assumono \textbf{rete implicita} e delle \textbf{connessioni sconosciute} tra gli user, vengono utilizzati quando si è interessati a \textbf{pattern globali} (trend, pattern d'infezione), si possono analizzare con due metodi:
+    \begin{itemize}
+        \item \textbf{Fully-mixed}: valuta le proporzioni d'infezione / recover, evitando di considerare le informazioni di rete;
+        \item \textbf{Contact network}: controlla come gli host comunicano tra loro, valutando come le epidemie avvengono in una rete (\textit{contact network} = grafo in cui nodi rappresentano host e archi rappresentano interazioni tra questi host).
+    \end{itemize}
+    \subsubsection{SI model}
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.5\linewidth]{figures/SI.png}
+      \end{figure}
+      Gli individui \textbf{suscettibili (S)} possono venire infetti, se \textbf{infetti (I)} non possono essere curati e possono infettare altri utenti. Sia $N$ la dimensione della \textbf{crowd}, costante:
+      \begin{itemize}
+          \item $S(t)$: numero di individui suscettibili all'istante $t$ - $s(t) = \frac{S(t)}{N}$;
+          \item $I(t)$: numero di individui infetti all'istante $t$ - $\frac{I(t)}{N}$;
+          \item $\beta$: probabilità di contatto - per $\beta=1$ tutti entrano in contatto con tutti, per $\beta=0$ nessuno entra in contatto con nessuno.
+      \end{itemize}
+      Dimensione della crowd è $N=S(t)+I(t)$, per ogni istante un individuo infetto può \textbf{incontrare} $\beta N$ individui e può \textbf{infettarne} $\beta S$, per gli altri $\beta I$ non succede niente, $\beta IS$ saranno infettati al prossimo istante.
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.6\linewidth]{figures/si_model.png}
+      \end{figure}
+  \subsection{SIR model}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{figures/SIR.png}
+    \end{figure}
+    Introduce (in aggiunta a \textbf{I} e \textbf{S}) lo stato di \textbf{recovery R}: determinati individui possono "curarsi" (o essere rimossi / morire), una volta arrivato a stato \textbf{R} non può più tornare \textbf{I}.
+    $$S+I+R=N$$
+    $\gamma$ invece definisce la probabilità di recover di un individuo infetto ad un dato istante.
+    \begin{itemize}
+        \item S decrescono monotonicamente;
+        \item R crescono monotonicamente;
+        \item I crescono inizialmente e poi decrescono man mano che individui guariscono / muoiono e vanno a 0 per $t\rightarrow\infty$;
+        \item S \textbf{non vanno} a 0: ne resta una generalmente piccola frazione (quando non ci sono più I non c'è nesusno per contagiare i pochi S che si salvano).
+    \end{itemize}
+    $R_0$ \textbf{Basic reproduction number} (calcolato con $\beta/\gamma$) numero medio di individui che un individuo infetta prima di guarire / morire. $R_0=1$ indica la \textbf{soglia epidemica}, quindi \textbf{c'è} epidemia se $R_0\geq1$, se $R_0\leq1$ non c'è epidemia perché gli infetti guariscono più in fretta di quanto gli S si ammalino.
+    \subsubsection{Transizione epidemica}
+      Transizione di fase fra regime epidemia e regime non-epidemia: brusca, improvvisa.
+  \subsection{SIS model}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{figures/SIS.png}
+    \end{figure}
+    Uguale a modello SI, ma soggetti infetti possono tornare sani e venire ri-infettati di nuovo.
+    $$I(\beta N-\gamma)-\beta I^2$$
+    \begin{itemize}
+        \item Se $\beta N\leq\gamma$: gli infetti diminuiranno esponenzialmente;
+        \item Se $\beta N>\gamma$: crescita logistica simile al modello SI.
+    \end{itemize}
+  \subsection{SIRS model}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\linewidth]{figures/SIRS.png}
+    \end{figure}
+    Individui che sono in stato R perdono l'immunità dopo un certo periosdo di tempo e diventano suscettibili di nuovo
+  \subsection{Contagio sociale}
+    Se un individuo vede un comportamento in un altro individuo, lo \textbf{imita} (adotta lo stesso comportamento), rappresentabile come \textbf{modifica di SIR}:
+    \begin{itemize}
+        \item Suscettibile - \textbf{Ignorant (I)}: individuo che non ha ancora ricevuto l'info;
+        \item Infetto - \textbf{Spreader (S)}: individuo che ha ricevuto l'info e la diffonde;
+        \item Recovered/Removed - \textbf{Stifler (R)}: ha ricevuto l'info ma non la diffonde (più).
+    \end{itemize}
+    A differenza di SIR (patologia \textbf{negativa}), il contagio sociale (ISR) è un atto intenzionale, vantaggioso ed attivo.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\linewidth]{figures/SIRISR.png}
+    \end{figure}
+    \begin{itemize}
+        \item Passaggio $I \rightarrow R$ in SIR è spontaneo e dipende solo da n° di I e dal parametro $\gamma$;
+        \item Passaggio $S \rightarrow R$ in "ISR" non è spontaneo e dipende da n° di S, parametro $\alpha$ e dal n° di R.
+    \end{itemize}
+    \subsubsection{Cosa succede}
+      \begin{itemize}
+        \item Allo \textbf{stato stazionario} ($t\rightarrow\infty$) non ci saranno più \textbf{spreaders} - $s_\infty=lim_{t\rightarrow\infty}s(t)=0$;
+        \item Gli ignoranti saranno tanti di meno quanti di più saranno gli stiflers - $i_\infty=e^{-(1+\lambda/\alpha)r_\infty}$;
+        \item Gli stiflers saranno tutti gli altri, $i_\infty+r_\infty=1$, $r_\infty=1-i_\infty$ - $r_\infty=1-e^{-(1+\lambda/\alpha)r_\infty}$.
+      \end{itemize}
+    \subsubsection{Condizione}
+      Per avere contagio sociale la condizione diventa $1+\frac{\lambda}{\alpha}$. \textbf{Non c'è più soglia epidemica}, qualsiasi siano i valori dei parametri c'è \textbf{sempre} epidemia sociale.
+\section{Epidemie su reti}
+  Supponiamo di avere una \textbf{rete omogenea}, tutti i nodi hanno un grado simile.
 \end{document}
