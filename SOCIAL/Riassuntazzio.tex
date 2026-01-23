@@ -779,5 +779,51 @@ moredelim = [l]{//}
           \item \textbf{Cammini brevi};
           \item \textbf{Clustering alto}: presenza di triangoli.
       \end{itemize}
-
+\section{Comunità}
+  Comunità (\textbf{community}) di utenti = gruppo fornito / gestito dalla piattaforma, modellato mediante gruppo di nodi "connessi fra loro e non connessi con gli altri" (homophilia: tendenza ad associarsi con persone simili a loro).
+  \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.5\linewidth]{figures/community_es.png}
+  \end{figure}
+  \subsection{Definizione "ideale"}
+    Sottografo connesso e senza archi con altri nodi: dato un grafo $G$, una comunità $C$ è un sottografo di $G$ tale che $C$ è connesso (\textit{o addirittura completo}) e $\forall$ nodo $v\notin C$, $v$ è sconnesso da $C$ ($\nexists$ cammino fra $v$ e nodi di $C$).
+  \subsection{Definizione "realistica"}
+    Sottografo connesso e senza archi con altri nodi: dato un grafo $G$, una comunità $C$ è un sottografo di $G$ tale che $C$ è connesso e $\forall$ nodo $v\notin C$, $v$ è \textbf{poco connesso} a $C$.
+  \subsection{Algoritmi per riconoscere comunità}
+    \subsubsection{Edge betweenness centrality}
+      \noindent
+        \begin{minipage}[c]{0.48\linewidth}
+            Anche gli archi possono essere più o meno centrali (si applica centralità di betweenness sugli archi), quantifica quanti shortest path passano per un arco anziché per un vertice (\textit{quanto un arco è importante nel connettere i nodi}). Gli archi con alta betweenness centrality sono i \textbf{weak ties}.
+        \end{minipage}
+        \hfill
+        \begin{minipage}[c]{0.48\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{figures/edge_centr.png}
+        \end{minipage}
+      Idea: rimuovere ricorsivamente legami deboli rimuovendo gli archi con alta betweenness centrality (\textbf{disconnettendo la rete}), rendendo le comunità componenti connesse.
+    \subsubsection{Algoritmo di Givran-Newman}
+      \begin{enumerate}
+          \item Calcolare edge betweenness per tutti gli archi del grafo;
+          \item Rimuovere arco con betweenness più alta;
+          \item Ricalcolare edge betweenness per tutti gli archi del grafo (basta per quelli la cui betweenness è cambiata);
+          \item Ripetere fino alla rimozione di tutti gli archi.
+      \end{enumerate}
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.7\linewidth]{figures/giv_new.png}
+      \end{figure}
+  \subsection{Gerarchia}
+    Viene prodotto un albero (\textit{dendrogramma}) del quale ogni livello corrisponde ad un valore di edge betweenness (decrescente da radice a foglie - sopracommunità $\rightarrow$ comunità $\rightarrow$ sottocomunità).
+\section{Diffuzione informazioni}
+  Processo per cui un'\textbf{informazione} (video, meme), o anche \textbf{comportamento} (adozione di una tecnologia) si diffonde e raggiunge altri individui. È un fenomeno \textbf{dinamico} sulle reti, dove i player principali sono:
+  \begin{itemize}
+      \item \textbf{Mittente (sender)}: uno o più mittenti che iniziano il processo;
+      \item \textbf{Destinatari (receivers)}: uno o più destinatari che ricevono l'informazione (insieme solitamente molto più grande di quello dei sender);
+      \item \textbf{Mezzo (medium)}: mezzo tramite il quale la diffusione avviene.
+      \item \textbf{Intervention}: mezzo di intervento / \textbf{intromissione} fino al blocco completo della diffusione (nel caso di fake news), al contrario possono anche "far ripartire" / velocizzare la condivisione (messaggi pubblicitari).
+  \end{itemize}
+  \subsection{Herd behavior}
+    Network \textbf{completamente osservabile} e ho informazioni \textbf{globali}, questo comportamento descrive quando un \textbf{gruppo di individui} esegue azioni \textbf{altamente correlate} senza piani (tendenza naturale a imitare). Dev'esserci una \textbf{connessione} fra individui e un \textbf{metodo di condivisione} informazioni oppure un modo di osservare individui.
+    \subsubsection{Grafo completo}
+      Rappresentazione 
 \end{document}
