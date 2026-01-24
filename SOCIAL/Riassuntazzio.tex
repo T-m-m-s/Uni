@@ -957,5 +957,436 @@ moredelim = [l]{//}
     \subsubsection{Condizione}
       Per avere contagio sociale la condizione diventa $1+\frac{\lambda}{\alpha}$. \textbf{Non c'è più soglia epidemica}, qualsiasi siano i valori dei parametri c'è \textbf{sempre} epidemia sociale.
 \section{Epidemie su reti}
-  Supponiamo di avere una \textbf{rete omogenea}, tutti i nodi hanno un grado simile.
+  Supponiamo di avere una \textbf{rete omogenea}, tutti i nodi hanno un grado simile e ogni individuo viene a contatto con lo stesso numero di individui. Si può ridefinire il \textbf{basic reproduction number} (n° di individui che un infected contagia prima di guarire / morire).
+  \begin{itemize}
+      \item \textbf{Rete omogenea}: tutti i nodi hanno grado simile alla media $<k>$;
+      \item Ogni $I$ infetta un vicino $S$ con probabilità $\beta$;
+      \item Ad inizio epidemia sono quasi tutti $S$, anche i vicini di un $I$;
+      \item N° medio di infezioni causate da un $I$: $\beta<k>$;
+      \item Ad ogni istante $t$, ogni $I$ può transitare in $R$ con probabilità $\gamma$.
+  \end{itemize}
+  Quindi:
+  \begin{itemize}
+    \item $\Delta I_{t+1} = \beta<k>I_t$;
+    \item $\Delta R_{t+1} = \gamma I_t$.
+  \end{itemize}
+  Per avere epidemia deve essere $\Delta I_{t+1} > \Delta R_{t+1}$, ossia $\beta<k>I_t > \gamma I_t$. \textbf{Quindi} $R_0 = <k>\beta/\gamma$.
+  \subsection{Intervention}
+    Per diminuire $R_0$:
+    \begin{itemize}
+        \item Diminuire \textbf{contagiosità} $\beta$;
+        \item Aumentare \textbf{velocità di guarigione} $\gamma$;
+        \item Diminuire il \textbf{grado medio} $<k>$.
+    \end{itemize}
+  Nel \textbf{mondo reale} reti sono eterogenee (power law, hub), se ci sono nodi con grado alto non c'è soglia e c'è comunue un'epidemia (hub si contagiano facilmente e contagiano molti altri).
+  \subsection{Epidemic intervention}
+    Scelgo nodi randomici e gli chiedo di selezionare gli altri individui più suscettibili, studio sperimentale su \textbf{rete WSSW}:
+    \begin{itemize}
+        \item $\lambda=\alpha=1$;
+        \item non fully mixed (\textbf{non completa});
+        \item variazione rispetto a probabilità $p$:
+          \begin{itemize}
+              \item per $p$ \textbf{bassi} - rete molto clusterizzata, alto $C$ e molti triangoli, spreaders diffondono sempre agli stessi e quindi passano velocemente fra stiflers (poca diffusione);
+              \item per $p$ \textbf{alti} - rete con shortcut, spreaders diffondono anche in parti lontane e quindi rumor si diffonde.
+          \end{itemize}
+    \end{itemize}
+  \subsection{Su reti eterogenee}
+    Power law, scale-free, con hub e \textbf{varianza alta} sui gradi. Hub dovrebbero essere spreader efficientissimi, tuttavia $r_\infty$ è più alto su reti omogenee... infatti hub non aiutano diffusione per i rumor: facile che un rumor raggiunga un hub (rendendo diffusione molto alta), ma se hub diventa spreader allora creerà velocemente molti \textbf{molti stifler}.
+\section{Modello dei benefici diretti (Morris)}
+  Persone sono influenzate da altre persone sulla base di \textbf{informazioni} (faccio X perché vedo molti che lo fanno) e \textbf{benefici diretti} (faccio X perché mi conviene rispetto a non farlo).
+  \subsection{Modello direct benefit}
+    Comportamento si diffode sulla rete sulla base di un processo di decision making basato su scelte dei nodi vicini.
+  \subsection{Modello di Morris}
+    Valuto un nodo di partenza e valuto i nodi vicini, per un nodo il \textbf{beneficio} di adottare un comportamento cresce al crescere del n° dei vicini che lo adottano. Ogni nodo sceglie fra due possibili comportamenti \textit{A} e \textit{B}, se due nodi $v$ e $w$ sono collegati da un arco hanno un incentivo ad \textbf{adottare comportamenti uguali}.
+    \subsubsection{Matrice payoff}
+      \noindent
+        \begin{minipage}[c]{0.58\linewidth}
+            $v$ e $w$ \textbf{giocatori}, $A$ e $B$ \textbf{strategie}:
+            \begin{itemize}
+                \item se $v$ e $w$ adottano entrambi $A$ allora \textbf{payoff} $a>0$;
+                \item se $v$ e $w$ adottano entrambi $B$ allora \textbf{payoff} $b>0$;
+                \item se $v$ e $w$ adottano comportamenti differenti allora \textbf{payoff} 0;
+            \end{itemize}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[c]{0.38\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{figures/payoff.png}
+        \end{minipage}
+      Ogni nodo seleziona strategia che massimizza la somma di tutti i payoff (trovati creando la matrice con tutti i suoi vicini).
+    \subsubsection{Regola di decisione}
+      Decisione della strategia dipende da:
+      \begin{itemize}
+          \item payoff $a$;
+          \item payoff $b$;
+          \item n° vicini che adottano $A$ (basta anche percentuale);
+          \item n° vicini che adottano $B$ (basta anche percentuale);
+          \item $p$ = percentuale vicini che adottano A, 1-p = percentuale vicini che adottano B;
+          \item $d$ = n° vicini.
+      \end{itemize}
+      Se $v$ adotta $A$ payoff = $pda$, se adotta $B$ payoff = $(1-p)db$. $v$ adotta $A$ \textbf{se e solo se} $pda\geq(1-p)db$, ossia se $p\geq\frac{b}{a+b}$.
+    \subsubsection{Equilibri}
+      2 ovvi equilibri (tutti A / tutti B), definendo inizialmente un \textbf{comportamento di default}, ci sono poi \textbf{early adopters} che vanno contro il comportamento default per ragioni extra-payoff. Ad ogni passo ogni nodo usa la \textbf{regola di decisione} per per scegliere se cambiare comportamento, si ferma quando tutti sono cambiati / nessuno vuole più cambiare. Si ha quindi una \textbf{cascata di adozioni} e, se tutti i nodi passano a un singolo comportamento si ha \textbf{cascata completa}.
+    \subsubsection{Intervention}
+      Strategie che possono essere usate per cambiare le decisioni, \textbf{miglioando i payoff} o \textbf{convincendo} alcuni nodi chiave per far ripartire la reazione a catena.
+    \subsubsection{Risultato di Morris}
+      Se esistono \textbf{cluster} (comunità molto legate con sottografi quasi completi e poco legati all'esterno) \textbf{ferman le cascate}, in particolare una cascata si ferma \textbf{se e solo se} c'è un cluster.
+      \begin{itemize}
+          \item Dati degli \textbf{initial adopters} di $A$;
+          \item Si definisce \textbf{soglia} $q$ per adottare $A$;
+          \item Se il resto della rete contiene un cluster di \textbf{densità} $> 1-q$ allora non ci sarà una cascata completa;
+          \item Se non c'è cascata completa, allora c'è un \textbf{cluster} di densità $> 1-q$.
+      \end{itemize}
+      \textbf{Dimostrazioni}
+      \begin{itemize}
+          \item Caso 1:
+            \begin{itemize}
+                \item Sia un cluster con densità $> 1-q$, sia $v$ il \textbf{primo} nodo nel cluster che adotta $A$ (al tempo $t$);
+                \item A $t-1$ doveva esserci almeno una frazione $q$ di vicini di $v$ adottanti $A$, nessuno \textbf{nel} cluster adottava $A$;
+                \item $v$ aveva almeno una frazione $q$ di vicini fuori dal cluster;
+                \item Il cluster è di densità $> 1-q \rightarrow > 1-q$ vicini di $v$ devono essere nel cluster;
+                \item Impossibile averne $q$ fuori... \textbf{no complete cascade}.
+            \end{itemize}
+          \item Caso 2:
+            \begin{itemize}
+                \item Sia un qualsiasi nodo $w$ in $S$;
+                \item $w$ non cambia da $B$ ad $A$, la frazione dei suoi vicini che usano $A$ è $F_W(A) < q$ e la frazione dei suoi vicini che usano $B$ è $F_W(B) > 1-q$;
+                \item Soli nodi che usano $B$ sono quelli in $S$, la frazione dei vicini di $w$ che stanno in $S$ è $> 1-q$;
+                \item Questo vale per tutti i nodi $w$ in $S$, per ognuno di questi la frazione dei vicini che stanno in $S$ è $> 1-q$ e quindi $S$ è un \textbf{cluster} di densità $> 1-q$.
+            \end{itemize}
+      \end{itemize}
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.4\linewidth]{figures/morris_es.png}
+      \end{figure}
+    \subsubsection{Awareness, adoption, weak ties}
+      \textbf{Weak ties} sono utili per conoscenze non intime (es. trovare lavoro), utili pere diffusione informazioni ma inutili per diffusione mode, innovazione. Ricorsiao che \textbf{awareness} = semplice consapevolezza e \textbf{adoption} = adozione comportamento. Posso estendere il modello di Morris con \textbf{payoff eterogenei}:
+      \begin{itemize}
+          \item Ogni nodo $v$ ha una ricompensa diversa $a_v$ ($b_v$) per l'adozione del comportamento $A$ ($B$)
+          \item Modellando così non solo chi è \textbf{influente} ma anche chi è \textbf{facilmente influenzabile}.
+      \end{itemize}
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.3\linewidth]{figures/morris_est.png}
+      \end{figure}
+\section{Fake news}
+  Quando parliamo di \textbf{fake news} parliamo di:
+  \begin{itemize}
+      \item \textbf{misinformation} = errori non intenzionali come diffusione di informazioni sbagliate "\textbf{in buona fede}";
+      \item \textbf{disinformation} = diffusione di contenuti / informazioni volutamente manipolate;
+      \item \textbf{malinformation} = diffusioni di info malevole con intenti diffamatori.
+  \end{itemize}
+  Un'informazione si valuta sotto \textbf{7 dimensioni}:
+  \begin{itemize}
+      \item \textbf{correctness} - informazione espressa in maniera accurata senza sbagli;
+      \item \textbf{neutrality} - informazione espressa sotto punto di vista oggettivo / neutrale;
+      \item \textbf{comprehensibility} - informazione comprensibile / capibile / leggibile facilmente);
+      \item \textbf{precision} - informazione è precisa / specifica, non vaga;
+      \item \textbf{completeness} - informazione è completa e racconta "tutta la storia";
+      \item \textbf{speaker's trustworthiness} - chi trasmette informazione è generalmente affidabile;
+      \item \textbf{indormativeness} - informazione permette di ricavare dati utili.
+  \end{itemize}
+  \subsection{Perché studiarle}
+    Fenomeno in forte crescita e sempre più problematico senza soluzione ovvia, studi hanno evidenziato che notizie false si diffondono quasi allo stesso rateo delle vere, ma con depth e size maggiore.
+    \begin{itemize}
+        \item Si è notato come notizie false vengano pubblicate con \textbf{più frequenza} delle vere, e come causino paura, disgusto e sorpreasa per restare impresse;
+        \item Anche se implementassimo un \textbf{bot} per diffonderle non cambierebbe niente in quando vengono diffuse maggiormente da \textbf{umani};
+        \item Due comunità ben distinte (buona parte dei post ha \textbf{alta omogeneità}): \textbf{cospirazionisti} e \textbf{scientifici}, che scaturiscono nelle \textbf{echo chambers} ad alta omogeneità (contenuti tendono a circolare solo all'interno della rispettiva comunità);
+        \item Si è riscontrato come attività di \textbf{debunking} sembra inutile (se non controproducente) a causa di \textbf{pregiudizio di conferma (confirmation bias)}: si crede a quello che si sa già.
+    \end{itemize}
+\section{Crowdsourcing}
+  Sistemi computazionali vengono supportati dal \textbf{comportamento sociale}: compiti che i calcolatori non fanno bene svolti da persone raggounte tramite i sistemi computazionali. Si sfruttano quindi le \textbf{folle} (possono avere comportamenti positivi / negativi), solitamente decisioni prese da un gruppo sono \textbf{più corrette} di quelle dei singoli esperti. Si parla quindi di \textbf{decisioni di gruppo}.
+  \subsection{4 elementi perché "funzioni"}
+    \begin{itemize}
+        \item \textbf{Diversità di opinioni}: ognuno deve avere le proprie \textbf{informazioni private} (al limite un'interpretazione originale dei fatti noti);
+        \item \textbf{Indipendenza}: le opinioni personali \textbf{non sono determinate} dalle opinioni di chi sta intorno (\textit{no herding behavior, cascade});
+        \item \textbf{Decentralizzazione}: persone sono capaci di \textbf{specializzare e basarsi su conoscenze locali};
+        \item \textbf{Aggregazione}: esistono meccanismi per \textbf{trasformare giudizi privati in una decisione collettiva}.
+    \end{itemize}
+  \subsection{5 motivi per cui non sempre "funziona"}
+    \begin{itemize}
+        \item \textbf{Omogeneità}: necessità che ci sia \textbf{diversità} in una folla, per avere abbastanza varietà di approcci / ragionamenti / informazioni private;
+        \item \textbf{Centralizzazione}: disastro dello shuttle Columbia attribuibile alla \textbf{gestione gerarchica / burocratica} della nasa (chiusa rispetto a ingegneri di "basso livello");
+        \item \textbf{Divisione}: informazioni \textbf{appartenenti a una sottodivisione non accessibili alle altre} (torri gemelle). Folle lavorano meglio se scelgono autonomamente su cosa lavorare e con quali informazioni;
+        \item \textbf{Imitazione}: scelte \textbf{visibili ed effettuate in sequenza}, si può formare una \textbf{information cascade} (\textit{herding behavior}) in cui solo prime scelte vengono fatte in modo genuino e poi si tende a confermare / copiare;
+        \item \textbf{Emotività}: fattori \textbf{emotivi} possono portare a pressioni, \textit{istinto di gregge} e, in casi estemi, a \textbf{isteria collettiva}.
+    \end{itemize}
+  \subsection{Definizione}
+    Compito tipicamente svolto da uno / pochi dipendenti esperti viene svolto in \textbf{outsourcing} con un \textbf{grande} gruppo di persone / community mediante una \textbf{chiamata aperta}.
+  \subsection{Human computation}
+    Processo computazionale che da in outsourcing \textbf{alcuni passi} ad umani: computer chiede a persona / crowd di risolvere un problema, lo raccoglie, interpreta e integra le soluzioni (reCAPTCHA).
+  \subsection{Esempi reali}
+    \begin{itemize}
+        \item Ricercatore che vuole dati epr esperimenti;
+        \item Azienda che vende beni (indagini di mercato veloci e a basso prezzo);
+        \item Amministrazione comunale che vuole sapere presenza di buche nelle strade.
+    \end{itemize}
+  \subsection{Amazon mechanical turk}
+    Mercato che richiede intelligenza umana per del lavoro dove i player sono:
+    \begin{itemize}
+        \item \textbf{requester} - individuo / organizzazione con lavoro da far svolgere;
+        \item \textbf{worker} - persona che fa il lavoro;
+        \item \textbf{HIT} (Human Intelligence Task) - unità di lavoro da svolgere alla quale è associato un pagamento;
+        \item \textbf{batch} - insieme di HIT caricato da un requester.
+    \end{itemize}
+    L'esito di un HIT o di un batch può venire rappresentato mediatnte una \textbf{matrice $n$ task / $m$ worker}, con $v_{ij}$ valori dati in risposta dal worker $i$ per la task $j$ (numero / testo / ...).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\linewidth]{figures/m_wo_ta.png}
+    \end{figure}
+    La matrice è \textbf{sparsa}: non tutti i worker fanno tutti i task e non tutti i task sono fatti da tutti i worker.
+    \subsubsection{Principi di Surowiecki}
+      Amazon mechanical turk rispetta i 4 principi di Surowiecki: diversità di opinioni, indipendenza, decentralizzazione e aggregazione.
+  \subsection{Tipi di task}
+    \begin{itemize}
+        \item \textbf{Complex task}: creazione website, sviluppo sistema SW;
+        \item \textbf{Simple projects}: sviluppare logo / visual identity;
+        \item \textbf{Macro tasks}: scrivere recensione, testare una feature nuova;
+        \item \textbf{Micro tasks}: labelling di un'immagine, verificare un indirizzo.
+    \end{itemize}
+    \subsubsection{Demartini}
+      Classificazione (capitoli) basata sulla \textbf{letteratura scientifica} in vari settori di ricerca, \textbf{sistemi ibridi} (human + machine) per:
+      \begin{itemize}
+          \item DB;
+          \item information retrieval;
+          \item processing di linguaggio naturale;
+          \item semantic web;
+          \item machine learning;
+          \item multimedia processing.
+      \end{itemize}
+    \subsubsection{Brabham}
+      4 tipi di task sulla base dei problemi risolti:
+      \begin{itemize}
+          \item \textbf{Knowledge discovery and management} - scoprire e organizzare / gestire conoscenze\textbf{già disponibili} ma \textbf{disorganizzate}, utile per raccolta e organizzazione info, creazione risorse collettive e reporting;
+          \item \textbf{Broadcast search} - trovare uno \textbf{specialista} (spesso fuori dal settore - "mente fresca") che svolga il compito, trovi la risposta giusta e dia la soluzione, utile per problemi tecnico-scientifici con soluzioni misurabili;
+          \item \textbf{Peer-vetted creative production} - produzione creativa riesaminata da pari, \textbf{crowd} produce e seleziona idee creative (sensato perché sarà massa ad usarle), utile per problemi la cui soluzione dipende da gusti e/o mercato;
+          \item \textbf{Distributed human-intelligence task} - grandi problemi di data processing decomposti in piccoli task che richiedono intelligenza umana (Amazon mechanical turk), utile per analisi dati su larga scala.
+      \end{itemize}
+    \subsubsection{Grier}
+      Classificazione più articolata con tipi di pagamento e tipi di mercato:
+      \begin{itemize}
+        \item Crowd\textbf{contest}: do in \textbf{outsourcing} un compito intero (solitamente) senza scomporlo, mediante un \textbf{contest} dove si seleziona e si paga \textbf{solo} la risposta migliore (es. design di un logo);
+        \item \textbf{Macro}tasking: dare in \textbf{outsourcing} a un consulente / libero professionista, pagamento orario (es. traduzioni, creazione app);
+        \item \textbf{Micro}tasking: compito \textbf{suddiviso} in piccole parti, poi aggregate (\textbf{il vero Crowdsourcing});
+        \item \textbf{Self-organized crowds}: chiedo che venga svolto un lavoro ma gli individui \textbf{cooperano / interagiscono}.
+        \item Crowd\textbf{funding}: non si vuole lavoro ma soldi, tante piccole donazioni (gofundme).
+      \end{itemize}
+      2 tipi di pagamento:
+      \begin{itemize}
+          \item \textbf{Pay-all}: tutti i worker che hanno svolto il lavoro vengono pagati (tipico);
+          \item \textbf{Pay-one}: solo uno viene pagato (contest).
+      \end{itemize}
+      2 tipi di mercato / crowd:
+      \begin{itemize}
+          \item \textbf{Indipendenti}: ognuno lavora per sé e viene pagato individualmente;
+          \item \textbf{Collaborative}: cooperazione fra i worker, a volte si dividono la paga.
+      \end{itemize}
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.6\linewidth]{figures/grier.png}
+      \end{figure}
+  \subsection{Come convincere i worker}
+    2 tipi di motivazioni:
+    \begin{itemize}
+        \item \textbf{Estrinseche}: compito considerato noioso, inutile o spiacevole necessita di \textbf{ricompensa aggiuntiva} (soldi, fama, reputazione, il mio tesoro, cercatelo, chissà se qualcuno di voi lo troverà);
+        \item \textbf{Intrinseche}: attività consegue a interesse / divertimento del compito stesso, la ricompensa è quindi \textbf{intrinseca} nello svolgimento del compito (Games With A Purpose).
+    \end{itemize}
+    \subsubsection{Li et al}
+      Classificazione \textbf{bidimensionale} che mette isieme \textbf{granularità} (microtask / macrotask) e \textbf{incentivo / motivazione} (denaro / divertimento).
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.4\linewidth]{figures/li_et_al.png}
+      \end{figure}
+  \subsection{Tipi di risposte}
+    Domande a risposta singola / multipla, risposta aperta numerica / testuale, collection di dati. 
+    \subsubsection{Real world tasks}
+      Sempre con associazione \textbf{task - tipo di risposta} con:
+      \begin{itemize}
+          \item \textbf{sentiment analysis} - opinione di una review;
+          \item \textbf{search relevance} - data un'interrogazione dire se un documento è pertinente con 2 o N valori;
+          \item \textbf{moderazione contenuti} - immagini o siti web, risposta singola S/N;
+          \item \textbf{raccolta dati} - points of interest / coordinate geografiche;
+          \item \textbf{categorizzazione} - ad es. classificare come attore o come cantante;
+          \item \textbf{trascrizione di audio / immagini} - digitalizzazione con dati immediatamente usabili.
+      \end{itemize}
+      Esito di un esperimento di crowdsourcing rappresentabile sempre mediante una \textbf{matrice worker / task}.
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.3\linewidth]{figures/m_r_w_t.png}
+      \end{figure}
+\section{Progettare microtask}
+  \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.6\linewidth]{figures/task_def.png}
+  \end{figure}
+  Il workflow per la definizione di una task si suddivide in 6 parti:
+  \begin{enumerate}
+      \item \textbf{Definire il problema}: comprenderlo per bene in modo da non risolvere il problema sbagliato;
+      \item \textbf{Idea di soluzione}: capire che esperimento effettuare con un progetto vero e proprio (cosa mostrare / chiedere su quanti / quali dati, con quanta ridondanza, quanto pagare e quali controlli di qualità effettuare), fornendo \textbf{istruzioni chiare} e raccogliendo \textbf{feedback};
+      \item \textbf{Prototipo di HIT}: imolementazione di tutto, magari non su tutti i dati e non con tutti i controlli (anche versioni alternative);
+      \item \textbf{Rilascio in laboratorio}: far svolgere il compito ad alcuni collaboratori per capire se ci sono \textbf{bug} e iniziare a imbastire la fase di analisi dati;
+      \item \textbf{Test pilota}: far svolgere il compito sulla piattaforma con worker e soldi \textbf{veri} su un insieme \textbf{fittizio / limitato} di dati oer comprendere scalabilità e collaudare GUI, istruzioni...;
+      \item \textbf{In produzione}: lancio esperimento finale con precauzioni, è difficile avere risposte perfette ed esatte.
+  \end{enumerate}
+  La qualità perfetta dei dati ottenuti mediante crowdsourcing è un'\textbf{utopia}, ci sono errori, incongruenze ecc. \textbf{Si fa il meglio che si può con i dati che si ha}.
+\section{Qualità}
+  \subsection{Tecniche per migliorare / ottenere buona qualità}
+    \subsubsection{Task design}
+      Scelte progettuali (pairwise vs singolo), modalià di presentazione, worker nelle migliori condizioni possibili ma \textbf{controlli costanti}.
+    \subsubsection{Qualification test}
+      Valutazioni prima del task: se un worker vuole svolgere un task deve prima superare un \textbf{test esplicito} (worker sa che sta facendo un test). Voglio selezionare worker \textbf{qualificati} e motivati a superare il test (magari senza paga). Il test può esseresa \textbf{piattaforma} o \textbf{interno} al task (prime domande).
+    \subsubsection{Controlli sintattici}
+      Parsing dell'input / preprocessing per evitare \textbf{campi vuoti} (matrici sparse), ma anche conteggio caratteri / parole e parsing più sofisticati e \textbf{controlli anti copiatura}.
+    \subsubsection{Testi nascosti}
+      \textbf{Nascosti} nelle varie parti del task, domande per definire qualità del worker (spesso facili o di cui si sa già la risposta) e spesso \textbf{ripetute} per valutare coerenza.
+    \subsubsection{Monitoraggio tempi}
+      Verifica del tempo impiegato per leggere istruzioni e compito, sia su singole parti che su totale: se troppo o troppo poco il worker viene scartato.
+    \subsubsection{Monitoraggio azioni}
+      Valutazione spostamenti mouse, focus, scrolling, click, ordine inserimento dati, pattern di navigazione fra pagine, mediante \textbf{behavioral logger}.
+    \subsubsection{Controlli ex post}
+      Il worker ha finito il task e sottomesso il risultato, posso decidere di:
+      \begin{itemize}
+          \item non usarli (pagandolo);
+          \item non accettarli (non pagarlo - quando non pago cala mia reputazione come requester);
+          \item non pagarlo e bloccarlo (impedendogli di fare altri task dello stesso batch).
+      \end{itemize}
+  \subsection{Ridondanza e aggregazione}
+    Raccogliere più vlte lo stesso dato dalla stessa domanda e poi aggregare in un unico dato è una tecnica al cuore del crowdsourcing. La misura della qualità si divide quindi in:
+    \begin{itemize}
+        \item \textbf{qualità individuale} della risposta di un singolo worker;
+        \item \textbf{qualità aggregata} delle risposte a un task;
+        \item \textbf{qualità di un worker}: qualità media delle sue risposte.
+    \end{itemize}
+    \subsubsection{Qualità individuale}
+      \noindent
+        \begin{minipage}[c]{0.48\linewidth}
+            Si ripende la matrice \textbf{workers / tasks} aggiungendoci la \textbf{verità}: singola e nota come unico valore corretto.
+        \end{minipage}
+        \hfill
+        \begin{minipage}[c]{0.48\linewidth}
+            \centering
+            \includegraphics[width=0.7\linewidth]{figures/qua_ind.png}
+        \end{minipage}
+    \subsubsection{Qualità aggregata}
+      \noindent
+        \begin{minipage}[c]{0.48\linewidth}
+            Dopo aver aggregato tutte le risposte a un task in un valore unico (mediante media, mediana, moda...). \textbf{Qualità aggregata > qualità individuale}, è proprio l'idea del crowdsourcing.
+        \end{minipage}
+        \hfill
+        \begin{minipage}[c]{0.48\linewidth}
+            \centering
+            \includegraphics[width=0.7\linewidth]{figures/qua_agg.png}
+        \end{minipage}
+    \subsubsection{Più formalmente}
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.3\linewidth]{figures/qua_for.png}
+      \end{figure}
+      \begin{itemize}
+          \item $w_i \in W = \{w_i\}_{i=1 \dots m}$: $i$-esimo worker, e l'insieme dei worker;
+          \item $t_j \in T = \{t_j\}_{j=1 \dots n}$: $j$-esimo task, e l'insieme dei task;
+          \item $v_{ij}$: i valori (le risposte) dati dal worker $i$ al task $j$. Risposta mancante: $\bot$;
+          \item $W_j = \{w_i \in W \mid v_{ij} \neq \bot\}$: l'insieme dei worker che hanno risposto al task $t_j$;
+          \item $T_i = \{t_j \in T \mid v_{ij} \neq \bot\}$: l'insieme dei task a cui ha risposto il worker $w_i$;
+          \item $av_j = \text{F}_{agg}(\{v_{ij} \mid w_i \in W_j\})$: i valori aggregati per il task $t_j$;
+          \item $cv_j$: i valori corretti (\textit{correct values}) per il task $t_j$.
+      \end{itemize}
+      \textbf{Similitudine media} con ground truth dei valori indivisuali è \textbf{minore} di quella dei valori aggregati:
+      $$\frac{1}{n}\sum_{i=1}^n(\frac{1}{m}\sum_{i=1}^msim(v_{ij},cv_j)) < \frac{1}{n}\sum_{j=1}^nsim(av_j,cv_j)$$
+      $$\frac{1}{n}\sum_{j=1}^n(\frac{1}{\abs{W_j}}\sum_{i\mid w_i\in W_j}sim(v_{ij},cv_j)) < \frac{1}{n}\sum_{j=1}^nsim(av_j,cv_j)$$
+    \subsubsection{Funzioni di aggregazione}
+      $$av_j = F_{aggr}({v_{ij} \mid w_j \in W_j}) = F_{aggr}({v_{ij} \mid v_{ij} \neq \bot})$$
+      Possibili funzioni di aggregazione:
+      \begin{itemize}
+          \item Moda a maggioranza;
+          \item Media aritmetica;
+          \item Media geometrica;
+          \item Media armonica;
+          \item Mediana.
+      \end{itemize}
+    \subsubsection{Esempio aggregazione}
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.6\linewidth]{figures/agg_es_1.png}
+      \end{figure}
+      \noindent
+        \begin{minipage}[c]{0.68\linewidth}
+            \begin{itemize}
+                \item Moda (MV);
+                \item + valori ammissibili;
+                \item - perso informazioni.
+            \end{itemize}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[c]{0.28\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{figures/agg_es_2.png}
+        \end{minipage}
+      \noindent
+        \begin{minipage}[c]{0.68\linewidth}
+            \begin{itemize}
+                \item Media aritmetica;
+                \item - valori non ammissibili;
+                \item + perdo meno informazioni.
+            \end{itemize}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[c]{0.28\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{figures/agg_es_3.png}
+        \end{minipage}
+\section{Misurazione}
+  Determinare una relazione fra una quantità ed un'unità di misura (\textbf{assegnare numeri a oggetti / eventi}), studiato nella \textbf{Measurement theory}.
+  \subsection{Definizione 1}
+    Assegnamento $w \in \Omega$ ($\Omega$ denota il set di tutti i possibili assegnamenti) è una funzione che assegna valori a oggetti in un set di oggetti $D$:
+    $w : D \rightarrow \mathbb{R}$
+    Posso avere diverse misure per la stessa cosa (metri vs pollici), posso cassificare \textbf{in colori} (non funziona benissimo), posso fare \textbf{aggregazioni} (temp media ultimi x gg).
+  \subsection{Definizione 2}
+    Assegnamento deve essere \textbf{omomorfo}: sia $<D,R_D>$ una struttura relazionale empirica e $<\mathbb{R},R_\mathbb{R}>$ una struttura relazionale numerale, una misurazione $\psi \in \Psi$ è un assegnamento di oggetti in un set $D$ (si denota con $\Psi \subset \Omega$ il set di tutti i misuramenti possibili):
+    $$\psi : D \rightarrow \mathbb{R}$$
+    $\forall x,y \in D (R_D(x,y) \implies R_\mathbb{R}(\psi(x),\psi(y)))$
+    \noindent
+      \begin{minipage}[c]{0.48\linewidth}
+          \centering
+          \includegraphics[width=0.8\linewidth]{figures/meas_es1.png}
+      \end{minipage}
+      \hfill
+      \begin{minipage}[c]{0.48\linewidth}
+          \centering
+          \includegraphics[width=0.8\linewidth]{figures/meas_es2.png}
+      \end{minipage}
+  \subsection{Scale di misura}
+    \subsubsection{Ratio scale}
+      Scala a \textbf{rapporti} "sono il doppio più alto di lui", poco efficiente per le date.
+      $$y = f(x),  f(x) = a * x,  a > 0$$
+    \subsubsection{Interval scale}
+      Scala a \textbf{intervalli} "negli ultimi 2 giorni c'è stato un aumento di 5°C della temperatura", funziona per le date.
+      $$y = f(x),  f(x) = ax + b,  a > 0$$
+    \subsubsection{Ordinal scale}
+      Una misutazione non è un valore ma un \textbf{rango} (funziona a classifica), $y = f(x)$ con f monotona crescente.
+    \subsubsection{Nominal scale}
+      Quantitativa e relativa a categorie, può essere \textbf{dicotomica} o no, non ci sono valutazioni su ratei, distanze, ranghi, $y = f(x)$  con f iniettiva.
+    \subsubsection{Recap}
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.6\linewidth]{figures/trasf_recap.png}
+      \end{figure}
+    \subsubsection{Operazioni ammissibili}
+      \textbf{Data una scala}, solo alcune operazioni hanno senso (sono \textbf{legittime}):
+      \begin{itemize}
+          \item Relazionali: =, $\neq$, >, <;
+          \item Aritmetiche: +, -, $\times$, /;
+          \item Statistiche: media, mediana, moda.
+      \end{itemize}
+      \noindent
+        \begin{minipage}[c]{0.48\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{figures/leg_op.png}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[c]{0.48\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{figures/leg_stat.png}
+        \end{minipage}
+
 \end{document}
