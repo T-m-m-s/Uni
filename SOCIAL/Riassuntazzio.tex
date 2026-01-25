@@ -37,7 +37,7 @@ moredelim = [l]{//}
 \newpage
 
 \section{Social media}
-  Tecnologie che facilitano \textbf{creazione} e \textbf{condivisione} di informazioni, idee, interessi e altre forme di espressione mediante \textbf{community vistuali} e \textbf{network}.
+  Tecnologie che facilitano \textbf{creazione} e \textbf{condivisione} di informazioni, idee, interessi e altre forme di espressione mediante \textbf{community virtuali} e \textbf{network}.
   \begin{itemize}
       \item Applicazioni internet-based \textbf{Web 2.0};
       \item Sviluppate avendo come scopo principale la gestione di \textbf{User-generated content};
@@ -114,7 +114,7 @@ moredelim = [l]{//}
     \textbf{Grado di un nodo $i$} $d_i$: numero di archi collegati a quel nodo (entranti = \textbf{in-degree} $d^{in}_i$, uscenti = \textbf{out-degree} $d^{out}_i$).
     \\
     \textbf{Degree distribution}: per ogni nodo, quanti nodi hanno quel grado:
-    $$p_{grado}=\frac{numNodi_grado}{numNodi}, \sum_{d=0}^{\infty}p_{grado}=1$$
+    $$p_{grado}=\frac{numNodi_{grado}}{numNodi}, \sum_{d=0}^{\infty}p_{grado}=1$$
     \\
     \textbf{Teorema}: sommatoria dei gradi di un grafo indiretto è 2 volte il numero degli archi
     $$\sum_id_i=2\abs{E}$$
@@ -280,7 +280,7 @@ moredelim = [l]{//}
     \subsubsection{Markov chain - autovettore}
       Quindi, per ogni step $x_{i+1}=x_i\times P$ ma stiamo cercando una distribuzione stabile $x_{i+1}=x_i$, cerchiamo quindi $x$ tale che $x=x\times P$ ($x$ autovettore di $P$).
       \\
-      Per ogni catena \textbf{ergodica} (\textbf{fortemente connessa} e in cui in ogni step si può \textbf{essere in ogni stato} con probabilità > 0) ogni stato ha un rate di visite a lungo termine per cui viene visitato proporzionalmente.
+      Per ogni catena \textbf{ergodica} (\textbf{fortemente connessa} e in cui in ogni step si può \textbf{essere in ogni stato} con probabilità $>$ 0) ogni stato ha un rate di visite a lungo termine per cui viene visitato proporzionalmente.
     \subsubsection{Teleporting}
       Nella pratica (Web) non sempre si hanno situazioni ergodiche, ma navigando si potrebbe "saltare" ad un'altra pagina random: "ciascuna pagina è collegata con qualsiasi altra pagina" (con basse probabilità).
       \begin{figure}[H]
@@ -494,7 +494,7 @@ moredelim = [l]{//}
         \item La sommatoria aggiunge 1 per ogni coppia reciproca ($A_{i,j}=A_{j,i}=1$);
         \item Divido per il numero massimo possibile di coppie reciproche dati gli archi in $E$: $\abs{E}/2$.
     \end{itemize}
-    $$R=\frac{\sum_{i,j,i<j}A_{i,j}A_{j,i}}{\abs{E}/2}=\frac{2}{\abs{E}}\sum_{i,j,i<j}A_{i,j}A_{j,i}=\frac{2}{\abs{E}}\times \frac{1}{2}Tr(A^2)=\frac{1}{\abs{E}Tr(A^2)=\frac{1}{m}Tr(A^2)}$$
+    $$R=\frac{\sum_{i,j,i<j}A_{i,j}A_{j,i}}{\abs{E}/2}=\frac{2}{\abs{E}}\sum_{i,j,i<j}A_{i,j}A_{j,i}=\frac{2}{\abs{E}}\times \frac{1}{2}Tr(A^2)=\frac{1}{\abs{E}Tr(A^2)}=\frac{1}{m}Tr(A^2)$$
     $$Tr(A)=A_{1,1}+A_{2,2}+...+A_{n,n}=\sum_{i=1}^nA_{i,i}$$
     \begin{figure}[H]
         \centering
@@ -825,7 +825,7 @@ moredelim = [l]{//}
   \subsection{Herd behavior}
     Network \textbf{completamente osservabile} e ho informazioni \textbf{globali}, questo comportamento descrive quando un \textbf{gruppo di individui} esegue azioni \textbf{altamente correlate} senza piani (tendenza naturale a imitare). Dev'esserci una \textbf{connessione} fra individui e un \textbf{metodo di condivisione} informazioni oppure un modo di osservare individui.
     \subsubsection{Grafo completo}
-      Rappresentazione di reti herd dove nodi possono osservare almeno maggior parte degli altri nosi e possono osservare informazioni pubbliche.
+      Rappresentazione di reti herd dove nodi possono osservare almeno maggior parte degli altri nodi e possono osservare informazioni pubbliche.
     \subsubsection{Esempio}
       \begin{figure}[H]
           \centering
@@ -931,7 +931,7 @@ moredelim = [l]{//}
         \centering
         \includegraphics[width=0.3\linewidth]{figures/SIRS.png}
     \end{figure}
-    Individui che sono in stato R perdono l'immunità dopo un certo periosdo di tempo e diventano suscettibili di nuovo
+    Individui che sono in stato R perdono l'immunità dopo un certo periodo di tempo e diventano suscettibili di nuovo
   \subsection{Contagio sociale}
     Se un individuo vede un comportamento in un altro individuo, lo \textbf{imita} (adotta lo stesso comportamento), rappresentabile come \textbf{modifica di SIR}:
     \begin{itemize}
@@ -1482,11 +1482,13 @@ moredelim = [l]{//}
       \end{figure}
       \noindent
         \begin{minipage}[c]{0.58\linewidth}
-            \item $w_1$ ha detto 25 volte Y (e 25 volte N) $\rightarrow$ $w_1$ ha detto 50\% di volte Y (e 50\% di volte N)
-            \item $w_2$ ha detto 30 volte Y (e 20 volte N) $\rightarrow$ $w_1$ ha detto 60\% di volte Y (e 40\% di volte N)
-            \item Probabilità che entrambi dicano Y: $p_Y = \frac{a+b}{a+b+c+d} \cdot \frac{a+c}{a+b+c+d} = 0.5 \times 0.6 = 0.3$
-            \item Probabilità che entrambi dicano N: $p_N = \frac{c+d}{a+b+c+d} \cdot \frac{b+d}{a+b+c+d} = 0.5 \times 0.4 = 0.2$
-            \item $p_e = p_Y + p_N = 0.3 + 0.2 = 0.5$
+          \begin{itemize}
+              \item $w_1$ ha detto 25 volte Y (e 25 volte N) $\rightarrow$ $w_1$ ha detto 50\% di volte Y (e 50\% di volte N)
+              \item $w_2$ ha detto 30 volte Y (e 20 volte N) $\rightarrow$ $w_1$ ha detto 60\% di volte Y (e 40\% di volte N)
+              \item Probabilità che entrambi dicano Y: $p_Y = \frac{a+b}{a+b+c+d} \cdot \frac{a+c}{a+b+c+d} = 0.5 \times 0.6 = 0.3$
+              \item Probabilità che entrambi dicano N: $p_N = \frac{c+d}{a+b+c+d} \cdot \frac{b+d}{a+b+c+d} = 0.5 \times 0.4 = 0.2$
+              \item $p_e = p_Y + p_N = 0.3 + 0.2 = 0.5$
+          \end{itemize}
         \end{minipage}
         \hfill
         \begin{minipage}[c]{0.38\linewidth}

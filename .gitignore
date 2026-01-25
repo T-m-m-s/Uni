@@ -5,3 +5,26 @@
 *.out
 *.toc
 *.gz
+# Flutter/Dart/Android/iOS ignores
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+android/app/libs/
+android/.gradle/
+android/build/
+android/local.properties
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Generated.xcconfig
+ios/Flutter/app.flx
+ios/Flutter/app.zip
+ios/Flutter/flutter_assets/
+ios/ServiceDefinitions.json
+ios/Runner/GeneratedPluginRegistrant.*
+*.iml
+.idea/
+.vscode/
