@@ -1388,5 +1388,128 @@ moredelim = [l]{//}
             \centering
             \includegraphics[width=\linewidth]{figures/leg_stat.png}
         \end{minipage}
-
+  \subsection{Aggregazione Reloaded}
+    Quando si aggregano giudizi su scale complesse (non binarie), sorgono problemi legati alla perdita di informazione e alla scelta della funzione corretta.
+    \subsubsection{Il problema delle Scale Ordinali}
+      Se abbiamo giudizi su scala ordinale (es. scala Likert a 6 valori: \textit{Pants on Fire} ... \textit{True}), l'approccio standard prevede l'uso della \textbf{Moda} o del \textbf{Majority Vote}. Tuttavia:
+      \begin{itemize}
+          \item \textbf{Perdita di informazione}: Una situazione con 51\% \textit{True} e 49\% \textit{Mostly True} viene trattata come 51\% \textit{True} e 49\% \textit{False}. La moda ignora la distribuzione dei voti "perdenti".
+          \item \textbf{Magnitudine dell'errore}: Errori piccoli dovrebbero pesare meno di errori grandi, ma la moda non distingue la "distanza" tra le categorie.
+      \end{itemize}
+      Per ovviare a questo, spesso si mappano le categorie su numeri (es. 0..5). Sebbene teoricamente rischioso (non è garantito che la distanza tra 1 e 2 sia uguale a quella tra 4 e 5), permette di usare:
+      \begin{itemize}
+          \item \textbf{Mediana}: Robusta rispetto agli outlier.
+          \item \textbf{Media}: Più sensibile, ma richiede cautela nell'interpretazione.
+      \end{itemize}
+    \subsubsection{Le diverse funzioni di Media}
+      La scelta della funzione di aggregazione "deforma" lo spazio di valutazione in modo diverso. Date le osservazioni $x$, valgono le disuguaglianze: $HM \le GM \le AM$.
+      \begin{itemize}
+          \item \textbf{Media Aritmetica (AM)}: $AM = \frac{1}{n}\sum x_i$.
+            \begin{itemize}
+                \item Considera uguali un miglioramento da 0.1 a 0.2 e uno da 0.8 a 0.9 (incremento lineare).
+                \item Molto sensibile agli outlier alti.
+            \end{itemize}
+          \item \textbf{Media Geometrica (GM)}: $GM = \sqrt[n]{\prod x_i} = e^{\frac{1}{n}\sum \ln x_i}$.
+            \begin{itemize}
+                \item "Stira" lo spazio verso i valori alti: è più difficile migliorare quando si è già vicini alla perfezione (1.0).
+                \item Premia il miglioramento su task "difficili" (es. passare da 0.8 a 0.9 vale più che passare da 0.1 a 0.2).
+                \item Utile in contesti come i Motori di Ricerca (meglio gestire bene le query difficili).
+            \end{itemize}
+          \item \textbf{Media Armonica (HM)}: $HM = \frac{n}{\sum \frac{1}{x_i}}$.
+            \begin{itemize}
+                \item Tende a essere vicina al valore \textbf{minimo} della distribuzione.
+                \item Molto penalizzante per i valori bassi (usata nella F-Measure).
+            \end{itemize}
+      \end{itemize}
+    \subsubsection{Outlier e Robustezza}
+      \begin{itemize}
+          \item \textbf{AM}: Un singolo errore enorme (outlier) "sporca" significativamente il risultato (es. un worker che inserisce 1000 in una scala 0-10).
+          \item \textbf{Mediana}: È la misura più robusta. Se un worker sbaglia completamente (outlier), la mediana spesso non cambia.
+      \end{itemize}
+    \subsubsection{Recap}
+      Non esiste una funzione "giusta" a priori. Bisogna scegliere la funzione di aggregazione in base al dominio applicativo (es. voglio premiare l'eccellenza? Voglio penalizzare i fallimenti gravi? Voglio ignorare gli outlier?).
+\section{Accordo}
+  Assunzione, congettura che viene sfruttata come \textbf{proxy / approssimazione} della realtà. se non so il valore corretto di una risposta posso comunque:
+  \begin{itemize}
+      \item \textbf{Accordo globale} - guardare quanto worker sono \textbf{in accordo tra loro} come insieme di tutti i worker che hanno svolto lo stesso task: se sono d'accordo allora \textbf{dati affidabili}, altrimenti no (magari ne vanno raccolti di più / bisogna cambiare).
+      \item \textbf{Accordo individuale} - guardare quanto il singolo worker è \textbf{in accordo con gli altri worker} che hanno svolto lo stesso task: se è d'accordo con gli altri si \textit{ipotizza} che la \textbf{qualità del worker sia alta}, altrimenti si assume come bassa (solitamente worker con qualità bassa vengono scartati).
+  \end{itemize}
+  \subsection{Percent(age) agreement}
+    Partiamo da solita matrice \textbf{workers / tasks} e la trasformiamo in una \textbf{scala nominale binaria non sparsa}.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{figures/perc_agr.png}
+    \end{figure}
+    \noindent
+      \begin{minipage}[c]{0.68\linewidth}
+          La percentuale di accordo tra due worker è semplice da calcolare con la matrice d confusione: $p=\frac{a+d}{a+b+c+d}$
+      \end{minipage}
+      \hfill
+      \begin{minipage}[c]{0.28\linewidth}
+          \centering
+          \includegraphics[width=\linewidth]{figures/perc_ag.png}
+      \end{minipage}
+    \noindent
+      \begin{minipage}[t]{0.48\linewidth}
+          \textbf{Pro}:
+          \begin{itemize}
+              \item Facile da calcolare;
+              \item Intuitivo;
+              \item Consente confronti;
+              \item Facilmente estendibile a \textbf{più categorie} (finché si resta in scala nominale).
+          \end{itemize}
+      \end{minipage}
+      \hfill
+      \begin{minipage}[t]{0.48\linewidth}
+          \textbf{Contro}
+          \begin{itemize}
+              \item Agreement by chance, accordo casuale tra gli worker (2 cat: 50$\%$, 3 cat: 33$\%$);
+              \item Categorie sbilanciate (se worker sanno che 90$\%$ di risposte sono N diranno a loro volta N al 90-100$\%$).
+          \end{itemize}
+      \end{minipage}
+  \subsection{Cohen's kappa (K)}
+    Idea: \textbf{migliorare / correggere percent agreement} tenendo conto dell'\textbf{agreement by chence}:
+    \begin{itemize}
+        \item sempre 2 worker;
+        \item sempre scala nominale $K=\frac{p_o-p_e}{1-p_e}$;
+        \item $p_o$ è percent agreement osservato;
+        \item $p_e$ è percent agreement by chance atteso (calcolato usando dati per stimare probabilità che ogni worker scelga una data categoria).
+    \end{itemize}
+    \subsubsection{Esempio}
+      \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.6\linewidth]{figures/cohen_1.png}
+      \end{figure}
+      \noindent
+        \begin{minipage}[c]{0.58\linewidth}
+            \item $w_1$ ha detto 25 volte Y (e 25 volte N) $\rightarrow$ $w_1$ ha detto 50\% di volte Y (e 50\% di volte N)
+            \item $w_2$ ha detto 30 volte Y (e 20 volte N) $\rightarrow$ $w_1$ ha detto 60\% di volte Y (e 40\% di volte N)
+            \item Probabilità che entrambi dicano Y: $p_Y = \frac{a+b}{a+b+c+d} \cdot \frac{a+c}{a+b+c+d} = 0.5 \times 0.6 = 0.3$
+            \item Probabilità che entrambi dicano N: $p_N = \frac{c+d}{a+b+c+d} \cdot \frac{b+d}{a+b+c+d} = 0.5 \times 0.4 = 0.2$
+            \item $p_e = p_Y + p_N = 0.3 + 0.2 = 0.5$
+        \end{minipage}
+        \hfill
+        \begin{minipage}[c]{0.38\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{figures/cohen_2.png}
+        \end{minipage}
+      Quindi $K=\frac{p_o-p_e}{1-p_e}=\frac{0.7-0.5}{1-0.5}=0.4$ (notare che $K$ può essere $< 0$).
+    \subsubsection{Scott's pi}
+      Stessa idea di Cohen's kappa, correggendo / normalizzando sulla base dell'accordo casuale. \textbf{ENTRAMBI LIMITATI, SOLO 2 WORKER}.
+  \subsection{Fleiss kappa (K)}
+    Estende Scott's pi con $m$ worker, scala nominale e un n° di categorie a piacere. Per misurare accordo tra i worker si ricorre a \textbf{pairwise agreement}, considerando tutte le coppie di worker e vedendo quale frazione di coppie è in accordo.
+    \subsubsection{Definizione}
+      Definizione generale: $K = \frac{\bar{P}-\bar{P}_e}{1-\bar{P}_e}$, come Cohen's kappa ma con pairwise agreement invece di percent agreement.
+      \begin{itemize}
+          \item $m$: numero di worker;
+          \item $n$: numero di task;
+          \item $k$: numero di categorie;
+          \item $n_{ij}$: numero di worker che hanno assegnato task $i$ alla categoria $j$;
+          \item Proporzione di assegmanenti a categoria $j$: $p_j = \frac{1}{nm}\sum_{i=1}^nn_{ij}$;
+          \item Somma dei loro quadrati: $\bar{P_e} = \sum_{j=1}^kp_j^2$;
+          \item Coppie worker-worker in accordo rispetto a tutte le coppie possibili: $P_i = \frac{2}{m(m-1)}\sum_{j=1}^k\frac{n_{ij}(n_{ij}-1)}{2}$;
+          \item Media su tutti gli item: $\bar{P}=\frac{1}{n}\sum_{i=1}^nP_i$.
+      \end{itemize}
+  \subsection{Sfruttare l'accordo}
+    Escludendo i worker che hanno agreement con l'aggregazione inferiore (magari iterativamente), pesarli di meno nell'aggregazione (in caso di media pesata) o utilizzando un modello più sofisticato.
 \end{document}
