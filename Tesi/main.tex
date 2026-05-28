@@ -1,0 +1,94 @@
+\documentclass[12pt,a4paper,oneside]{report}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{biblatex}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{titlesec}
+
+% --- Configuration ---
+\geometry{margin=3cm}
+\addbibresource{references.bib}
+\input{metadata.tex}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={\thesistitle},
+    pdfpagemode=FullScreen,
+}
+
+% Code listing style
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\lstset{
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+% --- Document Start ---
+\begin{document}
+
+\pagenumbering{roman}
+
+% Title Page
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    {\Large \textbf{\university} \par}
+    \vspace{0.5cm}
+    {\large \department \par}
+    \vspace{2cm}
+    {\Large \degree \par}
+    \vspace{1.5cm}
+    {\huge \textbf{\thesistitle} \par}
+    \vspace{2cm}
+    {\Large \thesisauthor \par}
+    \vfill
+    {\large Advisor: \thesisadvisor \par}
+    \vspace{1cm}
+    {\large \thesisyear \par}
+\end{titlepage}
+
+\tableofcontents
+\listoffigures
+
+\newpage
+\pagenumbering{arabic}
+
+% --- Chapters ---
+\include{chapters/01_introduction}
+\include{chapters/02_testing_theory}
+\include{chapters/03_mutation_testing}
+\include{chapters/04_neeche_app}
+\include{chapters/05_implementation}
+\include{chapters/06_results}
+\include{chapters/07_conclusions}
+
+% --- Back Matter ---
+\printbibliography
+
+\end{document}
