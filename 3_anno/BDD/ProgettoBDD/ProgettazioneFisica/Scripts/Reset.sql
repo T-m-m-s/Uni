@@ -1,0 +1,1 @@
+TRUNCATE Banca, Filiale, Persona, Cliente, Impiegato, Conto, IntestatoA, PrestaServizioIn, CartaBancomat, Interfaccia, Operazioni RESTART IDENTITY CASCADE;

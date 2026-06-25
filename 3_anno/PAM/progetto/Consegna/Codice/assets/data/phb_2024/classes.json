@@ -1,0 +1,627 @@
+{
+  "classes": [
+    {
+      "name": "Barbarian",
+      "hit_die": "1d12",
+      "features": [
+        { "level": 1, "name": "Rage", "desc": "Bonus Action: Adv on Str checks/saves, +damage to Str attacks, resistance to physical damage. Lasts 10 mins. Ends if you're unconscious or wear heavy armor." },
+        { "level": 1, "name": "Unarmored Defense", "desc": "AC = 10 + Dex + Con while no armor." },
+        { "level": 1, "name": "Weapon Mastery", "desc": "Master 2 kinds of weapons." },
+        { "level": 2, "name": "Danger Sense", "desc": "Adv on Dex saves vs visible effects." },
+        { "level": 2, "name": "Reckless Attack", "desc": "Adv on melee attacks, but attacks against you have Adv." },
+        { "level": 3, "name": "Barbarian Subclass", "desc": "Choose a Path for your primal power." },
+        { "level": 3, "name": "Primal Knowledge", "desc": "Gain proficiency in one skill (Animal Handling, Insight, Nature, Perception, Stealth, or Survival). While raging, use Str for certain skill checks." },
+        { "level": 4, "name": "Ability Score Improvement / Feat", "desc": "Increase one ability score by 2, two by 1, or take a Feat." },
+        { "level": 5, "name": "Extra Attack", "desc": "Attack twice per Attack action." },
+        { "level": 5, "name": "Fast Movement", "desc": "Speed +10ft while not in heavy armor." },
+        { "level": 7, "name": "Feral Instinct", "desc": "Adv on Initiative. If surprised, enter Rage to act normally." },
+        { "level": 7, "name": "Instinctive Pounce", "desc": "Move up to half speed as part of the Bonus Action used to enter Rage." },
+        { "level": 8, "name": "Ability Score Improvement / Feat", "desc": "Increase one ability score by 2, two by 1, or take a Feat." },
+        { "level": 9, "name": "Brutal Strike", "desc": "Sacrifice Adv from Reckless Attack for +1d10 damage and tactical effects (Forceful Blow or Hamstring)." },
+        { "level": 11, "name": "Relentless Rage", "desc": "Drop to 1 HP instead of 0 (Con save DC 10 + 5 per use)." },
+        { "level": 12, "name": "Ability Score Improvement / Feat", "desc": "Increase one ability score by 2, two by 1, or take a Feat." },
+        { "level": 13, "name": "Improved Brutal Strike", "desc": "Brutal Strike damage increases to 2d10. Gain more effect options." },
+        { "level": 15, "name": "Persistent Rage", "desc": "Rage lasts for its full duration regardless of attacking or taking damage. Regain one use on Initiative." },
+        { "level": 16, "name": "Ability Score Improvement / Feat", "desc": "Increase one ability score by 2, two by 1, or take a Feat." },
+        { "level": 17, "name": "Improved Brutal Strike (2)", "desc": "Brutal Strike damage increases to 3d10. Use two effects at once." },
+        { "level": 18, "name": "Indomitable Might", "desc": "Use your Str score as the total for a Str check if the roll is lower." },
+        { "level": 19, "name": "Epic Boon Feat", "desc": "Gain an Epic Boon feat and increase an ability score by 1 (max 30)." },
+        { "level": 20, "name": "Primal Champion", "desc": "Str and Con increase by 4, max is 25." }
+      ],
+      "subclasses": [
+        { "name": "Path of the Berserker", "features": [
+          { "level": 3, "name": "Frenzy", "desc": "Extra d6s of damage (equal to Rage damage bonus) once per turn while Reckless Raging." },
+          { "level": 6, "name": "Mindless Rage", "desc": "Immune to Charmed and Frightened while Raging." },
+          { "level": 10, "name": "Retaliation", "desc": "Use Reaction to attack a creature that damages you within 5ft." },
+          { "level": 14, "name": "Intimidating Presence", "desc": "Bonus Action: Frighten creatures within 30ft." }
+        ]},
+        { "name": "Path of the Wild Heart", "features": [
+          { "level": 3, "name": "Animal Aspect", "desc": "Choose Bear (Resistance), Eagle (Disengage), or Wolf (Adv for allies) during Rage." },
+          { "level": 6, "name": "Aspect of the Beast", "desc": "Magical utility based on an animal." },
+          { "level": 10, "name": "Spirit Walker", "desc": "Cast Commune with Nature as a ritual." },
+          { "level": 14, "name": "Totemic Attunement", "desc": "Powerful combat effects based on your chosen animal." }
+        ]},
+        { "name": "Path of the World Tree", "features": [
+          { "level": 3, "name": "Vitality of the Tree", "desc": "Gain Temp HP when entering Rage; grant Temp HP to allies." },
+          { "level": 6, "name": "Branches of the Tree", "desc": "Reaction: Teleport a creature within 30ft to a space near you." },
+          { "level": 10, "name": "Battering Roots", "desc": "Melee weapons gain Reach and Topple/Push properties." },
+          { "level": 14, "name": "Travel along the Roots", "desc": "Teleport yourself and allies long distances through the World Tree." }
+        ]},
+        { "name": "Path of the Zealot", "features": [
+          { "level": 3, "name": "Divine Fury", "desc": "Extra necrotic or radiant damage on attacks." },
+          { "level": 3, "name": "Warrior of the Gods", "desc": "Easy to revive with magic." },
+          { "level": 6, "name": "Fanatical Focus", "desc": "Reroll failed saving throws." },
+          { "level": 10, "name": "Zealous Presence", "desc": "Bonus Action: Grant Advantage on attacks and saves to allies for 1 round." },
+          { "level": 14, "name": "Rage beyond Death", "desc": "Keep fighting at 0 HP until Rage ends." }
+        ]}
+      ]
+    },
+    {
+      "name": "Bard",
+      "hit_die": "1d8",
+      "features": [
+        { "level": 1, "name": "Spellcasting", "desc": "Charisma-based. Prepared spells = level + 2. Use musical instruments as focus." },
+        { "level": 1, "name": "Bardic Inspiration (d6)", "desc": "Bonus Action: Give d6 to an ally (lasts 1 hour). Uses = Cha mod." },
+        { "level": 2, "name": "Jack of All Trades", "desc": "Add half PB to all non-proficient ability checks." },
+        { "level": 2, "name": "Expertise", "desc": "Double PB for two skill proficiencies." },
+        { "level": 3, "name": "Bard College", "desc": "Choose your subclass." },
+        { "level": 4, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 5, "name": "Bardic Inspiration (d8)", "desc": "Die increases to d8." },
+        { "level": 5, "name": "Font of Inspiration", "desc": "Regain Bardic Inspiration uses on a Short Rest." },
+        { "level": 7, "name": "Countercharm", "desc": "Reaction: Grant allies Advantage against being Charmed or Frightened." },
+        { "level": 8, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 9, "name": "Expertise", "desc": "Gain Expertise in two more skills." },
+        { "level": 10, "name": "Bardic Inspiration (d10)", "desc": "Die increases to d10." },
+        { "level": 10, "name": "Magical Secrets", "desc": "Learn spells from any class list (Cleric, Druid, or Wizard)." },
+        { "level": 11, "name": "Magical Secrets (Improved)", "desc": "Swap Magical Secrets spells when you gain a level." },
+        { "level": 12, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 15, "name": "Bardic Inspiration (d12)", "desc": "Die increases to d12." },
+        { "level": 16, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 18, "name": "Superior Inspiration", "desc": "Regain one Bardic Inspiration use if you have none on Initiative." },
+        { "level": 19, "name": "Epic Boon Feat", "desc": "Gain an Epic Boon feat." },
+        { "level": 20, "name": "Words of Creation", "desc": "Cast Power Word Heal and Power Word Kill; targets up to two creatures." }
+      ],
+      "subclasses": [
+        { "name": "College of Dance", "features": [
+          { "level": 3, "name": "Dazzling Footwork", "desc": "Unarmored AC = 10 + Dex + Cha. Unarmed strike damage uses Bardic Inspiration die." },
+          { "level": 3, "name": "Inspiring Movement", "desc": "Reaction: Move half speed and allow an ally to move too." },
+          { "level": 6, "name": "Tandem Footwork", "desc": "Grant PB to Initiative for yourself and allies." },
+          { "level": 14, "name": "Irresistible Dance", "desc": "Always have Otto's Irresistible Dance prepared; cast it by spending Bardic Inspiration." }
+        ]},
+        { "name": "College of Glamour", "features": [
+          { "level": 3, "name": "Beguiling Magic", "desc": "Always have Charm Person and Mirror Image prepared. Cast Enchantment/Illusion spells to charm/frighten." },
+          { "level": 3, "name": "Mantle of Inspiration", "desc": "Spend Inspiration to give Temp HP and move allies." },
+          { "level": 6, "name": "Mantle of Majesty", "desc": "Cast Command as a Bonus Action for 1 minute." },
+          { "level": 14, "name": "Unbreakable Majesty", "desc": "Make yourself supernaturally beautiful; attackers must save or miss." }
+        ]},
+        { "name": "College of Lore", "features": [
+          { "level": 3, "name": "Bonus Proficiencies", "desc": "Gain three skill proficiencies." },
+          { "level": 3, "name": "Cutting Words", "desc": "Reaction: Spend Inspiration to reduce an enemy's roll." },
+          { "level": 6, "name": "Magical Discoveries", "desc": "Learn two spells from any class list." },
+          { "level": 14, "name": "Peerless Skill", "desc": "Add Inspiration to your own ability checks." }
+        ]},
+        { "name": "College of Valor", "features": [
+          { "level": 3, "name": "Bonus Proficiencies", "desc": "Gain proficiency with Medium Armor, Shields, and Martial Weapons." },
+          { "level": 3, "name": "Combat Inspiration", "desc": "Allies can add Inspiration to damage or AC." },
+          { "level": 6, "name": "Extra Attack", "desc": "Attack twice; replace one attack with a Cantrip." },
+          { "level": 14, "name": "Battle Magic", "desc": "Cast a spell and make a weapon attack as a Bonus Action." }
+        ]}
+      ]
+    },
+    {
+      "name": "Cleric",
+      "hit_die": "1d8",
+      "features": [
+        { "level": 1, "name": "Spellcasting", "desc": "Wisdom-based. Prepared spells = level + 2." },
+        { "level": 1, "name": "Divine Order", "desc": "Choose Protector (Heavy Armor/Martial Weapons) or Thaumaturge (Extra Cantrip/Religion bonus)." },
+        { "level": 2, "name": "Channel Divinity (2 uses)", "desc": "Turn Undead or Divine Spark (Heal/Damage)." },
+        { "level": 3, "name": "Divine Domain", "desc": "Choose your subclass." },
+        { "level": 4, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 5, "name": "Sear Undead", "desc": "Turn Undead deals Radiant damage = 3 x PB." },
+        { "level": 6, "name": "Channel Divinity (3 uses)", "desc": "Gain an extra use." },
+        { "level": 7, "name": "Blessed Strikes", "desc": "Choose Divine Strike (+1d8 weapon damage) or Potent Spellcasting (+Wis to cantrip damage)." },
+        { "level": 8, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 10, "name": "Divine Intervention", "desc": "Request aid from your deity; duplicate a level 5- spell without components." },
+        { "level": 12, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 14, "name": "Improved Blessed Strikes", "desc": "Divine Strike increases to 2d8; Potent Spellcasting grants Temp HP." },
+        { "level": 16, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 18, "name": "Channel Divinity (4 uses)", "desc": "Gain an extra use." },
+        { "level": 19, "name": "Epic Boon Feat", "desc": "Gain an Epic Boon feat." },
+        { "level": 20, "name": "Greater Divine Intervention", "desc": "Divine Intervention can now cast Wish; used again after 2-4 days." }
+      ],
+      "subclasses": [
+        { "name": "Life Domain", "features": [
+          { "level": 3, "name": "Domain Spells", "desc": "Always have Life spells prepared (Bless, Cure Wounds, etc.)." },
+          { "level": 3, "name": "Disciple of Life", "desc": "Healing spells restore 2 + spell level extra HP." },
+          { "level": 3, "name": "Preserve Life", "desc": "Channel Divinity: Heal creatures in 30ft." },
+          { "level": 6, "name": "Blessed Healer", "desc": "Healing others heals you." },
+          { "level": 17, "name": "Supreme Healing", "desc": "Healing dice always use the maximum value." }
+        ]},
+        { "name": "Light Domain", "features": [
+          { "level": 3, "name": "Domain Spells", "desc": "Always have Light spells prepared (Burning Hands, Faerie Fire, etc.)." },
+          { "level": 3, "name": "Warding Flare", "desc": "Reaction: Impose Disadvantage on attackers." },
+          { "level": 3, "name": "Radiance of the Dawn", "desc": "Channel Divinity: Deal Radiant damage in 30ft." },
+          { "level": 6, "name": "Improved Flare", "desc": "Use Warding Flare for allies." },
+          { "level": 17, "name": "Corona of Light", "desc": "Action: Aura that imposes Disadvantage on saves vs Fire/Radiant." }
+        ]},
+        { "name": "Trickery Domain", "features": [
+          { "level": 3, "name": "Domain Spells", "desc": "Always have Trickery spells prepared (Charm Person, Disguise Self, etc.)." },
+          { "level": 3, "name": "Blessing of the Trickster", "desc": "Give an ally Adv on Stealth." },
+          { "level": 3, "name": "Invoke Duplicity", "desc": "Channel Divinity: Create an illusionary double." },
+          { "level": 6, "name": "Trickster's Transposition", "desc": "Teleport to swap places with your double." },
+          { "level": 17, "name": "Improved Duplicity", "desc": "Create up to four doubles." }
+        ]},
+        { "name": "War Domain", "features": [
+          { "level": 3, "name": "Domain Spells", "desc": "Always have War spells prepared (Divine Favor, Shield of Faith, etc.)." },
+          { "level": 3, "name": "War Priest", "desc": "Bonus Action: Attack with a weapon PB times per Long Rest." },
+          { "level": 3, "name": "Guided Strike", "desc": "Channel Divinity: +10 to an attack roll." },
+          { "level": 6, "name": "War God's Blessing", "desc": "Use Guided Strike for an ally." },
+          { "level": 17, "name": "Avatar of Battle", "desc": "Resistance to physical damage." }
+        ]}
+      ]
+    },
+    {
+      "name": "Druid",
+      "hit_die": "1d8",
+      "features": [
+        { "level": 1, "name": "Spellcasting", "desc": "Wisdom-based. Prepared spells = level + 2." },
+        { "level": 1, "name": "Druidic", "desc": "Know the secret language of druids." },
+        { "level": 1, "name": "Primal Order", "desc": "Choose Magician (Cantrip/Arcana) or Warden (Medium Armor/Martial Weapons)." },
+        { "level": 2, "name": "Wild Shape (2 uses)", "desc": "Bonus Action: Transform into beasts." },
+        { "level": 2, "name": "Wild Companion", "desc": "Spend Wild Shape to cast Find Familiar." },
+        { "level": 3, "name": "Druid Circle", "desc": "Choose your subclass." },
+        { "level": 4, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 5, "name": "Wild Resurgence", "desc": "Spend a spell slot to regain a Wild Shape use." },
+        { "level": 6, "name": "Wild Shape (3 uses)", "desc": "Gain an extra use." },
+        { "level": 7, "name": "Elemental Fury", "desc": "Choose Primal Strike (+1d8 melee damage) or Potent Spellcasting (+Wis to cantrip damage)." },
+        { "level": 8, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 12, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 15, "name": "Improved Elemental Fury", "desc": "Primal Strike increases to 2d8; Potent Spellcasting grants extra range." },
+        { "level": 16, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 17, "name": "Wild Shape (4 uses)", "desc": "Gain an extra use." },
+        { "level": 18, "name": "Beast Spells", "desc": "Cast spells while in Wild Shape." },
+        { "level": 19, "name": "Epic Boon Feat", "desc": "Gain an Epic Boon feat." },
+        { "level": 20, "name": "Archdruid", "desc": "Infinite Wild Shapes; regain level 1 spell slots when using Wild Shape." }
+      ],
+      "subclasses": [
+        { "name": "Circle of the Land", "features": [
+          { "level": 3, "name": "Circle Spells", "desc": "Always have land-themed spells prepared." },
+          { "level": 3, "name": "Land's Stride", "desc": "Move through difficult terrain; ignore plants." },
+          { "level": 6, "name": "Natural Recovery", "desc": "Regain spell slots on a Short Rest." },
+          { "level": 10, "name": "Nature's Ward", "desc": "Immune to Poison and Disease." },
+          { "level": 14, "name": "Nature's Sanctuary", "desc": "Creatures find it hard to attack you." }
+        ]},
+        { "name": "Circle of the Moon", "features": [
+          { "level": 3, "name": "Combat Wild Shape", "desc": "Attack as Bonus Action; use higher CR beasts; heal by spending spell slots." },
+          { "level": 3, "name": "Moonlight Step", "desc": "Bonus Action: Teleport 30ft PB times per Long Rest." },
+          { "level": 6, "name": "Primal Strike", "desc": "Attacks in Wild Shape are magical." },
+          { "level": 10, "name": "Elemental Wild Shape", "desc": "Transform into Elementals." },
+          { "level": 14, "name": "Thousand Forms", "desc": "Cast Alter Self at will." }
+        ]},
+        { "name": "Circle of the Sea", "features": [
+          { "level": 3, "name": "Wrath of the Tides", "desc": "Aura of sea magic: Deal Cold/Thunder damage and push enemies." },
+          { "level": 6, "name": "Aquatic Adaptation", "desc": "Swimming speed and breathe underwater." },
+          { "level": 10, "name": "Stormborn", "desc": "Fly speed and resistance to Cold/Thunder." },
+          { "level": 14, "name": "Oceanic Purity", "desc": "Heal yourself or allies when using sea features." }
+        ]},
+        { "name": "Circle of the Stars", "features": [
+          { "level": 3, "name": "Star Map", "desc": "Always have Guidance and Guiding Bolt prepared." },
+          { "level": 3, "name": "Starry Form", "desc": "Choose Archer, Chalice, or Dragon constellations for bonus effects." },
+          { "level": 6, "name": "Cosmic Omen", "desc": "Reaction: Weal or Woe bonus to rolls." },
+          { "level": 10, "name": "Twinkling Stars", "desc": "Starry Form constellations are improved." },
+          { "level": 14, "name": "Full of Stars", "desc": "Resistance to physical damage in Starry Form." }
+        ]}
+      ]
+    },
+    {
+      "name": "Fighter",
+      "hit_die": "1d10",
+      "features": [
+        { "level": 1, "name": "Fighting Style", "desc": "Gain a Fighting Style feat." },
+        { "level": 1, "name": "Second Wind (2 uses)", "desc": "Regain 1d10 + Level HP." },
+        { "level": 1, "name": "Weapon Mastery (3 kinds)", "desc": "Unlock mastery properties of 3 weapons." },
+        { "level": 2, "name": "Action Surge (1 use)", "desc": "Take one extra action." },
+        { "level": 2, "name": "Tactical Mind", "desc": "Spend Second Wind to add 1d10 to a failed skill check." },
+        { "level": 3, "name": "Martial Archetype", "desc": "Choose your subclass." },
+        { "level": 4, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 5, "name": "Extra Attack", "desc": "Attack twice per action." },
+        { "level": 5, "name": "Tactical Shift", "desc": "Move half speed during Second Wind." },
+        { "level": 6, "name": "Ability Score Improvement / Feat", "desc": "Bonus ASI/Feat." },
+        { "level": 9, "name": "Indomitable (1 use)", "desc": "Reroll a failed save with +Level bonus." },
+        { "level": 9, "name": "Tactical Master", "desc": "Swap mastery properties on your weapons (Push, Sap, etc.)." },
+        { "level": 11, "name": "Extra Attack (2)", "desc": "Attack 3 times per action." },
+        { "level": 12, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 13, "name": "Indomitable (2 uses)", "desc": "Gain an extra use." },
+        { "level": 13, "name": "Studied Attacks", "desc": "Gain Advantage on your next attack if you miss." },
+        { "level": 14, "name": "Ability Score Improvement / Feat", "desc": "Bonus ASI/Feat." },
+        { "level": 16, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 17, "name": "Action Surge (2 uses)", "desc": "Gain an extra use." },
+        { "level": 17, "name": "Indomitable (3 uses)", "desc": "Gain an extra use." },
+        { "level": 19, "name": "Epic Boon Feat", "desc": "Gain an Epic Boon feat." },
+        { "level": 20, "name": "Extra Attack (3)", "desc": "Attack 4 times per action." }
+      ],
+      "subclasses": [
+        { "name": "Battle Master", "features": [
+          { "level": 3, "name": "Combat Superiority", "desc": "Learn 3 maneuvers; gain 4 d8 superiority dice." },
+          { "level": 3, "name": "Student of War", "desc": "Gain proficiency with one tool." },
+          { "level": 7, "name": "Know Your Enemy", "desc": "Learn a creature's stats or resistances." },
+          { "level": 10, "name": "Improved Superiority", "desc": "Dice become d10." },
+          { "level": 15, "name": "Relentless", "desc": "Regain 1 die if you have none on Initiative." },
+          { "level": 18, "name": "Superiority (d12)", "desc": "Dice become d12." }
+        ]},
+        { "name": "Champion", "features": [
+          { "level": 3, "name": "Improved Critical", "desc": "Crit on 19-20." },
+          { "level": 3, "name": "Remarkable Athlete", "desc": "Adv on Initiative and Athletics." },
+          { "level": 7, "name": "Additional Fighting Style", "desc": "Gain another Fighting Style feat." },
+          { "level": 10, "name": "Heroic Warrior", "desc": "Gain Heroic Inspiration at the start of each turn." },
+          { "level": 15, "name": "Superior Critical", "desc": "Crit on 18-20." },
+          { "level": 18, "name": "Survivor", "desc": "Regain HP at the start of turns while below half HP." }
+        ]},
+        { "name": "Eldritch Knight", "features": [
+          { "level": 3, "name": "Spellcasting", "desc": "Wizard spells; Intelligence-based." },
+          { "level": 3, "name": "Weapon Bond", "desc": "Bond with weapons to summon them." },
+          { "level": 7, "name": "War Magic", "desc": "Replace one attack with a Cantrip." },
+          { "level": 10, "name": "Eldritch Strike", "desc": "Weapon hits impose Disadvantage on spell saves." },
+          { "level": 15, "name": "Arcane Charge", "desc": "Teleport when using Action Surge." },
+          { "level": 18, "name": "Improved War Magic", "desc": "Replace two attacks with a level 1-2 spell." }
+        ]},
+        { "name": "Psi Warrior", "features": [
+          { "level": 3, "name": "Psionic Power", "desc": "Protective Field, Psionic Strike, and Telekinetic Movement." },
+          { "level": 7, "name": "Telekinetic Adept", "desc": "Psi-Powered Leap and Telekinetic Thrust." },
+          { "level": 10, "name": "Guarded Mind", "desc": "Resistance to Psychic damage; end Charmed/Frightened." },
+          { "level": 15, "name": "Bulwark of Force", "desc": "Create a field of half-cover for allies." },
+          { "level": 18, "name": "Telekinetic Master", "desc": "Cast Telekinesis without components." }
+        ]}
+      ]
+    },
+    {
+      "name": "Monk",
+      "hit_die": "1d8",
+      "features": [
+        { "level": 1, "name": "Martial Arts (d6)", "desc": "Unarmed strikes deal d6; Dex for attacks; Bonus Action attack." },
+        { "level": 1, "name": "Unarmored Defense", "desc": "AC = 10 + Dex + Wis." },
+        { "level": 1, "name": "Monk's Focus", "desc": "Use Focus points (Level + 1) for Flurry of Blows, Patient Defense, etc." },
+        { "level": 2, "name": "Unarmored Movement", "desc": "Speed +10ft." },
+        { "level": 2, "name": "Uncanny Metabolism", "desc": "Regain all Focus points on Initiative (once per day)." },
+        { "level": 3, "name": "Monk Subclass", "desc": "Choose your warrior path." },
+        { "level": 3, "name": "Deflect Attacks", "desc": "Reaction: Reduce damage from melee/ranged attacks by 1d10+Dex+Level." },
+        { "level": 4, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 4, "name": "Slow Fall", "desc": "Reduce fall damage by 5 x Level." },
+        { "level": 5, "name": "Extra Attack", "desc": "Attack twice per action." },
+        { "level": 5, "name": "Stunning Strike", "desc": "Force a Con save or stun the target. Deals damage on a successful save." },
+        { "level": 6, "name": "Empowered Strikes", "desc": "Unarmed strikes are magical." },
+        { "level": 7, "name": "Evasion", "desc": "Half damage on failed Dex save; zero on success." },
+        { "level": 8, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 9, "name": "Acrobatic Movement", "desc": "Move along vertical surfaces and across liquids." },
+        { "level": 10, "name": "Heightened Focus", "desc": "Flurry of Blows, Patient Defense, and Step of the Wind are improved." },
+        { "level": 10, "name": "Self-Restoration", "desc": "End Charmed, Frightened, or Poisoned at the end of your turn." },
+        { "level": 12, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 13, "name": "Deflect Energy", "desc": "Deflect Attacks now works against any damage type." },
+        { "level": 14, "name": "Disciplined Survivor", "desc": "Proficiency in all saving throws; reroll failed saves for 1 Focus." },
+        { "level": 15, "name": "Perfect Focus", "desc": "Regain Focus points to always have at least 4 on Initiative." },
+        { "level": 16, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 18, "name": "Superior Defense", "desc": "Spend 3 Focus for resistance to all damage except Force." },
+        { "level": 19, "name": "Epic Boon Feat", "desc": "Gain an Epic Boon feat." },
+        { "level": 20, "name": "Body and Mind", "desc": "Dex and Wis increase by 4, max is 25." }
+      ],
+      "subclasses": [
+        { "name": "Warrior of Mercy", "features": [
+          { "level": 3, "name": "Hand of Healing", "desc": "Spend 1 Focus to heal a creature." },
+          { "level": 3, "name": "Hand of Harm", "desc": "Spend 1 Focus to deal extra Necrotic damage." },
+          { "level": 6, "name": "Physician's Touch", "desc": "Heal also ends conditions; Harm also imposes Poisoned." },
+          { "level": 11, "name": "Flurry of Healing/Harm", "desc": "Replace Flurry attacks with healing or harm." },
+          { "level": 17, "name": "Hand of Ultimate Mercy", "desc": "Spend 5 Focus to bring a creature back to life." }
+        ]},
+        { "name": "Warrior of Shadow", "features": [
+          { "level": 3, "name": "Shadow Arts", "desc": "Cast Darkness, Darkvision, etc.; see through your own Darkness." },
+          { "level": 6, "name": "Shadow Step", "desc": "Teleport from shadow to shadow; gain Adv on next attack." },
+          { "level": 11, "name": "Improved Shadow Step", "desc": "Teleport and make an unarmed strike as part of the same action." },
+          { "level": 17, "name": "Shadow Flurry", "desc": "Opportunity attacks can trigger an extra attack." }
+        ]},
+        { "name": "Warrior of the Elements", "features": [
+          { "level": 3, "name": "Elemental Attunement", "desc": "Reach becomes 10ft; deal elemental damage; push/pull enemies." },
+          { "level": 6, "name": "Environmental Burst", "desc": "Spend 2 Focus for an elemental AOE explosion." },
+          { "level": 11, "name": "Stride of the Elements", "desc": "Fly speed and swim speed while Attunement is active." },
+          { "level": 17, "name": "Elemental Epitome", "desc": "Powerful elemental aura; resistance to one type." }
+        ]},
+        { "name": "Warrior of the Open Hand", "features": [
+          { "level": 3, "name": "Open Hand Technique", "desc": "Add effects to Flurry of Blows: Prone, Push, or No Reactions." },
+          { "level": 6, "name": "Wholeness of Body", "desc": "Bonus Action: Heal yourself 3 x PB times per day." },
+          { "level": 11, "name": "Tranquility", "desc": "Gain the effects of Sanctuary." },
+          { "level": 17, "name": "Quivering Palm", "desc": "Set up a lethal vibration; spend 4 Focus to deal massive damage." }
+        ]}
+      ]
+    },
+    {
+      "name": "Paladin",
+      "hit_die": "1d10",
+      "features": [
+        { "level": 1, "name": "Lay on Hands", "desc": "Heal pool = 5 x Level. Also ends Poisoned/Diseased." },
+        { "level": 1, "name": "Spellcasting", "desc": "Charisma-based. Prepared spells = (Level/2) + 2." },
+        { "level": 1, "name": "Weapon Mastery", "desc": "Master 2 kinds of weapons." },
+        { "level": 2, "name": "Fighting Style", "desc": "Gain a Fighting Style feat." },
+        { "level": 2, "name": "Paladin's Smite", "desc": "Always have Divine Smite prepared. Smites are now Bonus Action spells." },
+        { "level": 3, "name": "Paladin Oath", "desc": "Choose your subclass." },
+        { "level": 3, "name": "Channel Divinity", "desc": "Magical effects unique to your oath." },
+        { "level": 4, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 5, "name": "Extra Attack", "desc": "Attack twice per action." },
+        { "level": 5, "name": "Faithful Steed", "desc": "Always have Find Steed prepared; cast it once per day for free." },
+        { "level": 6, "name": "Aura of Protection", "desc": "Add Cha mod to all saves for yourself and allies within 10ft." },
+        { "level": 9, "name": "Abjure Foes", "desc": "Action: Frighten multiple creatures." },
+        { "level": 10, "name": "Aura of Courage", "desc": "You and allies in aura are immune to Frightened." },
+        { "level": 11, "name": "Radiant Strikes", "desc": "All melee attacks deal extra 1d8 Radiant damage." },
+        { "level": 14, "name": "Restoring Touch", "desc": "Lay on Hands ends Charmed, Frightened, Paralyzed, or Stunned." },
+        { "level": 18, "name": "Aura Expansion", "desc": "Aura range increases to 30ft." },
+        { "level": 19, "name": "Epic Boon Feat", "desc": "Gain an Epic Boon feat." }
+      ],
+      "subclasses": [
+        { "name": "Oath of Devotion", "features": [
+          { "level": 3, "name": "Oath Spells", "desc": "Protection from Evil, Shield of Faith, etc." },
+          { "level": 3, "name": "Sacred Weapon", "desc": "Channel Divinity: Add Cha to attack rolls; weapon emits light." },
+          { "level": 7, "name": "Aura of Devotion", "desc": "Allies in aura can't be Charmed." },
+          { "level": 15, "name": "Purity of Spirit", "desc": "Always under the effect of Protection from Evil and Good." },
+          { "level": 20, "name": "Holy Nimbus", "desc": "Aura of radiant light that damages enemies and grants Adv on saves." }
+        ]},
+        { "name": "Oath of Glory", "features": [
+          { "level": 3, "name": "Oath Spells", "desc": "Guiding Bolt, Heroism, etc." },
+          { "level": 3, "name": "Peerless Athlete", "desc": "Channel Divinity: Adv on Athletics/Acrobatics; double jump distance." },
+          { "level": 3, "name": "Inspiring Smite", "desc": "Channel Divinity: Grant Temp HP after a smite." },
+          { "level": 7, "name": "Aura of Alacrity", "desc": "Increase speed for you and allies in aura." },
+          { "level": 15, "name": "Glorious Defense", "desc": "Reaction: Add AC to an ally; counterattack if the enemy misses." },
+          { "level": 20, "name": "Living Legend", "desc": "Adv on all Cha checks; turn a miss into a hit; reroll a save." }
+        ]},
+        { "name": "Oath of the Ancients", "features": [
+          { "level": 3, "name": "Oath Spells", "desc": "Ensnaring Strike, Speak with Animals, etc." },
+          { "level": 3, "name": "Nature's Wrath", "desc": "Channel Divinity: Restrain a creature with vines." },
+          { "level": 7, "name": "Aura of Warding", "desc": "Resistance to spell damage in aura." },
+          { "level": 15, "name": "Undying Sentinel", "desc": "Don't drop to 0 HP; no drawback from old age." },
+          { "level": 20, "name": "Elder Champion", "desc": "Heal 10 HP per turn; cast spells as Bonus Action; enemies have Disadv on saves." }
+        ]},
+        { "name": "Oath of Vengeance", "features": [
+          { "level": 3, "name": "Oath Spells", "desc": "Bane, Hunter's Mark, etc." },
+          { "level": 3, "name": "Vow of Enmity", "desc": "Channel Divinity: Adv on attacks against a target." },
+          { "level": 7, "name": "Relentless Avenger", "desc": "Move half speed when hitting with an opportunity attack." },
+          { "level": 15, "name": "Soul of Vengeance", "desc": "Attack your Vow target as a Reaction when they attack." },
+          { "level": 20, "name": "Avenging Angel", "desc": "Gain wings and a fly speed; aura that frightens enemies." }
+        ]}
+      ]
+    },
+    {
+      "name": "Ranger",
+      "hit_die": "1d10",
+      "features": [
+        { "level": 1, "name": "Spellcasting", "desc": "Wisdom-based. Prepared spells = (Level/2) + 2." },
+        { "level": 1, "name": "Favored Enemy", "desc": "Always have Hunter's Mark prepared; cast it without slots PB times." },
+        { "level": 1, "name": "Weapon Mastery", "desc": "Master 2 kinds of weapons." },
+        { "level": 2, "name": "Deft Explorer", "desc": "Expertise in one skill and learn two languages." },
+        { "level": 2, "name": "Fighting Style", "desc": "Gain a Fighting Style feat." },
+        { "level": 3, "name": "Ranger Archetype", "desc": "Choose your subclass." },
+        { "level": 4, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 5, "name": "Extra Attack", "desc": "Attack twice per action." },
+        { "level": 9, "name": "Expertise", "desc": "Gain Expertise in two more skills." },
+        { "level": 10, "name": "Tireless", "desc": "Gain Temp HP PB times; reduce Exhaustion on Short Rest." },
+        { "level": 13, "name": "Relentless Hunter", "desc": "Hunter's Mark no longer requires Concentration." },
+        { "level": 17, "name": "Precise Hunter", "desc": "Advantage on attacks against your Hunter's Mark target." },
+        { "level": 19, "name": "Epic Boon Feat", "desc": "Gain an Epic Boon feat." },
+        { "level": 20, "name": "Foe Slayer", "desc": "Add Wis mod to attack or damage rolls against Favored Enemies." }
+      ],
+      "subclasses": [
+        { "name": "Beast Master", "features": [
+          { "level": 3, "name": "Primal Companion", "desc": "Summon a Land, Sea, or Sky beast; it acts on your turn." },
+          { "level": 7, "name": "Exceptional Training", "desc": "Beast attacks are magical; it can Help/Dash/Disengage as Bonus Action." },
+          { "level": 11, "name": "Bestial Fury", "desc": "Beast attacks twice; benefits from Hunter's Mark." },
+          { "level": 15, "name": "Share Spells", "desc": "Spells you cast on yourself also affect your beast." }
+        ]},
+        { "name": "Fey Wanderer", "features": [
+          { "level": 3, "name": "Dreadful Strike", "desc": "Extra psychic damage once per turn." },
+          { "level": 3, "name": "Otherworldly Glamour", "desc": "Add Wis to Cha checks; gain a skill." },
+          { "level": 7, "name": "Beguiling Twist", "desc": "Reaction: Redirect a charm/frighten effect." },
+          { "level": 11, "name": "Fey Wild Augmentation", "desc": "Cast Summon Fey without a spell slot." },
+          { "level": 15, "name": "Misty Wanderer", "desc": "Cast Misty Step multiple times; bring an ally along." }
+        ]},
+        { "name": "Gloom Stalker", "features": [
+          { "level": 3, "name": "Dread Ambusher", "desc": "Extra speed and damage on the first turn of combat." },
+          { "level": 3, "name": "Umbral Sight", "desc": "Invisible to creatures using darkvision; gain darkvision." },
+          { "level": 7, "name": "Iron Mind", "desc": "Proficiency in Wisdom saving throws." },
+          { "level": 11, "name": "Stalker's Flurry", "desc": "If you miss, make another attack." },
+          { "level": 15, "name": "Shadow Dodge", "desc": "Reaction: Impose Disadvantage on attackers." }
+        ]},
+        { "name": "Hunter", "features": [
+          { "level": 3, "name": "Hunter's Prey", "desc": "Choose Colossus Slayer, Giant Killer, or Horde Breaker." },
+          { "level": 7, "name": "Defensive Tactics", "desc": "Escape the Horde, Multiattack Defense, or Steel Will." },
+          { "level": 11, "name": "Multiattack", "desc": "Volley or Whirlwind Attack." },
+          { "level": 15, "name": "Superior Hunter's Defense", "desc": "Evasion, Stand Against the Tide, or Uncanny Dodge." }
+        ]}
+      ]
+    },
+    {
+      "name": "Rogue",
+      "hit_die": "1d8",
+      "features": [
+        { "level": 1, "name": "Expertise", "desc": "Double PB for two skills." },
+        { "level": 1, "name": "Sneak Attack (1d6)", "desc": "Extra damage once per turn to target with Adv or an ally nearby." },
+        { "level": 1, "name": "Thieves' Cant", "desc": "Speak the secret code of rogues." },
+        { "level": 1, "name": "Weapon Mastery (2 kinds)", "desc": "Unlock mastery properties of 2 weapons." },
+        { "level": 2, "name": "Cunning Action", "desc": "Bonus Action: Dash, Disengage, or Hide." },
+        { "level": 3, "name": "Roguish Archetype", "desc": "Choose your subclass." },
+        { "level": 3, "name": "Steady Aim", "desc": "Bonus Action: Gain Adv on next attack; speed becomes 0." },
+        { "level": 4, "name": "Ability Score Improvement / Feat", "desc": "Increase stats or take a Feat." },
+        { "level": 5, "name": "Cunning Strike", "desc": "Sacrifice 1d6 Sneak Attack to Disarm, Poison, or Trip." },
+        { "level": 5, "name": "Uncanny Dodge", "desc": "Reaction: Half damage from an attack." },
+        { "level": 7, "name": "Reliable Talent", "desc": "Treat rolls of 9 or lower as 10 for proficient skills." },
+        { "level": 7, "name": "Evasion", "desc": "Half damage on failed Dex save; zero on success." },
+        { "level": 11, "name": "Improved Cunning Strike", "desc": "Sacrifice more dice for powerful effects (Blind, Daze, etc.)." },
+        { "level": 14, "name": "Devious Strikes", "desc": "Daze, Knock Out, and Obscure effects for Cunning Strike." },
+        { "level": 15, "name": "Slippery Mind", "desc": "Proficiency in Wisdom and Charisma saving throws." },
+        { "level": 18, "name": "Elusive", "desc": "Attackers can't have Advantage on you while you're not incapacitated." },
+        { "level": 19, "name": "Epic Boon Feat", "desc": "Gain an Epic Boon feat." },
+        { "level": 20, "name": "Stroke of Luck", "desc": "Turn a miss into a hit or a failed check into a 20 (once per Short Rest)." }
+      ],
+      "subclasses": [
+        { "name": "Arcane Trickster", "features": [
+          { "level": 3, "name": "Spellcasting", "desc": "Wizard spells (Enchantment/Illusion); Intelligence-based." },
+          { "level": 3, "name": "Mage Hand Legerdemain", "desc": "Concealed Mage Hand can pick locks/pockets." },
+          { "level": 9, "name": "Magical Ambush", "desc": "Enemies have Disadv on saves if you are hidden." },
+          { "level": 13, "name": "Versatile Trickster", "desc": "Bonus Action: Distract enemy with Mage Hand for Adv." },
+          { "level": 17, "name": "Spell Thief", "desc": "Steal a spell from an enemy caster." }
+        ]},
+        { "name": "Assassin", "features": [
+          { "level": 3, "name": "Assassinate", "desc": "Adv on initiative; extra damage on first turn." },
+          { "level": 3, "name": "Bonus Proficiencies", "desc": "Disguise Kit and Poisoner's Kit." },
+          { "level": 9, "name": "Infiltration Expertise", "desc": "Create false identities." },
+          { "level": 13, "name": "Impostor", "desc": "Mimic speech and behavior perfectly." },
+          { "level": 17, "name": "Death Strike", "desc": "Double damage against surprised targets." }
+        ]},
+        { "name": "Soulknife", "features": [
+          { "level": 3, "name": "Psychic Blades", "desc": "Attack with mental d6/d4 blades." },
+          { "level": 3, "name": "Psionic Energy", "desc": "Psi-Bolstered Knack and Whispers of the Mind." },
+          { "level": 9, "name": "Soul Blades", "desc": "Homing Strikes and Psychic Teleportation." },
+          { "level": 13, "name": "Psychic Veil", "desc": "Become invisible for 1 hour." },
+          { "level": 17, "name": "Rend Mind", "desc": "Stun enemies with a psychic strike." }
+        ]},
+        { "name": "Thief", "features": [
+          { "level": 3, "name": "Fast Hands", "desc": "Bonus Action: Use Object, Pick Lock, or Disarm Trap." },
+          { "level": 3, "name": "Second-Story Work", "desc": "Climb speed; jump further." },
+          { "level": 9, "name": "Supreme Stealth", "desc": "Adv on Stealth if moving half speed." },
+          { "level": 13, "name": "Use Magic Device", "desc": "Ignore all class/race/level requirements for items." },
+          { "level": 17, "name": "Thief's Reflexes", "desc": "Take two turns on the first round of combat." }
+        ]}
+      ]
+    },
+    {
+      "name": "Sorcerer",
+      "hit_die": "1d6",
+      "features": [
+        { "level": 1, "name": "Spellcasting", "desc": "Charisma-based. Prepared spells = level + 1." },
+        { "level": 1, "name": "Innate Sorcery", "desc": "Bonus Action: +1 to spell save DC and Adv on spell attacks for 1 min." },
+        { "level": 2, "name": "Font of Magic (2 points)", "desc": "Convert Sorcery Points to spell slots and vice versa." },
+        { "level": 2, "name": "Metamagic", "desc": "Choose 2 Metamagic options (Careful, Distant, Empowered, etc.)." },
+        { "level": 3, "name": "Sorcerous Origin", "desc": "Choose your subclass." },
+        { "level": 5, "name": "Sorcerous Restoration", "desc": "Regain PB points on a Short Rest." },
+        { "level": 7, "name": "Sorcery Incarnate", "desc": "While Innate Sorcery is active, use two metamagics on one spell." },
+        { "level": 10, "name": "Metamagic", "desc": "Choose another Metamagic option." },
+        { "level": 17, "name": "Metamagic", "desc": "Choose another Metamagic option." },
+        { "level": 19, "name": "Epic Boon Feat", "desc": "Gain an Epic Boon feat." },
+        { "level": 20, "name": "Arcane Apotheosis", "desc": "While Innate Sorcery is active, use one metamagic for free each turn." }
+      ],
+      "subclasses": [
+        { "name": "Aberrant Sorcery", "features": [
+          { "level": 3, "name": "Psionic Spells", "desc": "Bonus spells (Arms of Hadar, Dissonant Whispers, etc.)." },
+          { "level": 3, "name": "Telepathic Speech", "desc": "Create a mental link with a creature." },
+          { "level": 6, "name": "Psionic Sorcery", "desc": "Cast subclass spells using points instead of slots." },
+          { "level": 14, "name": "Revelation in Flesh", "desc": "Transform for flight, swimming, or seeing invisible." },
+          { "level": 18, "name": "Warping Implosion", "desc": "Teleport and pull enemies into a void." }
+        ]},
+        { "name": "Clockwork Sorcery", "features": [
+          { "level": 3, "name": "Clockwork Spells", "desc": "Bonus spells (Alarm, Protection from Evil, etc.)." },
+          { "level": 3, "name": "Restore Balance", "desc": "Reaction: Cancel Adv/Disadv for a creature." },
+          { "level": 6, "name": "Bastion of Law", "desc": "Create a ward that absorbs damage." },
+          { "level": 14, "name": "Trance of Order", "desc": "Can't have Disadv; treat rolls of 9- as 10." },
+          { "level": 18, "name": "Clockwork Cavalcade", "desc": "Summon spirits to heal allies and repair items." }
+        ]},
+        { "name": "Draconic Sorcery", "features": [
+          { "level": 3, "name": "Draconic Resilience", "desc": "AC = 13 + Dex; +1 HP per level." },
+          { "level": 3, "name": "Dragon Speech", "desc": "Speak Draconic; Adv on Cha checks with dragons." },
+          { "level": 6, "name": "Elemental Affinity", "desc": "Add Cha mod to one damage type; gain resistance." },
+          { "level": 14, "name": "Dragon Wings", "desc": "Bonus Action: Manifest wings for fly speed." },
+          { "level": 18, "name": "Draconic Presence", "desc": "Aura that charms or frightens enemies." }
+        ]},
+        { "name": "Wild Magic", "features": [
+          { "level": 3, "name": "Wild Magic Surge", "desc": "Cast spells to trigger random magical effects." },
+          { "level": 3, "name": "Tides of Chaos", "desc": "Gain Adv on a roll; resets on a Surge." },
+          { "level": 6, "name": "Bend Luck", "desc": "Spend 2 points to add/subtract 1d4 to a roll." },
+          { "level": 14, "name": "Controlled Surge", "desc": "Roll twice on the surge table and choose." },
+          { "level": 18, "name": "Spell Bombardment", "desc": "Extra damage dice on spells." }
+        ]}
+      ]
+    },
+    {
+      "name": "Warlock",
+      "hit_die": "1d8",
+      "features": [
+        { "level": 1, "name": "Pact Magic", "desc": "Charisma-based. Slots regain on Short Rest. Prepared spells = level + 1." },
+        { "level": 1, "name": "Eldritch Invocations (2)", "desc": "Custom powers like Agonizing Blast or Pact Boons (Blade, Chain, Tome)." },
+        { "level": 2, "name": "Magical Cunning", "desc": "Regain half spell slots (rounded up) as an action (once per day)." },
+        { "level": 2, "name": "Eldritch Invocations (3)", "desc": "Gain another invocation." },
+        { "level": 3, "name": "Otherworldly Patron", "desc": "Choose your subclass." },
+        { "level": 5, "name": "Eldritch Invocations (5)", "desc": "Gain two more invocations." },
+        { "level": 7, "name": "Eldritch Invocations (6)", "desc": "Gain another invocation." },
+        { "level": 9, "name": "Contact Patron", "desc": "Cast Commune to speak with your patron." },
+        { "level": 11, "name": "Mystic Arcanum (6th)", "desc": "Learn one level 6 spell; cast once per day." },
+        { "level": 13, "name": "Mystic Arcanum (7th)", "desc": "Learn one level 7 spell; cast once per day." },
+        { "level": 15, "name": "Mystic Arcanum (8th)", "desc": "Learn one level 8 spell; cast once per day." },
+        { "level": 17, "name": "Mystic Arcanum (9th)", "desc": "Learn one level 9 spell; cast once per day." },
+        { "level": 19, "name": "Epic Boon Feat", "desc": "Gain an Epic Boon feat." },
+        { "level": 20, "name": "Eldritch Master", "desc": "Regain all spell slots in 1 minute." }
+      ],
+      "subclasses": [
+        { "name": "Archfey Patron", "features": [
+          { "level": 3, "name": "Fey Presence", "desc": "Charm or frighten creatures in a 10ft cube." },
+          { "level": 6, "name": "Misty Escape", "desc": "Reaction: Teleport and become invisible when hit." },
+          { "level": 10, "name": "Beguiling Defenses", "desc": "Immune to Charmed; redirect charm effects." },
+          { "level": 14, "name": "Dark Delirium", "desc": "Trap a creature in a misty mental realm." }
+        ]},
+        { "name": "Celestial Patron", "features": [
+          { "level": 3, "name": "Healing Light", "desc": "Pool of d6s to heal creatures as a Bonus Action." },
+          { "level": 3, "name": "Bonus Cantrips", "desc": "Light and Sacred Flame." },
+          { "level": 6, "name": "Radiant Soul", "desc": "Resistance to Radiant damage; +Cha to Fire/Radiant damage." },
+          { "level": 10, "name": "Celestial Resilience", "desc": "Gain Temp HP for yourself and allies after a rest." },
+          { "level": 14, "name": "Searing Vengeance", "desc": "Explode with radiant energy when dropping to 0 HP; blind enemies." }
+        ]},
+        { "name": "Fiend Patron", "features": [
+          { "level": 3, "name": "Dark One's Blessing", "desc": "Gain Temp HP when you reduce a creature to 0 HP." },
+          { "level": 6, "name": "Dark One's Own Luck", "desc": "Add 1d10 to an ability check or saving throw." },
+          { "level": 10, "name": "Fiendish Resilience", "desc": "Choose one damage type to have resistance to (swap on rest)." },
+          { "level": 14, "name": "Hurl through Hell", "desc": "On hit, banish an enemy to a hellish realm for 1 round (10d10 damage)." }
+        ]},
+        { "name": "Great Old One Patron", "features": [
+          { "level": 3, "name": "Awakened Mind", "desc": "Telepathy with any creature you can see." },
+          { "level": 6, "name": "Entropic Ward", "desc": "Reaction: Impose Disadv on an attack; gain Adv on next hit." },
+          { "level": 10, "name": "Thought Shield", "desc": "Immune to telepathy/mind reading; resistance to Psychic damage." },
+          { "level": 14, "name": "Create Thrall", "desc": "Charm an incapacitated creature permanently." }
+        ]}
+      ]
+    },
+    {
+      "name": "Wizard",
+      "hit_die": "1d6",
+      "features": [
+        { "level": 1, "name": "Spellcasting", "desc": "Intelligence-based. Use Spellbook. Prepared spells = level + 1." },
+        { "level": 1, "name": "Arcane Recovery", "desc": "Regain spell slots on a Short Rest." },
+        { "level": 1, "name": "Ritual Adept", "desc": "Cast spells as rituals if in spellbook (no preparation needed)." },
+        { "level": 2, "name": "Scholar", "desc": "Expertise in one: Arcana, History, Investigation, Nature, Medicine, or Religion." },
+        { "level": 3, "name": "Wizard School", "desc": "Choose your subclass." },
+        { "level": 5, "name": "Memorize Spell", "desc": "Swap one prepared spell for another in your spellbook on a Short Rest." },
+        { "level": 18, "name": "Spell Mastery", "desc": "Choose a level 1 and level 2 spell to cast infinitely." },
+        { "level": 19, "name": "Epic Boon Feat", "desc": "Gain an Epic Boon feat." },
+        { "level": 20, "name": "Signature Spells", "desc": "Choose two level 3 spells to always have prepared and cast once for free." }
+      ],
+      "subclasses": [
+        { "name": "Abjurer", "features": [
+          { "level": 3, "name": "Arcane Ward", "desc": "Shield that absorbs damage equal to 2 x Level + Int." },
+          { "level": 6, "name": "Projected Ward", "desc": "Reaction: Use your ward to protect an ally." },
+          { "level": 10, "name": "Improved Abjuration", "desc": "Add PB to Dispel Magic and Counterspell checks." },
+          { "level": 14, "name": "Spell Resistance", "desc": "Advantage on saves vs spells; resistance to spell damage." }
+        ]},
+        { "name": "Diviner", "features": [
+          { "level": 3, "name": "Portent", "desc": "Pre-roll two d20s and swap them for any roll during the day." },
+          { "level": 6, "name": "Expert Divination", "desc": "Regain lower level slots when casting Divination spells." },
+          { "level": 10, "name": "The Third Eye", "desc": "Darkvision, See Invisibility, or see into Ethereal Plane." },
+          { "level": 14, "name": "Greater Portent", "desc": "Roll three d20s for Portent." }
+        ]},
+        { "name": "Evoker", "features": [
+          { "level": 3, "name": "Sculpt Spells", "desc": "Protect allies from your area-of-effect spells." },
+          { "level": 6, "name": "Potent Cantrip", "desc": "Half damage on successful saves against your cantrips." },
+          { "level": 10, "name": "Empowered Evocation", "desc": "Add Int mod to damage of Evocation spells." },
+          { "level": 14, "name": "Overchannel", "desc": "Deal maximum damage with a level 1-5 spell (takes damage on repeat)." }
+        ]},
+        { "name": "Illusionist", "features": [
+          { "level": 3, "name": "Improved Minor Illusion", "desc": "Cast both sound and image; cast as Bonus Action." },
+          { "level": 6, "name": "Malleable Illusions", "desc": "Change the nature of an active illusion." },
+          { "level": 10, "name": "Illusory Self", "desc": "Reaction: Create a double to make an attack miss." },
+          { "level": 14, "name": "Illusory Reality", "desc": "Make part of an illusion real for 1 minute." }
+        ]}
+      ]
+    }
+  ]
+}

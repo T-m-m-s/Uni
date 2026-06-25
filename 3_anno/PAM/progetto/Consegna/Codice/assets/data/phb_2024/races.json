@@ -1,0 +1,144 @@
+{
+  "species": [
+    {
+      "name": "Aasimar",
+      "slug": "aasimar",
+      "document__slug": "wotc-phb-2024",
+      "size": "Medium or Small",
+      "speed": 30,
+      "features": [
+        { "level": 1, "name": "Creature Type", "desc": "You are a Humanoid." },
+        { "level": 1, "name": "Celestial Resistance", "desc": "You have resistance to Radiant damage and Necrotic damage." },
+        { "level": 1, "name": "Darkvision", "desc": "You have Darkvision with a range of 60 feet." },
+        { "level": 1, "name": "Healing Hands", "desc": "As an Action, you can touch a creature and restore HP. Once per Long Rest.", "scaling": { "1": "PB d4" } },
+        { "level": 1, "name": "Light Bearer", "desc": "You know the Light cantrip. Charisma is your spellcasting ability." },
+        { "level": 3, "name": "Celestial Revelation", "desc": "Bonus Action: Transform for 1 min. Once per Long Rest. Choose your revelation each time you transform.", "scaling": { "3": "+PB Radiant/Necrotic damage" } }
+      ],
+      "variants": [
+        { "name": "Heavenly Wings", "desc": "You gain a Fly Speed equal to your Speed." },
+        { "name": "Inner Radiance", "desc": "At the end of your turns, creatures within 10ft take PB Radiant damage." },
+        { "name": "Necrotic Shroud", "desc": "Once per turn, deal extra Necrotic damage. Nearby creatures may be Frightened." }
+      ]
+    },
+    {
+      "name": "Dragonborn",
+      "slug": "dragonborn",
+      "document__slug": "wotc-phb-2024",
+      "size": "Medium",
+      "speed": 30,
+      "features": [
+        { 
+          "level": 1, 
+          "name": "Breath Weapon", 
+          "desc": "Replace one attack with a 15-ft cone or 30-ft line. DC 8 + Con + PB. Half damage on save. Uses = PB per Long Rest.",
+          "scaling": {
+            "1": "1d10",
+            "5": "2d10",
+            "11": "3d10",
+            "17": "4d10"
+          }
+        },
+        { "level": 1, "name": "Draconic Ancestry", "desc": "Determines your breath damage and resistance (see Variants)." },
+        { "level": 5, "name": "Draconic Flight", "desc": "Bonus Action: Gain fly speed for 10 mins. Once per Long Rest." }
+      ],
+      "variants": [
+        { "name": "Black Dragon", "desc": "Acid Resistance;" },
+        { "name": "Blue Dragon", "desc": "Lightning Resistance;" },
+        { "name": "Brass Dragon", "desc": "Fire Resistance;" },
+        { "name": "Bronze Dragon", "desc": "Lightning Resistance;" },
+        { "name": "Copper Dragon", "desc": "Acid Resistance;" },
+        { "name": "Gold Dragon", "desc": "Fire Resistance;" },
+        { "name": "Green Dragon", "desc": "Poison Resistance;" },
+        { "name": "Red Dragon", "desc": "Fire Resistance;" },
+        { "name": "Silver Dragon", "desc": "Cold Resistance;" },
+        { "name": "White Dragon", "desc": "Cold Resistance;" }
+      ]
+    },
+    {
+      "name": "Elf",
+      "slug": "elf",
+      "document__slug": "wotc-phb-2024",
+      "size": "Medium",
+      "speed": 30,
+      "features": [
+        { "level": 1, "name": "Fey Ancestry", "desc": "Adv on saves vs Charm; magic can't put you to sleep." },
+        { "level": 1, "name": "Keen Senses", "desc": "Proficiency in Insight, Perception, or Survival." },
+        { "level": 1, "name": "Trance", "desc": "4-hour Long Rest." },
+        { 
+          "level": 1, 
+          "name": "Elven Lineage", 
+          "desc": "Choose your lineage for specific magic.",
+          "scaling": {
+            "1": "Cantrip",
+            "3": "Level 1 Spell",
+            "5": "Level 2 Spell"
+          }
+        }
+      ],
+      "variants": [
+        { "name": "Drow", "desc": "Darkvision 120ft; Dancing Lights (1), Faerie Fire (3), Darkness (5)." },
+        { "name": "High Elf", "desc": "Prestidigitation (1 - swap on rest); Detect Magic (3), Misty Step (5)." },
+        { "name": "Wood Elf", "desc": "Speed 35ft; Druidcraft (1), Longstrider (3), Pass Without Trace (5)." }
+      ]
+    },
+    {
+      "name": "Gnome",
+      "slug": "gnome",
+      "document__slug": "wotc-phb-2024",
+      "size": "Small",
+      "speed": 30,
+      "features": [
+        { "level": 1, "name": "Gnomish Cunning", "desc": "Adv on Int, Wis, and Cha saving throws." },
+        { "level": 1, "name": "Gnomish Lineage", "desc": "Choose your lineage for specific magic." }
+      ],
+      "variants": [
+        { "name": "Forest Gnome", "desc": "Minor Illusion cantrip; Speak with Animals always prepared." },
+        { "name": "Rock Gnome", "desc": "Mending and Prestidigitation cantrips; create tiny clockwork devices." }
+      ]
+    },
+    {
+      "name": "Goliath",
+      "slug": "goliath",
+      "document__slug": "wotc-phb-2024",
+      "size": "Medium",
+      "speed": 35,
+      "features": [
+        { "level": 1, "name": "Giant Ancestry", "desc": "Choose your ancestry for combat benefits. Uses = PB per Long Rest." },
+        { "level": 1, "name": "Powerful Build", "desc": "Adv on saves vs Grappled. Count as one size larger for carrying." },
+        { "level": 5, "name": "Large Form", "desc": "Bonus Action: Become Large for 10 mins. Adv on Str checks, +10 speed. Once per Long Rest." }
+      ],
+      "variants": [
+        { "name": "Cloud Giant", "desc": "Bonus Action: Teleport 30ft." },
+        { "name": "Fire Giant", "desc": "On hit: Deal extra 1d10 Fire damage." },
+        { "name": "Frost Giant", "desc": "On hit: Deal extra 1d6 Cold damage and reduce target speed by 10ft." },
+        { "name": "Hill Giant", "desc": "On hit: Force target to be knocked Prone." },
+        { "name": "Stone Giant", "desc": "Reaction when hit: Reduce damage by 1d12 + Con." },
+        { "name": "Storm Giant", "desc": "Reaction when hit: Attacker takes 1d8 Thunder damage." }
+      ]
+    },
+    {
+      "name": "Tiefling",
+      "slug": "tiefling",
+      "document__slug": "wotc-phb-2024",
+      "size": "Medium or Small",
+      "speed": 30,
+      "features": [
+        { 
+          "level": 1, 
+          "name": "Fiendish Legacy", 
+          "desc": "Choose your legacy for resistance and magic.",
+          "scaling": {
+            "1": "Resistance + Cantrip",
+            "3": "Level 1 Spell",
+            "5": "Level 2 Spell"
+          }
+        }
+      ],
+      "variants": [
+        { "name": "Abyssal", "desc": "Poison Resistance; Poison Spray (1), Ray of Sickness (3), Hold Person (5)." },
+        { "name": "Chthonic", "desc": "Necrotic Resistance; Chill Touch (1), False Life (3), Ray of Enfeeblement (5)." },
+        { "name": "Infernal", "desc": "Fire Resistance; Fire Bolt (1), Hellish Rebuke (3), Darkness (5)." }
+      ]
+    }
+  ]
+}

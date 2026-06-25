@@ -1,0 +1,7 @@
+Implement Alignment
+Implement JSON import
+Implement campaign notes
+Implement stat rolling
+Implement character image
+Implement equipment/spell info
+Implement settings screen

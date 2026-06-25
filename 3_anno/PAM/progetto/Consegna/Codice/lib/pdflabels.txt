@@ -1,0 +1,3343 @@
+◄ 0s ⋈┈◎ pdftk dnd_5e_charactersheet.pdf dump_data_fields
+Picked up _JAVA_OPTIONS: -Djava.net.preferIPv4Stack=true
+---
+FieldType: Text
+FieldName: Languages 2
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: ConsumLeft 4
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Languages 1
+FieldFlags: 4096
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: TOOLS 3
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: TOOLS 2
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: TOOLS 1
+FieldFlags: 4096
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: AttunedMagic 3
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Consum 6
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Consum 5
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: AttunedMagic 1
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: ConsumLeft 6
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: AttunedMagic 2
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: PP
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: ConsumLeft 5
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: GP
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: ConsumLeft 3
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Consum 4
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: EP
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Consum 3
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Armor
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: ArmorHea
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: WpnOth 2
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: ConsumLeft 2
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Consum 2
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SP
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WEAPONStype 2
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: ConsumLeft 1
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WEAPONStype 1
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Consum 1
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: WpnOth 1
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: WpnMar
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: WpnSim
+FieldFlags: 0
+FieldValue: Off
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Shields
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: ArmorMed
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: ArmorLight
+FieldFlags: 0
+FieldValue: Off
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: ArmorStr
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: ArmorDex
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Shield
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: ArmorAC
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: FeatLeft 1
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: StealthDisv
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Passive
+FieldFlags: 12582912
+FieldValue: 5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: AmmoLeft 3
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Ammo 3
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: HIST
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CHAmod
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CHA
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: ARC
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellAtkBonus 2
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellSaveDC  2
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: AmmoLeft 2
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Ammo 2
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: INT
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: REL
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: AmmoLeft 1
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Ammo 1
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Wpn6 Damage
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Wpn6 AtkBonus
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Wpn Name 6
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Wpn5 Damage
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Wpn5 AtkBonus
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Wpn Name 5
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Wpn4 Damage
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Wpn3 Damage 
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SLE
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: PERS
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: RecoverySR 1
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: PERC
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: HISTPE
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: SURVPE
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: RELPE
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: SLEPE
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: PERSPE
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: PERCPE
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: NATPE
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: MEDPE
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: INSPE
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: PERFPE
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: INTIPE
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: DECPE
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: INVPE
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: STLTHPE
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: ATHPE
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: ARCPE
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: ANIMPE
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: ACROPE
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: DEC
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Wpn3 AtkBonus  
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Wpn Name 2
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Wpn1 Damage
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SURV
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WISmod
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: INTmod
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WIS
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Wpn2 Damage 
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Wpn4 AtkBonus
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Wpn Name 4
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Wpn2 AtkBonus 
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: NAT
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: MED
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: INS
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: HISTP
+FieldFlags: 0
+FieldValue: Off
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: SURVP
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: RELP
+FieldFlags: 0
+FieldValue: Off
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: SLEP
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: PERSP
+FieldFlags: 0
+FieldValue: Off
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: PERCP
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: NATP
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: MEDP
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: PERFP
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: INTIP
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: DECP
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: INVP
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: STLTHP
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: ATHP
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: ARCP
+FieldFlags: 0
+FieldValue: Off
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: ANIMP
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: ACROP
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: PERF
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: INTI
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: INSP
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Wpn Name 3
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Wpn1 AtkBonus
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Wpn Name
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: HDLeft2
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: HD2
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: HDTotal2
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CONmod
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: Check Box 17
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 16
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 15
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: INV
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: STLTH
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: ATH
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: Check Box 14
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 13
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 120000
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: HDLeft
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: HDTotal
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: HD
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: ANIM
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: ACRO
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Speed
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CON
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Vision
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: Check Box 12
+FieldFlags: 0
+FieldValue: Off
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Exhaustion
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: ST Charisma
+FieldFlags: 12582912
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: HPMax
+FieldFlags: 12582912
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: ST Wisdom
+FieldFlags: 12582912
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: DEXmod
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: ST Intelligence
+FieldFlags: 12582912
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: HPTemp
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: DEX
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: ST Constitution
+FieldFlags: 12582912
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: ST Dexterity
+FieldFlags: 12582912
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: HPCurrent
+FieldFlags: 12582912
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: ST Strength
+FieldFlags: 12582912
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: STRmod
+FieldFlags: 8388608
+FieldValue: -5
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Initiative
+FieldFlags: 12582912
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: ProfBonus
+FieldFlags: 12582912
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: STR
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: insp4
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: insp2
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: CHAprof
+FieldFlags: 0
+FieldValue: Off
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: WISprof
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: INTprof
+FieldFlags: 0
+FieldValue: Off
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: CONprof
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: DEXprof
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: STRprof
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: insp3
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Text
+FieldName: Limited Feat 1
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: MadnessLvl
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: FeatLeft 6
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: FeatTot 6
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: RecoveryLR 6
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: RecoveryDN 6
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: RecoverySR 6
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Limited Feat 6
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: FeatLeft 5
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: FeatTot 5
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: RecoveryLR 5
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: RecoveryDN 5
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: RecoverySR 5
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Limited Feat 5
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: FeatLeft 4
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: FeatTot 4
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: RecoveryLR 4
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: RecoveryDN 4
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: RecoverySR 4
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Limited Feat 4
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: FeatLeft 3
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: FeatTot 3
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: RecoveryLR 3
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: RecoveryDN 3
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: RecoverySR 3
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Limited Feat 3
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: AC
+FieldFlags: 12582912
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: FeatLeft 2
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: FeatTot 2
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: RecoveryLR 2
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: RecoveryDN 2
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: RecoverySR 2
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Limited Feat 2
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: RecoveryLR 1
+FieldFlags: 0
+FieldValue: Off
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: FeatTot 1
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: RecoveryDN 1
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: AC_Temp
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: insp1
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Text
+FieldName: AbilitySaveDC
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Nex_XP
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: XP
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Alignment
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Race 
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: PlayerName
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Background
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: ClassLevel
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: RESETTA LA SCHEDA
+FieldFlags: 65536
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: AppearanceText
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Image2_af_image
+FieldFlags: 65536
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: WEIGHT
+FieldNameAlt: WEIGHT
+FieldFlags: 0
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SymbolNAME
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CharacterName
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: Image1_af_image
+FieldFlags: 65536
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: HAIR
+FieldNameAlt: HAIR
+FieldFlags: 0
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SKIN
+FieldNameAlt: SKIN
+FieldFlags: 0
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: EYES
+FieldNameAlt: EYES
+FieldFlags: 0
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: HEIGHT
+FieldNameAlt: HEIGHT
+FieldFlags: 0
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: AGE
+FieldNameAlt: AGE
+FieldFlags: 0
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: 7_12
+FieldNameAlt: [7]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Check Box 3014
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 3013
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 3012
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 3011
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 3010
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 309
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 251
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 3016
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 3015
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 301423
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 301323
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 301223
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 301123
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 301023
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30923
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 25123
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: 6_12
+FieldNameAlt: [6]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 5_13
+FieldNameAlt: [5]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 4_14
+FieldNameAlt: [4]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 3_18
+FieldNameAlt: [3]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 2_18
+FieldNameAlt: [2]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 1_18
+FieldNameAlt: [1]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SlotsTotal 23
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SlotsRemaining 27
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: 7_11
+FieldNameAlt: [7]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SlotsRemaining 23
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SlotsTotal 27
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: 6_11
+FieldNameAlt: [6]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 5_12
+FieldNameAlt: [5]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 4_13
+FieldNameAlt: [4]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 1_11
+FieldNameAlt: [1]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 3_17
+FieldNameAlt: [3]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SlotsRemaining 20
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: Check Box 30191
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30181
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30171
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30161
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30151
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30141
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30131
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30121
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30111
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30101
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 3091
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 2511
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 25101
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30192
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30182
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30172
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30162
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30152
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30142
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30132
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30122
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30112
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30102
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 3092
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 2512
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 25102
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 301461
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 301361
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 301261
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 301161
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 301061
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30961
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 25161
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: SlotsTotal 20
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: Check Box 30166
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30156
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30146
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30136
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30126
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30116
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30106
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 3096
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 2516
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: 2_17
+FieldNameAlt: [2]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 1_17
+FieldNameAlt: [1]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SPELL NAME 12
+FieldNameAlt: SPELL NAME [12]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SPELL NAME 11
+FieldNameAlt: SPELL NAME [11]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SlotsRemaining 26
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SlotsTotal 191
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SPELL NAME 10
+FieldNameAlt: SPELL NAME [10]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SPELL NAME 9
+FieldNameAlt: SPELL NAME [9]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 9_10
+FieldNameAlt: [9]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 8_10
+FieldNameAlt: [8]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 7_10
+FieldNameAlt: [7]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 6_10
+FieldNameAlt: [6]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 5_11
+FieldNameAlt: [5]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 4_12
+FieldNameAlt: [4]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 3_16
+FieldNameAlt: [3]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 2_16
+FieldNameAlt: [2]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 1_16
+FieldNameAlt: [1]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 9_9
+FieldNameAlt: [9]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 8_9
+FieldNameAlt: [8]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 7_9
+FieldNameAlt: [7]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 6_9
+FieldNameAlt: [6]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 5_10
+FieldNameAlt: [5]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 4_11
+FieldNameAlt: [4]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 3_15
+FieldNameAlt: [3]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 2_15
+FieldNameAlt: [2]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 1_15
+FieldNameAlt: [1]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 9_8
+FieldNameAlt: [9]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 8_8
+FieldNameAlt: [8]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 7_8
+FieldNameAlt: [7]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 6_8
+FieldNameAlt: [6]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 5_9
+FieldNameAlt: [5]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 4_10
+FieldNameAlt: [4]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 3_14
+FieldNameAlt: [3]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 2_14
+FieldNameAlt: [2]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 1_14
+FieldNameAlt: [1]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 13_7
+FieldNameAlt: [13]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 12_7
+FieldNameAlt: [12]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 11_7
+FieldNameAlt: [11]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 10_7
+FieldNameAlt: [10]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 9_7
+FieldNameAlt: [9]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 8_7
+FieldNameAlt: [8]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 7_7
+FieldNameAlt: [7]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 6_7
+FieldNameAlt: [6]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 5_8
+FieldNameAlt: [5]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SPELL NAME 8
+FieldNameAlt: SPELL NAME [8]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 4_9
+FieldNameAlt: [4]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SPELL NAME 7
+FieldNameAlt: SPELL NAME [7]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 3_13
+FieldNameAlt: [3]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SPELL NAME 6
+FieldNameAlt: SPELL NAME [6]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 2_13
+FieldNameAlt: [2]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SPELL NAME 5
+FieldNameAlt: SPELL NAME [5]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 1_13
+FieldNameAlt: [1]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 13_6
+FieldNameAlt: [13]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 12_6
+FieldNameAlt: [12]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 11_6
+FieldNameAlt: [11]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 10_6
+FieldNameAlt: [10]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 9_6
+FieldNameAlt: [9]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 8_6
+FieldNameAlt: [8]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 7_6
+FieldNameAlt: [7]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 6_6
+FieldNameAlt: [6]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 5_7
+FieldNameAlt: [5]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 4_8
+FieldNameAlt: [4]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 3_12
+FieldNameAlt: [3]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 2_12
+FieldNameAlt: [2]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 13_5
+FieldNameAlt: [13]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 12_5
+FieldNameAlt: [12]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 11_5
+FieldNameAlt: [11]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 10_5
+FieldNameAlt: [10]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 9_5
+FieldNameAlt: [9]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 8_5
+FieldNameAlt: [8]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 7_5
+FieldNameAlt: [7]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 6_5
+FieldNameAlt: [6]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 5_6
+FieldNameAlt: [5]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 4_7
+FieldNameAlt: [4]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 3_11
+FieldNameAlt: [3]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 2_11
+FieldNameAlt: [2]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SPELL NAME 4
+FieldNameAlt: SPELL NAME [4]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SPELL NAME 3
+FieldNameAlt: SPELL NAME [3]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SlotsRemaining 22
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SlotsTotal 22
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SPELL NAME 2
+FieldNameAlt: SPELL NAME [2]
+FieldFlags: 0
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SPELL NAME 1
+FieldNameAlt: SPELL NAME [1]
+FieldFlags: 0
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SPELL NAME 111
+FieldNameAlt: SPELL NAME [11]
+FieldFlags: 0
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SlotsRemaining 25
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SlotsTotal 25
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: Check Box 3019
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 3018
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 3017
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 301600
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 301500
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 301400
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 301300
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 301200
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 301100
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 301000
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30900
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 25100
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 2510
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30199
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30189
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30179
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30169
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30159
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30149
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30139
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30129
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30119
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30109
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 3099
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 25111
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 251011
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: SlotsRemaining 19
+FieldFlags: 12582912
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SlotsTotal 19
+FieldFlags: 12582912
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: Check Box 30163
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30153
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30143
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30133
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30123
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30113
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 30103
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 3093
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Check Box 2513
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Yes
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: 0 8
+FieldNameAlt: 0 [8]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 0 7
+FieldNameAlt: 0 [7]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 0 6
+FieldNameAlt: 0 [6]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 0 5
+FieldNameAlt: 0 [5]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 0 4
+FieldNameAlt: 0 [4]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 0 3
+FieldNameAlt: 0 [3]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 0 2
+FieldNameAlt: 0 [2]
+FieldFlags: 0
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 0 1
+FieldNameAlt: 0 [1]
+FieldFlags: 0
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SlotsRemaining 24
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SlotsTotal 24
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SlotsRemaining 21
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SlotsTotal 21
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellcastingAbility 2
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Spellcasting Class 2
+FieldFlags: 8388608
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellSaveDC  21
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellAtkBonus 21
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Testo2
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Testo3
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Testo6
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Fazione
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Tratti car
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Ideali1
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: LEgami1
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: DIfetti1
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Nemici1
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 10
+FieldNameAlt: 10
+FieldFlags: 1
+FieldValue: 10
+FieldValueDefault: 10
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Talenti1
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: 1_12
+FieldNameAlt: [1]
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: CP
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: eq2
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq3
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq4
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq5
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq6
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq7
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq8
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq9
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq10
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq11
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq13
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq12
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq14
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq15
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq16
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq17
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq18
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq19
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq20
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq21
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq22
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq23
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq24
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq25
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: PesoMassimo
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: eq27
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq28
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq29
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq30
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq31
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq32
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq33
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq34
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq35
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq36
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq37
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq38
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq39
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq40
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq41
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq42
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq43
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq44
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq45
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq46
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: eq47
+FieldNameAlt: [1]
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Peso2
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso3
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso4
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso5
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso6
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso7
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso8
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso9
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso10
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso11
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso12
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso13
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso14
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso15
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso16
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso18
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso19
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso20
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso21
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso22
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso23
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso24
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso25
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso26
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso28
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso29
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso30
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso31
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso32
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso33
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso34
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso35
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso36
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso37
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso38
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso39
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso40
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso41
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso42
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso43
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso44
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso45
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso46
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso47
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: Peso48
+FieldFlags: 12582912
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: PesoTrasportabile
+FieldFlags: 8388609
+FieldValue: 0
+FieldJustification: Center

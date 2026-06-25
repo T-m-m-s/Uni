@@ -1,0 +1,874 @@
+{
+  "spells": [
+    {
+      "name": "Acid Splash",
+      "slug": "acid-splash",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Evocation",
+      "classes": ["Artificer", "Sorcerer", "Wizard"],
+      "casting_time": "Action",
+      "range": "60 feet",
+      "duration": "Instantaneous",
+      "description": "You create an acidic bubble at a point within range, where it explodes in a 5-foot-radius Sphere. Each creature in that Sphere must succeed on a Dexterity saving throw or take 1d6 Acid damage.",
+      "save": "Dexterity",
+      "damage": {
+        "type": "Acid",
+        "dice": "1d6"
+      },
+      "area": "5-foot-radius Sphere",
+      "cantrip_upgrade": {
+        "5": "2d6",
+        "11": "3d6",
+        "17": "4d6"
+      }
+    },
+    {
+      "name": "Blade Ward",
+      "slug": "blade-ward",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Abjuration",
+      "classes": ["Bard", "Sorcerer", "Warlock", "Wizard"],
+      "casting_time": "Action",
+      "range": "Self",
+      "duration": "Concentration, up to 1 minute",
+      "description": "Whenever a creature makes an attack roll against you before the spell ends, the attacker subtracts 1d4 from the attack roll."
+    },
+    {
+      "name": "Chill Touch",
+      "slug": "chill-touch",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Necromancy",
+      "classes": ["Sorcerer", "Warlock", "Wizard"],
+      "casting_time": "Action",
+      "range": "Touch",
+      "duration": "Instantaneous",
+      "description": "Channeling the chill of the grave, make a melee spell attack against a target within reach. On a hit, the target takes 1d10 Necrotic damage, and it can't regain Hit Points until the end of your next turn.",
+      "damage": {
+        "type": "Necrotic",
+        "dice": "1d10"
+      },
+      "cantrip_upgrade": {
+        "5": "2d10",
+        "11": "3d10",
+        "17": "4d10"
+      }
+    },
+    {
+      "name": "Dancing Lights",
+      "slug": "dancing-lights",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Illusion",
+      "classes": ["Artificer", "Bard", "Sorcerer", "Wizard"],
+      "casting_time": "Action",
+      "range": "120 feet",
+      "duration": "Concentration, up to 1 minute",
+      "description": "You create up to four torch-size lights within range, making them appear as torches, lanterns, or glowing orbs that hover for the duration. Alternatively, you combine the four lights into one glowing Medium form that is vaguely humanlike. Whichever form you choose, each light sheds Dim Light in a 10-foot radius.\n\nAs a Bonus Action, you can move the lights up to 60 feet to a space within range. A light must be within 20 feet of another light created by this spell, and a light vanishes if it exceeds the spell's range."
+    },
+    {
+      "name": "Druidcraft",
+      "slug": "druidcraft",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": ["Druid"],
+      "casting_time": "Action",
+      "range": "30 feet",
+      "duration": "Instantaneous",
+      "description": "Whispering to the spirits of nature, you create one of the following effects within range:\n- **Weather Sensor:** You create a Tiny, harmless sensory effect that predicts what the weather will be at your location for the next 24 hours. This effect persists for 1 round.\n- **Bloom:** You instantly make a flower blossom, a seed pod open, or a leaf bud bloom.\n- **Sensory Effect:** You create a harmless sensory effect in a 5-foot Cube.\n- **Fire Play:** You light or snuff out a candle, a torch, or a campfire."
+    },
+    {
+      "name": "Eldritch Blast",
+      "slug": "eldritch-blast",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Evocation",
+      "classes": ["Warlock"],
+      "casting_time": "Action",
+      "range": "120 feet",
+      "duration": "Instantaneous",
+      "description": "You hurl a beam of crackling energy. Make a ranged spell attack against one creature or object in range. On a hit, the target takes 1d10 Force damage.",
+      "damage": {
+        "type": "Force",
+        "dice": "1d10"
+      },
+      "cantrip_upgrade": {
+        "5": "Two beams",
+        "11": "Three beams",
+        "17": "Four beams",
+        "note": "Make a separate attack roll for each beam."
+      }
+    },
+    {
+      "name": "Elementalism",
+      "slug": "elementalism",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": ["Artificer", "Druid", "Sorcerer", "Wizard"],
+      "casting_time": "Action",
+      "range": "30 feet",
+      "duration": "Instantaneous",
+      "description": "You exert control over the elements, creating one of the following effects within range:\n- **Beckon Air:** Create a breeze to ripple cloth or close open doors in a 5-foot Cube.\n- **Beckon Earth:** Shroud surfaces with dust/sand or write in dirt in a 5-foot square.\n- **Beckon Fire:** Create harmless embers and scented smoke in a 5-foot Cube; can light candles/torches.\n- **Beckon Water:** Create a cool mist (5ft Cube) or 1 cup of clean water.\n- **Sculpt Element:** Shape dirt, sand, fire, smoke, mist, or water in a 1-foot Cube for 1 hour."
+    },
+    {
+      "name": "Fire Bolt",
+      "slug": "fire-bolt",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Evocation",
+      "classes": ["Artificer", "Sorcerer", "Wizard"],
+      "casting_time": "Action",
+      "range": "120 feet",
+      "duration": "Instantaneous",
+      "description": "You hurl a mote of fire. Make a ranged spell attack against a target. On a hit, the target takes 1d10 Fire damage. Flammable objects not worn/carried start burning.",
+      "damage": {
+        "type": "Fire",
+        "dice": "1d10"
+      },
+      "cantrip_upgrade": {
+        "5": "2d10",
+        "11": "3d10",
+        "17": "4d10"
+      }
+    },
+    {
+      "name": "Friends",
+      "slug": "friends",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Enchantment",
+      "classes": ["Bard", "Sorcerer", "Warlock", "Wizard"],
+      "casting_time": "Action",
+      "range": "10 feet",
+      "duration": "Concentration, up to 1 minute",
+      "description": "Emanate friendship toward one creature. They make a Wisdom save or are Charmed. Non-humanoids, enemies, or those cast upon in last 24h auto-succeed. Ends if you damage anyone or force a save. Target knows they were Charmed.",
+      "save": "Wisdom"
+    },
+    {
+      "name": "Guidance",
+      "slug": "guidance",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Divination",
+      "classes": ["Artificer", "Cleric", "Druid"],
+      "casting_time": "Action",
+      "range": "Touch",
+      "duration": "Concentration, up to 1 minute",
+      "description": "Touch a willing creature and choose a skill. They add 1d4 to any ability check using that skill until the spell ends."
+    },
+    {
+      "name": "Light",
+      "slug": "light",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Evocation",
+      "classes": ["Artificer", "Bard", "Cleric", "Sorcerer", "Wizard"],
+      "casting_time": "Action",
+      "range": "Touch",
+      "duration": "1 hour",
+      "description": "Touch a Large or smaller object not worn/carried. It sheds Bright Light (20ft) and Dim Light (+20ft). Can be colored. Opaque covering blocks light. Replaces previous casting."
+    },
+    {
+      "name": "Mage Hand",
+      "slug": "mage-hand",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Conjuration",
+      "classes": ["Artificer", "Bard", "Sorcerer", "Warlock", "Wizard"],
+      "casting_time": "Action",
+      "range": "30 feet",
+      "duration": "1 minute",
+      "description": "A spectral floating hand appears at a point you choose. Use it to manipulate objects, open unlocked doors/containers, or pour vials. As a Magic action, control it again and move it 30ft. It vanishes if >30ft away. Cannot attack or carry >10 lbs."
+    },
+    {
+      "name": "Mending",
+      "slug": "mending",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": ["Bard", "Cleric", "Druid", "Sorcerer", "Wizard"],
+      "casting_time": "1 minute",
+      "range": "Touch",
+      "duration": "Instantaneous",
+      "description": "Repair a single break or tear in an object (up to 1ft in any dimension). Can physically repair magic items but doesn't restore their magic."
+    },
+    {
+      "name": "Message",
+      "slug": "message",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": ["Artificer", "Bard", "Druid", "Sorcerer", "Wizard"],
+      "casting_time": "Action",
+      "range": "120 feet",
+      "duration": "1 round",
+      "description": "Point at a creature and whisper a message. They (and only they) hear it and can reply in a whisper. Can cast through solid objects if familiar (blocked by 1ft stone/metal/wood or lead)."
+    },
+    {
+      "name": "Mind Sliver",
+      "slug": "mind-sliver",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Enchantment",
+      "classes": ["Sorcerer", "Warlock", "Wizard"],
+      "casting_time": "Action",
+      "range": "60 feet",
+      "duration": "1 round",
+      "description": "Force an Intelligence save. Fail: 1d6 Psychic damage and subtract 1d4 from their next saving throw before the end of your next turn.",
+      "save": "Intelligence",
+      "damage": {
+        "type": "Psychic",
+        "dice": "1d6"
+      },
+      "cantrip_upgrade": {
+        "5": "2d6",
+        "11": "3d6",
+        "17": "4d6"
+      }
+    },
+    {
+      "name": "Minor Illusion",
+      "slug": "minor-illusion",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Illusion",
+      "classes": ["Bard", "Sorcerer", "Warlock", "Wizard"],
+      "casting_time": "Action",
+      "range": "30 feet",
+      "duration": "1 minute",
+      "description": "Create a sound or an image of an object (5ft Cube). Investigation vs spell DC reveals it as an illusion. Sounds range from whispers to screams. Images can't create sensory effects; physical interaction reveals them."
+    },
+    {
+      "name": "Poison Spray",
+      "slug": "poison-spray",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Necromancy",
+      "classes": ["Artificer", "Druid", "Sorcerer", "Warlock", "Wizard"],
+      "casting_time": "Action",
+      "range": "30 feet",
+      "duration": "Instantaneous",
+      "description": "You spray toxic mist at a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d12 Poison damage.",
+      "damage": {
+        "type": "Poison",
+        "dice": "1d12"
+      },
+      "cantrip_upgrade": {
+        "5": "2d12",
+        "11": "3d12",
+        "17": "4d12"
+      }
+    },
+    {
+      "name": "Prestidigitation",
+      "slug": "prestidigitation",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": ["Artificer", "Bard", "Sorcerer", "Warlock", "Wizard"],
+      "casting_time": "Action",
+      "range": "10 feet",
+      "duration": "Up to 1 hour",
+      "description": "You create a magical effect within range. Choose the effect from the options below. If you cast this spell multiple times, you can have up to three of its non-instantaneous effects active at a time:\n- **Sensory Effect:** You create an instantaneous, harmless sensory effect.\n- **Fire Play:** You instantaneously light or snuff out a candle, a torch, or a small campfire.\n- **Clean or Soil:** You instantaneously clean or soil an object no larger than 1 cubic foot.\n- **Minor Sensation:** You chill, warm, or flavor up to 1 cubic foot of nonliving material for 1 hour.\n- **Magic Mark:** You make a color, a small mark, or a symbol appear on an object or a surface for 1 hour.\n- **Minor Creation:** You create a nonmagical trinket or an illusory image that can fit in your hand. It lasts until the end of your next turn."
+    },
+    {
+      "name": "Produce Flame",
+      "slug": "produce-flame",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Conjuration",
+      "classes": ["Druid"],
+      "casting_time": "Bonus Action",
+      "range": "Self",
+      "duration": "10 minutes",
+      "description": "A flickering flame appears in your hand. While there, it sheds Bright Light in a 20-foot radius and Dim Light for an additional 20 feet. Until the spell ends, you can take a Magic action to hurl fire at a creature or object within 60 feet. Make a ranged spell attack. On a hit, the target takes 1d8 Fire damage.",
+      "damage": {
+        "type": "Fire",
+        "dice": "1d8"
+      },
+      "cantrip_upgrade": {
+        "5": "2d8",
+        "11": "3d8",
+        "17": "4d8"
+      }
+    },
+    {
+      "name": "Ray of Frost",
+      "slug": "ray-of-frost",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Evocation",
+      "classes": ["Artificer", "Sorcerer", "Wizard"],
+      "casting_time": "Action",
+      "range": "60 feet",
+      "duration": "Instantaneous",
+      "description": "A frigid beam of blue-white light streaks toward a creature. Make a ranged spell attack. On a hit, it takes 1d8 Cold damage, and its Speed is reduced by 10 feet until the start of your next turn.",
+      "damage": {
+        "type": "Cold",
+        "dice": "1d8"
+      },
+      "cantrip_upgrade": {
+        "5": "2d8",
+        "11": "3d8",
+        "17": "4d8"
+      }
+    },
+    {
+      "name": "Resistance",
+      "slug": "resistance",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Abjuration",
+      "classes": ["Artificer", "Cleric", "Druid"],
+      "casting_time": "Action",
+      "range": "Touch",
+      "duration": "Concentration, up to 1 minute",
+      "description": "You touch a willing creature and choose a damage type: Acid, Bludgeoning, Cold, Fire, Lightning, Necrotic, Piercing, Poison, Radiant, Slashing, or Thunder. When the creature takes damage of the chosen type before the spell ends, the creature reduces the total damage taken by 1d4. A creature can benefit from this spell only once per turn."
+    },
+    {
+      "name": "Sacred Flame",
+      "slug": "sacred-flame",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Evocation",
+      "classes": ["Cleric"],
+      "casting_time": "Action",
+      "range": "60 feet",
+      "duration": "Instantaneous",
+      "description": "Flame-like radiance descends on a creature. The target must succeed on a Dexterity saving throw or take 1d8 Radiant damage. The target gains no benefit from Half Cover or Three-Quarters Cover for this save.",
+      "save": "Dexterity",
+      "damage": {
+        "type": "Radiant",
+        "dice": "1d8"
+      },
+      "cantrip_upgrade": {
+        "5": "2d8",
+        "11": "3d8",
+        "17": "4d8"
+      }
+    },
+    {
+      "name": "Shillelagh",
+      "slug": "shillelagh",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": ["Druid"],
+      "casting_time": "Bonus Action",
+      "range": "Self",
+      "duration": "1 minute",
+      "description": "A Club or Quarterstaff you are holding is imbued with nature’s power. For the duration, you can use your spellcasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon’s damage die becomes a d8. If the attack deals damage, it can be Force damage or the weapon’s normal damage type (your choice).",
+      "damage": {
+        "type": "Force or Normal",
+        "dice": "1d8"
+      },
+      "cantrip_upgrade": {
+        "5": "1d10",
+        "11": "1d12",
+        "17": "2d6"
+      }
+    },
+    {
+      "name": "Shocking Grasp",
+      "slug": "shocking-grasp",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Evocation",
+      "classes": ["Artificer", "Sorcerer", "Wizard"],
+      "casting_time": "Action",
+      "range": "Touch",
+      "duration": "Instantaneous",
+      "description": "Lightning springs from you to a creature. Make a melee spell attack against the target. On a hit, the target takes 1d8 Lightning damage, and it can’t make Opportunity Attacks until the start of its next turn.",
+      "damage": {
+        "type": "Lightning",
+        "dice": "1d8"
+      },
+      "cantrip_upgrade": {
+        "5": "2d8",
+        "11": "3d8",
+        "17": "4d8"
+      }
+    },
+    {
+      "name": "Sorcerous Burst",
+      "slug": "sorcerous-burst",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Evocation",
+      "classes": ["Sorcerer"],
+      "casting_time": "Action",
+      "range": "120 feet",
+      "duration": "Instantaneous",
+      "description": "Make a ranged spell attack. On a hit, deal 1d8 damage of a chosen type (Acid, Cold, Fire, Lightning, Poison, Psychic, or Thunder). If you roll an 8, roll another d8 and add it (max extra dice = spellcasting ability modifier).",
+      "damage": {
+        "type": "Choice",
+        "dice": "1d8"
+      },
+      "cantrip_upgrade": {
+        "5": "2d8",
+        "11": "3d8",
+        "17": "4d8"
+      }
+    },
+    {
+      "name": "Spare the Dying",
+      "slug": "spare-the-dying",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Necromancy",
+      "classes": ["Artificer", "Cleric", "Druid"],
+      "casting_time": "Action",
+      "range": "15 feet",
+      "duration": "Instantaneous",
+      "description": "Touch a creature with 0 HP that isn't dead. It becomes Stable.",
+      "cantrip_upgrade": {
+        "5": "30 feet",
+        "11": "60 feet",
+        "17": "120 feet",
+        "note": "Range increase."
+      }
+    },
+    {
+      "name": "Starry Wisp",
+      "slug": "starry-wisp",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Evocation",
+      "classes": ["Bard", "Druid"],
+      "casting_time": "Action",
+      "range": "60 feet",
+      "duration": "Instantaneous",
+      "description": "Make a ranged spell attack. On a hit, deal 1d8 Radiant damage. Until the end of your next turn, the target emits 10ft Dim Light and can't benefit from being Invisible.",
+      "damage": {
+        "type": "Radiant",
+        "dice": "1d8"
+      },
+      "cantrip_upgrade": {
+        "5": "2d8",
+        "11": "3d8",
+        "17": "4d8"
+      }
+    },
+    {
+      "name": "Thaumaturgy",
+      "slug": "thaumaturgy",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": ["Cleric"],
+      "casting_time": "Action",
+      "range": "30 feet",
+      "duration": "Up to 1 minute",
+      "description": "Create a minor wonder: alter eye appearance, boom voice (Adv on Intimidation), flicker/dim/brighten/color flames, slam/open unlocked doors/windows, create instantaneous sounds, or cause ground tremors. Can have 3 effects active."
+    },
+    {
+      "name": "Thorn Whip",
+      "slug": "thorn-whip",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": ["Artificer", "Druid"],
+      "casting_time": "Action",
+      "range": "30 feet",
+      "duration": "Instantaneous",
+      "description": "Make a melee spell attack. On a hit, deal 1d6 Piercing damage and pull a Large or smaller target 10ft closer to you.",
+      "damage": {
+        "type": "Piercing",
+        "dice": "1d6"
+      },
+      "cantrip_upgrade": {
+        "5": "2d6",
+        "11": "3d6",
+        "17": "4d6"
+      }
+    },
+    {
+      "name": "Thunderclap",
+      "slug": "thunderclap",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Evocation",
+      "classes": ["Artificer", "Bard", "Druid", "Sorcerer", "Warlock", "Wizard"],
+      "casting_time": "Action",
+      "range": "Self",
+      "duration": "Instantaneous",
+      "description": "Each creature in a 5-foot Emanation must make a Constitution save or take 1d6 Thunder damage. Audible up to 100ft.",
+      "save": "Constitution",
+      "damage": {
+        "type": "Thunder",
+        "dice": "1d6"
+      },
+      "area": "5-foot Emanation",
+      "cantrip_upgrade": {
+        "5": "2d6",
+        "11": "3d6",
+        "17": "4d6"
+      }
+    },
+    {
+      "name": "Toll the Dead",
+      "slug": "toll-the-dead",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Necromancy",
+      "classes": ["Cleric", "Warlock", "Wizard"],
+      "casting_time": "Action",
+      "range": "60 feet",
+      "duration": "Instantaneous",
+      "description": "Target makes a Wisdom save or takes 1d8 Necrotic damage, or 1d12 if it's missing HP.",
+      "save": "Wisdom",
+      "damage": {
+        "type": "Necrotic",
+        "dice": "1d8/1d12"
+      },
+      "cantrip_upgrade": {
+        "5": "2d8/2d12",
+        "11": "3d8/3d12",
+        "17": "4d8/4d12"
+      }
+    },
+    {
+      "name": "True Strike",
+      "slug": "true-strike",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Divination",
+      "classes": ["Artificer", "Bard", "Sorcerer", "Warlock", "Wizard"],
+      "casting_time": "Action",
+      "range": "Self",
+      "duration": "Instantaneous",
+      "description": "Make one attack with a weapon. Use your spellcasting ability for attack/damage rolls. Deals normal or Radiant damage. Gain extra Radiant damage at higher levels.",
+      "damage": {
+        "type": "Radiant or Normal",
+        "dice": "Weapon"
+      },
+      "cantrip_upgrade": {
+        "5": "+1d6 Radiant",
+        "11": "+2d6 Radiant",
+        "17": "+3d6 Radiant"
+      }
+    },
+    {
+      "name": "Vicious Mockery",
+      "slug": "vicious-mockery",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Enchantment",
+      "classes": ["Bard"],
+      "casting_time": "Action",
+      "range": "60 feet",
+      "duration": "Instantaneous",
+      "description": "Force a Wisdom save. Fail: 1d6 Psychic damage and Disadvantage on the next attack roll it makes before the end of your next turn.",
+      "save": "Wisdom",
+      "damage": {
+        "type": "Psychic",
+        "dice": "1d6"
+      },
+      "cantrip_upgrade": {
+        "5": "2d6",
+        "11": "3d6",
+        "17": "4d6"
+      }
+    },
+    {
+      "name": "Word of Radiance",
+      "slug": "word-of-radiance",
+      "source": "PHB 2024",
+      "level": 0,
+      "school": "Evocation",
+      "classes": ["Cleric"],
+      "casting_time": "Action",
+      "range": "Self",
+      "duration": "Instantaneous",
+      "description": "Each chosen creature in a 5-foot Emanation must make a Constitution save or take 1d6 Radiant damage.",
+      "save": "Constitution",
+      "damage": {
+        "type": "Radiant",
+        "dice": "1d6"
+      },
+      "area": "5-foot Emanation",
+      "cantrip_upgrade": {
+        "5": "2d6",
+        "11": "3d6",
+        "17": "4d6"
+      }
+    },
+    {
+      "name": "Booming Blade",
+      "slug": "booming-blade",
+      "source": "Tasha's",
+      "level": 0,
+      "school": "Evocation",
+      "classes": ["Artificer", "Sorcerer", "Warlock", "Wizard"],
+      "casting_time": "Action",
+      "range": "Self (5-foot radius)",
+      "duration": "1 round",
+      "description": "Brandish weapon and make melee attack. On hit, normal effects + sheathed in booming energy. If target willingly moves 5ft before your next turn, it takes 1d8 Thunder damage.",
+      "damage": {
+        "type": "Thunder",
+        "dice": "1d8"
+      },
+      "cantrip_upgrade": {
+        "5": "Attack +1d8, Move +2d8",
+        "11": "Attack +2d8, Move +3d8",
+        "17": "Attack +3d8, Move +4d8"
+      }
+    },
+    {
+      "name": "Control Flames",
+      "slug": "control-flames",
+      "source": "Xanathar's",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": ["Druid", "Sorcerer", "Wizard"],
+      "casting_time": "Action",
+      "range": "60 feet",
+      "duration": "Instantaneous or 1 hour",
+      "description": "Manipulate a 5ft Cube flame: expand it 5ft (needs fuel), extinguish it, change light area/color (1h), or create animated shapes (1h). Max 3 non-instantaneous effects."
+    },
+    {
+      "name": "Create Bonfire",
+      "slug": "create-bonfire",
+      "source": "Xanathar's",
+      "level": 0,
+      "school": "Conjuration",
+      "classes": ["Artificer", "Druid", "Sorcerer", "Warlock", "Wizard"],
+      "casting_time": "Action",
+      "range": "60 feet",
+      "duration": "Concentration, up to 1 minute",
+      "description": "Create a bonfire in a 5ft Cube. Creatures in or entering area make a Dex save or take 1d8 Fire damage. Ignites objects.",
+      "save": "Dexterity",
+      "damage": {
+        "type": "Fire",
+        "dice": "1d8"
+      },
+      "area": "5-foot Cube",
+      "cantrip_upgrade": {
+        "5": "2d8",
+        "11": "3d8",
+        "17": "4d8"
+      }
+    },
+    {
+      "name": "Encode Thoughts",
+      "slug": "encode-thoughts",
+      "source": "Ravnica",
+      "level": 0,
+      "school": "Enchantment",
+      "classes": ["Wizard"],
+      "casting_time": "Action",
+      "range": "Self",
+      "duration": "8 hours",
+      "description": "Transform a memory/message into a Tiny, weightless thought strand (AC 10, 1 HP). While holding it, use an action to receive its content. Can be read by Detect Thoughts."
+    },
+    {
+      "name": "Frostbite",
+      "slug": "frostbite",
+      "source": "Xanathar's",
+      "level": 0,
+      "school": "Evocation",
+      "classes": ["Artificer", "Druid", "Sorcerer", "Warlock", "Wizard"],
+      "casting_time": "Action",
+      "range": "60 feet",
+      "duration": "Instantaneous",
+      "description": "Force a Constitution save. Fail: 1d6 Cold damage and Disadvantage on its next weapon attack roll before the end of its next turn.",
+      "save": "Constitution",
+      "damage": {
+        "type": "Cold",
+        "dice": "1d6"
+      },
+      "cantrip_upgrade": {
+        "5": "2d6",
+        "11": "3d6",
+        "17": "4d6"
+      }
+    },
+    {
+      "name": "Green-Flame Blade",
+      "slug": "green-flame-blade",
+      "source": "Tasha's",
+      "level": 0,
+      "school": "Evocation",
+      "classes": ["Artificer", "Sorcerer", "Warlock", "Wizard"],
+      "casting_time": "Action",
+      "range": "Self (5-foot radius)",
+      "duration": "Instantaneous",
+      "description": "Brandish weapon and make melee attack. On hit, normal effects + green fire leaps to a different creature within 5ft of target, dealing Fire damage equal to spellcasting modifier.",
+      "damage": {
+        "type": "Fire",
+        "dice": "Mod"
+      },
+      "cantrip_upgrade": {
+        "5": "Attack +1d8, Leap +1d8+Mod",
+        "11": "Attack +2d8, Leap +2d8+Mod",
+        "17": "Attack +3d8, Leap +3d8+Mod"
+      }
+    },
+    {
+      "name": "Gust",
+      "slug": "gust",
+      "source": "Xanathar's",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": ["Druid", "Sorcerer", "Wizard"],
+      "casting_time": "Action",
+      "range": "30 feet",
+      "duration": "Instantaneous",
+      "description": "Create air effect: Medium- creature makes Str save or pushed 5ft; move 5lb object 10ft; or create harmless sensory effect (rustle leaves, slam shutters)."
+    },
+    {
+      "name": "Infestation",
+      "slug": "infestation",
+      "source": "Xanathar's",
+      "level": 0,
+      "school": "Conjuration",
+      "classes": ["Druid", "Sorcerer", "Warlock", "Wizard"],
+      "casting_time": "Action",
+      "range": "30 feet",
+      "duration": "Instantaneous",
+      "description": "Target makes a Constitution save. Fail: 1d6 Poison damage and moves 5ft in random direction (d4: N/S/E/W). No Opportunity Attacks from this movement.",
+      "save": "Constitution",
+      "damage": {
+        "type": "Poison",
+        "dice": "1d6"
+      },
+      "cantrip_upgrade": {
+        "5": "2d6",
+        "11": "3d6",
+        "17": "4d6"
+      }
+    },
+    {
+      "name": "Lightning Lure",
+      "slug": "lightning-lure",
+      "source": "Tasha's",
+      "level": 0,
+      "school": "Evocation",
+      "classes": ["Artificer", "Sorcerer", "Warlock", "Wizard"],
+      "casting_time": "Action",
+      "range": "Self (15-foot radius)",
+      "duration": "Instantaneous",
+      "description": "Force a Strength save on creature within 15ft. Fail: pulled 10ft toward you; if then within 5ft, takes 1d8 Lightning damage.",
+      "save": "Strength",
+      "damage": {
+        "type": "Lightning",
+        "dice": "1d8"
+      },
+      "cantrip_upgrade": {
+        "5": "2d8",
+        "11": "3d8",
+        "17": "4d8"
+      }
+    },
+    {
+      "name": "Magic Stone",
+      "slug": "magic-stone",
+      "source": "Xanathar's",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": ["Artificer", "Druid", "Warlock"],
+      "casting_time": "Bonus Action",
+      "range": "Touch",
+      "duration": "1 minute",
+      "description": "Imbue 1-3 pebbles. Ranged spell attack (thrown/sling) for 1d6 + spellcasting modifier Bludgeoning damage. If another attacks, they use your modifier. Stone loses magic on hit/miss.",
+      "damage": {
+        "type": "Bludgeoning",
+        "dice": "1d6+Mod"
+      }
+    },
+    {
+      "name": "Primal Savagery",
+      "slug": "primal-savagery",
+      "source": "Xanathar's",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": ["Druid"],
+      "casting_time": "Action",
+      "range": "Self",
+      "duration": "Instantaneous",
+      "description": "Sharpen teeth/nails and make a melee spell attack within 5ft: 1d10 Acid damage. Revert immediately after.",
+      "damage": {
+        "type": "Acid",
+        "dice": "1d10"
+      },
+      "cantrip_upgrade": {
+        "5": "2d10",
+        "11": "3d10",
+        "17": "4d10"
+      }
+    },
+    {
+      "name": "Sapping Sting",
+      "slug": "sapping-sting",
+      "source": "Wildemount",
+      "level": 0,
+      "school": "Necromancy",
+      "classes": ["Wizard"],
+      "casting_time": "Action",
+      "range": "30 feet",
+      "duration": "Instantaneous",
+      "description": "Target makes a Constitution save. Fail: 1d4 Necrotic damage and falls Prone.",
+      "save": "Constitution",
+      "damage": {
+        "type": "Necrotic",
+        "dice": "1d4"
+      },
+      "cantrip_upgrade": {
+        "5": "2d4",
+        "11": "3d4",
+        "17": "4d4"
+      }
+    },
+    {
+      "name": "Shape Water",
+      "slug": "shape-water",
+      "source": "Xanathar's",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": ["Druid", "Sorcerer", "Wizard"],
+      "casting_time": "Action",
+      "range": "30 feet",
+      "duration": "Instantaneous or 1 hour",
+      "description": "Manipulate a 5ft Cube water: change flow/direction (5ft), form simple shapes/animate (1h), change color/opacity (1h), or freeze (if no creatures; 1h). Max 2 non-instantaneous effects."
+    },
+    {
+      "name": "Sword Burst",
+      "slug": "sword-burst",
+      "source": "Tasha's",
+      "level": 0,
+      "school": "Conjuration",
+      "classes": ["Artificer", "Sorcerer", "Warlock", "Wizard"],
+      "casting_time": "Action",
+      "range": "Self (5-foot radius)",
+      "duration": "Instantaneous",
+      "description": "Creatures within 5ft make a Dexterity save or take 1d6 Force damage.",
+      "save": "Dexterity",
+      "damage": {
+        "type": "Force",
+        "dice": "1d6"
+      },
+      "area": "5-foot radius",
+      "cantrip_upgrade": {
+        "5": "2d6",
+        "11": "3d6",
+        "17": "4d6"
+      }
+    },
+    {
+      "name": "Mold Earth",
+      "slug": "mold-earth",
+      "source": "Xanathar's",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": ["Druid", "Sorcerer", "Wizard"],
+      "casting_time": "Action",
+      "range": "30 feet",
+      "duration": "Instantaneous or 1 hour",
+      "description": "Manipulate 5ft Cube of dirt/stone: excavate loose earth (5ft away), create shapes/colors/patterns (1h), or turn ground into/from Difficult Terrain (1h). Max 2 non-instantaneous effects."
+    }
+  ]
+}

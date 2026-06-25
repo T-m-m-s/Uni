@@ -1,0 +1,6197 @@
+{
+  "spells": [
+    {
+      "name": "Abi-Dalzim\u2019s Horrid Wilting",
+      "slug": "abi-dalzims-horrid-wilting",
+      "level": 8,
+      "school": "Necromancy",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Absorb Elements",
+      "slug": "absorb-elements",
+      "level": 1,
+      "school": "Abjuration",
+      "classes": [
+        "Artificer",
+        "Druid",
+        "Ranger",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Acid Splash",
+      "slug": "acid-splash",
+      "level": 0,
+      "school": "Evocation",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Aganazzar's Scorcher",
+      "slug": "aganazzars-scorcher",
+      "level": 2,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Elemental Evil"
+    },
+    {
+      "name": "Aid",
+      "slug": "aid",
+      "level": 2,
+      "school": "Abjuration",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Cleric",
+        "Druid",
+        "Paladin",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Air Bubble",
+      "slug": "air-bubble",
+      "level": 2,
+      "school": "Conjuration",
+      "classes": [
+        "Artificer",
+        "Druid",
+        "Ranger",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Astral Adventurer's Guide"
+    },
+    {
+      "name": "Alarm",
+      "slug": "alarm",
+      "level": 1,
+      "school": "Abjuration",
+      "classes": [
+        "Artificer",
+        "Ranger",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Alter Self",
+      "slug": "alter-self",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Animal Friendship",
+      "slug": "animal-friendship",
+      "level": 1,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Animal Messenger",
+      "slug": "animal-messenger",
+      "level": 2,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Animal Shapes",
+      "slug": "animal-shapes",
+      "level": 8,
+      "school": "Transmutation",
+      "classes": [
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Animate Dead",
+      "slug": "animate-dead",
+      "level": 3,
+      "school": "Necromancy",
+      "classes": [
+        "Cleric",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Animate Objects",
+      "slug": "animate-objects",
+      "level": 5,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Antilife Shell",
+      "slug": "antilife-shell",
+      "level": 5,
+      "school": "Abjuration",
+      "classes": [
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Antimagic Field",
+      "slug": "antimagic-field",
+      "level": 8,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Antipathy/Sympathy",
+      "slug": "antipathy-sympathy",
+      "level": 8,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Druid",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Arcane Eye",
+      "slug": "arcane-eye",
+      "level": 4,
+      "school": "Divination",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Arcane Gate",
+      "slug": "arcane-gate",
+      "level": 6,
+      "school": "Conjuration",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Arcane Lock",
+      "slug": "arcane-lock",
+      "level": 2,
+      "school": "Abjuration",
+      "classes": [
+        "Artificer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Arcane Vigor",
+      "slug": "arcane-vigor",
+      "level": 2,
+      "school": "Abjuration",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Armor of Agathys",
+      "slug": "armor-of-agathys",
+      "level": 1,
+      "school": "Abjuration",
+      "classes": [
+        "Warlock"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Arms of Hadar",
+      "slug": "arms-of-hadar",
+      "level": 1,
+      "school": "Conjuration",
+      "classes": [
+        "Warlock"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Ashardalon's Stride",
+      "slug": "ashardalons-stride",
+      "level": 3,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Ranger",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Fizban's"
+    },
+    {
+      "name": "Astral Projection",
+      "slug": "astral-projection",
+      "level": 9,
+      "school": "Necromancy",
+      "classes": [
+        "Cleric",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Augury",
+      "slug": "augury",
+      "level": 2,
+      "school": "Divination",
+      "classes": [
+        "Cleric",
+        "Druid",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Aura of Life",
+      "slug": "aura-of-life",
+      "level": 4,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric",
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Aura of Purity",
+      "slug": "aura-of-purity",
+      "level": 4,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric",
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Aura of Vitality",
+      "slug": "aura-of-vitality",
+      "level": 3,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric",
+        "Druid",
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Awaken",
+      "slug": "awaken",
+      "level": 5,
+      "school": "Transmutation",
+      "classes": [
+        "Bard",
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Bane",
+      "slug": "bane",
+      "level": 1,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Warlock"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Banishing Smite",
+      "slug": "banishing-smite",
+      "level": 5,
+      "school": "Abjuration",
+      "classes": [
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Banishment",
+      "slug": "banishment",
+      "level": 4,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric",
+        "Paladin",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Barkskin",
+      "slug": "barkskin",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Beacon of Hope",
+      "slug": "beacon-of-hope",
+      "level": 3,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Beast Bond",
+      "slug": "beast-bond",
+      "level": 1,
+      "school": "Divination",
+      "classes": [
+        "Druid",
+        "Ranger"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Beast Sense",
+      "slug": "beast-sense",
+      "level": 2,
+      "school": "Divination",
+      "classes": [
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Befuddlement",
+      "slug": "befuddlement",
+      "level": 8,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Druid",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Bestow Curse",
+      "slug": "bestow-curse",
+      "level": 3,
+      "school": "Necromancy",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Bigby's Hand",
+      "slug": "bigbys-hand",
+      "level": 5,
+      "school": "Evocation",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Blade Barrier",
+      "slug": "blade-barrier",
+      "level": 6,
+      "school": "Evocation",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Blade Ward",
+      "slug": "blade-ward",
+      "level": 0,
+      "school": "Abjuration",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Blade of Disaster",
+      "slug": "blade-of-disaster",
+      "level": 9,
+      "school": "Conjuration",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Bless",
+      "slug": "bless",
+      "level": 1,
+      "school": "Enchantment",
+      "classes": [
+        "Cleric",
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Blight",
+      "slug": "blight",
+      "level": 4,
+      "school": "Necromancy",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Blinding Smite",
+      "slug": "blinding-smite",
+      "level": 3,
+      "school": "Evocation",
+      "classes": [
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Blindness/Deafness",
+      "slug": "blindness-deafness",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Blink",
+      "slug": "blink",
+      "level": 3,
+      "school": "Transmutation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Blur",
+      "slug": "blur",
+      "level": 2,
+      "school": "Illusion",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Bones of the Earth",
+      "slug": "bones-of-the-earth",
+      "level": 6,
+      "school": "Transmutation",
+      "classes": [
+        "Druid"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Booming Blade",
+      "slug": "booming-blade",
+      "level": 0,
+      "school": "Evocation",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Tasha's"
+    },
+    {
+      "name": "Borrowed Knowledge",
+      "slug": "borrowed-knowledge",
+      "level": 2,
+      "school": "Divination",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Strixhaven"
+    },
+    {
+      "name": "Burning Hands",
+      "slug": "burning-hands",
+      "level": 1,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Buzzing Bee",
+      "slug": "buzzing-bee",
+      "level": 1,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Ranger",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "D&D Beyond Drops - May 2026"
+    },
+    {
+      "name": "Call Lightning",
+      "slug": "call-lightning",
+      "level": 3,
+      "school": "Conjuration",
+      "classes": [
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Calm Emotions",
+      "slug": "calm-emotions",
+      "level": 2,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Catapult",
+      "slug": "catapult",
+      "level": 1,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Catnap",
+      "slug": "catnap",
+      "level": 3,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Cause Fear",
+      "slug": "cause-fear",
+      "level": 1,
+      "school": "Necromancy",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Ceremony",
+      "slug": "ceremony",
+      "level": 1,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric",
+        "Paladin"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Chain Lightning",
+      "slug": "chain-lightning",
+      "level": 6,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Chaos Bolt",
+      "slug": "chaos-bolt",
+      "level": 1,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Charm Monster",
+      "slug": "charm-monster",
+      "level": 4,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Druid",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Charm Person",
+      "slug": "charm-person",
+      "level": 1,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Druid",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Chill Touch",
+      "slug": "chill-touch",
+      "level": 0,
+      "school": "Necromancy",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Chromatic Orb",
+      "slug": "chromatic-orb",
+      "level": 1,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Circle of Death",
+      "slug": "circle-of-death",
+      "level": 6,
+      "school": "Necromancy",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Circle of Power",
+      "slug": "circle-of-power",
+      "level": 5,
+      "school": "Abjuration",
+      "classes": [
+        "Artificer",
+        "Cleric",
+        "Paladin",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Clairvoyance",
+      "slug": "clairvoyance",
+      "level": 3,
+      "school": "Divination",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Clone",
+      "slug": "clone",
+      "level": 8,
+      "school": "Necromancy",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Cloud of Daggers",
+      "slug": "cloud-of-daggers",
+      "level": 2,
+      "school": "Conjuration",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Cloudkill",
+      "slug": "cloudkill",
+      "level": 5,
+      "school": "Conjuration",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Color Spray",
+      "slug": "color-spray",
+      "level": 1,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Command",
+      "slug": "command",
+      "level": 1,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Commune",
+      "slug": "commune",
+      "level": 5,
+      "school": "Divination",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Commune with Nature",
+      "slug": "commune-with-nature",
+      "level": 5,
+      "school": "Divination",
+      "classes": [
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Compelled Duel",
+      "slug": "compelled-duel",
+      "level": 1,
+      "school": "Enchantment",
+      "classes": [
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Comprehend Languages",
+      "slug": "comprehend-languages",
+      "level": 1,
+      "school": "Divination",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Compulsion",
+      "slug": "compulsion",
+      "level": 4,
+      "school": "Enchantment",
+      "classes": [
+        "Bard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Cone of Cold",
+      "slug": "cone-of-cold",
+      "level": 5,
+      "school": "Evocation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Confusion",
+      "slug": "confusion",
+      "level": 4,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Conjure Animals",
+      "slug": "conjure-animals",
+      "level": 3,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Conjure Barrage",
+      "slug": "conjure-barrage",
+      "level": 3,
+      "school": "Conjuration",
+      "classes": [
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Conjure Celestial",
+      "slug": "conjure-celestial",
+      "level": 7,
+      "school": "Conjuration",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Conjure Constructs",
+      "slug": "conjure-constructs",
+      "level": 3,
+      "school": "Conjuration",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Conjure Elemental",
+      "slug": "conjure-elemental",
+      "level": 5,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Conjure Fey",
+      "slug": "conjure-fey",
+      "level": 6,
+      "school": "Conjuration",
+      "classes": [
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Conjure Minor Elementals",
+      "slug": "conjure-minor-elementals",
+      "level": 4,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Conjure Volley",
+      "slug": "conjure-volley",
+      "level": 5,
+      "school": "Conjuration",
+      "classes": [
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Conjure Woodland Beings",
+      "slug": "conjure-woodland-beings",
+      "level": 4,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Contact Other Plane",
+      "slug": "contact-other-plane",
+      "level": 5,
+      "school": "Divination",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Contagion",
+      "slug": "contagion",
+      "level": 5,
+      "school": "Necromancy",
+      "classes": [
+        "Cleric",
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Contingency",
+      "slug": "contingency",
+      "level": 6,
+      "school": "Evocation",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Continual Flame",
+      "slug": "continual-flame",
+      "level": 2,
+      "school": "Evocation",
+      "classes": [
+        "Artificer",
+        "Cleric",
+        "Druid",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Control Flames",
+      "slug": "control-flames",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Control Water",
+      "slug": "control-water",
+      "level": 4,
+      "school": "Transmutation",
+      "classes": [
+        "Cleric",
+        "Druid",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Control Weather",
+      "slug": "control-weather",
+      "level": 8,
+      "school": "Transmutation",
+      "classes": [
+        "Cleric",
+        "Druid",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Control Winds",
+      "slug": "control-winds",
+      "level": 5,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Counterspell",
+      "slug": "counterspell",
+      "level": 3,
+      "school": "Abjuration",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Create Bonfire",
+      "slug": "create-bonfire",
+      "level": 0,
+      "school": "Conjuration",
+      "classes": [
+        "Artificer",
+        "Druid",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Create Food and Water",
+      "slug": "create-food-and-water",
+      "level": 3,
+      "school": "Conjuration",
+      "classes": [
+        "Artificer",
+        "Cleric",
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Create Homunculus",
+      "slug": "create-homunculus",
+      "level": 6,
+      "school": "Transmutation",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Create Spelljamming Helm",
+      "slug": "create-spelljamming-helm",
+      "level": 5,
+      "school": "Transmutation",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Spelljammer"
+    },
+    {
+      "name": "Create Undead",
+      "slug": "create-undead",
+      "level": 6,
+      "school": "Necromancy",
+      "classes": [
+        "Cleric",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Create or Destroy Water",
+      "slug": "create-or-destroy-water",
+      "level": 1,
+      "school": "Transmutation",
+      "classes": [
+        "Cleric",
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Creation",
+      "slug": "creation",
+      "level": 5,
+      "school": "Illusion",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Crown of Madness",
+      "slug": "crown-of-madness",
+      "level": 2,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Crown of Stars",
+      "slug": "crown-of-stars",
+      "level": 7,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Crusader's Mantle",
+      "slug": "crusaders-mantle",
+      "level": 3,
+      "school": "Evocation",
+      "classes": [
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Cure Wounds",
+      "slug": "cure-wounds",
+      "level": 1,
+      "school": "Abjuration",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Cleric",
+        "Druid",
+        "Paladin",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Dancing Lights",
+      "slug": "dancing-lights",
+      "level": 0,
+      "school": "Illusion",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Danse Macabre",
+      "slug": "danse-macabre",
+      "level": 5,
+      "school": "Necromancy",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Darkness",
+      "slug": "darkness",
+      "level": 2,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Darkvision",
+      "slug": "darkvision",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Druid",
+        "Ranger",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Dawn",
+      "slug": "dawn",
+      "level": 5,
+      "school": "Evocation",
+      "classes": [
+        "Cleric",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Daylight",
+      "slug": "daylight",
+      "level": 3,
+      "school": "Evocation",
+      "classes": [
+        "Cleric",
+        "Druid",
+        "Paladin",
+        "Ranger",
+        "Sorcerer"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Death Ward",
+      "slug": "death-ward",
+      "level": 4,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric",
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Delayed Blast Fireball",
+      "slug": "delayed-blast-fireball",
+      "level": 7,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Demiplane",
+      "slug": "demiplane",
+      "level": 8,
+      "school": "Conjuration",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Destructive Wave",
+      "slug": "destructive-wave",
+      "level": 5,
+      "school": "Evocation",
+      "classes": [
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Detect Evil and Good",
+      "slug": "detect-evil-and-good",
+      "level": 1,
+      "school": "Divination",
+      "classes": [
+        "Cleric",
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Detect Magic",
+      "slug": "detect-magic",
+      "level": 1,
+      "school": "Divination",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Cleric",
+        "Druid",
+        "Paladin",
+        "Ranger",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Detect Poison and Disease",
+      "slug": "detect-poison-and-disease",
+      "level": 1,
+      "school": "Divination",
+      "classes": [
+        "Cleric",
+        "Druid",
+        "Paladin",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Detect Thoughts",
+      "slug": "detect-thoughts",
+      "level": 2,
+      "school": "Divination",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Dimension Door",
+      "slug": "dimension-door",
+      "level": 4,
+      "school": "Conjuration",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Dirge",
+      "slug": "dirge",
+      "level": 6,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Disguise Self",
+      "slug": "disguise-self",
+      "level": 1,
+      "school": "Illusion",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Disintegrate",
+      "slug": "disintegrate",
+      "level": 6,
+      "school": "Transmutation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Dispel Evil and Good",
+      "slug": "dispel-evil-and-good",
+      "level": 5,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric",
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Dispel Magic",
+      "slug": "dispel-magic",
+      "level": 3,
+      "school": "Abjuration",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Cleric",
+        "Druid",
+        "Paladin",
+        "Ranger",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Dissonant Whispers",
+      "slug": "dissonant-whispers",
+      "level": 1,
+      "school": "Enchantment",
+      "classes": [
+        "Bard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Distort Value",
+      "slug": "distort-value",
+      "level": 1,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Acquisitions Inc"
+    },
+    {
+      "name": "Divination",
+      "slug": "divination",
+      "level": 4,
+      "school": "Divination",
+      "classes": [
+        "Cleric",
+        "Druid",
+        "Paladin",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Divine Favor",
+      "slug": "divine-favor",
+      "level": 1,
+      "school": "Transmutation",
+      "classes": [
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Divine Smite",
+      "slug": "divine-smite",
+      "level": 1,
+      "school": "Evocation",
+      "classes": [
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Divine Word",
+      "slug": "divine-word",
+      "level": 7,
+      "school": "Evocation",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Dominate Beast",
+      "slug": "dominate-beast",
+      "level": 4,
+      "school": "Enchantment",
+      "classes": [
+        "Druid",
+        "Ranger",
+        "Sorcerer"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Dominate Monster",
+      "slug": "dominate-monster",
+      "level": 8,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Dominate Person",
+      "slug": "dominate-person",
+      "level": 5,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Draconic Transformation",
+      "slug": "draconic-transformation",
+      "level": 7,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Fizban's"
+    },
+    {
+      "name": "Dragon's Breath",
+      "slug": "dragons-breath",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Drawmij's Instant Summons",
+      "slug": "drawmijs-instant-summons",
+      "level": 6,
+      "school": "Conjuration",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Dream",
+      "slug": "dream",
+      "level": 5,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Dream of the Blue Veil",
+      "slug": "dream-of-the-blue-veil",
+      "level": 7,
+      "school": "Conjuration",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Tasha's"
+    },
+    {
+      "name": "Druid Grove",
+      "slug": "druid-grove",
+      "level": 6,
+      "school": "Abjuration",
+      "classes": [
+        "Druid"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Druidcraft",
+      "slug": "druidcraft",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": [
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Dust Devil",
+      "slug": "dust-devil",
+      "level": 2,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Earth Tremor",
+      "slug": "earth-tremor",
+      "level": 1,
+      "school": "Evocation",
+      "classes": [
+        "Bard",
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Earthbind",
+      "slug": "earthbind",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Earthquake",
+      "slug": "earthquake",
+      "level": 8,
+      "school": "Transmutation",
+      "classes": [
+        "Cleric",
+        "Druid",
+        "Sorcerer"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Eldritch Blast",
+      "slug": "eldritch-blast",
+      "level": 0,
+      "school": "Evocation",
+      "classes": [
+        "Warlock"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Elemental Bane",
+      "slug": "elemental-bane",
+      "level": 4,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Druid",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Elemental Weapon",
+      "slug": "elemental-weapon",
+      "level": 3,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Druid",
+        "Paladin",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Elementalism",
+      "slug": "elementalism",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Encode Thoughts",
+      "slug": "encode-thoughts",
+      "level": 0,
+      "school": "Enchantment",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Ravnica"
+    },
+    {
+      "name": "Enemies Abound",
+      "slug": "enemies-abound",
+      "level": 3,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Enervation",
+      "slug": "enervation",
+      "level": 5,
+      "school": "Necromancy",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Enhance Ability",
+      "slug": "enhance-ability",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Cleric",
+        "Druid",
+        "Ranger",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Enlarge/Reduce",
+      "slug": "enlarge-reduce",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Ensnaring Strike",
+      "slug": "ensnaring-strike",
+      "level": 1,
+      "school": "Conjuration",
+      "classes": [
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Entangle",
+      "slug": "entangle",
+      "level": 1,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Enthrall",
+      "slug": "enthrall",
+      "level": 2,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Warlock"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Erupting Earth",
+      "slug": "erupting-earth",
+      "level": 3,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Etherealness",
+      "slug": "etherealness",
+      "level": 7,
+      "school": "Conjuration",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Evard's Black Tentacles",
+      "slug": "evards-black-tentacles",
+      "level": 4,
+      "school": "Conjuration",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Expeditious Retreat",
+      "slug": "expeditious-retreat",
+      "level": 1,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Eyebite",
+      "slug": "eyebite",
+      "level": 6,
+      "school": "Necromancy",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Fabricate",
+      "slug": "fabricate",
+      "level": 4,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Faerie Fire",
+      "slug": "faerie-fire",
+      "level": 1,
+      "school": "Evocation",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "False Life",
+      "slug": "false-life",
+      "level": 1,
+      "school": "Necromancy",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Far Step",
+      "slug": "far-step",
+      "level": 5,
+      "school": "Conjuration",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Fear",
+      "slug": "fear",
+      "level": 3,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Feather Fall",
+      "slug": "feather-fall",
+      "level": 1,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Feign Death",
+      "slug": "feign-death",
+      "level": 3,
+      "school": "Necromancy",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Druid",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Find Familiar",
+      "slug": "find-familiar",
+      "level": 1,
+      "school": "Conjuration",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Find Greater Steed",
+      "slug": "find-greater-steed",
+      "level": 4,
+      "school": "Conjuration",
+      "classes": [
+        "Paladin"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Find Steed",
+      "slug": "find-steed",
+      "level": 2,
+      "school": "Conjuration",
+      "classes": [
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Find Traps",
+      "slug": "find-traps",
+      "level": 2,
+      "school": "Divination",
+      "classes": [
+        "Cleric",
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Find the Path",
+      "slug": "find-the-path",
+      "level": 6,
+      "school": "Divination",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Finger of Death",
+      "slug": "finger-of-death",
+      "level": 7,
+      "school": "Necromancy",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Fire Bolt",
+      "slug": "fire-bolt",
+      "level": 0,
+      "school": "Evocation",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Fire Shield",
+      "slug": "fire-shield",
+      "level": 4,
+      "school": "Evocation",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Fire Storm",
+      "slug": "fire-storm",
+      "level": 7,
+      "school": "Evocation",
+      "classes": [
+        "Cleric",
+        "Druid",
+        "Sorcerer"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Fireball",
+      "slug": "fireball",
+      "level": 3,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Fizban's Platinum Shield",
+      "slug": "fizbans-platinum-shield",
+      "level": 6,
+      "school": "Abjuration",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Fizban's"
+    },
+    {
+      "name": "Flame Arrows",
+      "slug": "flame-arrows",
+      "level": 3,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Ranger",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Flame Blade",
+      "slug": "flame-blade",
+      "level": 2,
+      "school": "Evocation",
+      "classes": [
+        "Druid",
+        "Sorcerer"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Flame Strike",
+      "slug": "flame-strike",
+      "level": 5,
+      "school": "Evocation",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Flaming Sphere",
+      "slug": "flaming-sphere",
+      "level": 2,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Flesh to Stone",
+      "slug": "flesh-to-stone",
+      "level": 6,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Flock of Familiars",
+      "slug": "flock-of-familiars",
+      "level": 2,
+      "school": "Conjuration",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Lost Laboratory of Kwalish"
+    },
+    {
+      "name": "Fly",
+      "slug": "fly",
+      "level": 3,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Fog Cloud",
+      "slug": "fog-cloud",
+      "level": 1,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Ranger",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Forbiddance",
+      "slug": "forbiddance",
+      "level": 6,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Forcecage",
+      "slug": "forcecage",
+      "level": 7,
+      "school": "Evocation",
+      "classes": [
+        "Bard",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Foresight",
+      "slug": "foresight",
+      "level": 9,
+      "school": "Divination",
+      "classes": [
+        "Bard",
+        "Druid",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Fortune's Favor",
+      "slug": "fortunes-favor",
+      "level": 2,
+      "school": "Divination",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Wildemount"
+    },
+    {
+      "name": "Fount of Moonlight",
+      "slug": "fount-of-moonlight",
+      "level": 4,
+      "school": "Evocation",
+      "classes": [
+        "Bard",
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Freedom of Movement",
+      "slug": "freedom-of-movement",
+      "level": 4,
+      "school": "Abjuration",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Cleric",
+        "Druid",
+        "Paladin",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Friends",
+      "slug": "friends",
+      "level": 0,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Frost Fingers",
+      "slug": "frost-fingers",
+      "level": 1,
+      "school": "Evocation",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Rime of the Frostmaiden"
+    },
+    {
+      "name": "Frostbite",
+      "slug": "frostbite",
+      "level": 0,
+      "school": "Evocation",
+      "classes": [
+        "Artificer",
+        "Druid",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Galder's Speedy Courier",
+      "slug": "galders-speedy-courier",
+      "level": 4,
+      "school": "Conjuration",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Lost Laboratory of Kwalish"
+    },
+    {
+      "name": "Gaseous Form",
+      "slug": "gaseous-form",
+      "level": 3,
+      "school": "Transmutation",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Gate",
+      "slug": "gate",
+      "level": 9,
+      "school": "Conjuration",
+      "classes": [
+        "Cleric",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Geas",
+      "slug": "geas",
+      "level": 5,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Druid",
+        "Paladin",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Gentle Repose",
+      "slug": "gentle-repose",
+      "level": 2,
+      "school": "Necromancy",
+      "classes": [
+        "Cleric",
+        "Paladin",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Giant Insect",
+      "slug": "giant-insect",
+      "level": 4,
+      "school": "Transmutation",
+      "classes": [
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Gift of Alacrity",
+      "slug": "gift-of-alacrity",
+      "level": 1,
+      "school": "Divination",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Wildemount"
+    },
+    {
+      "name": "Gift of Gab",
+      "slug": "gift-of-gab",
+      "level": 2,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Wizard"
+      ],
+      "source": "Acquisitions Inc"
+    },
+    {
+      "name": "Glibness",
+      "slug": "glibness",
+      "level": 8,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Warlock"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Globe of Invulnerability",
+      "slug": "globe-of-invulnerability",
+      "level": 6,
+      "school": "Abjuration",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Glyph of Warding",
+      "slug": "glyph-of-warding",
+      "level": 3,
+      "school": "Abjuration",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Cleric",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Goodberry",
+      "slug": "goodberry",
+      "level": 1,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Grasping Vine",
+      "slug": "grasping-vine",
+      "level": 4,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Gravity Sinkhole",
+      "slug": "gravity-sinkhole",
+      "level": 4,
+      "school": "Evocation",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Wildemount"
+    },
+    {
+      "name": "Grease",
+      "slug": "grease",
+      "level": 1,
+      "school": "Conjuration",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Greater Invisibility",
+      "slug": "greater-invisibility",
+      "level": 4,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Greater Restoration",
+      "slug": "greater-restoration",
+      "level": 5,
+      "school": "Abjuration",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Cleric",
+        "Druid",
+        "Paladin",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Green-Flame Blade",
+      "slug": "green-flame-blade",
+      "level": 0,
+      "school": "Evocation",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Tasha's"
+    },
+    {
+      "name": "Guardian of Faith",
+      "slug": "guardian-of-faith",
+      "level": 4,
+      "school": "Conjuration",
+      "classes": [
+        "Cleric",
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Guardian of Nature",
+      "slug": "guardian-of-nature",
+      "level": 4,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Ranger"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Guards and Wards",
+      "slug": "guards-and-wards",
+      "level": 6,
+      "school": "Abjuration",
+      "classes": [
+        "Bard",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Guidance",
+      "slug": "guidance",
+      "level": 0,
+      "school": "Divination",
+      "classes": [
+        "Artificer",
+        "Cleric",
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Guiding Bolt",
+      "slug": "guiding-bolt",
+      "level": 1,
+      "school": "Evocation",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Gust",
+      "slug": "gust",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Gust of Wind",
+      "slug": "gust-of-wind",
+      "level": 2,
+      "school": "Evocation",
+      "classes": [
+        "Druid",
+        "Ranger",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Hail of Thorns",
+      "slug": "hail-of-thorns",
+      "level": 1,
+      "school": "Conjuration",
+      "classes": [
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Hallow",
+      "slug": "hallow",
+      "level": 5,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Hallucinatory Terrain",
+      "slug": "hallucinatory-terrain",
+      "level": 4,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Druid",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Harm",
+      "slug": "harm",
+      "level": 6,
+      "school": "Necromancy",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Haste",
+      "slug": "haste",
+      "level": 3,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Heal",
+      "slug": "heal",
+      "level": 6,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric",
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Healing Spirit",
+      "slug": "healing-spirit",
+      "level": 2,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Ranger"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Healing Word",
+      "slug": "healing-word",
+      "level": 1,
+      "school": "Abjuration",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Heat Metal",
+      "slug": "heat-metal",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Hellish Rebuke",
+      "slug": "hellish-rebuke",
+      "level": 1,
+      "school": "Evocation",
+      "classes": [
+        "Warlock"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Heroes' Feast",
+      "slug": "heroes-feast",
+      "level": 6,
+      "school": "Conjuration",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Heroism",
+      "slug": "heroism",
+      "level": 1,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Hex",
+      "slug": "hex",
+      "level": 1,
+      "school": "Enchantment",
+      "classes": [
+        "Warlock"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Hold Monster",
+      "slug": "hold-monster",
+      "level": 5,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Hold Person",
+      "slug": "hold-person",
+      "level": 2,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Druid",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Holy Aura",
+      "slug": "holy-aura",
+      "level": 8,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Holy Weapon",
+      "slug": "holy-weapon",
+      "level": 5,
+      "school": "Evocation",
+      "classes": [
+        "Cleric",
+        "Paladin"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Homunculus Servant",
+      "slug": "homunculus-servant",
+      "level": 2,
+      "school": "Conjuration",
+      "classes": [
+        "Artificer"
+      ],
+      "source": "Eberron"
+    },
+    {
+      "name": "Hunger of Hadar",
+      "slug": "hunger-of-hadar",
+      "level": 3,
+      "school": "Conjuration",
+      "classes": [
+        "Warlock"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Hunter's Mark",
+      "slug": "hunter-mark",
+      "level": 1,
+      "school": "Divination",
+      "classes": [
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Hypnotic Pattern",
+      "slug": "hypnotic-pattern",
+      "level": 3,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Ice Knife",
+      "slug": "ice-knife",
+      "level": 1,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Ice Storm",
+      "slug": "ice-storm",
+      "level": 4,
+      "school": "Evocation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Identify",
+      "slug": "identify",
+      "level": 1,
+      "school": "Divination",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Illusory Dragon",
+      "slug": "illusory-dragon",
+      "level": 8,
+      "school": "Illusion",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Illusory Script",
+      "slug": "illusory-script",
+      "level": 1,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Immolation",
+      "slug": "immolation",
+      "level": 5,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Immovable Object",
+      "slug": "immovable-object",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Wildemount"
+    },
+    {
+      "name": "Imprisonment",
+      "slug": "imprisonment",
+      "level": 9,
+      "school": "Abjuration",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Incendiary Cloud",
+      "slug": "incendiary-cloud",
+      "level": 8,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Infernal Calling",
+      "slug": "infernal-calling",
+      "level": 5,
+      "school": "Conjuration",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Infestation",
+      "slug": "infestation",
+      "level": 0,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Inflict Wounds",
+      "slug": "inflict-wounds",
+      "level": 1,
+      "school": "Necromancy",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Insect Plague",
+      "slug": "insect-plague",
+      "level": 5,
+      "school": "Conjuration",
+      "classes": [
+        "Cleric",
+        "Druid",
+        "Sorcerer"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Insidious Rhythm",
+      "slug": "insidious-rhythm",
+      "level": 1,
+      "school": "Enchantment",
+      "classes": [
+        "Bard"
+      ],
+      "source": "D&D Beyond Drops - May 2026"
+    },
+    {
+      "name": "Intellect Fortress",
+      "slug": "intellect-fortress",
+      "level": 3,
+      "school": "Abjuration",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Tasha's"
+    },
+    {
+      "name": "Investiture of Flame",
+      "slug": "investiture-of-flame",
+      "level": 6,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Investiture of Ice",
+      "slug": "investiture-of-ice",
+      "level": 6,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Investiture of Stone",
+      "slug": "investiture-of-stone",
+      "level": 6,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Investiture of Wind",
+      "slug": "investiture-of-wind",
+      "level": 6,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Invisibility",
+      "slug": "invisibility",
+      "level": 2,
+      "school": "Illusion",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Invulnerability",
+      "slug": "invulnerability",
+      "level": 9,
+      "school": "Abjuration",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Jallarzi's Storm of Radiance",
+      "slug": "jallarzis-storm-of-radiance",
+      "level": 5,
+      "school": "Evocation",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Jim's Glowing Coin",
+      "slug": "jims-glowing-coin",
+      "level": 2,
+      "school": "Enchantment",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Acquisitions Inc"
+    },
+    {
+      "name": "Jim's Magic Missile",
+      "slug": "jims-magic-missile",
+      "level": 1,
+      "school": "Evocation",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Acquisitions Inc"
+    },
+    {
+      "name": "Jump",
+      "slug": "jump",
+      "level": 1,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Druid",
+        "Ranger",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Kinetic Jaunt",
+      "slug": "kinetic-jaunt",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Strixhaven"
+    },
+    {
+      "name": "Knock",
+      "slug": "knock",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Legend Lore",
+      "slug": "legend-lore",
+      "level": 5,
+      "school": "Divination",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Leomund's Lamentable Belaborment",
+      "slug": "leomunds-lamentable-belaborment",
+      "level": 6,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Leomund's Secret Chest",
+      "slug": "leomunds-secret-chest",
+      "level": 4,
+      "school": "Conjuration",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Leomund's Tiny Hut",
+      "slug": "leomunds-tiny-hut",
+      "level": 3,
+      "school": "Evocation",
+      "classes": [
+        "Bard",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Lesser Restoration",
+      "slug": "lesser-restoration",
+      "level": 2,
+      "school": "Abjuration",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Cleric",
+        "Druid",
+        "Paladin",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Levitate",
+      "slug": "levitate",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Life Transference",
+      "slug": "life-transference",
+      "level": 3,
+      "school": "Necromancy",
+      "classes": [
+        "Cleric",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Light",
+      "slug": "light",
+      "level": 0,
+      "school": "Evocation",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Cleric",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Lightning Arrow",
+      "slug": "lightning-arrow",
+      "level": 3,
+      "school": "Transmutation",
+      "classes": [
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Lightning Bolt",
+      "slug": "lightning-bolt",
+      "level": 3,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Lightning Lure",
+      "slug": "lightning-lure",
+      "level": 0,
+      "school": "Evocation",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Tasha's"
+    },
+    {
+      "name": "Locate Animals or Plants",
+      "slug": "locate-animals-or-plants",
+      "level": 2,
+      "school": "Divination",
+      "classes": [
+        "Bard",
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Locate Creature",
+      "slug": "locate-creature",
+      "level": 4,
+      "school": "Divination",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Druid",
+        "Paladin",
+        "Ranger",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Locate Object",
+      "slug": "locate-object",
+      "level": 2,
+      "school": "Divination",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Druid",
+        "Paladin",
+        "Ranger",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Longstrider",
+      "slug": "longstrider",
+      "level": 1,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Druid",
+        "Ranger",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Maddening Darkness",
+      "slug": "maddening-darkness",
+      "level": 8,
+      "school": "Evocation",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Maelstrom",
+      "slug": "maelstrom",
+      "level": 5,
+      "school": "Evocation",
+      "classes": [
+        "Druid"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Mage Armor",
+      "slug": "mage-armor",
+      "level": 1,
+      "school": "Abjuration",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Mage Hand",
+      "slug": "mage-hand",
+      "level": 0,
+      "school": "Conjuration",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Magic Circle",
+      "slug": "magic-circle",
+      "level": 3,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric",
+        "Paladin",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Magic Jar",
+      "slug": "magic-jar",
+      "level": 6,
+      "school": "Necromancy",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Magic Missile",
+      "slug": "magic-missile",
+      "level": 1,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Magic Mouth",
+      "slug": "magic-mouth",
+      "level": 2,
+      "school": "Illusion",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Magic Stone",
+      "slug": "magic-stone",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Druid",
+        "Warlock"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Magic Weapon",
+      "slug": "magic-weapon",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Paladin",
+        "Ranger",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Magnify Gravity",
+      "slug": "magnify-gravity",
+      "level": 1,
+      "school": "Transmutation",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Wildemount"
+    },
+    {
+      "name": "Major Image",
+      "slug": "major-image",
+      "level": 3,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Mass Cure Wounds",
+      "slug": "mass-cure-wounds",
+      "level": 5,
+      "school": "Abjuration",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Mass Heal",
+      "slug": "mass-heal",
+      "level": 9,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Mass Healing Word",
+      "slug": "mass-healing-word",
+      "level": 3,
+      "school": "Abjuration",
+      "classes": [
+        "Bard",
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Mass Polymorph",
+      "slug": "mass-polymorph",
+      "level": 9,
+      "school": "Transmutation",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Mass Suggestion",
+      "slug": "mass-suggestion",
+      "level": 6,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Maximillian's Earthen Grasp",
+      "slug": "maximillians-earthen-grasp",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Maze",
+      "slug": "maze",
+      "level": 8,
+      "school": "Conjuration",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Meld into Stone",
+      "slug": "meld-into-stone",
+      "level": 3,
+      "school": "Transmutation",
+      "classes": [
+        "Cleric",
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Melf's Acid Arrow",
+      "slug": "melfs-acid-arrow",
+      "level": 2,
+      "school": "Evocation",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Melf's Minute Meteors",
+      "slug": "melfs-minute-meteors",
+      "level": 3,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Mending",
+      "slug": "mending",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Mental Prison",
+      "slug": "mental-prison",
+      "level": 6,
+      "school": "Illusion",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Message",
+      "slug": "message",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Meteor Swarm",
+      "slug": "meteor-swarm",
+      "level": 9,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Mighty Fortress",
+      "slug": "mighty-fortress",
+      "level": 8,
+      "school": "Conjuration",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Mind Blank",
+      "slug": "mind-blank",
+      "level": 8,
+      "school": "Abjuration",
+      "classes": [
+        "Bard",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Mind Sliver",
+      "slug": "mind-sliver",
+      "level": 0,
+      "school": "Enchantment",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Mind Spike",
+      "slug": "mind-spike",
+      "level": 2,
+      "school": "Divination",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Minor Illusion",
+      "slug": "minor-illusion",
+      "level": 0,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Mirage Arcane",
+      "slug": "mirage-arcane",
+      "level": 7,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Druid",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Mirror Image",
+      "slug": "mirror-image",
+      "level": 2,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Mislead",
+      "slug": "mislead",
+      "level": 5,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Misty Step",
+      "slug": "misty-step",
+      "level": 2,
+      "school": "Conjuration",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Modify Memory",
+      "slug": "modify-memory",
+      "level": 5,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Mold Earth",
+      "slug": "mold-earth",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Moonbeam",
+      "slug": "moonbeam",
+      "level": 2,
+      "school": "Evocation",
+      "classes": [
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Mordenkainen's Faithful Hound",
+      "slug": "mordenkainens-faithful-hound",
+      "level": 4,
+      "school": "Conjuration",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Mordenkainen's Magnificent Mansion",
+      "slug": "mordenkainens-magnificent-mansion",
+      "level": 7,
+      "school": "Conjuration",
+      "classes": [
+        "Bard",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Mordenkainen's Private Sanctum",
+      "slug": "mordenkainens-private-sanctum",
+      "level": 4,
+      "school": "Abjuration",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Mordenkainen's Sword",
+      "slug": "mordenkainens-sword",
+      "level": 7,
+      "school": "Evocation",
+      "classes": [
+        "Bard",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Move Earth",
+      "slug": "move-earth",
+      "level": 6,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Nathair's Mischief",
+      "slug": "nathairs-mischief",
+      "level": 2,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Fizban's"
+    },
+    {
+      "name": "Negative Energy Flood",
+      "slug": "negative-energy-flood",
+      "level": 5,
+      "school": "Necromancy",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Nondetection",
+      "slug": "nondetection",
+      "level": 3,
+      "school": "Abjuration",
+      "classes": [
+        "Bard",
+        "Ranger",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Nystul's Magic Aura",
+      "slug": "nystuls-magic-aura",
+      "level": 2,
+      "school": "Illusion",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Otiluke's Freezing Sphere",
+      "slug": "otilukes-freezing-sphere",
+      "level": 6,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Otiluke's Resilient Sphere",
+      "slug": "otilukes-resilient-sphere",
+      "level": 4,
+      "school": "Evocation",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Otto's Irresistible Dance",
+      "slug": "ottos-irresistible-dance",
+      "level": 6,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Pass without Trace",
+      "slug": "pass-without-trace",
+      "level": 2,
+      "school": "Abjuration",
+      "classes": [
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Passwall",
+      "slug": "passwall",
+      "level": 5,
+      "school": "Transmutation",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Phantasmal Force",
+      "slug": "phantasmal-force",
+      "level": 2,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Phantasmal Killer",
+      "slug": "phantasmal-killer",
+      "level": 4,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Phantom Steed",
+      "slug": "phantom-steed",
+      "level": 3,
+      "school": "Illusion",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Planar Ally",
+      "slug": "planar-ally",
+      "level": 6,
+      "school": "Conjuration",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Planar Binding",
+      "slug": "planar-binding",
+      "level": 5,
+      "school": "Abjuration",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Druid",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Plane Shift",
+      "slug": "plane-shift",
+      "level": 7,
+      "school": "Conjuration",
+      "classes": [
+        "Cleric",
+        "Druid",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Plant Growth",
+      "slug": "plant-growth",
+      "level": 3,
+      "school": "Transmutation",
+      "classes": [
+        "Bard",
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Poison Spray",
+      "slug": "poison-spray",
+      "level": 0,
+      "school": "Necromancy",
+      "classes": [
+        "Artificer",
+        "Druid",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Polymorph",
+      "slug": "polymorph",
+      "level": 4,
+      "school": "Transmutation",
+      "classes": [
+        "Bard",
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Power Word Fortify",
+      "slug": "power-word-fortify",
+      "level": 7,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Power Word Heal",
+      "slug": "power-word-heal",
+      "level": 9,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Power Word Kill",
+      "slug": "power-word-kill",
+      "level": 9,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Power Word Stun",
+      "slug": "power-word-stun",
+      "level": 8,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Power Word: Pain",
+      "slug": "power-word-pain",
+      "level": 7,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Prayer of Healing",
+      "slug": "prayer-of-healing",
+      "level": 2,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric",
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Prestidigitation",
+      "slug": "prestidigitation",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Primal Savagery",
+      "slug": "primal-savagery",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": [
+        "Druid"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Primordial Ward",
+      "slug": "primordial-ward",
+      "level": 6,
+      "school": "Abjuration",
+      "classes": [
+        "Druid"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Prismatic Spray",
+      "slug": "prismatic-spray",
+      "level": 7,
+      "school": "Evocation",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Prismatic Wall",
+      "slug": "prismatic-wall",
+      "level": 9,
+      "school": "Abjuration",
+      "classes": [
+        "Bard",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Produce Flame",
+      "slug": "produce-flame",
+      "level": 0,
+      "school": "Conjuration",
+      "classes": [
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Programmed Illusion",
+      "slug": "programmed-illusion",
+      "level": 6,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Project Image",
+      "slug": "project-image",
+      "level": 7,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Protection from Energy",
+      "slug": "protection-from-energy",
+      "level": 3,
+      "school": "Abjuration",
+      "classes": [
+        "Artificer",
+        "Cleric",
+        "Druid",
+        "Ranger",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Protection from Evil and Good",
+      "slug": "protection-evil-and-good",
+      "level": 1,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric",
+        "Druid",
+        "Paladin",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Protection from Poison",
+      "slug": "protection-from-poison",
+      "level": 2,
+      "school": "Abjuration",
+      "classes": [
+        "Artificer",
+        "Cleric",
+        "Druid",
+        "Paladin",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Psychic Scream",
+      "slug": "psychic-scream",
+      "level": 9,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Pulse Wave",
+      "slug": "pulse-wave",
+      "level": 3,
+      "school": "Evocation",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Wildemount"
+    },
+    {
+      "name": "Purify Food and Drink",
+      "slug": "purify-food-and-drink",
+      "level": 1,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Cleric",
+        "Druid",
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Pyrotechnics",
+      "slug": "pyrotechnics",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Raise Dead",
+      "slug": "raise-dead",
+      "level": 5,
+      "school": "Necromancy",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Rary's Telepathic Bond",
+      "slug": "rarys-telepathic-bond",
+      "level": 5,
+      "school": "Divination",
+      "classes": [
+        "Bard",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Raulothim's Psychic Lance",
+      "slug": "raulothims-psychic-lance",
+      "level": 4,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Fizban's"
+    },
+    {
+      "name": "Ravenous Void",
+      "slug": "ravenous-void",
+      "level": 9,
+      "school": "Evocation",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Wildemount"
+    },
+    {
+      "name": "Ray of Enfeeblement",
+      "slug": "ray-of-enfeeblement",
+      "level": 2,
+      "school": "Necromancy",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Ray of Frost",
+      "slug": "ray-of-frost",
+      "level": 0,
+      "school": "Evocation",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Ray of Sickness",
+      "slug": "ray-of-sickness",
+      "level": 1,
+      "school": "Necromancy",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Regenerate",
+      "slug": "regenerate",
+      "level": 7,
+      "school": "Transmutation",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Reincarnate",
+      "slug": "reincarnate",
+      "level": 5,
+      "school": "Necromancy",
+      "classes": [
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Remove Curse",
+      "slug": "remove-curse",
+      "level": 3,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric",
+        "Paladin",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Resistance",
+      "slug": "resistance",
+      "level": 0,
+      "school": "Abjuration",
+      "classes": [
+        "Artificer",
+        "Cleric",
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Resurrection",
+      "slug": "resurrection",
+      "level": 7,
+      "school": "Necromancy",
+      "classes": [
+        "Bard",
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Reverse Gravity",
+      "slug": "reverse-gravity",
+      "level": 7,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Revivify",
+      "slug": "revivify",
+      "level": 3,
+      "school": "Necromancy",
+      "classes": [
+        "Artificer",
+        "Cleric",
+        "Druid",
+        "Paladin",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Rime's Binding Ice",
+      "slug": "rimes-binding-ice",
+      "level": 2,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Fizban's"
+    },
+    {
+      "name": "Rope Trick",
+      "slug": "rope-trick",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Sacred Flame",
+      "slug": "sacred-flame",
+      "level": 0,
+      "school": "Evocation",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Sanctuary",
+      "slug": "sanctuary",
+      "level": 1,
+      "school": "Abjuration",
+      "classes": [
+        "Artificer",
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Sapping Sting",
+      "slug": "sapping-sting",
+      "level": 0,
+      "school": "Necromancy",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Wildemount"
+    },
+    {
+      "name": "Scatter",
+      "slug": "scatter",
+      "level": 6,
+      "school": "Conjuration",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Scorching Ray",
+      "slug": "scorching-ray",
+      "level": 2,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Scrying",
+      "slug": "scrying",
+      "level": 5,
+      "school": "Divination",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Druid",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Searing Orb",
+      "slug": "searing-orb",
+      "level": 2,
+      "school": "Evocation",
+      "classes": [
+        "Cleric",
+        "Paladin"
+      ],
+      "source": "D&D Beyond Drops - June 2026"
+    },
+    {
+      "name": "Searing Smite",
+      "slug": "searing-smite",
+      "level": 1,
+      "school": "Evocation",
+      "classes": [
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "See Invisibility",
+      "slug": "see-invisibility",
+      "level": 2,
+      "school": "Divination",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Seeming",
+      "slug": "seeming",
+      "level": 5,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Sending",
+      "slug": "sending",
+      "level": 3,
+      "school": "Divination",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Sequester",
+      "slug": "sequester",
+      "level": 7,
+      "school": "Transmutation",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Shadow Blade",
+      "slug": "shadow-blade",
+      "level": 2,
+      "school": "Illusion",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Shadow of Moil",
+      "slug": "shadow-of-moil",
+      "level": 4,
+      "school": "Necromancy",
+      "classes": [
+        "Warlock"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Shape Water",
+      "slug": "shape-water",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Shapechange",
+      "slug": "shapechange",
+      "level": 9,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Shatter",
+      "slug": "shatter",
+      "level": 2,
+      "school": "Evocation",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Shield",
+      "slug": "shield",
+      "level": 1,
+      "school": "Abjuration",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Shield of Faith",
+      "slug": "shield-of-faith",
+      "level": 1,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric",
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Shillelagh",
+      "slug": "shillelagh",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": [
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Shining Smite",
+      "slug": "shining-smite",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Shocking Grasp",
+      "slug": "shocking-grasp",
+      "level": 0,
+      "school": "Evocation",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Sickening Radiance",
+      "slug": "sickening-radiance",
+      "level": 4,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Silence",
+      "slug": "silence",
+      "level": 2,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Silent Image",
+      "slug": "silent-image",
+      "level": 1,
+      "school": "Illusion",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Silvery Barbs",
+      "slug": "silvery-barbs",
+      "level": 1,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Strixhaven"
+    },
+    {
+      "name": "Simulacrum",
+      "slug": "simulacrum",
+      "level": 7,
+      "school": "Illusion",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Skill Empowerment",
+      "slug": "skill-empowerment",
+      "level": 5,
+      "school": "Transmutation",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Skywrite",
+      "slug": "skywrite",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Bard",
+        "Druid",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Sleep",
+      "slug": "sleep",
+      "level": 1,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Sleet Storm",
+      "slug": "sleet-storm",
+      "level": 3,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Slow",
+      "slug": "slow",
+      "level": 3,
+      "school": "Transmutation",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Snare",
+      "slug": "snare",
+      "level": 1,
+      "school": "Abjuration",
+      "classes": [
+        "Artificer",
+        "Druid",
+        "Ranger",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Snilloc's Snowball Swarm",
+      "slug": "snillocs-snowball-swarm",
+      "level": 2,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Elemental Evil"
+    },
+    {
+      "name": "Songal's Elemental Suffusion",
+      "slug": "songals-elemental-suffusion",
+      "level": 5,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Sorcerous Burst",
+      "slug": "sorcerous-burst",
+      "level": 0,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Soul Cage",
+      "slug": "soul-cage",
+      "level": 6,
+      "school": "Necromancy",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Spare the Dying",
+      "slug": "spare-the-dying",
+      "level": 0,
+      "school": "Necromancy",
+      "classes": [
+        "Artificer",
+        "Cleric",
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Speak with Animals",
+      "slug": "speak-with-animals",
+      "level": 1,
+      "school": "Divination",
+      "classes": [
+        "Bard",
+        "Druid",
+        "Ranger",
+        "Warlock"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Speak with Dead",
+      "slug": "speak-with-dead",
+      "level": 3,
+      "school": "Necromancy",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Speak with Plants",
+      "slug": "speak-with-plants",
+      "level": 3,
+      "school": "Transmutation",
+      "classes": [
+        "Bard",
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Spider Climb",
+      "slug": "spider-climb",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Spike Growth",
+      "slug": "spike-growth",
+      "level": 2,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Spirit Guardians",
+      "slug": "spirit-guardians",
+      "level": 3,
+      "school": "Conjuration",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Spirit Shroud",
+      "slug": "spirit-shroud",
+      "level": 3,
+      "school": "Necromancy",
+      "classes": [
+        "Cleric",
+        "Paladin",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Tasha's"
+    },
+    {
+      "name": "Spiritual Weapon",
+      "slug": "spiritual-weapon",
+      "level": 2,
+      "school": "Evocation",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Spray of Cards",
+      "slug": "spray-of-cards",
+      "level": 2,
+      "school": "Conjuration",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "The Book of Many Things"
+    },
+    {
+      "name": "Staggering Smite",
+      "slug": "staggering-smite",
+      "level": 4,
+      "school": "Enchantment",
+      "classes": [
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Starry Wisp",
+      "slug": "starry-wisp",
+      "level": 0,
+      "school": "Evocation",
+      "classes": [
+        "Bard",
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Steel Wind Strike",
+      "slug": "steel-wind-strike",
+      "level": 5,
+      "school": "Conjuration",
+      "classes": [
+        "Ranger",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Stinking Cloud",
+      "slug": "stinking-cloud",
+      "level": 3,
+      "school": "Conjuration",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Stone Shape",
+      "slug": "stone-shape",
+      "level": 4,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Stoneskin",
+      "slug": "stoneskin",
+      "level": 4,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Ranger",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Storm Sphere",
+      "slug": "storm-sphere",
+      "level": 4,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Storm of Vengeance",
+      "slug": "storm-of-vengeance",
+      "level": 9,
+      "school": "Conjuration",
+      "classes": [
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Suggestion",
+      "slug": "suggestion",
+      "level": 2,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Summon Aberration",
+      "slug": "summon-aberration",
+      "level": 4,
+      "school": "Conjuration",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Summon Beast",
+      "slug": "summon-beast",
+      "level": 2,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Summon Celestial",
+      "slug": "summon-celestial",
+      "level": 5,
+      "school": "Conjuration",
+      "classes": [
+        "Cleric",
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Summon Construct",
+      "slug": "summon-construct",
+      "level": 4,
+      "school": "Conjuration",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Summon Dragon",
+      "slug": "summon-dragon",
+      "level": 5,
+      "school": "Conjuration",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Summon Elemental",
+      "slug": "summon-elemental",
+      "level": 4,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Ranger",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Summon Fey",
+      "slug": "summon-fey",
+      "level": 3,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Ranger",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Summon Fiend",
+      "slug": "summon-fiend",
+      "level": 6,
+      "school": "Conjuration",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Summon Greater Demon",
+      "slug": "summon-greater-demon",
+      "level": 4,
+      "school": "Conjuration",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Summon Lesser Demons",
+      "slug": "summon-lesser-demons",
+      "level": 3,
+      "school": "Conjuration",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Summon Shadowspawn",
+      "slug": "summon-shadowspawn",
+      "level": 3,
+      "school": "Conjuration",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Tasha's"
+    },
+    {
+      "name": "Summon Undead",
+      "slug": "summon-undead",
+      "level": 3,
+      "school": "Necromancy",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Sunbeam",
+      "slug": "sunbeam",
+      "level": 6,
+      "school": "Evocation",
+      "classes": [
+        "Cleric",
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Sunburst",
+      "slug": "sunburst",
+      "level": 8,
+      "school": "Evocation",
+      "classes": [
+        "Cleric",
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Swift Quiver",
+      "slug": "swift-quiver",
+      "level": 5,
+      "school": "Transmutation",
+      "classes": [
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Sword Burst",
+      "slug": "sword-burst",
+      "level": 0,
+      "school": "Conjuration",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Tasha's"
+    },
+    {
+      "name": "Symbol",
+      "slug": "symbol",
+      "level": 7,
+      "school": "Abjuration",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Druid",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Synaptic Static",
+      "slug": "synaptic-static",
+      "level": 5,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Tasha's Bubbling Cauldron",
+      "slug": "tashas-bubbling-cauldron",
+      "level": 6,
+      "school": "Conjuration",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Tasha's Caustic Brew",
+      "slug": "tashas-caustic-brew",
+      "level": 1,
+      "school": "Evocation",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Tasha's"
+    },
+    {
+      "name": "Tasha's Hideous Laughter",
+      "slug": "tashas-hideous-laughter",
+      "level": 1,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Tasha's Mind Whip",
+      "slug": "tashas-mind-whip",
+      "level": 2,
+      "school": "Enchantment",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Tasha's"
+    },
+    {
+      "name": "Tasha's Otherworldly Guise",
+      "slug": "tashas-otherworldly-guise",
+      "level": 6,
+      "school": "Transmutation",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Tasha's"
+    },
+    {
+      "name": "Telekinesis",
+      "slug": "telekinesis",
+      "level": 5,
+      "school": "Transmutation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Telepathy",
+      "slug": "telepathy",
+      "level": 8,
+      "school": "Enchantment",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Teleport",
+      "slug": "teleport",
+      "level": 7,
+      "school": "Conjuration",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Teleportation Circle",
+      "slug": "teleportation-circle",
+      "level": 5,
+      "school": "Conjuration",
+      "classes": [
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Temple of the Gods",
+      "slug": "temple-of-the-gods",
+      "level": 7,
+      "school": "Conjuration",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Temporal Shunt",
+      "slug": "temporal-shunt",
+      "level": 5,
+      "school": "Transmutation",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Wildemount"
+    },
+    {
+      "name": "Tenser's Floating Disk",
+      "slug": "tensers-floating-disk",
+      "level": 1,
+      "school": "Conjuration",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Tenser's Transformation",
+      "slug": "tensers-transformation",
+      "level": 6,
+      "school": "Transmutation",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Tether Essence",
+      "slug": "tether-essence",
+      "level": 7,
+      "school": "Necromancy",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Wildemount"
+    },
+    {
+      "name": "Thaumaturgy",
+      "slug": "thaumaturgy",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Thorn Whip",
+      "slug": "thorn-whip",
+      "level": 0,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Thunder Step",
+      "slug": "thunder-step",
+      "level": 3,
+      "school": "Conjuration",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Thunderclap",
+      "slug": "thunderclap",
+      "level": 0,
+      "school": "Evocation",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Druid",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Thunderous Smite",
+      "slug": "thunderous-smite",
+      "level": 1,
+      "school": "Evocation",
+      "classes": [
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Thunderwave",
+      "slug": "thunderwave",
+      "level": 1,
+      "school": "Evocation",
+      "classes": [
+        "Bard",
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Tidal Wave",
+      "slug": "tidal-wave",
+      "level": 3,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Time Ravage",
+      "slug": "time-ravage",
+      "level": 9,
+      "school": "Necromancy",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Wildemount"
+    },
+    {
+      "name": "Time Stop",
+      "slug": "time-stop",
+      "level": 9,
+      "school": "Transmutation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Tiny Servant",
+      "slug": "tiny-servant",
+      "level": 3,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Toll the Dead",
+      "slug": "toll-the-dead",
+      "level": 0,
+      "school": "Necromancy",
+      "classes": [
+        "Cleric",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Tongues",
+      "slug": "tongues",
+      "level": 3,
+      "school": "Divination",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Tortoise Shell",
+      "slug": "tortoise-shell",
+      "level": 2,
+      "school": "Abjuration",
+      "classes": [
+        "Artificer",
+        "Druid",
+        "Ranger"
+      ],
+      "source": "D&D Beyond Drops - June 2026"
+    },
+    {
+      "name": "Transmute Rock",
+      "slug": "transmute-rock",
+      "level": 5,
+      "school": "Transmutation",
+      "classes": [
+        "Druid",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Transport via Plants",
+      "slug": "transport-via-plants",
+      "level": 6,
+      "school": "Conjuration",
+      "classes": [
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Tree Stride",
+      "slug": "tree-stride",
+      "level": 5,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "True Polymorph",
+      "slug": "true-polymorph",
+      "level": 9,
+      "school": "Transmutation",
+      "classes": [
+        "Bard",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "True Resurrection",
+      "slug": "true-resurrection",
+      "level": 9,
+      "school": "Necromancy",
+      "classes": [
+        "Cleric",
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "True Seeing",
+      "slug": "true-seeing",
+      "level": 6,
+      "school": "Divination",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "True Strike",
+      "slug": "true-strike",
+      "level": 0,
+      "school": "Divination",
+      "classes": [
+        "Artificer",
+        "Bard",
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Tsunami",
+      "slug": "tsunami",
+      "level": 8,
+      "school": "Conjuration",
+      "classes": [
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Unseen Servant",
+      "slug": "unseen-servant",
+      "level": 1,
+      "school": "Conjuration",
+      "classes": [
+        "Bard",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Vampiric Touch",
+      "slug": "vampiric-touch",
+      "level": 3,
+      "school": "Necromancy",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Vicious Mockery",
+      "slug": "vicious-mockery",
+      "level": 0,
+      "school": "Enchantment",
+      "classes": [
+        "Bard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Vitriolic Sphere",
+      "slug": "vitriolic-sphere",
+      "level": 4,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Void Star",
+      "slug": "void-star",
+      "level": 7,
+      "school": "Necromancy",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Vortex Warp",
+      "slug": "vortex-warp",
+      "level": 2,
+      "school": "Conjuration",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Strixhaven"
+    },
+    {
+      "name": "Wall of Fire",
+      "slug": "wall-of-fire",
+      "level": 4,
+      "school": "Evocation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Wall of Force",
+      "slug": "wall-of-force",
+      "level": 5,
+      "school": "Evocation",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Wall of Ice",
+      "slug": "wall-of-ice",
+      "level": 6,
+      "school": "Evocation",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Wall of Light",
+      "slug": "wall-of-light",
+      "level": 5,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Wall of Sand",
+      "slug": "wall-of-sand",
+      "level": 3,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Wall of Stone",
+      "slug": "wall-of-stone",
+      "level": 5,
+      "school": "Evocation",
+      "classes": [
+        "Artificer",
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Wall of Thorns",
+      "slug": "wall-of-thorns",
+      "level": 6,
+      "school": "Conjuration",
+      "classes": [
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Wall of Water",
+      "slug": "wall-of-water",
+      "level": 3,
+      "school": "Evocation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Warding Bond",
+      "slug": "warding-bond",
+      "level": 2,
+      "school": "Abjuration",
+      "classes": [
+        "Cleric",
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Warding Wind",
+      "slug": "warding-wind",
+      "level": 2,
+      "school": "Evocation",
+      "classes": [
+        "Bard",
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Water Breathing",
+      "slug": "water-breathing",
+      "level": 3,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Druid",
+        "Ranger",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Water Walk",
+      "slug": "water-walk",
+      "level": 3,
+      "school": "Transmutation",
+      "classes": [
+        "Artificer",
+        "Cleric",
+        "Druid",
+        "Ranger",
+        "Sorcerer"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Watery Sphere",
+      "slug": "watery-sphere",
+      "level": 4,
+      "school": "Conjuration",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Web",
+      "slug": "web",
+      "level": 2,
+      "school": "Conjuration",
+      "classes": [
+        "Artificer",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Weird",
+      "slug": "weird",
+      "level": 9,
+      "school": "Illusion",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Whirlwind",
+      "slug": "whirlwind",
+      "level": 7,
+      "school": "Evocation",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Wind Walk",
+      "slug": "wind-walk",
+      "level": 6,
+      "school": "Transmutation",
+      "classes": [
+        "Druid"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Wind Wall",
+      "slug": "wind-wall",
+      "level": 3,
+      "school": "Evocation",
+      "classes": [
+        "Druid",
+        "Ranger"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Wish",
+      "slug": "wish",
+      "level": 9,
+      "school": "Conjuration",
+      "classes": [
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Witch Bolt",
+      "slug": "witch-bolt",
+      "level": 1,
+      "school": "Evocation",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Wither and Bloom",
+      "slug": "wither-and-bloom",
+      "level": 2,
+      "school": "Necromancy",
+      "classes": [
+        "Druid",
+        "Sorcerer",
+        "Wizard"
+      ],
+      "source": "Strixhaven"
+    },
+    {
+      "name": "Word of Radiance",
+      "slug": "word-of-radiance",
+      "level": 0,
+      "school": "Evocation",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Word of Recall",
+      "slug": "word-of-recall",
+      "level": 6,
+      "school": "Conjuration",
+      "classes": [
+        "Cleric"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Wrath of Nature",
+      "slug": "wrath-of-nature",
+      "level": 5,
+      "school": "Evocation",
+      "classes": [
+        "Druid",
+        "Ranger"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Wrathful Smite",
+      "slug": "wrathful-smite",
+      "level": 1,
+      "school": "Necromancy",
+      "classes": [
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Wristpocket",
+      "slug": "wristpocket",
+      "level": 2,
+      "school": "Conjuration",
+      "classes": [
+        "Wizard"
+      ],
+      "source": "Wildemount"
+    },
+    {
+      "name": "Yolande's Regal Presence",
+      "slug": "yolandes-regal-presence",
+      "level": 5,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Wizard"
+      ],
+      "source": "PHB 2024"
+    },
+    {
+      "name": "Zephyr Strike",
+      "slug": "zephyr-strike",
+      "level": 1,
+      "school": "Transmutation",
+      "classes": [
+        "Ranger"
+      ],
+      "source": "Xanathar's"
+    },
+    {
+      "name": "Zone of Truth",
+      "slug": "zone-of-truth",
+      "level": 2,
+      "school": "Enchantment",
+      "classes": [
+        "Bard",
+        "Cleric",
+        "Paladin"
+      ],
+      "source": "PHB 2024"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "weapons": [
+    { "name": "Dagger", "damage_dice": "1d4", "damage_type": "Piercing", "properties": ["Finesse", "Light", "Thrown (20/60)"], "mastery": "Nick", "cost": "2 GP", "document__slug": "wotc-phb-2024" },
+    { "name": "Shortsword", "damage_dice": "1d6", "damage_type": "Piercing", "properties": ["Finesse", "Light"], "mastery": "Vex", "cost": "10 GP", "document__slug": "wotc-phb-2024" },
+    { "name": "Longsword", "damage_dice": "1d8", "damage_type": "Slashing", "properties": ["Versatile (1d10)"], "mastery": "Sap", "cost": "15 GP", "document__slug": "wotc-phb-2024" },
+    { "name": "Greataxe", "damage_dice": "1d12", "damage_type": "Slashing", "properties": ["Heavy", "Two-Handed"], "mastery": "Cleave", "cost": "30 GP", "document__slug": "wotc-phb-2024" },
+    { "name": "Greatsword", "damage_dice": "2d6", "damage_type": "Slashing", "properties": ["Heavy", "Two-Handed"], "mastery": "Graze", "cost": "50 GP", "document__slug": "wotc-phb-2024" },
+    { "name": "Maul", "damage_dice": "2d6", "damage_type": "Bludgeoning", "properties": ["Heavy", "Two-Handed"], "mastery": "Topple", "cost": "10 GP", "document__slug": "wotc-phb-2024" },
+    { "name": "Quarterstaff", "damage_dice": "1d6", "damage_type": "Bludgeoning", "properties": ["Versatile (1d8)"], "mastery": "Topple", "cost": "2 SP", "document__slug": "wotc-phb-2024" },
+    { "name": "Warhammer", "damage_dice": "1d8", "damage_type": "Bludgeoning", "properties": ["Versatile (1d10)"], "mastery": "Push", "cost": "15 GP", "document__slug": "wotc-phb-2024" },
+    { "name": "Handaxe", "damage_dice": "1d6", "damage_type": "Slashing", "properties": ["Light", "Thrown (20/60)"], "mastery": "Vex", "cost": "5 GP", "document__slug": "wotc-phb-2024" },
+    { "name": "Javelin", "damage_dice": "1d6", "damage_type": "Piercing", "properties": ["Thrown (30/120)"], "mastery": "Slow", "cost": "5 SP", "document__slug": "wotc-phb-2024" },
+    { "name": "Longbow", "damage_dice": "1d8", "damage_type": "Piercing", "properties": ["Ammunition (150/600)", "Heavy", "Two-Handed"], "mastery": "Slow", "cost": "50 GP", "document__slug": "wotc-phb-2024" },
+    { "name": "Shortbow", "damage_dice": "1d6", "damage_type": "Piercing", "properties": ["Ammunition (80/320)", "Two-Handed"], "mastery": "Vex", "cost": "25 GP", "document__slug": "wotc-phb-2024" },
+    { "name": "Crossbow, Light", "damage_dice": "1d8", "damage_type": "Piercing", "properties": ["Ammunition (80/320)", "Loading", "Two-Handed"], "mastery": "Slow", "cost": "25 GP", "document__slug": "wotc-phb-2024" },
+    { "name": "Crossbow, Heavy", "damage_dice": "1d10", "damage_type": "Piercing", "properties": ["Ammunition (100/400)", "Heavy", "Loading", "Two-Handed"], "mastery": "Push", "cost": "50 GP", "document__slug": "wotc-phb-2024" },
+    { "name": "Musket", "damage_dice": "1d12", "damage_type": "Piercing", "properties": ["Ammunition (40/120)", "Loading", "Two-Handed"], "mastery": "Slow", "cost": "500 GP", "document__slug": "wotc-phb-2024" }
+  ],
+  "armor": [
+    { "name": "Leather", "ac_string": "11 + Dex", "category": "Light Armor", "cost": "10 GP", "stealth_disadvantage": false, "document__slug": "wotc-phb-2024" },
+    { "name": "Studded Leather", "ac_string": "12 + Dex", "category": "Light Armor", "cost": "45 GP", "stealth_disadvantage": false, "document__slug": "wotc-phb-2024" },
+    { "name": "Hide", "ac_string": "12 + Dex (max 2)", "category": "Medium Armor", "cost": "10 GP", "stealth_disadvantage": false, "document__slug": "wotc-phb-2024" },
+    { "name": "Chain Shirt", "ac_string": "13 + Dex (max 2)", "category": "Medium Armor", "cost": "50 GP", "stealth_disadvantage": false, "document__slug": "wotc-phb-2024" },
+    { "name": "Scale Mail", "ac_string": "14 + Dex (max 2)", "category": "Medium Armor", "cost": "50 GP", "stealth_disadvantage": true, "document__slug": "wotc-phb-2024" },
+    { "name": "Breastplate", "ac_string": "14 + Dex (max 2)", "category": "Medium Armor", "cost": "400 GP", "stealth_disadvantage": false, "document__slug": "wotc-phb-2024" },
+    { "name": "Half Plate", "ac_string": "15 + Dex (max 2)", "category": "Medium Armor", "cost": "750 GP", "stealth_disadvantage": true, "document__slug": "wotc-phb-2024" },
+    { "name": "Ring Mail", "ac_string": "14", "category": "Heavy Armor", "cost": "30 GP", "stealth_disadvantage": true, "document__slug": "wotc-phb-2024" },
+    { "name": "Chain Mail", "ac_string": "16", "category": "Heavy Armor", "cost": "75 GP", "stealth_disadvantage": true, "strength_requirement": 13, "document__slug": "wotc-phb-2024" },
+    { "name": "Splint", "ac_string": "17", "category": "Heavy Armor", "cost": "200 GP", "stealth_disadvantage": true, "strength_requirement": 15, "document__slug": "wotc-phb-2024" },
+    { "name": "Plate", "ac_string": "18", "category": "Heavy Armor", "cost": "1500 GP", "stealth_disadvantage": true, "strength_requirement": 15, "document__slug": "wotc-phb-2024" },
+    { "name": "Shield", "ac_string": "+2", "category": "Shield", "cost": "10 GP", "stealth_disadvantage": false, "document__slug": "wotc-phb-2024" }
+  ]
+}

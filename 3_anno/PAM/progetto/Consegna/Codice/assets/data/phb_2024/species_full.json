@@ -1,0 +1,1073 @@
+{
+  "species": [
+    {
+      "name": "Aasimar",
+      "slug": "aasimar",
+      "source": "PHB 2024",
+      "creature_type": "Humanoid",
+      "size": "Medium or Small (chosen at selection)",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Celestial Resistance",
+          "level": 1,
+          "description": "You have Resistance to Necrotic damage and Radiant damage."
+        },
+        {
+          "name": "Darkvision",
+          "level": 1,
+          "description": "You have Darkvision with a range of 60 feet."
+        },
+        {
+          "name": "Healing Hands",
+          "level": 1,
+          "action": "Magic",
+          "uses": 1,
+          "refresh": "Long Rest",
+          "description": "As a Magic action, you touch a creature and roll a number of d4s equal to your Proficiency Bonus. The creature regains a number of Hit Points equal to the total rolled. Once you use this trait, you can't use it again until you finish a Long Rest."
+        },
+        {
+          "name": "Light Bearer",
+          "level": 1,
+          "description": "You know the Light cantrip. Charisma is your spellcasting ability for it."
+        },
+        {
+          "name": "Celestial Revelation",
+          "level": 3,
+          "action": "Bonus Action",
+          "duration": "1 minute",
+          "uses": 1,
+          "refresh": "Long Rest",
+          "description": "When you reach character level 3, you can transform as a Bonus Action using one of the options below (choose the option each time you transform). The transformation lasts for 1 minute or until you end it (no action required). Once you transform, you can’t do so again until you finish a Long Rest.\n\nOnce on each of your turns before the transformation ends, you can deal extra damage to one target when you deal damage to it with an attack or a spell. The extra damage equals your Proficiency Bonus, and the extra damage’s type is either Necrotic for Necrotic Shroud or Radiant for Heavenly Wings and Inner Radiance.",
+          "options": [
+            {
+              "name": "Heavenly Wings",
+              "description": "Two spectral wings sprout from your back temporarily. Until the transformation ends, you have a Fly Speed equal to your Speed."
+            },
+            {
+              "name": "Inner Radiance",
+              "description": "Searing light temporarily radiates from your eyes and mouth. For the duration, you shed Bright Light in a 10-foot radius and Dim Light for an additional 10 feet, and at the end of each of your turns, each creature within 10 feet of you takes Radiant damage equal to your Proficiency Bonus."
+            },
+            {
+              "name": "Necrotic Shroud",
+              "dc": "8 + PB + CHA",
+              "description": "Your eyes briefly become pools of darkness, and flightless wings sprout from your back temporarily. Creatures other than your allies within 10 feet of you must succeed on a Charisma saving throw (DC 8 plus your Charisma modifier and Proficiency Bonus) or have the Frightened condition until the end of your next turn."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dragonborn",
+      "slug": "dragonborn",
+      "source": "PHB 2024",
+      "creature_type": "Humanoid",
+      "size": "Medium",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Draconic Ancestry",
+          "level": 1,
+          "description": "Your lineage stems from a dragon progenitor. Choose the kind of dragon from the Draconic Ancestors table. Your choice affects your Breath Weapon and Damage Resistance traits as well as your appearance.",
+          "options": [
+            { "name": "Black", "damage_type": "Acid" },
+            { "name": "Blue", "damage_type": "Lightning" },
+            { "name": "Brass", "damage_type": "Fire" },
+            { "name": "Bronze", "damage_type": "Lightning" },
+            { "name": "Copper", "damage_type": "Acid" },
+            { "name": "Gold", "damage_type": "Fire" },
+            { "name": "Green", "damage_type": "Poison" },
+            { "name": "Red", "damage_type": "Fire" },
+            { "name": "Silver", "damage_type": "Cold" },
+            { "name": "White", "damage_type": "Cold" }
+          ]
+        },
+        {
+          "name": "Breath Weapon",
+          "level": 1,
+          "action": "Attack Replacement",
+          "uses": "PB",
+          "refresh": "Long Rest",
+          "dc": "8 + PB + CON",
+          "description": "When you take the Attack action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot Cone or a 30-foot Line that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw. On a failed save, a creature takes damage of the type determined by your Draconic Ancestry trait. On a successful save, a creature takes half as much damage. You can use this a number of times equal to your Proficiency Bonus.",
+          "scaling": {
+            "1": "1d10",
+            "5": "2d10",
+            "11": "3d10",
+            "17": "4d10"
+          }
+        },
+        {
+          "name": "Damage Resistance",
+          "level": 1,
+          "description": "You have Resistance to the damage type determined by your Draconic Ancestry trait."
+        },
+        {
+          "name": "Darkvision",
+          "level": 1,
+          "description": "You have Darkvision with a range of 60 feet."
+        },
+        {
+          "name": "Draconic Flight",
+          "level": 5,
+          "action": "Bonus Action",
+          "duration": "10 minutes",
+          "uses": 1,
+          "refresh": "Long Rest",
+          "description": "As a Bonus Action, you sprout spectral wings on your back that last for 10 minutes or until you retract the wings (no action required) or have the Incapacitated condition. During that time, you have a Fly Speed equal to your Speed. Your wings appear to be made of the same energy as your Breath Weapon. Once you use this trait, you can't use it again until you finish a Long Rest."
+        }
+      ]
+    },
+    {
+      "name": "Dwarf",
+      "slug": "dwarf",
+      "source": "PHB 2024",
+      "creature_type": "Humanoid",
+      "size": "Medium",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Darkvision",
+          "level": 1,
+          "description": "You have Darkvision with a range of 120 feet."
+        },
+        {
+          "name": "Dwarven Resilience",
+          "level": 1,
+          "description": "You have Resistance to Poison damage. You also have Advantage on saving throws you make to avoid or end the Poisoned condition."
+        },
+        {
+          "name": "Dwarven Toughness",
+          "level": 1,
+          "description": "Your Hit Point maximum increases by 1, and it increases by 1 again whenever you gain a level."
+        },
+        {
+          "name": "Stonecunning",
+          "level": 1,
+          "action": "Bonus Action",
+          "duration": "10 minutes",
+          "uses": "PB",
+          "refresh": "Long Rest",
+          "description": "As a Bonus Action, you gain Tremorsense with a range of 60 feet for 10 minutes. You must be on a stone surface or touching a stone surface to use this Tremorsense. The stone can be natural or worked. You can use this a number of times equal to your Proficiency Bonus."
+        }
+      ]
+    },
+    {
+      "name": "Elf",
+      "slug": "elf",
+      "source": "PHB 2024 & MTG (Mixed)",
+      "creature_type": "Humanoid",
+      "size": "Medium",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Darkvision",
+          "level": 1,
+          "description": "You have Darkvision with a range of 60 feet."
+        },
+        {
+          "name": "Elven Lineage",
+          "level": 1,
+          "spellcasting_ability_options": ["Intelligence", "Wisdom", "Charisma"],
+          "description": "You are part of a lineage that grants you supernatural abilities. Choose a lineage and a spellcasting ability. At level 3 and 5, you learn higher-level spells you can cast once per Long Rest for free (or using slots).",
+          "level_unlocks": {
+            "1": "Level 1 Benefit / Cantrip",
+            "3": "Level 1 Spell",
+            "5": "Level 2 Spell"
+          },
+          "variants": [
+            {
+              "name": "Drow",
+              "level_1": "Darkvision range increases to 120 feet; Dancing Lights cantrip.",
+              "level_3": "Faerie Fire",
+              "level_5": "Darkness"
+            },
+            {
+              "name": "High Elf",
+              "level_1": "Prestidigitation cantrip (swap with any Wizard cantrip on Long Rest).",
+              "level_3": "Detect Magic",
+              "level_5": "Misty Step"
+            },
+            {
+              "name": "Wood Elf",
+              "level_1": "Speed increases to 35 feet; Druidcraft cantrip.",
+              "level_3": "Longstrider",
+              "level_5": "Pass without Trace"
+            },
+            {
+              "name": "Lorwyn Elf",
+              "level_1": "Thorn Whip cantrip (swap with any Druid cantrip on Long Rest).",
+              "level_3": "Command",
+              "level_5": "Silence"
+            },
+            {
+              "name": "Shadowmoor Elf",
+              "level_1": "Darkvision range increases to 120 feet; Starry Wisp cantrip.",
+              "level_3": "Heroism",
+              "level_5": "Gentle Repose"
+            }
+          ]
+        },
+        {
+          "name": "Fey Ancestry",
+          "level": 1,
+          "description": "You have Advantage on saving throws you make to avoid or end the Charmed condition."
+        },
+        {
+          "name": "Keen Senses",
+          "level": 1,
+          "choice": {
+            "count": 1,
+            "options": ["Insight", "Perception", "Survival"]
+          },
+          "description": "You have proficiency in the Insight, Perception, or Survival skill."
+        },
+        {
+          "name": "Trance",
+          "level": 1,
+          "description": "You don't need to sleep, and magic can't put you to sleep. You can finish a Long Rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness."
+        }
+      ]
+    },
+    {
+      "name": "Gnome",
+      "slug": "gnome",
+      "source": "PHB 2024",
+      "creature_type": "Humanoid",
+      "size": "Small",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Darkvision",
+          "level": 1,
+          "description": "You have Darkvision with a range of 60 feet."
+        },
+        {
+          "name": "Gnomish Cunning",
+          "level": 1,
+          "description": "You have Advantage on Intelligence, Wisdom, and Charisma saving throws."
+        },
+        {
+          "name": "Gnomish Lineage",
+          "level": 1,
+          "spellcasting_ability_options": ["Intelligence", "Wisdom", "Charisma"],
+          "description": "You are part of a lineage that grants you supernatural abilities. Choose a lineage and a spellcasting ability.",
+          "variants": [
+            {
+              "name": "Forest Gnome",
+              "description": "You know the Minor Illusion cantrip. You also always have the Speak with Animals spell prepared. You can cast it without a spell slot a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.",
+              "uses": "PB",
+              "refresh": "Long Rest"
+            },
+            {
+              "name": "Rock Gnome",
+              "description": "You know the Mending and Prestidigitation cantrips. In addition, you can spend 10 minutes casting Prestidigitation to create a Tiny clockwork device (AC 5, 1 HP). The device produces an effect from Prestidigitation whenever a creature takes a Bonus Action to activate it. You can have three such devices in existence at a time, each falling apart after 8 hours.",
+              "uses": 3,
+              "duration": "8 hours"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Goliath",
+      "slug": "goliath",
+      "source": "PHB 2024",
+      "creature_type": "Humanoid",
+      "size": "Medium",
+      "speed": 35,
+      "traits": [
+        {
+          "name": "Giant Ancestry",
+          "level": 1,
+          "description": "You are descended from Giants. Choose one of the following benefits; you can use the chosen benefit a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.",
+          "uses": "PB",
+          "refresh": "Long Rest",
+          "options": [
+            { "name": "Cloud's Jaunt (Cloud Giant)", "action": "Bonus Action", "description": "As a Bonus Action, you magically teleport up to 30 feet to an unoccupied space you can see." },
+            { "name": "Fire's Burn (Fire Giant)", "action": "On Hit", "description": "When you hit a target with an attack roll and deal damage to it, you can also deal 1d10 Fire damage to that target." },
+            { "name": "Frost's Chill (Frost Giant)", "action": "On Hit", "description": "When you hit a target with an attack roll and deal damage to it, you can also deal 1d6 Cold damage to that target and reduce its Speed by 10 feet until the start of your next turn." },
+            { "name": "Hill's Tumble (Hill Giant)", "action": "On Hit", "description": "When you hit a Large or smaller creature with an attack roll and deal damage to it, you can give that target the Prone condition." },
+            { "name": "Stone's Endurance (Stone Giant)", "action": "Reaction", "description": "When you take damage, you can take a Reaction to roll 1d12. Add your Constitution modifier to the number rolled and reduce the damage by that total." },
+            { "name": "Storm's Thunder (Storm Giant)", "action": "Reaction", "description": "When you take damage from a creature within 60 feet of you, you can take a Reaction to deal 1d8 Thunder damage to that creature." }
+          ]
+        },
+        {
+          "name": "Large Form",
+          "level": 5,
+          "action": "Bonus Action",
+          "duration": "10 minutes",
+          "uses": 1,
+          "refresh": "Long Rest",
+          "description": "Starting at character level 5, you can change your size to Large as a Bonus Action if you're in a big enough space. For that duration, you have Advantage on Strength checks, and your Speed increases by 10 feet."
+        },
+        {
+          "name": "Powerful Build",
+          "level": 1,
+          "description": "You have Advantage on any ability check you make to end the Grappled condition. You also count as one size larger when determining your carrying capacity."
+        }
+      ]
+    },
+    {
+      "name": "Halfling",
+      "slug": "halfling",
+      "source": "PHB 2024",
+      "creature_type": "Humanoid",
+      "size": "Small",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Brave",
+          "level": 1,
+          "description": "You have Advantage on saving throws you make to avoid or end the Frightened condition."
+        },
+        {
+          "name": "Halfling Nimbleness",
+          "level": 1,
+          "description": "You can move through the space of any creature that is a size larger than you, but you can't stop in the same space."
+        },
+        {
+          "name": "Luck",
+          "level": 1,
+          "description": "When you roll a 1 on the d20 of a D20 Test, you can reroll the die, and you must use the new roll."
+        },
+        {
+          "name": "Naturally Stealthy",
+          "level": 1,
+          "description": "You can take the Hide action even when you are obscured only by a creature that is at least one size larger than you."
+        }
+      ]
+    },
+    {
+      "name": "Human",
+      "slug": "human",
+      "source": "PHB 2024",
+      "creature_type": "Humanoid",
+      "size": "Medium or Small (chosen at selection)",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Resourceful",
+          "level": 1,
+          "refresh": "Long Rest",
+          "description": "You gain Heroic Inspiration whenever you finish a Long Rest."
+        },
+        {
+          "name": "Skillful",
+          "level": 1,
+          "choice": {
+            "count": 1,
+            "options": "Any"
+          },
+          "description": "You gain proficiency in one skill of your choice."
+        },
+        {
+          "name": "Versatile",
+          "level": 1,
+          "choice": {
+            "count": 1,
+            "options": "Origin Feat"
+          },
+          "description": "You gain an Origin feat of your choice."
+        }
+      ]
+    },
+    {
+      "name": "Orc",
+      "slug": "orc",
+      "source": "PHB 2024",
+      "creature_type": "Humanoid",
+      "size": "Medium",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Adrenaline Rush",
+          "level": 1,
+          "action": "Bonus Action",
+          "uses": "PB",
+          "refresh": "Short or Long Rest",
+          "description": "You can take the Dash action as a Bonus Action. When you do so, you gain a number of Temporary Hit Points equal to your Proficiency Bonus."
+        },
+        {
+          "name": "Darkvision",
+          "level": 1,
+          "description": "You have Darkvision with a range of 120 feet."
+        },
+        {
+          "name": "Relentless Endurance",
+          "level": 1,
+          "uses": 1,
+          "refresh": "Long Rest",
+          "description": "When you are reduced to 0 Hit Points but not killed outright, you can drop to 1 Hit Point instead. Once you use this trait, you can't do so again until you finish a Long Rest."
+        }
+      ]
+    },
+    {
+      "name": "Tiefling",
+      "slug": "tiefling",
+      "source": "PHB 2024",
+      "creature_type": "Humanoid",
+      "size": "Medium or Small (chosen at selection)",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Darkvision",
+          "level": 1,
+          "description": "You have Darkvision with a range of 60 feet."
+        },
+        {
+          "name": "Fiendish Legacy",
+          "level": 1,
+          "spellcasting_ability_options": ["Intelligence", "Wisdom", "Charisma"],
+          "description": "You are the recipient of a legacy that grants you supernatural abilities. Choose a legacy and a spellcasting ability. At level 3 and 5, you learn higher-level spells you can cast once per Long Rest for free (or using slots).",
+          "level_unlocks": {
+            "1": "Resistance + Cantrip",
+            "3": "Level 1 Spell",
+            "5": "Level 2 Spell"
+          },
+          "variants": [
+            {
+              "name": "Abyssal",
+              "level_1": "Resistance to Poison damage; Poison Spray cantrip.",
+              "level_3": "Ray of Sickness",
+              "level_5": "Hold Person"
+            },
+            {
+              "name": "Chthonic",
+              "level_1": "Resistance to Necrotic damage; Chill Touch cantrip.",
+              "level_3": "False Life",
+              "level_5": "Ray of Enfeeblement"
+            },
+            {
+              "name": "Infernal",
+              "level_1": "Resistance to Fire damage; Fire Bolt cantrip.",
+              "level_3": "Hellish Rebuke",
+              "level_5": "Darkness"
+            }
+          ]
+        },
+        {
+          "name": "Otherworldly Presence",
+          "level": 1,
+          "description": "You know the Thaumaturgy cantrip. When you cast it with this trait, the spell uses the same spellcasting ability you use for your Fiendish Legacy trait."
+        }
+      ]
+    },
+    {
+      "name": "Changeling",
+      "slug": "changeling",
+      "source": "Eberron / MPMM",
+      "creature_type": "Fey",
+      "size": "Medium or Small (chosen at selection)",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Changeling Instincts",
+          "level": 1,
+          "choice": {
+            "count": 2,
+            "options": ["Deception", "Insight", "Intimidation", "Performance", "Persuasion"]
+          },
+          "description": "Thanks to your connection to the fey realm, you gain proficiency in two of the following skills of your choice: Deception, Insight, Intimidation, Performance, or Persuasion."
+        },
+        {
+          "name": "Shape-Shifter",
+          "level": 1,
+          "action": "Action",
+          "description": "As an action, you can change your appearance and your voice. You determine the specifics, including coloration, hair length, sex, height, and weight, and can change size between Medium and Small. You can appear as a member of another species (stats don't change). You must adopt a form with the same basic arrangement of limbs. While shape-shifted, you have Advantage on Charisma checks. You stay in the form until you use an action to revert."
+        }
+      ]
+    },
+    {
+      "name": "Kalashtar",
+      "slug": "kalashtar",
+      "source": "Eberron",
+      "creature_type": "Aberration",
+      "size": "Medium",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Dual Mind",
+          "level": 1,
+          "description": "You have Advantage on Wisdom and Charisma saving throws."
+        },
+        {
+          "name": "Mental Discipline",
+          "level": 1,
+          "description": "You have Resistance to Psychic damage."
+        },
+        {
+          "name": "Mind Link",
+          "level": 1,
+          "action": "Magic",
+          "description": "You have telepathy with a range (in feet) equal to 10 times your level. As a Magic action, you can give a creature the ability to speak telepathically with you for 1 hour.",
+          "scaling": {
+            "1": "10ft x Level"
+          }
+        },
+        {
+          "name": "Severed from Dreams",
+          "level": 1,
+          "refresh": "Long Rest",
+          "choice": {
+            "count": 1,
+            "options": "Any"
+          },
+          "description": "You can’t be the target of the Dream spell. Whenever you finish a Long Rest, you gain proficiency in one skill of your choice until the end of your next Long Rest."
+        }
+      ]
+    },
+    {
+      "name": "Khoravar",
+      "slug": "khoravar",
+      "source": "Eberron",
+      "creature_type": "Humanoid",
+      "size": "Medium or Small (chosen at selection)",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Darkvision",
+          "level": 1,
+          "description": "You have Darkvision with a range of 60 feet."
+        },
+        {
+          "name": "Fey Ancestry",
+          "level": 1,
+          "description": "You have Advantage on saving throws you make to avoid or end the Charmed condition."
+        },
+        {
+          "name": "Fey Gift",
+          "level": 1,
+          "spellcasting_ability_options": ["Intelligence", "Wisdom", "Charisma"],
+          "refresh": "Long Rest",
+          "description": "You know the Friends cantrip. Whenever you finish a Long Rest, you can replace that cantrip with a different cantrip from the Cleric, Druid, or Wizard spell list. Intelligence, Wisdom, or Charisma is your spellcasting ability for the spell you cast with this trait (chosen at selection)."
+        },
+        {
+          "name": "Lethargy Resilience",
+          "level": 1,
+          "uses": 1,
+          "refresh": "1d4 Long Rests",
+          "description": "When you fail a saving throw to avoid or end the Unconscious condition, you can succeed instead. Once you use this trait, you can’t do so again until you finish 1d4 Long Rests."
+        },
+        {
+          "name": "Skill Versatility",
+          "level": 1,
+          "refresh": "Long Rest",
+          "choice": {
+            "count": 1,
+            "options": "Any Skill or Tool"
+          },
+          "description": "You gain proficiency in one skill or with one tool of your choice. Whenever you finish a Long Rest, you can replace it with another skill or tool proficiency."
+        }
+      ]
+    },
+    {
+      "name": "Shifter",
+      "slug": "shifter",
+      "source": "Eberron",
+      "creature_type": "Humanoid",
+      "size": "Medium or Small (chosen at selection)",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Bestial Instincts",
+          "level": 1,
+          "choice": {
+            "count": 1,
+            "options": ["Acrobatics", "Athletics", "Intimidation", "Survival"]
+          },
+          "description": "Channeling the beast within, you gain proficiency in one of the following skills: Acrobatics, Athletics, Intimidation, or Survival."
+        },
+        {
+          "name": "Darkvision",
+          "level": 1,
+          "description": "You have Darkvision with a range of 60 feet."
+        },
+        {
+          "name": "Shifting",
+          "level": 1,
+          "action": "Bonus Action",
+          "duration": "1 minute",
+          "uses": "PB",
+          "refresh": "Long Rest",
+          "description": "As a Bonus Action, you can shape-shift. You gain Temporary Hit Points equal to 2 x PB. You gain the benefit of your chosen sub-species (see Variants).",
+          "variants": [
+            {
+              "name": "Beasthide",
+              "description": "You gain 1d6 additional Temporary Hit Points. While shifted, you have a +1 bonus to your Armor Class."
+            },
+            {
+              "name": "Longtooth",
+              "description": "When you shift and as a Bonus Action while shifted, you can make an Unarmed Strike with your fangs (1d6 + Str piercing damage)."
+            },
+            {
+              "name": "Swiftstride",
+              "description": "While shifted, your Speed increases by 10 feet. You can move 10ft as a Reaction when a creature ends its turn within 5ft without provoking opportunity attacks."
+            },
+            {
+              "name": "Wildhunt",
+              "description": "While shifted, you have Advantage on Wisdom checks. No creature within 30ft has Advantage on attacks against you."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Warforged",
+      "slug": "warforged",
+      "source": "Eberron",
+      "creature_type": "Construct",
+      "size": "Medium or Small (chosen at selection)",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Construct Resilience",
+          "level": 1,
+          "description": "You have Resistance to Poison damage. You also have Advantage on saving throws to avoid or end the Poisoned condition."
+        },
+        {
+          "name": "Integrated Protection",
+          "level": 1,
+          "description": "You gain a +1 bonus to your Armor Class. In addition, armor you have donned can’t be removed against your will while you’re alive."
+        },
+        {
+          "name": "Sentry’s Rest",
+          "level": 1,
+          "description": "You don’t need to sleep, and magic can’t put you to sleep. You can finish a Long Rest in 6 hours if you spend those hours in an inactive, motionless state. During this time, you appear inert but remain conscious."
+        },
+        {
+          "name": "Specialized Design",
+          "level": 1,
+          "choice": {
+            "skill_count": 1,
+            "tool_count": 1,
+            "options": "Any"
+          },
+          "description": "You gain one skill proficiency and one tool proficiency of your choice."
+        },
+        {
+          "name": "Tireless",
+          "level": 1,
+          "description": "You don’t gain Exhaustion levels from dehydration, malnutrition, or suffocation."
+        }
+      ]
+    },
+    {
+      "name": "Boggart",
+      "slug": "boggart",
+      "source": "Lorwyn",
+      "creature_type": "Humanoid (Goblinoid)",
+      "size": "Small",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Darkvision",
+          "level": 1,
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+        },
+        {
+          "name": "Fey Ancestry",
+          "level": 1,
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+        },
+        {
+          "name": "Fury of the Small",
+          "level": 1,
+          "uses": "PB",
+          "refresh": "Long Rest",
+          "description": "When you damage a creature with an attack or a spell and the creature’s size is larger than yours, you can cause the attack or spell to deal extra damage equal to your proficiency bonus. Once per turn."
+        },
+        {
+          "name": "Nimble Escape",
+          "level": 1,
+          "action": "Bonus Action",
+          "description": "You can take the Disengage or Hide action as a bonus action on each of your turns."
+        }
+      ]
+    },
+    {
+      "name": "Faerie",
+      "slug": "faerie",
+      "source": "Lorwyn",
+      "creature_type": "Fey",
+      "size": "Small",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Fairy Magic",
+          "level": 1,
+          "spellcasting_ability_options": ["Intelligence", "Wisdom", "Charisma"],
+          "description": "You know the Druidcraft cantrip. At level 3, you learn Faerie Fire. At level 5, you learn Enlarge/Reduce. You can cast each once per Long Rest for free.",
+          "level_unlocks": {
+            "1": "Druidcraft",
+            "3": "Faerie Fire",
+            "5": "Enlarge/Reduce"
+          }
+        },
+        {
+          "name": "Flight",
+          "level": 1,
+          "description": "You have a flying speed equal to your walking speed. You can’t use this flying speed if you’re wearing medium or heavy armor."
+        }
+      ],
+      "variants": [
+        {
+          "name": "Shadowmoor Faerie",
+          "description": "You have Darkvision with a range of 120 feet."
+        }
+      ]
+    },
+    {
+      "name": "Flamekin",
+      "slug": "flamekin",
+      "source": "Lorwyn",
+      "creature_type": "Humanoid",
+      "size": "Medium or Small (chosen at selection)",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Darkvision",
+          "level": 1,
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light."
+        },
+        {
+          "name": "Fire Resistance",
+          "level": 1,
+          "description": "You have resistance to fire damage."
+        },
+        {
+          "name": "Reach to the Blaze",
+          "level": 1,
+          "spellcasting_ability_options": ["Intelligence", "Wisdom", "Charisma"],
+          "description": "You know the Produce Flame cantrip. At level 3, you learn Burning Hands. At level 5, you learn Flame Blade (no material components). You can cast each once per Long Rest for free.",
+          "level_unlocks": {
+            "1": "Produce Flame",
+            "3": "Burning Hands",
+            "5": "Flame Blade"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Lorwyn Changeling",
+      "slug": "lorwyn-changeling",
+      "source": "Lorwyn",
+      "creature_type": "Fey",
+      "size": "Medium or Small (chosen at selection)",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Shape Self",
+          "level": 1,
+          "action": "Action",
+          "description": "As an action, you can reshape your body to a two-legged Humanoid shape or to a four-legged Beast shape. While you have a Humanoid shape, you can wear clothing and armor made for a Humanoid of your size."
+        },
+        {
+          "name": "Darkvision",
+          "level": 1,
+          "description": "You have Darkvision with a range of 120 feet."
+        },
+        {
+          "name": "Delightful Imitator",
+          "level": 1,
+          "description": "You have proficiency in the Performance skill."
+        },
+        {
+          "name": "Unpredictable Movement",
+          "level": 1,
+          "action": "Reaction",
+          "description": "When you roll Initiative and don’t have Disadvantage on that roll, you can take the Dash action as a Reaction."
+        }
+      ]
+    },
+    {
+      "name": "Rimekin",
+      "slug": "rimekin",
+      "source": "Lorwyn",
+      "creature_type": "Humanoid",
+      "size": "Medium or Small (chosen at selection)",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Cold Fire Magic",
+          "level": 1,
+          "spellcasting_ability_options": ["Intelligence", "Wisdom", "Charisma"],
+          "description": "You know Ray of Frost. At level 3, you learn Ice Knife. At level 5, you learn Flame Blade (deals Cold damage). You can cast each once per Long Rest for free.",
+          "level_unlocks": {
+            "1": "Ray of Frost",
+            "3": "Ice Knife",
+            "5": "Flame Blade (Cold)"
+          }
+        },
+        {
+          "name": "Cold Resistance",
+          "level": 1,
+          "description": "You have Resistance to Cold damage."
+        },
+        {
+          "name": "Darkvision",
+          "level": 1,
+          "description": "You have Darkvision with a range of 60 feet."
+        }
+      ]
+    },
+    {
+      "name": "Dhampir",
+      "slug": "dhampir",
+      "source": "Ravenloft",
+      "creature_type": "Humanoid",
+      "size": "Medium or Small (chosen at selection)",
+      "speed": 35,
+      "traits": [
+        {
+          "name": "Darkvision",
+          "level": 1,
+          "description": "You have Darkvision with a range of 60 feet."
+        },
+        {
+          "name": "Spider Climb",
+          "level": 1,
+          "description": "You have a Climb Speed equal to your Speed. At level 3, you can move across vertical surfaces and ceilings leaving your hands free.",
+          "level_unlocks": {
+            "3": "Move across vertical surfaces and ceilings (hands free)"
+          }
+        },
+        {
+          "name": "Trace of Undeath",
+          "level": 1,
+          "description": "You have Resistance to Necrotic damage."
+        },
+        {
+          "name": "Vampiric Bite",
+          "level": 1,
+          "uses": "PB",
+          "refresh": "Long Rest",
+          "description": "Use fangs for Unarmed Strike (1d4 + Con piercing). When damaging non-Constructs/Undead, choose Drain (Heal damage dealt) or Strengthen (Bonus to next ability check or attack roll equal to damage dealt). You can empower yourself PB times per Long Rest."
+        }
+      ]
+    },
+    {
+      "name": "Hexblood",
+      "slug": "hexblood",
+      "source": "Ravenloft",
+      "creature_type": "Fey",
+      "size": "Medium or Small (chosen at selection)",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Darkvision",
+          "level": 1,
+          "description": "You have Darkvision with a range of 60 feet."
+        },
+        {
+          "name": "Eerie Token",
+          "level": 1,
+          "action": "Bonus Action",
+          "uses": 1,
+          "refresh": "Long Rest",
+          "description": "Create a magical token from a lock of hair or nail. It lasts until a Long Rest or destruction. Includes Distant Message (Telepathy within 10 miles) and Remote Viewing (See/hear from token for 1 min, destroys token after).",
+          "options": [
+            { "name": "Distant Message", "action": "Magic", "description": "Send a telepathic message of 25 words or fewer to the creature holding the token (10 mile range)." },
+            { "name": "Remote Viewing", "action": "Magic", "duration": "1 minute", "description": "See and hear through the token as if you were there (10 mile range). Ends token when finished." }
+          ]
+        },
+        {
+          "name": "Hex Magic",
+          "level": 1,
+          "spellcasting_ability_options": ["Intelligence", "Wisdom", "Charisma"],
+          "refresh": "Long Rest",
+          "description": "You always have Disguise Self and Hex prepared. You can cast each once per Long Rest for free.",
+          "level_unlocks": {
+            "1": "Disguise Self, Hex"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Lupin",
+      "slug": "lupin",
+      "source": "Ravenloft",
+      "creature_type": "Humanoid",
+      "size": "Medium or Small (chosen at selection)",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Darkvision",
+          "level": 1,
+          "description": "You have Darkvision with a range of 60 feet."
+        },
+        {
+          "name": "Feral Pounce",
+          "level": 1,
+          "description": "Your Unarmed Strikes deal Slashing damage. Once per turn when you hit with an Unarmed Strike as part of an Attack action, you can use both the Damage and Shove options."
+        },
+        {
+          "name": "Howl",
+          "level": 1,
+          "action": "Bonus Action",
+          "uses": "PB",
+          "refresh": "Long Rest",
+          "dc": "8 + PB + CON",
+          "description": "As a Bonus Action, let out a howl. Chosen creatures in 15ft must succeed on a Wisdom save or have Disadvantage on attack rolls and saves until the start of your next turn."
+        },
+        {
+          "name": "Werewolf Instincts",
+          "level": 1,
+          "choice": {
+            "count": 1,
+            "options": ["Perception", "Stealth", "Survival"]
+          },
+          "description": "You have proficiency in the Perception, Stealth, or Survival skill."
+        }
+      ]
+    },
+    {
+      "name": "Reborn",
+      "slug": "reborn",
+      "source": "Ravenloft",
+      "creature_type": "Humanoid",
+      "size": "Medium or Small (chosen at selection)",
+      "speed": 30,
+      "traits": [
+        {
+          "name": "Escaped Death",
+          "level": 1,
+          "description": "You have Advantage on Death Saving Throws."
+        },
+        {
+          "name": "Everlasting",
+          "level": 1,
+          "description": "You don’t gain Exhaustion levels from dehydration, malnutrition, or suffocation. You don’t need to sleep, and magic can’t put you to sleep. You can finish a Long Rest in 4 hours if you spend those hours in an inactive, motionless state, during which you retain consciousness."
+        },
+        {
+          "name": "Knowledge from a Past Life",
+          "level": 1,
+          "uses": "PB",
+          "refresh": "Long Rest",
+          "choice": {
+            "count": 1,
+            "options": "Any Skill"
+          },
+          "description": "You gain proficiency in one skill of your choice. In addition, when you fail an ability check, you can roll 1d6 and add it to the d20. You can use this bonus PB times per Long Rest."
+        },
+        {
+          "name": "Strange Endurance",
+          "level": 1,
+          "choice": {
+            "count": 1,
+            "options": ["Cold", "Necrotic", "Poison"]
+          },
+          "description": "You have Resistance to one of the following damage types of your choice: Cold, Necrotic, or Poison."
+        }
+      ]
+    },
+    {
+      "name": "Dhampir",
+      "slug": "dhampir",
+      "source": "Ravenloft",
+      "size": "Medium or Small",
+      "speed": 35,
+      "traits": [
+        { "name": "Ancestral Legacy", "description": "If you replace a species with this lineage, you keep its skill proficiencies and climbing/flying/swimming speeds." },
+        { "name": "Darkvision", "description": "You have Darkvision with a range of 60 feet." },
+        { "name": "Deathless Nature", "description": "You don't need to breathe." },
+        { "name": "Spider Climb", "description": "You have a Climb Speed equal to your Speed. At L3+, you can move up, down, and across vertical surfaces and upside down along ceilings, leaving your hands free." },
+        { "name": "Vampiric Bite", "description": "Your fanged bite is a natural weapon (1d4 Piercing). While you have less than half your HP, you have Advantage on attack rolls with it. When you hit, you can empower yourself (Con mod times per Long Rest): gain HP equal to damage dealt or a bonus to your next ability check/attack roll equal to the damage." }
+      ]
+    },
+    {
+      "name": "Hexblood",
+      "slug": "hexblood",
+      "source": "Ravenloft",
+      "size": "Medium or Small",
+      "speed": 30,
+      "traits": [
+        { "name": "Ancestral Legacy", "description": "Keep skill proficiencies and special speeds from previous species." },
+        { "name": "Darkvision", "description": "60 feet." },
+        { "name": "Fey Resilience", "description": "You have Advantage on saving throws you make to avoid or end the Charmed condition." },
+        { "name": "Hex Magic", "description": "You know the Disguise Self and Hex spells. You can cast each once per Long Rest without a slot, or use slots. Use Int, Wis, or Cha for spellcasting." },
+        { "name": "Magic Token", "description": "As an Action, pull out a fingernail, hair, or tooth to create a token. You can telepathically speak to a creature holding it within 10 miles, or see/hear through the token (Action)." }
+      ]
+    },
+    {
+      "name": "Reborn",
+      "slug": "reborn",
+      "source": "Ravenloft",
+      "size": "Medium or Small",
+      "speed": 30,
+      "traits": [
+        { "name": "Ancestral Legacy", "description": "Keep skill proficiencies and special speeds from previous species." },
+        { "name": "Darkvision", "description": "60 feet." },
+        { "name": "Deathless Nature", "description": "Advantage on saves vs Disease/Poison; Resistance to Poison damage; Advantage on Death saves; don't need to eat, drink, or breathe; don't need sleep (4h motionless for Long Rest)." },
+        { "name": "Knowledge from a Past Life", "description": "When you make an ability check that uses a skill, add 1d6 to the roll (PB times per Long Rest)." }
+      ]
+    },
+    {
+      "name": "Lupin",
+      "slug": "lupin",
+      "source": "Ravenloft",
+      "size": "Medium",
+      "speed": 30,
+      "traits": [
+        { "name": "Scent", "description": "Advantage on Wisdom (Perception) checks involving smell." },
+        { "name": "Natural Weapons", "description": "Bite (1d6 Piercing). Strike (1d4 Slashing)." },
+        { "name": "Strong Will", "description": "Advantage on saves vs Frightened." }
+      ]
+    },
+    {
+      "name": "Boggart",
+      "slug": "boggart",
+      "source": "Lorwyn",
+      "size": "Small",
+      "speed": 30,
+      "traits": [
+        { "name": "Boggart Cunning", "description": "Advantage on Dex (Stealth) and Sleight of Hand checks." },
+        { "name": "Nose for Sensation", "description": "Sense of smell allows you to detect presence of food or decay within 30ft." }
+      ]
+    },
+    {
+      "name": "Faerie",
+      "slug": "faerie",
+      "source": "Lorwyn",
+      "size": "Small",
+      "speed": 10,
+      "traits": [
+        { "name": "Flight", "description": "Fly Speed 30ft (hover)." },
+        { "name": "Faerie Magic", "description": "Know Druidcraft. At L3, cast Faerie Fire once per Long Rest." }
+      ]
+    },
+    {
+      "name": "Flamekin",
+      "slug": "flamekin",
+      "source": "Lorwyn",
+      "size": "Medium",
+      "speed": 30,
+      "traits": [
+        { "name": "Inner Fire", "description": "Resistance to Fire damage." },
+        { "name": "Flame Burst", "description": "Once per Long Rest, emit burst: 5ft radius, Dex save or 2d6 Fire damage." }
+      ]
+    },
+    {
+      "name": "Lorwyn Changeling",
+      "slug": "lorwyn-changeling",
+      "source": "Lorwyn",
+      "size": "Medium or Small",
+      "speed": 30,
+      "traits": [
+        { "name": "Duplicity", "description": "You have Advantage on saving throws you make to avoid or end the Charmed condition." },
+        { "name": "Shapechanger", "description": "As a Magic action, you can change your appearance and voice. You determine the specifics of the changes, including your coloration, hair length, and sex. You can also adjust your height and weight, but not so much that your Size changes. You can make yourself appear as a member of another species, though none of your game statistics change. You stay in the new form until you use a Magic action to revert to your true form or until you die." }
+      ]
+    },
+    {
+      "name": "Rimekin",
+      "slug": "rimekin",
+      "source": "Lorwyn",
+      "size": "Medium",
+      "speed": 30,
+      "traits": [
+        { "name": "Child of the Rime", "description": "You have Resistance to Cold damage." },
+        { "name": "Frost Breath", "description": "Once per Long Rest, emit burst: 15ft cone, Con save or 2d6 Cold damage and Speed halved until next turn." }
+      ]
+    }
+  ]
+}

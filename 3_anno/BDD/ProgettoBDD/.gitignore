@@ -1,0 +1,39 @@
+# LaTeX 
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.xdv
+
+# Build output
+Relazione/build/*
+!Relazione/build/main.pdf
+
+# Dia
+*.dia~
+*.autosave
+*.autosave~
+
+# LibreOffice
+.~lock.*#
+
+# VS Code
+.vscode/*
+
+# Specific files
+ProgettazioneLogica/TavoleAccessi.md

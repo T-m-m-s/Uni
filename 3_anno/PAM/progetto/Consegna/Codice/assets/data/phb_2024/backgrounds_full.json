@@ -1,0 +1,691 @@
+{
+  "backgrounds": [
+    {
+      "name": "Acolyte",
+      "slug": "acolyte",
+      "source": "PHB 2024",
+      "description": "You devoted yourself to service in a temple, either nestled in a town or secluded in a sacred grove. There you performed rites in honor of a god or pantheon. You served under a priest and studied religion. Thanks to your priest's instruction and your own devotion, you also learned how to channel a modicum of divine power in service to your place of worship and the people who prayed there.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Intelligence", "Wisdom", "Charisma"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Magic Initiate (Cleric)",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["Insight", "Religion"],
+      "tool_proficiency": "Calligrapher's Supplies",
+      "equipment": "Calligrapher's Supplies, Holy Symbol, Prayer Book, Robes, 15 GP"
+    },
+    {
+      "name": "Artisan",
+      "slug": "artisan",
+      "source": "PHB 2024",
+      "description": "You began mopping floors and scrubbing counters in an artisan’s workshop for a few coppers per day as soon as you were strong enough to carry a bucket. When you were old enough to apprentice, you learned to create basic crafts of your own, as well as how to sweet-talk the occasional demanding customer. Your trade has also given you a keen eye for detail.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Strength", "Dexterity", "Intelligence"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Crafter",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["Investigation", "Persuasion"],
+      "tool_proficiency": {
+        "choice": {
+          "count": 1,
+          "options": "Any Artisan's Tools"
+        }
+      },
+      "equipment": "Abacus, Artisan's Tools (one kind), Merchant's Scale, Pouch, Traveler's Clothes, 25 GP"
+    },
+    {
+      "name": "Charlatan",
+      "slug": "charlatan",
+      "source": "PHB 2024",
+      "description": "Once you were old enough to order an ale, you soon had a favorite stool in every tavern within ten miles of where you were born. As you traveled the circuit from public house to watering hole, you learned to prey on unfortunates who were in the market for a comforting lie or two—perhaps a sham potion or forged ancestry records.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Dexterity", "Constitution", "Charisma"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Skilled",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["Deception", "Sleight of Hand"],
+      "tool_proficiency": "Forgery Kit",
+      "equipment": "Costume, Fine Clothes, Forgery Kit, Pouch, 15 GP"
+    },
+    {
+      "name": "Criminal",
+      "slug": "criminal",
+      "source": "PHB 2024",
+      "description": "You eked out a living in dark alleyways, cutting purses or burgling shops. Perhaps you were part of a small gang of like-minded wrongdoers who looked out for each other. Or maybe you were a lone wolf, fending for yourself against the local thieves' guild and more fearsome lawbreakers.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Dexterity", "Constitution", "Intelligence"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Alert",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["Sleight of Hand", "Stealth"],
+      "tool_proficiency": "Thieves' Tools",
+      "equipment": "Crowbar, Dagger (2), Pouch, Stealthy Clothes, Thieves' Tools, 16 GP"
+    },
+    {
+      "name": "Entertainer",
+      "slug": "entertainer",
+      "source": "PHB 2024",
+      "description": "You spent much of your youth following roving fairs and carnivals, performing odd jobs for musicians and acrobats in exchange for lessons. You may have learned how to walk a tightrope, how to play a lute in a distinct style, or how to recite poetry with impeccable diction. To this day, you thrive on applause and long for the stage.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Strength", "Dexterity", "Charisma"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Musician",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["Acrobatics", "Performance"],
+      "tool_proficiency": {
+        "choice": {
+          "count": 1,
+          "options": "Any Musical Instrument"
+        }
+      },
+      "equipment": "Costume, Musical Instrument (one kind), Perfume, Pouch, Traveler's Clothes, 11 GP"
+    },
+    {
+      "name": "Farmer",
+      "slug": "farmer",
+      "source": "PHB 2024",
+      "description": "You grew up close to the land. Years tending animals and cultivating the earth rewarded you with patience and good health. You have a keen appreciation for nature’s bounty alongside a healthy respect for nature's wrath.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Strength", "Constitution", "Wisdom"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Tough",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["Animal Handling", "Nature"],
+      "tool_proficiency": "Carpenter's Tools",
+      "equipment": "Carpenter's Tools, Healer's Kit, Iron Pot, Pouch, Sickle, Traveler's Clothes, 23 GP"
+    },
+    {
+      "name": "Guard",
+      "slug": "guard",
+      "source": "PHB 2024",
+      "description": "Your feet ache when you remember the countless hours you spent at your post in the tower. You were trained to keep one eye looking outside the wall, watching for marauders sweeping from the nearby forest, and your other eye looking inside the wall, searching for cutpurses and troublemakers.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Strength", "Intelligence", "Wisdom"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Alert",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["Athletics", "Perception"],
+      "tool_proficiency": {
+        "choice": {
+          "count": 1,
+          "options": "Any Gaming Set"
+        }
+      },
+      "equipment": "Gaming Set (one kind), Lantern, Pouch, Quiver, Shortbow, Spear, Traveler's Clothes, 12 GP"
+    },
+    {
+      "name": "Guide",
+      "slug": "guide",
+      "source": "PHB 2024",
+      "description": "You came of age outdoors, far from settled lands. Your home was anywhere you chose to spread your bedroll. There are wonders in the wilderness— strange monsters, pristine forests and streams, overgrown ruins of great halls once trod by giants— and you learned to fend for yourself as you explored them. From time to time, you guided friendly nature priests who instructed you in the fundamentals of channeling the magic of the wild.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Dexterity", "Constitution", "Wisdom"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Magic Initiate (Druid)",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["Stealth", "Survival"],
+      "tool_proficiency": "Cartographer's Tools",
+      "equipment": "Bedroll, Cartographer's Tools, Pouch, Shortbow, Quiver, Traveler's Clothes, 2 GP"
+    },
+    {
+      "name": "Hermit",
+      "slug": "hermit",
+      "source": "PHB 2024",
+      "description": "You spent your early years secluded in a hut or monastery located well beyond the outskirts of the nearest settlement. In those days, your only companions were the creatures of the forest and those who would occasionally visit to bring news of the outside world and supplies. The solitude allowed you to spend many hours pondering the mysteries of creation.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Constitution", "Wisdom", "Charisma"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Healer",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["Medicine", "Religion"],
+      "tool_proficiency": "Herbalism Kit",
+      "equipment": "Bedroll, Book (Philosophy), Herbalism Kit, Pouch, Quarterstaff, Traveler's Clothes, 15 GP"
+    },
+    {
+      "name": "Merchant",
+      "slug": "merchant",
+      "source": "PHB 2024",
+      "description": "You were apprenticed to a trader, caravan master, or shopkeeper, learning the fundamentals of commerce. You traveled broadly, and you earned a living by buying and selling the raw materials artisans need to practice their craft or finished works from such crafters. You might have transported goods from one place to another (by ship, wagon, or caravan) or bought them from traveling traders and sold them in your own shop.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Constitution", "Intelligence", "Charisma"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Lucky",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["Animal Handling", "Persuasion"],
+      "tool_proficiency": "Navigator's Tools",
+      "equipment": "Navigator's Tools, Pouch, Scale, Traveler's Clothes, 22 GP"
+    },
+    {
+      "name": "Noble",
+      "slug": "noble",
+      "source": "PHB 2024",
+      "description": "You were raised in a castle, surrounded by wealth, power, and privilege. Your family of minor aristocrats ensured that you received a first-class education, some of which you appreciated and some of which you resented. Your time in the castle, especially the many hours you spent observing your family at court, also taught you a great deal about leadership.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Strength", "Intelligence", "Charisma"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Skilled",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["History", "Persuasion"],
+      "tool_proficiency": {
+        "choice": {
+          "count": 1,
+          "options": "Any Gaming Set"
+        }
+      },
+      "equipment": "Fine Clothes, Gaming Set (one kind), Perfume, Pouch, Signet Ring, 24 GP"
+    },
+    {
+      "name": "Sage",
+      "slug": "sage",
+      "source": "PHB 2024",
+      "description": "You spent your formative years traveling between manors and monasteries, performing various odd jobs and services in exchange for access to their libraries. You whiled away many a long evening studying books and scrolls, learning the lore of the multiverse - even the rudiments of magic - and your mind yearns for more.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Constitution", "Intelligence", "Wisdom"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Magic Initiate (Wizard)",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["Arcana", "History"],
+      "tool_proficiency": "Calligrapher's Supplies",
+      "equipment": "Book (History), Calligrapher's Supplies, Pouch, Quarterstaff, Robes, 8 GP"
+    },
+    {
+      "name": "Sailor",
+      "slug": "sailor",
+      "source": "PHB 2024",
+      "description": "You lived as a seafarer, wind at your back and decks swaying beneath your feet. You've perched on barstools in more ports of call than you can remember, faced mighty storms, and swapped stories with folk who live beneath the waves.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Strength", "Dexterity", "Wisdom"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Tavern Brawler",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["Acrobatics", "Perception"],
+      "tool_proficiency": "Navigator's Tools",
+      "equipment": "Dagger, Navigator's Tools, Pouch, Silk Rope (50 ft), Traveler's Clothes, 10 GP"
+    },
+    {
+      "name": "Scribe",
+      "slug": "scribe",
+      "source": "PHB 2024",
+      "description": "You spent formative years in a scriptorium, a monastery dedicated to the preservation of knowledge, or a government agency, where you learned to write with a clear hand and produce finely written texts. Perhaps you scribed government documents or copied tomes of literature. You might have some skill as a writer of poetry, narrative, or scholarly research. Above all, you have a careful attention to detail, helping you avoid introducing mistakes to the documents you copy and create.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Dexterity", "Intelligence", "Wisdom"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Skilled",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["Investigation", "Perception"],
+      "tool_proficiency": "Calligrapher's Supplies",
+      "equipment": "Book (Blank), Calligrapher's Supplies, Pouch, Robes, 8 GP"
+    },
+    {
+      "name": "Soldier",
+      "slug": "soldier",
+      "source": "PHB 2024",
+      "description": "You began training for war as soon as you reached adulthood and carry precious few memories of life before you took up arms. Battle is in your blood. Sometimes you catch yourself reflexively performing the basic fighting exercises you learned first. Eventually, you put that training to use on the battlefield, protecting the realm by waging war.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Strength", "Dexterity", "Constitution"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Savage Attacker",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["Athletics", "Intimidation"],
+      "tool_proficiency": {
+        "choice": {
+          "count": 1,
+          "options": "Any Gaming Set"
+        }
+      },
+      "equipment": "Gaming Set (one kind), Pouch, Spear, Traveler's Clothes, 14 GP"
+    },
+    {
+      "name": "Wayfarer",
+      "slug": "wayfarer",
+      "source": "PHB 2024",
+      "description": "You grew up on the streets surrounded by similarly ill-fated castoffs, a few of them friends and a few of them rivals. You slept where you could and did odd jobs for food. At times, when the hunger became unbearable, you resorted to theft. Still, you never lost your pride and never abandoned hope. Fate is not yet finished with you.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Dexterity", "Wisdom", "Charisma"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Lucky",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["Insight", "Stealth"],
+      "tool_proficiency": "Thieves' Tools",
+      "equipment": "Bedroll, Dagger (2), Pouch, Thieves' Tools, Traveler's Clothes, 16 GP"
+    },
+    {
+      "name": "Aberrant Heir",
+      "slug": "aberrant-heir",
+      "source": "Eberron / MPMM",
+      "description": "Your aberrant dragonmark has made life challenging since it manifested. You might have hidden it successfully for most of your life or managed to avoid notice. Alternatively, you might have encountered suspicion and fear, perhaps coupled with the outright antagonism of one or more dragonmarked houses. You might have formed an association with the House Tarkanan criminal organization. Or you might struggle to find your own way in the world, relying on your wits and the power of your mark.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Strength", "Constitution", "Charisma"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Aberrant Dragonmark",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["History", "Intimidation"],
+      "tool_proficiency": "Disguise Kit",
+      "equipment": "Choose A or B: (A) Dagger, Disguise Kit, Costume, Traveler’s Clothes, 16 GP; or (B) 50 GP"
+    },
+    {
+      "name": "Archaeologist",
+      "slug": "archaeologist",
+      "source": "Eberron / MPMM",
+      "description": "You’ve made a lifelong study of the lost and fallen cultures of the past, visiting their ruins, deciphering their written records, and examining their surviving masterworks. Perhaps you studied at Morgrave University or a similar institution, supplementing your time in the library with fieldwork amid ancient ruins in remote locations. Some archaeologists plunder the treasures of the past in search of wealth or fame, but most consider it their calling to learn from the past.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Dexterity", "Intelligence", "Wisdom"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Skilled",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["History", "Survival"],
+      "tool_proficiency": "Cartographer's Tools",
+      "equipment": "Choose A or B: (A) Cartographer’s Tools, Bullseye Lantern, Map, Case, Shovel, Tent, Traveler’s Clothes, 17 GP; or (B) 50 GP"
+    },
+    {
+      "name": "House Agent",
+      "slug": "house-agent",
+      "source": "Eberron / MPMM",
+      "description": "You are connected to one of the dragonmarked houses, but you haven’t (yet) manifested a dragonmark. You might be a member of the family by birth or an employee of the house with no familial connection. You’ve earned your living by doing the business of the house, serving as the hands, feet, and eyes of house leadership in the world.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Strength", "Intelligence", "Charisma"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Lucky",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["Investigation", "Persuasion"],
+      "tool_proficiency": {
+        "choice": {
+          "count": 1,
+          "options": "Any Artisan's Tools"
+        }
+      },
+      "equipment": "Choose A or B: (A) Artisan’s Tools (same as above), Fine Clothes, 20 GP; or (B) 50 GP"
+    },
+    {
+      "name": "Inquisitive",
+      "slug": "inquisitive",
+      "source": "Eberron / MPMM",
+      "description": "You have honed your talents of investigation and deduction—fueled by a boundless curiosity—to explore mysteries, find missing people, recover stolen goods, unearth corruption and conspiracies, and solve crimes. As an inquisitive, you might have pursued freelance work, signed on with an inquisitive agency, or worked for a police force.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Constitution", "Intelligence", "Charisma"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "name": "Alert",
+        "type": "Origin"
+      },
+      "skill_proficiencies": ["Insight", "Investigation"],
+      "tool_proficiency": "Thieves' Tools",
+      "equipment": "Choose A or B: (A) Thieves’ Tools, Bullseye Lantern, Crowbar, Oil (10 flasks), Traveler’s Clothes, 10 GP; or (B) 50 GP"
+    },
+    {
+      "name": "Haunted One",
+      "slug": "haunted-one",
+      "source": "Ravenloft",
+      "description": "You are haunted by the events of your past. Whether it was a lone terrible incident or an accumulation of painful moments, you bear the unshakable weight of what happened to you. You’ve tried to bury it and run away from it, to no avail; it can’t be slain with a sword or banished via magic. Nevertheless, you persist.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Constitution", "Wisdom", "Charisma"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "choice": {
+          "count": 1,
+          "options": ["Survivor", "Any Dark Gift"]
+        }
+      },
+      "skill_proficiencies": ["Arcana", "Survival"],
+      "tool_proficiency": {
+        "choice": {
+          "count": 1,
+          "options": "Any Gaming Set"
+        }
+      },
+      "equipment": "Choose A or B: (A) Gaming Set (one kind), Crowbar, Holy Water (1 flask), Mirror, Oil (2 flasks), Signal Whistle, Tinderbox, Traveler’s Clothes, 5 Torches, Waterskin, and 14 GP; or (B) 50 GP"
+    },
+    {
+      "name": "Investigator",
+      "slug": "investigator",
+      "source": "Ravenloft",
+      "description": "You relentlessly seek the truth. Perhaps you witnessed something remarkable or terrible and now desire to unravel its mystery, or maybe you’re motivated by universal justice and honesty. Whether the cases you’re embroiled in are local crimes or eldritch conspiracies, you’re driven to reveal what others would keep hidden.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Intelligence", "Wisdom", "Charisma"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "choice": {
+          "count": 1,
+          "options": ["Sharp Eye", "Any Dark Gift"]
+        }
+      },
+      "skill_proficiencies": ["Insight", "Investigation"],
+      "tool_proficiency": "Disguise Kit",
+      "equipment": "Choose A or B: (A) Disguise Kit, Manacles, Shovel, Traveler’s Clothes, 3 Vials, and 16 GP; or (B) 50 GP"
+    },
+    {
+      "name": "Mist Wanderer",
+      "slug": "mist-wanderer",
+      "source": "Ravenloft",
+      "description": "You once knew your home. But one day, the Mists rose and drew you into a Domain of Dread. Ever since, you have wandered between domains, braving the mercurial Mists as you search for a way home. Your time in these cursed realms has changed you, yet you find solace in communities of fellow wanderers throughout the Mists.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Dexterity", "Constitution", "Wisdom"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "choice": {
+          "count": 1,
+          "options": ["Any Dark Gift"],
+          "recommended": "Mist Walker"
+        }
+      },
+      "skill_proficiencies": ["Survival", "Stealth"],
+      "tool_proficiency": {
+        "choice": {
+          "count": 1,
+          "options": "Any Artisan's Tools"
+        }
+      },
+      "equipment": "Choose A or B: (A) Artisan’s Tools (one kind), Lamp, Oil (5 flasks), Pouch, Rope, Tinderbox, Traveler’s Clothes, and 30 GP; or (B) 50 GP"
+    },
+    {
+      "name": "Spirit Medium",
+      "slug": "spirit-medium",
+      "source": "Ravenloft",
+      "description": "Through strange rituals and fateful encounters, you’ve discovered that you bear a unique connection to the spirits of the dead and damned. Your body is a conduit for such spirits, granting you prescient insight from beyond. But these spirits’ intentions aren’t always innocent, and their gifts come at a haunting cost.",
+      "ability_scores": {
+        "choice": {
+          "count": 3,
+          "options": ["Constitution", "Intelligence", "Wisdom"],
+          "note": "Increase three of these scores by 1, or one by 2 and another by 1."
+        }
+      },
+      "feat": {
+        "choice": {
+          "count": 1,
+          "options": ["Any Dark Gift"],
+          "recommended": "Gathered Whispers"
+        }
+      },
+      "skill_proficiencies": ["Insight", "Religion"],
+      "tool_proficiency": {
+        "choice": {
+          "count": 1,
+          "options": "Any Gaming Set"
+        }
+      },
+      "equipment": "Choose A or B: (A) Dagger, Gaming Set (one kind), Basket, Bell, 8 Candles, Ink, Ink Pen, Paper (5 sheets), Tinderbox, Traveler’s Clothes, and 32 GP; or (B) 50 GP"
+    },
+    {
+      "name": "House Cannith Heir",
+      "slug": "house-cannith-heir",
+      "source": "Eberron",
+      "ability_scores": { "choice": 1, "options": ["Intelligence", "Constitution", "Dexterity"] },
+      "feats": [{ "name": "Crafter" }],
+      "description": "You are a scion of House Cannith, the house of making. You have grown up surrounded by artifice and industry."
+    },
+    {
+      "name": "House Deneith Heir",
+      "slug": "house-deneith-heir",
+      "source": "Eberron",
+      "ability_scores": { "choice": 1, "options": ["Strength", "Constitution", "Charisma"] },
+      "feats": [{ "name": "Savage Attacker" }],
+      "description": "You are a scion of House Deneith, the house of sentinels. Your family provides the finest mercenaries and bodyguards in Khorvaire."
+    },
+    {
+      "name": "House Ghallanda Heir",
+      "slug": "house-ghallanda-heir",
+      "source": "Eberron",
+      "ability_scores": { "choice": 1, "options": ["Charisma", "Constitution", "Dexterity"] },
+      "feats": [{ "name": "Musician" }],
+      "description": "You are a scion of House Ghallanda, the house of hospitality. Your family runs the finest inns and taverns."
+    },
+    {
+      "name": "House Jorasco Heir",
+      "slug": "house-jorasco-heir",
+      "source": "Eberron",
+      "ability_scores": { "choice": 1, "options": ["Wisdom", "Constitution", "Dexterity"] },
+      "feats": [{ "name": "Healer" }],
+      "description": "You are a scion of House Jorasco, the house of healing. Your family provides medical services across the continent."
+    },
+    {
+      "name": "House Kundarak Heir",
+      "slug": "house-kundarak-heir",
+      "source": "Eberron",
+      "ability_scores": { "choice": 1, "options": ["Constitution", "Intelligence", "Wisdom"] },
+      "feats": [{ "name": "Alert" }],
+      "description": "You are a scion of House Kundarak, the house of warding. Your family manages the banking and security of Khorvaire."
+    },
+    {
+      "name": "House Lyrandar Heir",
+      "slug": "house-lyrandar-heir",
+      "source": "Eberron",
+      "ability_scores": { "choice": 1, "options": ["Dexterity", "Wisdom", "Charisma"] },
+      "feats": [{ "name": "Lucky" }],
+      "description": "You are a scion of House Lyrandar, the house of storms. Your family controls the elemental galleons and airships."
+    },
+    {
+      "name": "House Medani Heir",
+      "slug": "house-medani-heir",
+      "source": "Eberron",
+      "ability_scores": { "choice": 1, "options": ["Intelligence", "Wisdom", "Dexterity"] },
+      "feats": [{ "name": "Sharp Eye" }],
+      "description": "You are a scion of House Medani, the house of detection. Your family specializes in the prevention of assassination and espionage."
+    },
+    {
+      "name": "House Orien Heir",
+      "slug": "house-orien-heir",
+      "source": "Eberron",
+      "ability_scores": { "choice": 1, "options": ["Dexterity", "Constitution", "Wisdom"] },
+      "feats": [{ "name": "Speedy" }],
+      "description": "You are a scion of House Orien, the house of passage. Your family controls the lightning rail and courier services."
+    },
+    {
+      "name": "House Phiarlan Heir",
+      "slug": "house-phiarlan-heir",
+      "source": "Eberron",
+      "ability_scores": { "choice": 1, "options": ["Dexterity", "Charisma", "Wisdom"] },
+      "feats": [{ "name": "Skilled" }],
+      "description": "You are a scion of House Phiarlan, the house of shadow. Your family is famous for its artists and entertainers, as well as its spies."
+    },
+    {
+      "name": "House Sivis Heir",
+      "slug": "house-sivis-heir",
+      "source": "Eberron",
+      "ability_scores": { "choice": 1, "options": ["Intelligence", "Charisma", "Dexterity"] },
+      "feats": [{ "name": "Skilled" }],
+      "description": "You are a scion of House Sivis, the house of scribing. Your family handles communication and legal documentation."
+    },
+    {
+      "name": "House Tharashk Heir",
+      "slug": "house-tharashk-heir",
+      "source": "Eberron",
+      "ability_scores": { "choice": 1, "options": ["Strength", "Wisdom", "Constitution"] },
+      "feats": [{ "name": "Tough" }],
+      "description": "You are a scion of House Tharashk, the house of finding. Your family is known for its prospectors and bounty hunters."
+    },
+    {
+      "name": "House Thuranni Heir",
+      "slug": "house-thuranni-heir",
+      "source": "Eberron",
+      "ability_scores": { "choice": 1, "options": ["Dexterity", "Charisma", "Intelligence"] },
+      "feats": [{ "name": "Skilled" }],
+      "description": "You are a scion of House Thuranni, the house of shadow. Your family split from Phiarlan and offers similar services of art and espionage."
+    },
+    {
+      "name": "House Vadalis Heir",
+      "slug": "house-vadalis-heir",
+      "source": "Eberron",
+      "ability_scores": { "choice": 1, "options": ["Wisdom", "Strength", "Constitution"] },
+      "feats": [{ "name": "Magic Initiate (Druid)" }],
+      "description": "You are a scion of House Vadalis, the house of handling. Your family breeds and trains magical beasts."
+    },
+    {
+      "name": "Carouser",
+      "slug": "carouser",
+      "source": "Exotic",
+      "ability_scores": { "choice": 1, "options": ["Charisma", "Constitution", "Dexterity"] },
+      "feats": [{ "name": "Tireless Reveler" }],
+      "description": "You are the life of the party, finding joy and connection in every celebration."
+    },
+    {
+      "name": "Lorwyn Expert",
+      "slug": "lorwyn-expert",
+      "source": "Lorwyn",
+      "ability_scores": { "choice": 1, "options": ["Intelligence", "Wisdom", "Dexterity"] },
+      "feats": [{ "name": "Skilled" }],
+      "description": "You possess deep knowledge of the Lorwyn plane, its lineages, and its intricate social customs."
+    },
+    {
+      "name": "Pact Seeker",
+      "slug": "pact-seeker",
+      "source": "Exotic",
+      "ability_scores": { "choice": 1, "options": ["Intelligence", "Wisdom", "Charisma"] },
+      "feats": [{ "name": "Magic Initiate" }],
+      "description": "You seek powerful entities to forge pacts, trading service for arcane power."
+    },
+    {
+      "name": "Shadowmoor Expert",
+      "slug": "shadowmoor-expert",
+      "source": "Shadowmoor",
+      "ability_scores": { "choice": 1, "options": ["Intelligence", "Wisdom", "Constitution"] },
+      "feats": [{ "name": "Shadowmoor Hexer" }],
+      "description": "You are well-versed in the dark and dangerous folklore of Shadowmoor."
+    },
+    {
+      "name": "Vampire Devotee",
+      "slug": "vampire-devotee",
+      "source": "Ravenloft",
+      "ability_scores": { "choice": 1, "options": ["Charisma", "Constitution", "Strength"] },
+      "feats": [{ "name": "Vampire's Plaything" }],
+      "description": "You have served a powerful vampire, willingly or otherwise, and have been marked by the experience."
+    },
+    {
+      "name": "Vampire Survivor",
+      "slug": "vampire-survivor",
+      "source": "Ravenloft",
+      "ability_scores": { "choice": 1, "options": ["Constitution", "Wisdom", "Dexterity"] },
+      "feats": [{ "name": "Vampire Hunter" }],
+      "description": "You have survived an encounter with a vampire and now dedicate your life to hunting them or ensuring others do not share your fate."
+    }
+  ]
+}

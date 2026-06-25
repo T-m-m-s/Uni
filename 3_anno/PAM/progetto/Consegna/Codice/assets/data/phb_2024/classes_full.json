@@ -1,0 +1,1856 @@
+{
+  "classes": [
+    {
+      "name": "Barbarian",
+      "slug": "barbarian",
+      "source": "PHB 2024",
+      "description": "Barbarians are mighty warriors who are powered by primal forces of the multiverse that manifest as a Rage. More than a mere emotion—and not limited to anger—this Rage is an incarnation of a predator’s ferocity, a storm's fury, and a sea's turmoil.",
+      "core_traits": {
+        "primary_ability": "Strength",
+        "hit_die": "d12",
+        "saving_throws": ["Strength", "Constitution"],
+        "skill_proficiencies": {
+          "choice": {
+            "count": 2,
+            "options": ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"]
+          }
+        },
+        "weapon_proficiencies": ["Simple", "Martial"],
+        "armor_training": ["Light", "Medium", "Shields"],
+        "starting_equipment": {
+          "options": [
+            {
+              "label": "A",
+              "items": ["Greataxe", "4 Handaxes", "Explorer’s Pack", "15 GP"]
+            },
+            {
+              "label": "B",
+              "gp": 75
+            }
+          ]
+        }
+      },
+      "multiclassing": {
+        "requirements": { "Strength": 13 },
+        "traits": ["Hit Point Die", "Martial weapons", "Shields"]
+      },
+      "class_table": [
+        { "level": 1, "prof_bonus": "+2", "features": ["Rage", "Unarmored Defense", "Weapon Mastery"], "rages": 2, "rage_damage": "+2", "weapon_mastery": 2 },
+        { "level": 2, "prof_bonus": "+2", "features": ["Danger Sense", "Reckless Attack"], "rages": 2, "rage_damage": "+2", "weapon_mastery": 2 },
+        { "level": 3, "prof_bonus": "+2", "features": ["Barbarian Subclass", "Primal Knowledge"], "rages": 3, "rage_damage": "+2", "weapon_mastery": 2 },
+        { "level": 4, "prof_bonus": "+2", "features": ["Ability Score Improvement"], "rages": 3, "rage_damage": "+2", "weapon_mastery": 3 },
+        { "level": 5, "prof_bonus": "+3", "features": ["Extra Attack", "Fast Movement"], "rages": 3, "rage_damage": "+2", "weapon_mastery": 3 },
+        { "level": 6, "prof_bonus": "+3", "features": ["Subclass feature"], "rages": 4, "rage_damage": "+2", "weapon_mastery": 3 },
+        { "level": 7, "prof_bonus": "+3", "features": ["Feral Instinct", "Instinctive Pounce"], "rages": 4, "rage_damage": "+2", "weapon_mastery": 3 },
+        { "level": 8, "prof_bonus": "+3", "features": ["Ability Score Improvement"], "rages": 4, "rage_damage": "+2", "weapon_mastery": 3 },
+        { "level": 9, "prof_bonus": "+4", "features": ["Brutal Strike"], "rages": 4, "rage_damage": "+3", "weapon_mastery": 3 },
+        { "level": 10, "prof_bonus": "+4", "features": ["Subclass feature"], "rages": 4, "rage_damage": "+3", "weapon_mastery": 4 },
+        { "level": 11, "prof_bonus": "+4", "features": ["Relentless Rage"], "rages": 4, "rage_damage": "+3", "weapon_mastery": 4 },
+        { "level": 12, "prof_bonus": "+4", "features": ["Ability Score Improvement"], "rages": 5, "rage_damage": "+3", "weapon_mastery": 4 },
+        { "level": 13, "prof_bonus": "+5", "features": ["Improved Brutal Strike"], "rages": 5, "rage_damage": "+3", "weapon_mastery": 4 },
+        { "level": 14, "prof_bonus": "+5", "features": ["Subclass feature"], "rages": 5, "rage_damage": "+3", "weapon_mastery": 4 },
+        { "level": 15, "prof_bonus": "+5", "features": ["Persistent Rage"], "rages": 5, "rage_damage": "+3", "weapon_mastery": 4 },
+        { "level": 16, "prof_bonus": "+5", "features": ["Ability Score Improvement"], "rages": 5, "rage_damage": "+4", "weapon_mastery": 4 },
+        { "level": 17, "prof_bonus": "+6", "features": ["Improved Brutal Strike"], "rages": 6, "rage_damage": "+4", "weapon_mastery": 4 },
+        { "level": 18, "prof_bonus": "+6", "features": ["Indomitable Might"], "rages": 6, "rage_damage": "+4", "weapon_mastery": 4 },
+        { "level": 19, "prof_bonus": "+6", "features": ["Epic Boon"], "rages": 6, "rage_damage": "+4", "weapon_mastery": 4 },
+        { "level": 20, "prof_bonus": "+6", "features": ["Primal Champion"], "rages": 6, "rage_damage": "+4", "weapon_mastery": 4 }
+      ],
+      "features": [
+        {
+          "name": "Rage",
+          "level": 1,
+          "action": "Bonus Action",
+          "description": "You can imbue yourself with a primal power called Rage. You can enter it as a Bonus Action if you aren't wearing Heavy armor.",
+          "benefits": [
+            { "name": "Damage Resistance", "description": "You have Resistance to Bludgeoning, Piercing, and Slashing damage." },
+            { "name": "Rage Damage", "description": "When you make an attack using Strength and deal damage, you gain a bonus shown in the Rage Damage column." },
+            { "name": "Strength Advantage", "description": "You have Advantage on Strength checks and Strength saving throws." },
+            { "name": "No Concentration or Spells", "description": "You can't maintain Concentration, and you can't cast spells." }
+          ],
+          "duration": "10 minutes",
+          "extension": "Attack an enemy, force a save, or use a Bonus Action to extend.",
+          "refresh": "Regain 1 use on Short Rest, all on Long Rest."
+        },
+        {
+          "name": "Unarmored Defense",
+          "level": 1,
+          "description": "While you aren't wearing any armor, your base Armor Class equals 10 plus your Dexterity and Constitution modifiers. You can use a Shield and still gain this benefit."
+        },
+        {
+          "name": "Weapon Mastery",
+          "level": 1,
+          "description": "Use mastery properties of weapons. Change one choice after a Long Rest.",
+          "count_by_level": { "1": 2, "4": 3, "10": 4 }
+        },
+        {
+          "name": "Danger Sense",
+          "level": 2,
+          "description": "You have Advantage on Dexterity saving throws unless you have the Incapacitated condition."
+        },
+        {
+          "name": "Reckless Attack",
+          "level": 2,
+          "description": "Advantage on Strength attack rolls until start of next turn, but attacks against you also have Advantage."
+        },
+        {
+          "name": "Primal Knowledge",
+          "level": 3,
+          "description": "Gain one Barbarian skill proficiency. While Raging, you can use Strength for Acrobatics, Intimidation, Perception, Stealth, or Survival checks.",
+          "choice": { "count": 1, "options": "Barbarian Skill List" }
+        },
+        {
+          "name": "Extra Attack",
+          "level": 5,
+          "description": "Attack twice instead of once whenever you take the Attack action."
+        },
+        {
+          "name": "Fast Movement",
+          "level": 5,
+          "description": "Your speed increases by 10 feet while you aren't wearing Heavy armor."
+        },
+        {
+          "name": "Feral Instinct",
+          "level": 7,
+          "description": "Advantage on Initiative rolls."
+        },
+        {
+          "name": "Instinctive Pounce",
+          "level": 7,
+          "description": "As part of entering Rage, you can move up to half your Speed."
+        },
+        {
+          "name": "Brutal Strike",
+          "level": 9,
+          "description": "If using Reckless Attack, forgo Advantage on one attack for +1d10 damage and an effect.",
+          "options": [
+            { "name": "Forceful Blow", "description": "Push target 15ft away; you can move half speed toward them without Opportunity Attacks." },
+            { "name": "Hamstring Blow", "description": "Target's Speed reduced by 15ft until start of your next turn." }
+          ]
+        },
+        {
+          "name": "Relentless Rage",
+          "level": 11,
+          "description": "If reduced to 0 HP while Raging, make a DC 10 Con save to drop to 2x Level HP instead. DC increases by 5 each use until rest."
+        },
+        {
+          "name": "Improved Brutal Strike",
+          "level": 13,
+          "description": "New Brutal Strike options available.",
+          "options": [
+            { "name": "Staggering Blow", "description": "Target has Disadvantage on its next save and can't make Opportunity Attacks until start of your next turn." },
+            { "name": "Sundering Blow", "description": "Next attack by another creature against target gains +5 bonus." }
+          ]
+        },
+        {
+          "name": "Persistent Rage",
+          "level": 15,
+          "description": "Regain all Rages on Initiative (once per Long Rest). Rage lasts 10 minutes without needing to extend; ends only if Unconscious or wearing Heavy armor."
+        },
+        {
+          "name": "Improved Brutal Strike (2)",
+          "level": 17,
+          "description": "Extra damage increases to 2d10. Use two different effects at once."
+        },
+        {
+          "name": "Indomitable Might",
+          "level": 18,
+          "description": "Use Strength score in place of total for Strength check/save if roll is lower."
+        },
+        {
+          "name": "Primal Champion",
+          "level": 20,
+          "description": "Strength and Constitution scores increase by 4, to a maximum of 25."
+        }
+      ],
+      "subclasses_available": [
+        "Path of the Berserker",
+        "Path of the Wild Heart",
+        "Path of the World Tree",
+        "Path of the Zealot"
+      ]
+    },
+    {
+      "name": "Bard",
+      "slug": "bard",
+      "source": "PHB 2024",
+      "description": "Invoking magic through music, dance, and verse, Bards are expert at inspiring others, soothing hurts, disheartening foes, and creating illusions.",
+      "core_traits": {
+        "primary_ability": "Charisma",
+        "hit_die": "d8",
+        "saving_throws": ["Dexterity", "Charisma"],
+        "skill_proficiencies": {
+          "choice": {
+            "count": 3,
+            "options": "Any Skill"
+          }
+        },
+        "tool_proficiencies": {
+          "choice": {
+            "count": 3,
+            "options": "Any Musical Instrument"
+          }
+        },
+        "weapon_proficiencies": ["Simple"],
+        "armor_training": ["Light"],
+        "starting_equipment": {
+          "options": [
+            {
+              "label": "A",
+              "items": ["Leather Armor", "2 Daggers", "Musical Instrument of your choice", "Entertainer’s Pack", "19 GP"]
+            },
+            {
+              "label": "B",
+              "gp": 90
+            }
+          ]
+        }
+      },
+      "multiclassing": {
+        "requirements": { "Charisma": 13 },
+        "traits": ["Hit Point Die", "One Skill of your choice", "One Musical Instrument of your choice", "Light armor"]
+      },
+      "class_table": [
+        { "level": 1, "prof_bonus": "+2", "features": ["Bardic Inspiration", "Spellcasting"], "bardic_die": "d6", "cantrips": 2, "prepared_spells": 4, "spell_slots": { "1": 2 } },
+        { "level": 2, "prof_bonus": "+2", "features": ["Expertise", "Jack of all Trades"], "bardic_die": "d6", "cantrips": 2, "prepared_spells": 5, "spell_slots": { "1": 3 } },
+        { "level": 3, "prof_bonus": "+2", "features": ["Bard Subclass"], "bardic_die": "d6", "cantrips": 2, "prepared_spells": 6, "spell_slots": { "1": 4, "2": 2 } },
+        { "level": 4, "prof_bonus": "+2", "features": ["Ability Score Improvement"], "bardic_die": "d6", "cantrips": 3, "prepared_spells": 7, "spell_slots": { "1": 4, "2": 3 } },
+        { "level": 5, "prof_bonus": "+3", "features": ["Font of Inspiration"], "bardic_die": "d8", "cantrips": 3, "prepared_spells": 9, "spell_slots": { "1": 4, "2": 3, "3": 2 } },
+        { "level": 6, "prof_bonus": "+3", "features": ["Subclass feature"], "bardic_die": "d8", "cantrips": 3, "prepared_spells": 10, "spell_slots": { "1": 4, "2": 3, "3": 3 } },
+        { "level": 7, "prof_bonus": "+3", "features": ["Countercharm"], "bardic_die": "d8", "cantrips": 3, "prepared_spells": 11, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 1 } },
+        { "level": 8, "prof_bonus": "+3", "features": ["Ability Score Improvement"], "bardic_die": "d8", "cantrips": 3, "prepared_spells": 12, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 2 } },
+        { "level": 9, "prof_bonus": "+4", "features": ["Expertise"], "bardic_die": "d8", "cantrips": 3, "prepared_spells": 14, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 } },
+        { "level": 10, "prof_bonus": "+4", "features": ["Magical Secrets"], "bardic_die": "d10", "cantrips": 4, "prepared_spells": 15, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 } },
+        { "level": 11, "prof_bonus": "+4", "features": [], "bardic_die": "d10", "cantrips": 4, "prepared_spells": 16, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 } },
+        { "level": 12, "prof_bonus": "+4", "features": ["Ability Score Improvement"], "bardic_die": "d10", "cantrips": 4, "prepared_spells": 16, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 } },
+        { "level": 13, "prof_bonus": "+5", "features": [], "bardic_die": "d10", "cantrips": 4, "prepared_spells": 17, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 } },
+        { "level": 14, "prof_bonus": "+5", "features": ["Subclass feature"], "bardic_die": "d10", "cantrips": 4, "prepared_spells": 17, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 } },
+        { "level": 15, "prof_bonus": "+5", "features": [], "bardic_die": "d12", "cantrips": 4, "prepared_spells": 18, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 } },
+        { "level": 16, "prof_bonus": "+5", "features": ["Ability Score Improvement"], "bardic_die": "d12", "cantrips": 4, "prepared_spells": 18, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 } },
+        { "level": 17, "prof_bonus": "+6", "features": [], "bardic_die": "d12", "cantrips": 4, "prepared_spells": 19, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1, "9": 1 } },
+        { "level": 18, "prof_bonus": "+6", "features": ["Superior Inspiration"], "bardic_die": "d12", "cantrips": 4, "prepared_spells": 20, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 1, "7": 1, "8": 1, "9": 1 } },
+        { "level": 19, "prof_bonus": "+6", "features": ["Epic Boon"], "bardic_die": "d12", "cantrips": 4, "prepared_spells": 21, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 1, "8": 1, "9": 1 } },
+        { "level": 20, "prof_bonus": "+6", "features": ["Words of Creation"], "bardic_die": "d12", "cantrips": 4, "prepared_spells": 22, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 2, "8": 1, "9": 1 } }
+      ],
+      "features": [
+        {
+          "name": "Bardic Inspiration",
+          "level": 1,
+          "action": "Bonus Action",
+          "uses": "Charisma modifier",
+          "refresh": "Long Rest",
+          "description": "As a Bonus Action, give a Bardic Inspiration die to a creature within 60ft. Once within the next hour when they fail a D20 Test, they can roll the die and add it to the d20. (Die becomes d8 at L5, d10 at L10, d12 at L15)."
+        },
+        {
+          "name": "Spellcasting",
+          "level": 1,
+          "description": "Charisma is your spellcasting ability. You use a Musical Instrument as a focus. You know cantrips and prepare spells of level 1+ based on the Bard Features table."
+        },
+        {
+          "name": "Expertise",
+          "level": 2,
+          "description": "You gain Expertise in two of your skill proficiencies. At level 9, gain Expertise in two more."
+        },
+        {
+          "name": "Jack of all Trades",
+          "level": 2,
+          "description": "Add half your Proficiency Bonus to any ability check that lacks proficiency and doesn't otherwise use your PB."
+        },
+        {
+          "name": "Font of Inspiration",
+          "level": 5,
+          "description": "Regain all expended uses of Bardic Inspiration on a Short Rest as well as Long. Also, expend a spell slot to regain one use."
+        },
+        {
+          "name": "Countercharm",
+          "level": 7,
+          "action": "Reaction",
+          "description": "When you or a creature within 30ft fails a save against being Charmed or Frightened, use a Reaction to reroll with Advantage."
+        },
+        {
+          "name": "Magical Secrets",
+          "level": 10,
+          "description": "When your Prepared Spells number increases or you replace a spell, you can choose spells from the Bard, Cleric, Druid, and Wizard lists. They count as Bard spells."
+        },
+        {
+          "name": "Superior Inspiration",
+          "level": 18,
+          "description": "When you roll Initiative, regain uses of Bardic Inspiration until you have two (if you had fewer)."
+        },
+        {
+          "name": "Words of Creation",
+          "level": 20,
+          "description": "Always have Power Word: Heal and Power Word: Kill prepared. When you cast either, you can target a second creature within 10ft of the first."
+        }
+      ],
+      "subclasses_available": [
+        "College of Dance",
+        "College of Glamour",
+        "College of Lore",
+        "College of Spirits",
+        "College of the Moon",
+        "College of Valor"
+      ]
+    },
+    {
+      "name": "Cleric",
+      "slug": "cleric",
+      "source": "PHB 2024",
+      "description": "Clerics draw power from the realms of the gods and harness it to work miracles. Blessed by a deity, a pantheon, or another immortal entity, a Cleric can reach out to the divine magic of the Outer Planes—where gods dwell—and channel it to bolster people and battle foes.",
+      "core_traits": {
+        "primary_ability": "Wisdom",
+        "hit_die": "d8",
+        "saving_throws": ["Wisdom", "Charisma"],
+        "skill_proficiencies": {
+          "choice": {
+            "count": 2,
+            "options": ["History", "Insight", "Medicine", "Persuasion", "Religion"]
+          }
+        },
+        "weapon_proficiencies": ["Simple"],
+        "armor_training": ["Light", "Medium", "Shields"],
+        "starting_equipment": {
+          "options": [
+            {
+              "label": "A",
+              "items": ["Chain Shirt", "Shield", "Mace", "Holy Symbol", "Priest's Pack", "7 GP"]
+            },
+            {
+              "label": "B",
+              "gp": 110
+            }
+          ]
+        }
+      },
+      "multiclassing": {
+        "requirements": { "Wisdom": 13 },
+        "traits": ["Hit Point Die", "Light armor", "Medium armor", "Shields"]
+      },
+      "class_table": [
+        { "level": 1, "prof_bonus": "+2", "features": ["Spellcasting", "Divine Order"], "channel_divinity": 0, "cantrips": 3, "prepared_spells": 4, "spell_slots": { "1": 2 } },
+        { "level": 2, "prof_bonus": "+2", "features": ["Channel Divinity"], "channel_divinity": 2, "cantrips": 3, "prepared_spells": 5, "spell_slots": { "1": 3 } },
+        { "level": 3, "prof_bonus": "+2", "features": ["Cleric Subclass"], "channel_divinity": 2, "cantrips": 3, "prepared_spells": 6, "spell_slots": { "1": 4, "2": 2 } },
+        { "level": 4, "prof_bonus": "+2", "features": ["Ability Score Improvement"], "channel_divinity": 2, "cantrips": 4, "prepared_spells": 7, "spell_slots": { "1": 4, "2": 3 } },
+        { "level": 5, "prof_bonus": "+3", "features": ["Sear Undead"], "channel_divinity": 2, "cantrips": 4, "prepared_spells": 9, "spell_slots": { "1": 4, "2": 3, "3": 2 } },
+        { "level": 6, "prof_bonus": "+3", "features": ["Subclass Feature"], "channel_divinity": 3, "cantrips": 4, "prepared_spells": 10, "spell_slots": { "1": 4, "2": 3, "3": 3 } },
+        { "level": 7, "prof_bonus": "+3", "features": ["Blessed Strikes"], "channel_divinity": 3, "cantrips": 4, "prepared_spells": 11, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 1 } },
+        { "level": 8, "prof_bonus": "+3", "features": ["Ability Score Improvement"], "channel_divinity": 3, "cantrips": 4, "prepared_spells": 12, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 2 } },
+        { "level": 9, "prof_bonus": "+4", "features": [], "channel_divinity": 3, "cantrips": 4, "prepared_spells": 14, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 } },
+        { "level": 10, "prof_bonus": "+4", "features": ["Divine Intervention"], "channel_divinity": 3, "cantrips": 5, "prepared_spells": 15, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 } },
+        { "level": 11, "prof_bonus": "+4", "features": [], "channel_divinity": 3, "cantrips": 5, "prepared_spells": 16, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 } },
+        { "level": 12, "prof_bonus": "+4", "features": ["Ability Score Improvement"], "channel_divinity": 3, "cantrips": 5, "prepared_spells": 16, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 } },
+        { "level": 13, "prof_bonus": "+5", "features": [], "channel_divinity": 3, "cantrips": 5, "prepared_spells": 17, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 } },
+        { "level": 14, "prof_bonus": "+5", "features": ["Improved Blessed Strikes"], "channel_divinity": 3, "cantrips": 5, "prepared_spells": 17, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 } },
+        { "level": 15, "prof_bonus": "+5", "features": [], "channel_divinity": 3, "cantrips": 5, "prepared_spells": 18, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 } },
+        { "level": 16, "prof_bonus": "+5", "features": ["Ability Score Improvement"], "channel_divinity": 3, "cantrips": 5, "prepared_spells": 18, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 } },
+        { "level": 17, "prof_bonus": "+6", "features": ["Subclass Feature"], "channel_divinity": 3, "cantrips": 5, "prepared_spells": 19, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1, "9": 1 } },
+        { "level": 18, "prof_bonus": "+6", "features": [], "channel_divinity": 4, "cantrips": 5, "prepared_spells": 20, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 1, "7": 1, "8": 1, "9": 1 } },
+        { "level": 19, "prof_bonus": "+6", "features": ["Epic Boon"], "channel_divinity": 4, "cantrips": 5, "prepared_spells": 21, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 1, "8": 1, "9": 1 } },
+        { "level": 20, "prof_bonus": "+6", "features": ["Greater Divine Intervention"], "channel_divinity": 4, "cantrips": 5, "prepared_spells": 22, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 2, "8": 1, "9": 1 } }
+      ],
+      "features": [
+        {
+          "name": "Spellcasting",
+          "level": 1,
+          "description": "Wisdom is your spellcasting ability. You use a Holy Symbol as a focus. You know cantrips and prepare spells of level 1+ based on the Cleric Features table. Change your prepared spells on a Long Rest."
+        },
+        {
+          "name": "Divine Order",
+          "level": 1,
+          "description": "You dedicate yourself to a sacred role.",
+          "options": [
+            { "name": "Protector", "description": "Gain proficiency with Martial weapons and Heavy armor." },
+            { "name": "Thaumaturge", "description": "Gain one extra cantrip and a bonus to Arcana/Religion checks equal to Wisdom modifier (min +1)." }
+          ]
+        },
+        {
+          "name": "Channel Divinity",
+          "level": 2,
+          "refresh": "Regain 1 use on Short Rest, all on Long Rest",
+          "description": "Channel divine energy for magical effects. DCs use your spell save DC.",
+          "options": [
+            { "name": "Divine Spark", "action": "Magic Action", "description": "Target a creature within 30ft. Roll 1d8 + Wis mod. Restore that much HP, or force a Con save to deal that much Necrotic/Radiant damage (half on success). Damage dice increases at L7 (2d8), L13 (3d8), and L18 (4d8)." },
+            { "name": "Turn Undead", "action": "Magic Action", "description": "Undead within 30ft make a Wis save or are Frightened and Incapacitated for 1 minute. They must move away from you. Ends early on damage." }
+          ]
+        },
+        {
+          "name": "Sear Undead",
+          "level": 5,
+          "description": "When you use Turn Undead, roll d8s equal to your Wis mod (min 1d8). Undead that fail the save take Radiant damage equal to the total. This doesn't end the turn effect."
+        },
+        {
+          "name": "Blessed Strikes",
+          "level": 7,
+          "description": "Infuse your attacks with divine power. Choose one:",
+          "options": [
+            { "name": "Divine Strike", "description": "Once per turn when you hit with a weapon attack, deal an extra 1d8 Necrotic or Radiant damage." },
+            { "name": "Potent Spellcasting", "description": "Add your Wisdom modifier to the damage of any Cleric cantrip." }
+          ]
+        },
+        {
+          "name": "Divine Intervention",
+          "level": 10,
+          "action": "Magic Action",
+          "refresh": "Long Rest",
+          "description": "Cast any Cleric spell of level 5 or lower without expending a slot or components. Can't use again until a Long Rest."
+        },
+        {
+          "name": "Improved Blessed Strikes",
+          "level": 14,
+          "description": "Your chosen Blessed Strike improves.",
+          "options": [
+            { "name": "Divine Strike", "description": "Extra damage increases to 2d8." },
+            { "name": "Potent Spellcasting", "description": "When dealing damage with a cantrip, grant Temp HP equal to twice your Wis mod to yourself or an ally within 60ft." }
+          ]
+        },
+        {
+          "name": "Greater Divine Intervention",
+          "level": 20,
+          "description": "When using Divine Intervention, you can choose Wish. If you do, you can't use Divine Intervention again for 2d4 Long Rests."
+        }
+      ],
+      "subclasses_available": [
+        "Grave Domain",
+        "Life Domain",
+        "Light Domain",
+        "Trickery Domain",
+        "War Domain"
+      ]
+    },
+    {
+      "name": "Druid",
+      "slug": "druid",
+      "source": "PHB 2024",
+      "description": "Druids belong to ancient orders that call on the forces of nature. Harnessing the magic of animals, plants, and the four elements, Druids heal, transform into animals, and wield elemental destruction.",
+      "core_traits": {
+        "primary_ability": "Wisdom",
+        "hit_die": "d8",
+        "saving_throws": ["Intelligence", "Wisdom"],
+        "skill_proficiencies": {
+          "choice": {
+            "count": 2,
+            "options": ["Arcana", "Animal Handling", "Insight", "Medicine", "Nature", "Perception", "Religion", "Survival"]
+          }
+        },
+        "weapon_proficiencies": ["Simple"],
+        "tool_proficiencies": ["Herbalism Kit"],
+        "armor_training": ["Light", "Shields"],
+        "starting_equipment": {
+          "options": [
+            {
+              "label": "A",
+              "items": ["Leather Armor", "Shield", "Sickle", "Druidic Focus (Quarterstaff)", "Explorer's Pack", "Herbalism Kit", "9 GP"]
+            },
+            {
+              "label": "B",
+              "gp": 50
+            }
+          ]
+        }
+      },
+      "multiclassing": {
+        "requirements": { "Wisdom": 13 },
+        "traits": ["Hit Point Die", "Light armor", "Shields"]
+      },
+      "class_table": [
+        { "level": 1, "prof_bonus": "+2", "features": ["Spellcasting", "Druidic", "Primal Order"], "wild_shape": 0, "cantrips": 2, "prepared_spells": 4, "spell_slots": { "1": 2 } },
+        { "level": 2, "prof_bonus": "+2", "features": ["Wild Shape", "Wild Companion"], "wild_shape": 2, "cantrips": 2, "prepared_spells": 5, "spell_slots": { "1": 3 } },
+        { "level": 3, "prof_bonus": "+2", "features": ["Druid Subclass"], "wild_shape": 2, "cantrips": 2, "prepared_spells": 6, "spell_slots": { "1": 4, "2": 2 } },
+        { "level": 4, "prof_bonus": "+2", "features": ["Ability Score Improvement"], "wild_shape": 2, "cantrips": 3, "prepared_spells": 7, "spell_slots": { "1": 4, "2": 3 } },
+        { "level": 5, "prof_bonus": "+3", "features": ["Wild Resurgence"], "wild_shape": 2, "cantrips": 3, "prepared_spells": 9, "spell_slots": { "1": 4, "2": 3, "3": 2 } },
+        { "level": 6, "prof_bonus": "+3", "features": ["Subclass Feature"], "wild_shape": 3, "cantrips": 3, "prepared_spells": 10, "spell_slots": { "1": 4, "2": 3, "3": 3 } },
+        { "level": 7, "prof_bonus": "+3", "features": ["Elemental Fury"], "wild_shape": 3, "cantrips": 3, "prepared_spells": 11, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 1 } },
+        { "level": 8, "prof_bonus": "+3", "features": ["Ability Score Improvement"], "wild_shape": 3, "cantrips": 3, "prepared_spells": 12, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 2 } },
+        { "level": 9, "prof_bonus": "+4", "features": [], "wild_shape": 3, "cantrips": 3, "prepared_spells": 14, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 } },
+        { "level": 10, "prof_bonus": "+4", "features": ["Subclass Feature"], "wild_shape": 3, "cantrips": 4, "prepared_spells": 15, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 } },
+        { "level": 11, "prof_bonus": "+4", "features": [], "wild_shape": 3, "cantrips": 4, "prepared_spells": 16, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 } },
+        { "level": 12, "prof_bonus": "+4", "features": ["Ability Score Improvement"], "wild_shape": 3, "cantrips": 4, "prepared_spells": 16, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 } },
+        { "level": 13, "prof_bonus": "+5", "features": [], "wild_shape": 3, "cantrips": 4, "prepared_spells": 17, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 } },
+        { "level": 14, "prof_bonus": "+5", "features": ["Subclass Feature"], "wild_shape": 3, "cantrips": 4, "prepared_spells": 17, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 } },
+        { "level": 15, "prof_bonus": "+5", "features": ["Improved Elemental Fury"], "wild_shape": 3, "cantrips": 4, "prepared_spells": 18, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 } },
+        { "level": 16, "prof_bonus": "+5", "features": ["Ability Score Improvement"], "wild_shape": 3, "cantrips": 4, "prepared_spells": 18, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 } },
+        { "level": 17, "prof_bonus": "+6", "features": [], "wild_shape": 4, "cantrips": 4, "prepared_spells": 19, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1, "9": 1 } },
+        { "level": 18, "prof_bonus": "+6", "features": ["Beast Spells"], "wild_shape": 4, "cantrips": 4, "prepared_spells": 20, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 1, "7": 1, "8": 1, "9": 1 } },
+        { "level": 19, "prof_bonus": "+6", "features": ["Epic Boon"], "wild_shape": 4, "cantrips": 4, "prepared_spells": 21, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 1, "8": 1, "9": 1 } },
+        { "level": 20, "prof_bonus": "+6", "features": ["Archdruid"], "wild_shape": 4, "cantrips": 4, "prepared_spells": 22, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 2, "8": 1, "9": 1 } }
+      ],
+      "features": [
+        {
+          "name": "Spellcasting",
+          "level": 1,
+          "description": "Wisdom is your spellcasting ability. You use a Druidic Focus as a focus. You know cantrips and prepare spells of level 1+ based on the Druid Features table. Change your prepared spells on a Long Rest."
+        },
+        {
+          "name": "Druidic",
+          "level": 1,
+          "description": "You know Druidic, the secret language of Druids. You also always have the Speak with Animals spell prepared. You can leave hidden messages in Druidic (DC 15 Investigation to spot, but undecipherable without magic)."
+        },
+        {
+          "name": "Primal Order",
+          "level": 1,
+          "description": "You dedicate yourself to a sacred role.",
+          "options": [
+            { "name": "Magician", "description": "Gain one extra cantrip and a bonus to Arcana/Nature checks equal to Wisdom modifier (min +1)." },
+            { "name": "Warden", "description": "Gain proficiency with Martial weapons and training with Medium armor." }
+          ]
+        },
+        {
+          "name": "Wild Shape",
+          "level": 2,
+          "action": "Bonus Action",
+          "refresh": "Regain 1 use on Short Rest, all on Long Rest",
+          "description": "Shape-shift into a Beast form. Lasts for hours equal to half your Druid level. You gain Temp HP equal to your Druid level. You retain your personality, Int/Wis/Cha scores, and class features, but can't cast spells.",
+          "table": {
+            "name": "Beast Shapes",
+            "rows": [
+              { "level": 2, "known_forms": 4, "max_cr": "1/4", "fly_speed": "No" },
+              { "level": 4, "known_forms": 6, "max_cr": "1/2", "fly_speed": "No" },
+              { "level": 8, "known_forms": 8, "max_cr": "1", "fly_speed": "Yes" }
+            ]
+          }
+        },
+        {
+          "name": "Wild Companion",
+          "level": 2,
+          "action": "Magic Action",
+          "description": "Expend a spell slot or a use of Wild Shape to cast Find Familiar without Material components. The familiar is Fey and disappears after a Long Rest."
+        },
+        {
+          "name": "Wild Resurgence",
+          "level": 5,
+          "description": "If you have no uses of Wild Shape, you can expend a spell slot to regain one use (once per turn, no action). Additionally, you can expend one use of Wild Shape to regain a level 1 spell slot (once per Long Rest)."
+        },
+        {
+          "name": "Elemental Fury",
+          "level": 7,
+          "description": "The might of the elements flows through you. Choose one:",
+          "options": [
+            { "name": "Potent Spellcasting", "description": "Add your Wisdom modifier to the damage of any Druid cantrip." },
+            { "name": "Primal Strike", "description": "Once per turn when you hit with a weapon or Beast form attack, deal an extra 1d8 Cold, Fire, Lightning, or Thunder damage." }
+          ]
+        },
+        {
+          "name": "Improved Elemental Fury",
+          "level": 15,
+          "description": "Your chosen Elemental Fury improves.",
+          "options": [
+            { "name": "Potent Spellcasting", "description": "When you cast a Druid cantrip with a range of 10+ feet, the range increases by 300 feet." },
+            { "name": "Primal Strike", "description": "The extra damage increases to 2d8." }
+          ]
+        },
+        {
+          "name": "Beast Spells",
+          "level": 18,
+          "description": "While in Wild Shape, you can cast spells in Beast form (except spells requiring costly or consumed Material components)."
+        },
+        {
+          "name": "Archdruid",
+          "level": 20,
+          "description": "Gain the following benefits:",
+          "benefits": [
+            { "name": "Evergreen Wild Shape", "description": "Regain one expended use of Wild Shape when you roll Initiative and have none left." },
+            { "name": "Nature Magician", "description": "Convert unexpended uses of Wild Shape into a single spell slot (2 spell levels per use) once per Long Rest." },
+            { "name": "Longevity", "description": "For every ten years that pass, your body ages only one year." }
+          ]
+        }
+      ],
+      "subclasses_available": [
+        "Circle of the Land",
+        "Circle of the Moon",
+        "Circle of the Sea",
+        "Circle of the Stars"
+      ]
+    },
+    {
+      "name": "Fighter",
+      "slug": "fighter",
+      "source": "PHB 2024",
+      "description": "Fighters rule many battlefields. Questing knights, royal champions, elite soldiers, and hardened mercenaries - as Fighters, they all share an unparalleled prowess with weapons and armor. And they are well acquainted with death, both meting it out and defying it.",
+      "core_traits": {
+        "primary_ability": "Strength or Dexterity",
+        "hit_die": "d10",
+        "saving_throws": ["Strength", "Constitution"],
+        "skill_proficiencies": {
+          "choice": {
+            "count": 2,
+            "options": ["Acrobatics", "Animal Handling", "Athletics", "History", "Insight", "Intimidation", "Persuasion", "Perception", "Survival"]
+          }
+        },
+        "weapon_proficiencies": ["Simple", "Martial"],
+        "armor_training": ["Light", "Medium", "Heavy", "Shields"],
+        "starting_equipment": {
+          "options": [
+            {
+              "label": "A",
+              "items": ["Chain Mail", "Greatsword", "Flail", "8 Javelins", "Dungeoneer's Pack", "4 GP"]
+            },
+            {
+              "label": "B",
+              "items": ["Studded Leather Armor", "Scimitar", "Shortsword", "Longbow", "20 Arrows", "Quiver", "Dungeoneer's Pack", "11 GP"]
+            },
+            {
+              "label": "C",
+              "gp": 155
+            }
+          ]
+        }
+      },
+      "multiclassing": {
+        "requirements": { "Strength": 13, "Dexterity": 13, "note": "Strength 13 or Dexterity 13" },
+        "traits": ["Hit Point Die", "Martial weapons", "Light armor", "Medium armor", "Shields"]
+      },
+      "class_table": [
+        { "level": 1, "prof_bonus": "+2", "features": ["Fighting Style", "Second Wind", "Weapon Mastery"], "second_wind": 2, "weapon_mastery": 3 },
+        { "level": 2, "prof_bonus": "+2", "features": ["Action Surge (One Use)", "Tactical Mind"], "second_wind": 2, "weapon_mastery": 3 },
+        { "level": 3, "prof_bonus": "+2", "features": ["Fighter Subclass"], "second_wind": 2, "weapon_mastery": 3 },
+        { "level": 4, "prof_bonus": "+2", "features": ["Ability Score Improvement"], "second_wind": 3, "weapon_mastery": 4 },
+        { "level": 5, "prof_bonus": "+3", "features": ["Extra Attack", "Tactical Shift"], "second_wind": 3, "weapon_mastery": 4 },
+        { "level": 6, "prof_bonus": "+3", "features": ["Ability Score Improvement"], "second_wind": 3, "weapon_mastery": 4 },
+        { "level": 7, "prof_bonus": "+3", "features": ["Subclass Feature"], "second_wind": 3, "weapon_mastery": 4 },
+        { "level": 8, "prof_bonus": "+3", "features": ["Ability Score Improvement"], "second_wind": 3, "weapon_mastery": 4 },
+        { "level": 9, "prof_bonus": "+4", "features": ["Indomitable (One Use)", "Tactical Master"], "second_wind": 3, "weapon_mastery": 4 },
+        { "level": 10, "prof_bonus": "+4", "features": ["Subclass Feature"], "second_wind": 4, "weapon_mastery": 5 },
+        { "level": 11, "prof_bonus": "+4", "features": ["Two Extra Attacks"], "second_wind": 4, "weapon_mastery": 5 },
+        { "level": 12, "prof_bonus": "+4", "features": ["Ability Score Improvement"], "second_wind": 4, "weapon_mastery": 5 },
+        { "level": 13, "prof_bonus": "+5", "features": ["Indomitable (Two Uses)", "Studied Attacks"], "second_wind": 4, "weapon_mastery": 5 },
+        { "level": 14, "prof_bonus": "+5", "features": ["Ability Score Improvement"], "second_wind": 4, "weapon_mastery": 5 },
+        { "level": 15, "prof_bonus": "+5", "features": ["Subclass Feature"], "second_wind": 4, "weapon_mastery": 5 },
+        { "level": 16, "prof_bonus": "+5", "features": ["Ability Score Improvement"], "second_wind": 4, "weapon_mastery": 6 },
+        { "level": 17, "prof_bonus": "+6", "features": ["Action Surge (Two Uses)", "Indomitable (Three Uses)"], "second_wind": 4, "weapon_mastery": 6 },
+        { "level": 18, "prof_bonus": "+6", "features": ["Subclass Feature"], "second_wind": 4, "weapon_mastery": 6 },
+        { "level": 19, "prof_bonus": "+6", "features": ["Epic Boon"], "second_wind": 4, "weapon_mastery": 6 },
+        { "level": 20, "prof_bonus": "+6", "features": ["Three Extra Attacks"], "second_wind": 4, "weapon_mastery": 6 }
+      ],
+      "features": [
+        {
+          "name": "Fighting Style",
+          "level": 1,
+          "description": "You gain a Fighting Style feat of your choice. Whenever you gain a Fighter level, you can replace the feat you chose with a different Fighting Style feat."
+        },
+        {
+          "name": "Second Wind",
+          "level": 1,
+          "action": "Bonus Action",
+          "refresh": "Regain 1 use on Short Rest, all on Long Rest",
+          "description": "As a Bonus Action, regain Hit Points equal to 1d10 + your Fighter level."
+        },
+        {
+          "name": "Weapon Mastery",
+          "level": 1,
+          "description": "Use mastery properties of weapons. Change one choice after a Long Rest.",
+          "count_by_level": { "1": 3, "4": 4, "10": 5, "16": 6 }
+        },
+        {
+          "name": "Action Surge",
+          "level": 2,
+          "refresh": "Short or Long Rest",
+          "description": "On your turn, take one additional action, except the Magic action. Can use twice before a rest starting at level 17 (only once per turn)."
+        },
+        {
+          "name": "Tactical Mind",
+          "level": 2,
+          "description": "When you fail an ability check, expend a use of Second Wind to roll 1d10 and add it to the check. If it still fails, the use isn't expended."
+        },
+        {
+          "name": "Extra Attack",
+          "level": 5,
+          "description": "Attack twice instead of once whenever you take the Attack action."
+        },
+        {
+          "name": "Tactical Shift",
+          "level": 5,
+          "description": "When you activate Second Wind, move up to half your Speed without provoking Opportunity Attacks."
+        },
+        {
+          "name": "Indomitable",
+          "level": 9,
+          "refresh": "Long Rest",
+          "description": "If you fail a saving throw, reroll it with a bonus equal to your Fighter level. Must use new roll."
+        },
+        {
+          "name": "Tactical Master",
+          "level": 9,
+          "description": "When you attack with a weapon whose mastery property you can use, replace it with Push, Sap, or Slow for that attack."
+        },
+        {
+          "name": "Two Extra Attacks",
+          "level": 11,
+          "description": "Attack three times instead of once whenever you take the Attack action."
+        },
+        {
+          "name": "Studied Attacks",
+          "level": 13,
+          "description": "If you miss an attack roll, gain Advantage on your next attack roll against that creature before the end of your next turn."
+        },
+        {
+          "name": "Three Extra Attacks",
+          "level": 20,
+          "description": "Attack four times instead of once whenever you take the Attack action."
+        }
+      ],
+      "subclasses_available": [
+        "Battle Master",
+        "Champion",
+        "Eldritch Knight",
+        "Psi Warrior"
+      ]
+    },
+    {
+      "name": "Monk",
+      "slug": "monk",
+      "source": "PHB 2024",
+      "description": "Monks use rigorous combat training and mental discipline to align themselves with the multiverse and focus their internal reservoirs of power. They strive to turn themselves into living weapons.",
+      "core_traits": {
+        "primary_ability": "Dexterity and Wisdom",
+        "hit_die": "d8",
+        "saving_throws": ["Strength", "Dexterity"],
+        "skill_proficiencies": {
+          "choice": {
+            "count": 2,
+            "options": ["Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"]
+          }
+        },
+        "tool_proficiencies": {
+          "choice": {
+            "count": 1,
+            "options": "Any type of Artisan's Tools or Musical Instrument"
+          }
+        },
+        "weapon_proficiencies": ["Simple", "Martial weapons with the Light property"],
+        "armor_training": [],
+        "starting_equipment": {
+          "options": [
+            {
+              "label": "A",
+              "items": ["Spear", "5 Daggers", "Artisan's Tools or Musical Instrument", "Explorer's Pack", "11 GP"]
+            },
+            {
+              "label": "B",
+              "gp": 50
+            }
+          ]
+        }
+      },
+      "multiclassing": {
+        "requirements": { "Dexterity": 13, "Wisdom": 13 },
+        "traits": ["Hit Point Die"]
+      },
+      "class_table": [
+        { "level": 1, "prof_bonus": "+2", "features": ["Martial Arts", "Unarmored Defense"], "martial_arts": "1d6", "focus_points": 0, "unarmored_movement": 0 },
+        { "level": 2, "prof_bonus": "+2", "features": ["Monk's Focus", "Unarmored Movement", "Uncanny Metabolism"], "martial_arts": "1d6", "focus_points": 2, "unarmored_movement": 10 },
+        { "level": 3, "prof_bonus": "+2", "features": ["Deflect Attacks", "Monk Subclass"], "martial_arts": "1d6", "focus_points": 3, "unarmored_movement": 10 },
+        { "level": 4, "prof_bonus": "+2", "features": ["Ability Score Improvement", "Slow Fall"], "martial_arts": "1d6", "focus_points": 4, "unarmored_movement": 10 },
+        { "level": 5, "prof_bonus": "+3", "features": ["Extra Attack", "Stunning Strike"], "martial_arts": "1d8", "focus_points": 5, "unarmored_movement": 10 },
+        { "level": 6, "prof_bonus": "+3", "features": ["Empowered Strikes", "Subclass Feature"], "martial_arts": "1d8", "focus_points": 6, "unarmored_movement": 15 },
+        { "level": 7, "prof_bonus": "+3", "features": ["Evasion"], "martial_arts": "1d8", "focus_points": 7, "unarmored_movement": 15 },
+        { "level": 8, "prof_bonus": "+3", "features": ["Ability Score Improvement"], "martial_arts": "1d8", "focus_points": 8, "unarmored_movement": 15 },
+        { "level": 9, "prof_bonus": "+4", "features": ["Acrobatic Movement"], "martial_arts": "1d8", "focus_points": 9, "unarmored_movement": 15 },
+        { "level": 10, "prof_bonus": "+4", "features": ["Heightened Focus", "Self-Restoration"], "martial_arts": "1d8", "focus_points": 10, "unarmored_movement": 20 },
+        { "level": 11, "prof_bonus": "+4", "features": ["Subclass Feature"], "martial_arts": "1d10", "focus_points": 11, "unarmored_movement": 20 },
+        { "level": 12, "prof_bonus": "+4", "features": ["Ability Score Improvement"], "martial_arts": "1d10", "focus_points": 12, "unarmored_movement": 20 },
+        { "level": 13, "prof_bonus": "+5", "features": ["Deflect Energy"], "martial_arts": "1d10", "focus_points": 13, "unarmored_movement": 20 },
+        { "level": 14, "prof_bonus": "+5", "features": ["Disciplined Survivor"], "martial_arts": "1d10", "focus_points": 14, "unarmored_movement": 25 },
+        { "level": 15, "prof_bonus": "+5", "features": ["Perfect Focus"], "martial_arts": "1d10", "focus_points": 15, "unarmored_movement": 25 },
+        { "level": 16, "prof_bonus": "+5", "features": ["Ability Score Improvement"], "martial_arts": "1d10", "focus_points": 16, "unarmored_movement": 25 },
+        { "level": 17, "prof_bonus": "+6", "features": ["Subclass Feature"], "martial_arts": "1d12", "focus_points": 17, "unarmored_movement": 25 },
+        { "level": 18, "prof_bonus": "+6", "features": ["Superior Defense"], "martial_arts": "1d12", "focus_points": 18, "unarmored_movement": 30 },
+        { "level": 19, "prof_bonus": "+6", "features": ["Epic Boon"], "martial_arts": "1d12", "focus_points": 19, "unarmored_movement": 30 },
+        { "level": 20, "prof_bonus": "+6", "features": ["Body and Mind"], "martial_arts": "1d12", "focus_points": 20, "unarmored_movement": 30 }
+      ],
+      "features": [
+        {
+          "name": "Martial Arts",
+          "level": 1,
+          "description": "Mastery of combat styles using Unarmed Strikes and Monk weapons (Simple Melee and Martial Melee with Light property). Gain Dexterous Attacks (use Dex for Str attacks/saves), Bonus Unarmed Strike, and Martial Arts Die damage.",
+          "benefits": [
+            { "name": "Bonus Unarmed Strike", "action": "Bonus Action", "description": "Make one Unarmed Strike as a Bonus Action." },
+            { "name": "Martial Arts Die", "description": "Use your Martial Arts die (scaling by level) for Unarmed Strikes or Monk weapons." },
+            { "name": "Dexterous Attacks", "description": "Use Dex instead of Str for attack/damage rolls and Grapple/Shove save DCs." }
+          ]
+        },
+        {
+          "name": "Unarmored Defense",
+          "level": 1,
+          "description": "While wearing no armor and no shield, AC = 10 + Dex + Wis."
+        },
+        {
+          "name": "Monk's Focus",
+          "level": 2,
+          "refresh": "Short or Long Rest",
+          "dc": "8 + PB + WIS",
+          "description": "Expend Focus Points to fuel special features.",
+          "options": [
+            { "name": "Flurry of Blows", "action": "Bonus Action", "cost": 1, "description": "Make two Unarmed Strikes as a Bonus Action." },
+            { "name": "Patient Defense", "action": "Bonus Action", "cost": "0 or 1", "description": "Take Disengage action. Or spend 1 point for both Disengage and Dodge." },
+            { "name": "Step of the Wind", "action": "Bonus Action", "cost": "0 or 1", "description": "Take Dash action. Or spend 1 point for both Disengage and Dash; jump distance doubles." }
+          ]
+        },
+        {
+          "name": "Unarmored Movement",
+          "level": 2,
+          "description": "Speed increases while wearing no armor or shield. Bonus scales with level."
+        },
+        {
+          "name": "Uncanny Metabolism",
+          "level": 2,
+          "refresh": "Long Rest",
+          "description": "When you roll Initiative, regain all Focus Points and heal HP equal to Monk level + Martial Arts die."
+        },
+        {
+          "name": "Deflect Attacks",
+          "level": 3,
+          "action": "Reaction",
+          "description": "Reduce Bludgeoning, Piercing, or Slashing damage by 1d10 + Dex + Monk level. If reduced to 0, spend 1 Focus Point to redirect force (2 rolls of Martial Arts die + Dex) to a creature within 5ft (melee) or 60ft (ranged)."
+        },
+        {
+          "name": "Slow Fall",
+          "level": 4,
+          "action": "Reaction",
+          "description": "Reduce fall damage by 5 x Monk level."
+        },
+        {
+          "name": "Extra Attack",
+          "level": 5,
+          "description": "Attack twice per Attack action."
+        },
+        {
+          "name": "Stunning Strike",
+          "level": 5,
+          "cost": 1,
+          "description": "Once per turn on a hit, spend 1 Focus Point for a Con save. Fail: Stunned until start of your next turn. Success: Speed halved and next attack against it has Advantage."
+        },
+        {
+          "name": "Empowered Strikes",
+          "level": 6,
+          "description": "Unarmed Strikes can deal Force damage instead of normal type."
+        },
+        {
+          "name": "Evasion",
+          "level": 7,
+          "description": "No damage on successful Dex save for half; half on failure."
+        },
+        {
+          "name": "Acrobatic Movement",
+          "level": 9,
+          "description": "Move along vertical surfaces and across liquids without falling."
+        },
+        {
+          "name": "Heightened Focus",
+          "level": 10,
+          "description": "Improved Flurry (3 strikes), Patient Defense (Temp HP), and Step of the Wind (Move a Large- creature with you)."
+        },
+        {
+          "name": "Self-Restoration",
+          "level": 10,
+          "description": "Remove Charmed, Frightened, or Poisoned at the end of each turn. No Exhaustion from lack of food/drink."
+        },
+        {
+          "name": "Deflect Energy",
+          "level": 13,
+          "description": "Deflect Attacks now works against any damage type."
+        },
+        {
+          "name": "Disciplined Survivor",
+          "level": 14,
+          "description": "Proficiency in all saving throws. Spend 1 Focus Point to reroll failed save."
+        },
+        {
+          "name": "Perfect Focus",
+          "level": 15,
+          "description": "Regain Focus points to 4 on Initiative if you have 3 or fewer (and didn't use Uncanny Metabolism)."
+        },
+        {
+          "name": "Superior Defense",
+          "level": 18,
+          "cost": 3,
+          "description": "Spend 3 Focus Points for Resistance to all damage except Force for 1 minute."
+        },
+        {
+          "name": "Body and Mind",
+          "level": 20,
+          "description": "Dexterity and Wisdom increase by 4 (max 25)."
+        }
+      ],
+      "subclasses_available": [
+        "Warrior of Mercy",
+        "Warrior of Shadow",
+        "Warrior of the Elements",
+        "Warrior of the Open Hand"
+      ]
+    },
+    {
+      "name": "Paladin",
+      "slug": "paladin",
+      "source": "PHB 2024",
+      "description": "Paladins are united by their oaths to stand against the forces of annihilation and corruption. They are devout warriors who become blessed champions, secondary only to the magical power they wield to heal, smite, and protect.",
+      "core_traits": {
+        "primary_ability": "Strength and Charisma",
+        "hit_die": "d10",
+        "saving_throws": ["Wisdom", "Charisma"],
+        "skill_proficiencies": {
+          "choice": {
+            "count": 2,
+            "options": ["Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion"]
+          }
+        },
+        "weapon_proficiencies": ["Simple", "Martial"],
+        "armor_training": ["Light", "Medium", "Heavy", "Shields"],
+        "starting_equipment": {
+          "options": [
+            {
+              "label": "A",
+              "items": ["Chain Mail", "Shield", "Longsword", "6 Javelins", "Holy Symbol", "Priest's Pack", "9 GP"]
+            },
+            {
+              "label": "B",
+              "gp": 150
+            }
+          ]
+        }
+      },
+      "multiclassing": {
+        "requirements": { "Strength": 13, "Charisma": 13 },
+        "traits": ["Hit Point Die", "Martial weapons", "Light armor", "Medium armor", "Shields"]
+      },
+      "class_table": [
+        { "level": 1, "prof_bonus": "+2", "features": ["Lay On Hands", "Spellcasting", "Weapon Mastery"], "channel_divinity": 0, "prepared_spells": 2, "spell_slots": { "1": 2 } },
+        { "level": 2, "prof_bonus": "+2", "features": ["Fighting Style", "Paladin's Smite"], "channel_divinity": 0, "prepared_spells": 3, "spell_slots": { "1": 2 } },
+        { "level": 3, "prof_bonus": "+2", "features": ["Channel Divinity", "Paladin Subclass"], "channel_divinity": 2, "prepared_spells": 4, "spell_slots": { "1": 3 } },
+        { "level": 4, "prof_bonus": "+2", "features": ["Ability Score Improvement"], "channel_divinity": 2, "prepared_spells": 5, "spell_slots": { "1": 3 } },
+        { "level": 5, "prof_bonus": "+3", "features": ["Extra Attack", "Faithful Steed"], "channel_divinity": 2, "prepared_spells": 6, "spell_slots": { "1": 4, "2": 2 } },
+        { "level": 6, "prof_bonus": "+3", "features": ["Aura of Protection"], "channel_divinity": 2, "prepared_spells": 6, "spell_slots": { "1": 4, "2": 2 } },
+        { "level": 7, "prof_bonus": "+3", "features": ["Subclass Feature"], "channel_divinity": 2, "prepared_spells": 7, "spell_slots": { "1": 4, "2": 3 } },
+        { "level": 8, "prof_bonus": "+3", "features": ["Ability Score Improvement"], "channel_divinity": 2, "prepared_spells": 7, "spell_slots": { "1": 4, "2": 3 } },
+        { "level": 9, "prof_bonus": "+4", "features": ["Abjure Foes"], "channel_divinity": 2, "prepared_spells": 9, "spell_slots": { "1": 4, "2": 3, "3": 2 } },
+        { "level": 10, "prof_bonus": "+4", "features": ["Aura of Courage"], "channel_divinity": 2, "prepared_spells": 9, "spell_slots": { "1": 4, "2": 3, "3": 2 } },
+        { "level": 11, "prof_bonus": "+4", "features": ["Radiant Strikes"], "channel_divinity": 3, "prepared_spells": 10, "spell_slots": { "1": 4, "2": 3, "3": 3 } },
+        { "level": 12, "prof_bonus": "+4", "features": ["Ability Score Improvement"], "channel_divinity": 3, "prepared_spells": 10, "spell_slots": { "1": 4, "2": 3, "3": 3 } },
+        { "level": 13, "prof_bonus": "+5", "features": [], "channel_divinity": 3, "prepared_spells": 11, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 1 } },
+        { "level": 14, "prof_bonus": "+5", "features": ["Restoring Touch"], "channel_divinity": 3, "prepared_spells": 11, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 1 } },
+        { "level": 15, "prof_bonus": "+5", "features": ["Subclass Feature"], "channel_divinity": 3, "prepared_spells": 12, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 2 } },
+        { "level": 16, "prof_bonus": "+5", "features": ["Ability Score Improvement"], "channel_divinity": 3, "prepared_spells": 12, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 2 } },
+        { "level": 17, "prof_bonus": "+6", "features": [], "channel_divinity": 3, "prepared_spells": 14, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 } },
+        { "level": 18, "prof_bonus": "+6", "features": ["Aura Expansion"], "channel_divinity": 3, "prepared_spells": 14, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 } },
+        { "level": 19, "prof_bonus": "+6", "features": ["Epic Boon"], "channel_divinity": 3, "prepared_spells": 15, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 } },
+        { "level": 20, "prof_bonus": "+6", "features": ["Subclass Feature"], "channel_divinity": 3, "prepared_spells": 15, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 } }
+      ],
+      "features": [
+        {
+          "name": "Lay On Hands",
+          "level": 1,
+          "action": "Bonus Action",
+          "refresh": "Long Rest",
+          "description": "Restore HP from a pool equal to 5 x Level. As a Bonus Action, touch a creature to heal any amount from the pool. Or spend 5 points to remove the Poisoned condition."
+        },
+        {
+          "name": "Spellcasting",
+          "level": 1,
+          "description": "Charisma is your spellcasting ability. You use a Holy Symbol as a focus. Prepare spells of level 1+ based on the Paladin Features table. Change your prepared spells on a Long Rest."
+        },
+        {
+          "name": "Weapon Mastery",
+          "level": 1,
+          "description": "Use mastery properties of 2 kinds of weapons. Change choices after a Long Rest."
+        },
+        {
+          "name": "Fighting Style",
+          "level": 2,
+          "description": "Gain a Fighting Style feat or choose Blessed Warrior (learn 2 Cleric cantrips, Charisma-based)."
+        },
+        {
+          "name": "Paladin's Smite",
+          "level": 2,
+          "description": "Always have Divine Smite prepared. Cast once per Long Rest without a slot, or use available slots."
+        },
+        {
+          "name": "Channel Divinity",
+          "level": 3,
+          "refresh": "Regain 1 use on Short Rest, all on Long Rest",
+          "dc": "8 + PB + CHA",
+          "description": "Channel divine energy for magical effects.",
+          "options": [
+            { "name": "Divine Sense", "action": "Bonus Action", "description": "Detect Celestials, Fiends, and Undead within 60ft, and Hallow-style effects for 10 minutes." }
+          ]
+        },
+        {
+          "name": "Extra Attack",
+          "level": 5,
+          "description": "Attack twice per Attack action."
+        },
+        {
+          "name": "Faithful Steed",
+          "level": 5,
+          "description": "Always have Find Steed prepared. Cast once per Long Rest without a slot, or use available slots."
+        },
+        {
+          "name": "Aura of Protection",
+          "level": 6,
+          "description": "You and allies within 10ft gain a bonus to saving throws equal to your Charisma modifier (min +1). Inactive if Incapacitated."
+        },
+        {
+          "name": "Abjure Foes",
+          "level": 9,
+          "action": "Magic Action",
+          "cost": "1 Channel Divinity use",
+          "description": "Target Cha mod creatures within 60ft. Wis save or Frightened for 1 minute. While Frightened, they can only move, act, OR bonus act."
+        },
+        {
+          "name": "Aura of Courage",
+          "level": 10,
+          "description": "You and allies within your Aura of Protection are immune to the Frightened condition."
+        },
+        {
+          "name": "Radiant Strikes",
+          "level": 11,
+          "description": "Melee attacks and Unarmed Strikes deal an extra 1d8 Radiant damage."
+        },
+        {
+          "name": "Restoring Touch",
+          "level": 14,
+          "description": "Spend 5 HP from Lay on Hands to remove Blinded, Charmed, Deafened, Frightened, Paralyzed, or Stunned."
+        },
+        {
+          "name": "Aura Expansion",
+          "level": 18,
+          "description": "Aura of Protection (and related auras) expansion to 30ft."
+        }
+      ],
+      "subclasses_available": [
+        "Oath of Devotion",
+        "Oath of Glory",
+        "Oath of the Ancients",
+        "Oath of the Noble Genies",
+        "Oath of Vengeance"
+      ]
+    },
+    {
+      "name": "Ranger",
+      "slug": "ranger",
+      "source": "PHB 2024",
+      "description": "Rangers keep unending watch in the wilderness, tracking quarry like predators and harnessing primal powers to protect the world from monsters and tyrants.",
+      "core_traits": {
+        "primary_ability": "Dexterity and Wisdom",
+        "hit_die": "d10",
+        "saving_throws": ["Strength", "Dexterity"],
+        "skill_proficiencies": {
+          "choice": {
+            "count": 3,
+            "options": ["Animal Handling", "Athletics", "Insight", "Investigation", "Nature", "Perception", "Stealth", "Survival"]
+          }
+        },
+        "weapon_proficiencies": ["Simple", "Martial"],
+        "armor_training": ["Light", "Medium", "Shields"],
+        "starting_equipment": {
+          "options": [
+            {
+              "label": "A",
+              "items": ["Studded Leather Armor", "Scimitar", "Shortsword", "Longbow", "20 Arrows", "Quiver", "Druidic Focus (sprig of mistletoe)", "Explorer's Pack", "7 GP"]
+            },
+            {
+              "label": "B",
+              "gp": 150
+            }
+          ]
+        }
+      },
+      "multiclassing": {
+        "requirements": { "Dexterity": 13, "Wisdom": 13 },
+        "traits": ["Hit Point Die", "Martial weapons", "One Skill from Ranger list", "Light armor", "Medium armor", "Shields"]
+      },
+      "class_table": [
+        { "level": 1, "prof_bonus": "+2", "features": ["Spellcasting", "Favored Enemy", "Weapon Mastery"], "favored_enemy_uses": 2, "prepared_spells": 2, "spell_slots": { "1": 2 } },
+        { "level": 2, "prof_bonus": "+2", "features": ["Deft Explorer", "Fighting Style"], "favored_enemy_uses": 2, "prepared_spells": 3, "spell_slots": { "1": 2 } },
+        { "level": 3, "prof_bonus": "+2", "features": ["Ranger Subclass"], "favored_enemy_uses": 2, "prepared_spells": 4, "spell_slots": { "1": 3 } },
+        { "level": 4, "prof_bonus": "+2", "features": ["Ability Score Improvement"], "favored_enemy_uses": 2, "prepared_spells": 5, "spell_slots": { "1": 3 } },
+        { "level": 5, "prof_bonus": "+3", "features": ["Extra Attack"], "favored_enemy_uses": 3, "prepared_spells": 6, "spell_slots": { "1": 4, "2": 2 } },
+        { "level": 6, "prof_bonus": "+3", "features": ["Roving"], "favored_enemy_uses": 3, "prepared_spells": 6, "spell_slots": { "1": 4, "2": 2 } },
+        { "level": 7, "prof_bonus": "+3", "features": ["Subclass Feature"], "favored_enemy_uses": 3, "prepared_spells": 7, "spell_slots": { "1": 4, "2": 3 } },
+        { "level": 8, "prof_bonus": "+3", "features": ["Ability Score Improvement"], "favored_enemy_uses": 3, "prepared_spells": 7, "spell_slots": { "1": 4, "2": 3 } },
+        { "level": 9, "prof_bonus": "+4", "features": ["Expertise"], "favored_enemy_uses": 4, "prepared_spells": 9, "spell_slots": { "1": 4, "2": 3, "3": 2 } },
+        { "level": 10, "prof_bonus": "+4", "features": ["Tireless"], "favored_enemy_uses": 4, "prepared_spells": 9, "spell_slots": { "1": 4, "2": 3, "3": 2 } },
+        { "level": 11, "prof_bonus": "+4", "features": ["Subclass Feature"], "favored_enemy_uses": 4, "prepared_spells": 10, "spell_slots": { "1": 4, "2": 3, "3": 3 } },
+        { "level": 12, "prof_bonus": "+4", "features": ["Ability Score Improvement"], "favored_enemy_uses": 4, "prepared_spells": 10, "spell_slots": { "1": 4, "2": 3, "3": 3 } },
+        { "level": 13, "prof_bonus": "+5", "features": ["Relentless Hunter"], "favored_enemy_uses": 5, "prepared_spells": 11, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 1 } },
+        { "level": 14, "prof_bonus": "+5", "features": ["Nature's Veil"], "favored_enemy_uses": 5, "prepared_spells": 11, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 1 } },
+        { "level": 15, "prof_bonus": "+5", "features": ["Subclass Feature"], "favored_enemy_uses": 5, "prepared_spells": 12, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 2 } },
+        { "level": 16, "prof_bonus": "+5", "features": ["Ability Score Improvement"], "favored_enemy_uses": 5, "prepared_spells": 12, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 2 } },
+        { "level": 17, "prof_bonus": "+6", "features": ["Precise Hunter"], "favored_enemy_uses": 6, "prepared_spells": 14, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 } },
+        { "level": 18, "prof_bonus": "+6", "features": ["Feral Senses"], "favored_enemy_uses": 6, "prepared_spells": 14, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 } },
+        { "level": 19, "prof_bonus": "+6", "features": ["Epic Boon"], "favored_enemy_uses": 6, "prepared_spells": 15, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 } },
+        { "level": 20, "prof_bonus": "+6", "features": ["Foe Slayer"], "favored_enemy_uses": 6, "prepared_spells": 15, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 } }
+      ],
+      "features": [
+        {
+          "name": "Spellcasting",
+          "level": 1,
+          "description": "Wisdom is your spellcasting ability. You use a Druidic Focus as a focus. Prepare spells of level 1+ based on the Ranger Features table. Change your prepared spells on a Long Rest."
+        },
+        {
+          "name": "Favored Enemy",
+          "level": 1,
+          "refresh": "Long Rest",
+          "description": "Always have Hunter's Mark prepared. Cast it without a slot a number of times equal to the Favored Enemy column. Regain uses on Long Rest."
+        },
+        {
+          "name": "Weapon Mastery",
+          "level": 1,
+          "description": "Use mastery properties of 2 kinds of weapons. Change choices after a Long Rest."
+        },
+        {
+          "name": "Deft Explorer",
+          "level": 2,
+          "description": "Gain Expertise in one skill proficiency and learn two languages."
+        },
+        {
+          "name": "Fighting Style",
+          "level": 2,
+          "description": "Gain a Fighting Style feat or choose Druidic Warrior (learn 2 Druid cantrips, Wisdom-based)."
+        },
+        {
+          "name": "Extra Attack",
+          "level": 5,
+          "description": "Attack twice per Attack action."
+        },
+        {
+          "name": "Roving",
+          "level": 6,
+          "description": "Speed increases by 10ft while not in Heavy armor. Gain Climb and Swim speeds equal to your Speed."
+        },
+        {
+          "name": "Expertise",
+          "level": 9,
+          "description": "Gain Expertise in two more skill proficiencies."
+        },
+        {
+          "name": "Tireless",
+          "level": 10,
+          "refresh": "Long Rest",
+          "description": "As a Magic action, gain 1d8 + Wis mod Temp HP (uses = Wis mod). Decrease Exhaustion level by 1 on a Short Rest."
+        },
+        {
+          "name": "Relentless Hunter",
+          "level": 13,
+          "description": "Damage can't break your Concentration on Hunter's Mark."
+        },
+        {
+          "name": "Nature's Veil",
+          "level": 14,
+          "action": "Bonus Action",
+          "refresh": "Long Rest",
+          "description": "As a Bonus Action, become Invisible until the end of your next turn (uses = Wis mod)."
+        },
+        {
+          "name": "Precise Hunter",
+          "level": 17,
+          "description": "Advantage on attack rolls against your Hunter's Mark target."
+        },
+        {
+          "name": "Feral Senses",
+          "level": 18,
+          "description": "Gain 30ft of Blindsight."
+        },
+        {
+          "name": "Foe Slayer",
+          "level": 20,
+          "description": "Hunter's Mark damage die increases to d10."
+        }
+      ],
+      "subclasses_available": [
+        "Beast Master",
+        "Fey Wanderer",
+        "Gloom Stalker",
+        "Hollow Warden",
+        "Hunter"
+      ]
+    },
+    {
+      "name": "Rogue",
+      "slug": "rogue",
+      "source": "PHB 2024",
+      "description": "Rogues rely on cunning, stealth, and their foes' vulnerabilities to get the upper hand in any situation. They have a knack for finding the solution to just about any problem.",
+      "core_traits": {
+        "primary_ability": "Dexterity",
+        "hit_die": "d8",
+        "saving_throws": ["Dexterity", "Intelligence"],
+        "skill_proficiencies": {
+          "choice": {
+            "count": 4,
+            "options": ["Acrobatics", "Athletics", "Deception", "Insight", "Intimidation", "Investigation", "Perception", "Persuasion", "Sleight of Hand", "Stealth"]
+          }
+        },
+        "weapon_proficiencies": ["Simple", "Martial weapons with the Finesse or Light property"],
+        "tool_proficiencies": ["Thieves' Tools"],
+        "armor_training": ["Light"],
+        "starting_equipment": {
+          "options": [
+            {
+              "label": "A",
+              "items": ["Leather Armor", "2 Daggers", "Shortsword", "Shortbow", "20 Arrows", "Quiver", "Thieves' Tools", "Burglar's Pack", "8 GP"]
+            },
+            {
+              "label": "B",
+              "gp": 100
+            }
+          ]
+        }
+      },
+      "multiclassing": {
+        "requirements": { "Dexterity": 13 },
+        "traits": ["Hit Point Die", "One Skill from Rogue list", "Thieves' Tools", "Light armor"]
+      },
+      "class_table": [
+        { "level": 1, "prof_bonus": "+2", "features": ["Expertise", "Sneak Attack", "Thieves' Cant", "Weapon Mastery"], "sneak_attack": "1d6" },
+        { "level": 2, "prof_bonus": "+2", "features": ["Cunning Action"], "sneak_attack": "1d6" },
+        { "level": 3, "prof_bonus": "+2", "features": ["Rogue Subclass", "Steady Aim"], "sneak_attack": "2d6" },
+        { "level": 4, "prof_bonus": "+2", "features": ["Ability Score Improvement"], "sneak_attack": "2d6" },
+        { "level": 5, "prof_bonus": "+3", "features": ["Cunning Strike", "Uncanny Dodge"], "sneak_attack": "3d6" },
+        { "level": 6, "prof_bonus": "+3", "features": ["Expertise"], "sneak_attack": "3d6" },
+        { "level": 7, "prof_bonus": "+3", "features": ["Evasion", "Reliable Talent"], "sneak_attack": "4d6" },
+        { "level": 8, "prof_bonus": "+3", "features": ["Ability Score Improvement"], "sneak_attack": "4d6" },
+        { "level": 9, "prof_bonus": "+4", "features": ["Subclass Feature"], "sneak_attack": "5d6" },
+        { "level": 10, "prof_bonus": "+4", "features": ["Ability Score Improvement"], "sneak_attack": "5d6" },
+        { "level": 11, "prof_bonus": "+4", "features": ["Improved Cunning Strike"], "sneak_attack": "6d6" },
+        { "level": 12, "prof_bonus": "+4", "features": ["Ability Score Improvement"], "sneak_attack": "6d6" },
+        { "level": 13, "prof_bonus": "+5", "features": ["Subclass Feature"], "sneak_attack": "7d6" },
+        { "level": 14, "prof_bonus": "+5", "features": ["Devious Strikes"], "sneak_attack": "7d6" },
+        { "level": 15, "prof_bonus": "+5", "features": ["Slippery Mind"], "sneak_attack": "8d6" },
+        { "level": 16, "prof_bonus": "+5", "features": ["Ability Score Improvement"], "sneak_attack": "8d6" },
+        { "level": 17, "prof_bonus": "+6", "features": ["Subclass Feature"], "sneak_attack": "9d6" },
+        { "level": 18, "prof_bonus": "+6", "features": ["Elusive"], "sneak_attack": "9d6" },
+        { "level": 19, "prof_bonus": "+6", "features": ["Epic Boon"], "sneak_attack": "10d6" },
+        { "level": 20, "prof_bonus": "+6", "features": ["Stroke of Luck"], "sneak_attack": "10d6" }
+      ],
+      "features": [
+        {
+          "name": "Expertise",
+          "level": 1,
+          "description": "Gain Expertise in two skill proficiencies. At Rogue level 6, gain Expertise in two more."
+        },
+        {
+          "name": "Sneak Attack",
+          "level": 1,
+          "description": "Once per turn, deal extra damage to a creature hit with a Finesse or Ranged weapon if you have Advantage or an ally is within 5ft. Damage scales with level."
+        },
+        {
+          "name": "Thieves' Cant",
+          "level": 1,
+          "description": "Know Thieves' Cant and one other language of your choice."
+        },
+        {
+          "name": "Weapon Mastery",
+          "level": 1,
+          "description": "Use mastery properties of 2 kinds of weapons. Change choices after a Long Rest."
+        },
+        {
+          "name": "Cunning Action",
+          "level": 2,
+          "action": "Bonus Action",
+          "description": "Take Dash, Disengage, or Hide action as a Bonus Action."
+        },
+        {
+          "name": "Steady Aim",
+          "level": 3,
+          "action": "Bonus Action",
+          "description": "Gain Advantage on next attack roll this turn. Speed becomes 0 until end of turn. Can't move before using."
+        },
+        {
+          "name": "Cunning Strike",
+          "level": 5,
+          "dc": "8 + PB + DEX",
+          "description": "Forgo Sneak Attack dice for effects. Save DC uses Dex.",
+          "options": [
+            { "name": "Poison", "cost": "1d6", "description": "Con save or Poisoned for 1 minute (requires Poisoner's Kit)." },
+            { "name": "Trip", "cost": "1d6", "description": "Large or smaller targets make Dex save or knocked Prone." },
+            { "name": "Withdraw", "cost": "1d6", "description": "Move up to half speed without Opportunity Attacks." }
+          ]
+        },
+        {
+          "name": "Uncanny Dodge",
+          "level": 5,
+          "action": "Reaction",
+          "description": "Halve damage from an attack you can see."
+        },
+        {
+          "name": "Evasion",
+          "level": 7,
+          "description": "No damage on successful Dex save for half; half on failure. Inactive if Incapacitated."
+        },
+        {
+          "name": "Reliable Talent",
+          "level": 7,
+          "description": "Treat d20 rolls of 9 or lower as 10 for proficient skill/tool checks."
+        },
+        {
+          "name": "Improved Cunning Strike",
+          "level": 11,
+          "description": "Use up to two Cunning Strike effects simultaneously, paying die costs for each."
+        },
+        {
+          "name": "Devious Strikes",
+          "level": 14,
+          "description": "New Cunning Strike options available.",
+          "options": [
+            { "name": "Daze", "cost": "2d6", "description": "Con save or target can only move, act, or bonus act on next turn." },
+            { "name": "Knock Out", "cost": "6d6", "description": "Con save or Unconscious for 1 minute/damage." },
+            { "name": "Obscure", "cost": "3d6", "description": "Dex save or Blinded until end of your next turn." }
+          ]
+        },
+        {
+          "name": "Slippery Mind",
+          "level": 15,
+          "description": "Gain proficiency in Wisdom and Charisma saving throws."
+        },
+        {
+          "name": "Elusive",
+          "level": 18,
+          "description": "Attackers can't have Advantage against you unless you are Incapacitated."
+        },
+        {
+          "name": "Stroke of Luck",
+          "level": 20,
+          "refresh": "Short or Long Rest",
+          "description": "Turn a failed d20 Test into a 20 once per rest."
+        }
+      ],
+      "subclasses_available": [
+        "Arcane Trickster",
+        "Assassin",
+        "Phantom",
+        "Soulknife",
+        "Thief"
+      ]
+    },
+    {
+      "name": "Sorcerer",
+      "slug": "sorcerer",
+      "source": "PHB 2024",
+      "description": "Sorcerers wield innate magic that is stamped into their being. Sorcerers don’t learn magic; the raw, roiling power of magic is part of them. The essential art of a Sorcerer is learning to harness and channel that innate magic.",
+      "core_traits": {
+        "primary_ability": "Charisma",
+        "hit_die": "d6",
+        "saving_throws": ["Constitution", "Charisma"],
+        "skill_proficiencies": {
+          "choice": {
+            "count": 2,
+            "options": ["Arcana", "Deception", "Insight", "Intimidation", "Persuasion", "Religion"]
+          }
+        },
+        "weapon_proficiencies": ["Simple"],
+        "armor_training": [],
+        "starting_equipment": {
+          "options": [
+            {
+              "label": "A",
+              "items": ["Spear", "2 Daggers", "Arcane Focus (crystal)", "Dungeoneer's Pack", "28 GP"]
+            },
+            {
+              "label": "B",
+              "gp": 50
+            }
+          ]
+        }
+      },
+      "multiclassing": {
+        "requirements": { "Charisma": 13 },
+        "traits": ["Hit Point Die"]
+      },
+      "class_table": [
+        { "level": 1, "prof_bonus": "+2", "features": ["Spellcasting", "Innate Sorcery"], "sorcery_points": 0, "cantrips": 4, "prepared_spells": 2, "spell_slots": { "1": 2 } },
+        { "level": 2, "prof_bonus": "+2", "features": ["Font of Magic", "Metamagic"], "sorcery_points": 2, "cantrips": 4, "prepared_spells": 4, "spell_slots": { "1": 3 } },
+        { "level": 3, "prof_bonus": "+2", "features": ["Sorcerer Subclass"], "sorcery_points": 3, "cantrips": 4, "prepared_spells": 6, "spell_slots": { "1": 4, "2": 2 } },
+        { "level": 4, "prof_bonus": "+2", "features": ["Ability Score Improvement"], "sorcery_points": 4, "cantrips": 5, "prepared_spells": 7, "spell_slots": { "1": 4, "2": 3 } },
+        { "level": 5, "prof_bonus": "+3", "features": ["Sorcerous Restoration"], "sorcery_points": 5, "cantrips": 5, "prepared_spells": 9, "spell_slots": { "1": 4, "2": 3, "3": 2 } },
+        { "level": 6, "prof_bonus": "+3", "features": ["Subclass feature"], "sorcery_points": 6, "cantrips": 5, "prepared_spells": 10, "spell_slots": { "1": 4, "2": 3, "3": 3 } },
+        { "level": 7, "prof_bonus": "+3", "features": ["Sorcery Incarnate"], "sorcery_points": 7, "cantrips": 5, "prepared_spells": 11, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 1 } },
+        { "level": 8, "prof_bonus": "+3", "features": ["Ability Score Improvement"], "sorcery_points": 8, "cantrips": 5, "prepared_spells": 12, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 2 } },
+        { "level": 9, "prof_bonus": "+4", "features": [], "sorcery_points": 9, "cantrips": 5, "prepared_spells": 14, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 } },
+        { "level": 10, "prof_bonus": "+4", "features": ["Metamagic"], "sorcery_points": 10, "cantrips": 6, "prepared_spells": 15, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 } },
+        { "level": 11, "prof_bonus": "+4", "features": [], "sorcery_points": 11, "cantrips": 6, "prepared_spells": 16, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 } },
+        { "level": 12, "prof_bonus": "+4", "features": ["Ability Score Improvement"], "sorcery_points": 12, "cantrips": 6, "prepared_spells": 16, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 } },
+        { "level": 13, "prof_bonus": "+5", "features": [], "sorcery_points": 13, "cantrips": 6, "prepared_spells": 17, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 } },
+        { "level": 14, "prof_bonus": "+5", "features": ["Subclass feature"], "sorcery_points": 14, "cantrips": 6, "prepared_spells": 17, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 } },
+        { "level": 15, "prof_bonus": "+5", "features": [], "sorcery_points": 15, "cantrips": 6, "prepared_spells": 18, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 } },
+        { "level": 16, "prof_bonus": "+5", "features": ["Ability Score Improvement"], "sorcery_points": 16, "cantrips": 6, "prepared_spells": 18, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 } },
+        { "level": 17, "prof_bonus": "+6", "features": ["Metamagic"], "sorcery_points": 17, "cantrips": 6, "prepared_spells": 19, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1, "9": 1 } },
+        { "level": 18, "prof_bonus": "+6", "features": ["Subclass feature"], "sorcery_points": 18, "cantrips": 6, "prepared_spells": 20, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 1, "7": 1, "8": 1, "9": 1 } },
+        { "level": 19, "prof_bonus": "+6", "features": ["Epic Boon"], "sorcery_points": 19, "cantrips": 6, "prepared_spells": 21, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 1, "8": 1, "9": 1 } },
+        { "level": 20, "prof_bonus": "+6", "features": ["Arcane Apotheosis"], "sorcery_points": 20, "cantrips": 6, "prepared_spells": 22, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 2, "8": 1, "9": 1 } }
+      ],
+      "features": [
+        {
+          "name": "Spellcasting",
+          "level": 1,
+          "description": "Charisma is your spellcasting ability. You use an Arcane Focus. You know cantrips and prepare spells of level 1+ based on the Sorcerer Features table. Change your prepared spells on a level up."
+        },
+        {
+          "name": "Innate Sorcery",
+          "level": 1,
+          "action": "Bonus Action",
+          "uses": 2,
+          "refresh": "Long Rest",
+          "description": "Unleash magic for 1 minute: spell save DC of Sorcerer spells increases by 1, and you have Advantage on attack rolls of Sorcerer spells."
+        },
+        {
+          "name": "Font of Magic",
+          "level": 2,
+          "refresh": "Long Rest",
+          "description": "You have Sorcery Points to fuel magical effects. Expend a slot to gain points equal to slot level. Transform points into a slot as a Bonus Action (Level 1: 2 SP, L2: 3 SP, L3: 5 SP, L4: 6 SP, L5: 7 SP)."
+        },
+        {
+          "name": "Metamagic",
+          "level": 2,
+          "description": "Gain two Metamagic options to temporarily modify spells by spending Sorcery Points. Only one option per spell usually. Gain two more at L10 and L17.",
+          "options": [
+            { "name": "Careful Spell", "cost": 1, "description": "When creatures make a save against your spell, protect up to your Charisma modifier creatures. They automatically succeed and take no damage if they would normally take half." },
+            { "name": "Distant Spell", "cost": 1, "description": "Double a spell's range (if 5ft+), or make a Touch range spell 30ft." },
+            { "name": "Empowered Spell", "cost": 1, "description": "Reroll up to Charisma modifier damage dice; must use new rolls. Can use alongside other Metamagic." },
+            { "name": "Extended Spell", "cost": 1, "description": "Double duration of a spell (1 min+) to max 24 hours. Gain Advantage on Concentration saves for that spell." },
+            { "name": "Heightened Spell", "cost": 2, "description": "Give one target of a spell Disadvantage on saves against it." },
+            { "name": "Quickened Spell", "cost": 2, "description": "Change casting time of an action spell to a Bonus Action. Can't cast another level 1+ spell this turn." },
+            { "name": "Seeking Spell", "cost": 1, "description": "If you miss a spell attack, reroll the d20. Can use alongside other Metamagic." },
+            { "name": "Subtle Spell", "cost": 1, "description": "Cast without Verbal, Somatic, or Material components (unless costly or consumed)." },
+            { "name": "Transmuted Spell", "cost": 1, "description": "Change damage type to Acid, Cold, Fire, Lightning, Poison, or Thunder." },
+            { "name": "Twinned Spell", "cost": 1, "description": "For spells that target additional creatures when upcast, increase the effective level by 1." }
+          ]
+        },
+        {
+          "name": "Sorcerous Restoration",
+          "level": 5,
+          "refresh": "Long Rest",
+          "description": "On a Short Rest, regain expended Sorcery Points up to half your Sorcerer level (round down). Once per Long Rest."
+        },
+        {
+          "name": "Sorcery Incarnate",
+          "level": 7,
+          "description": "If you have no uses of Innate Sorcery left, you can activate it by spending 2 Sorcery Points. While active, you can use up to two Metamagic options on each spell."
+        },
+        {
+          "name": "Arcane Apotheosis",
+          "level": 20,
+          "description": "While Innate Sorcery is active, you can use one Metamagic option on each of your turns without spending Sorcery Points."
+        }
+      ],
+      "subclasses_available": [
+        "Aberrant Sorcery",
+        "Clockwork Sorcery",
+        "Draconic Sorcery",
+        "Shadow Sorcery",
+        "Wild Magic Sorcery"
+      ]
+    },
+    {
+      "name": "Warlock",
+      "slug": "warlock",
+      "source": "PHB 2024",
+      "description": "Warlocks quest for knowledge hidden in the fabric of the multiverse, forming binding pacts with powerful patrons to piece together arcane secrets and bolster their own power.",
+      "core_traits": {
+        "primary_ability": "Charisma",
+        "hit_die": "d8",
+        "saving_throws": ["Wisdom", "Charisma"],
+        "skill_proficiencies": {
+          "choice": {
+            "count": 2,
+            "options": ["Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion"]
+          }
+        },
+        "weapon_proficiencies": ["Simple"],
+        "armor_training": ["Light"],
+        "starting_equipment": {
+          "options": [
+            {
+              "label": "A",
+              "items": ["Leather Armor", "Sickle", "2 Daggers", "Arcane Focus (orb)", "Book (occult lore)", "Scholar's Pack", "15 GP"]
+            },
+            {
+              "label": "B",
+              "gp": 100
+            }
+          ]
+        }
+      },
+      "multiclassing": {
+        "requirements": { "Charisma": 13 },
+        "traits": ["Hit Point Die", "Light armor"]
+      },
+      "class_table": [
+        { "level": 1, "prof_bonus": "+2", "features": ["Eldritch Invocations", "Pact Magic"], "invocations": 1, "cantrips": 2, "prepared_spells": 2, "spell_slots": 1, "slot_level": 1 },
+        { "level": 2, "prof_bonus": "+2", "features": ["Magical Cunning"], "invocations": 3, "cantrips": 2, "prepared_spells": 3, "spell_slots": 2, "slot_level": 1 },
+        { "level": 3, "prof_bonus": "+2", "features": ["Warlock Subclass"], "invocations": 3, "cantrips": 2, "prepared_spells": 4, "spell_slots": 2, "slot_level": 2 },
+        { "level": 4, "prof_bonus": "+2", "features": ["Ability Score Improvement"], "invocations": 3, "cantrips": 3, "prepared_spells": 5, "spell_slots": 2, "slot_level": 2 },
+        { "level": 5, "prof_bonus": "+3", "features": [], "invocations": 5, "cantrips": 3, "prepared_spells": 6, "spell_slots": 2, "slot_level": 3 },
+        { "level": 6, "prof_bonus": "+3", "features": ["Subclass Feature"], "invocations": 5, "cantrips": 3, "prepared_spells": 7, "spell_slots": 2, "slot_level": 3 },
+        { "level": 7, "prof_bonus": "+3", "features": [], "invocations": 6, "cantrips": 3, "prepared_spells": 8, "spell_slots": 2, "slot_level": 4 },
+        { "level": 8, "prof_bonus": "+3", "features": ["Ability Score Improvement"], "invocations": 6, "cantrips": 3, "prepared_spells": 9, "spell_slots": 2, "slot_level": 4 },
+        { "level": 9, "prof_bonus": "+4", "features": ["Contact Patron"], "invocations": 7, "cantrips": 3, "prepared_spells": 10, "spell_slots": 2, "slot_level": 5 },
+        { "level": 10, "prof_bonus": "+4", "features": ["Subclass Feature"], "invocations": 7, "cantrips": 4, "prepared_spells": 10, "spell_slots": 2, "slot_level": 5 },
+        { "level": 11, "prof_bonus": "+4", "features": ["Mystic Arcanum (Level 6 Spell)"], "invocations": 7, "cantrips": 4, "prepared_spells": 11, "spell_slots": 3, "slot_level": 5 },
+        { "level": 12, "prof_bonus": "+4", "features": ["Ability Score Improvement"], "invocations": 8, "cantrips": 4, "prepared_spells": 11, "spell_slots": 3, "slot_level": 5 },
+        { "level": 13, "prof_bonus": "+5", "features": ["Mystic Arcanum (Level 7 Spell)"], "invocations": 8, "cantrips": 4, "prepared_spells": 12, "spell_slots": 3, "slot_level": 5 },
+        { "level": 14, "prof_bonus": "+5", "features": ["Subclass Feature"], "invocations": 8, "cantrips": 4, "prepared_spells": 12, "spell_slots": 3, "slot_level": 5 },
+        { "level": 15, "prof_bonus": "+5", "features": ["Mystic Arcanum (Level 8 Spell)"], "invocations": 9, "cantrips": 4, "prepared_spells": 13, "spell_slots": 3, "slot_level": 5 },
+        { "level": 16, "prof_bonus": "+5", "features": ["Ability Score Improvement"], "invocations": 9, "cantrips": 4, "prepared_spells": 13, "spell_slots": 3, "slot_level": 5 },
+        { "level": 17, "prof_bonus": "+6", "features": ["Mystic Arcanum (Level 9 Spell)"], "invocations": 9, "cantrips": 4, "prepared_spells": 14, "spell_slots": 4, "slot_level": 5 },
+        { "level": 18, "prof_bonus": "+6", "features": [], "invocations": 10, "cantrips": 4, "prepared_spells": 14, "spell_slots": 4, "slot_level": 5 },
+        { "level": 19, "prof_bonus": "+6", "features": ["Epic Boon"], "invocations": 10, "cantrips": 4, "prepared_spells": 15, "spell_slots": 4, "slot_level": 5 },
+        { "level": 20, "prof_bonus": "+6", "features": ["Eldritch Master"], "invocations": 10, "cantrips": 4, "prepared_spells": 15, "spell_slots": 4, "slot_level": 5 }
+      ],
+      "features": [
+        {
+          "name": "Eldritch Invocations",
+          "level": 1,
+          "description": "Unearthed forbidden knowledge. Gain invocations of your choice based on the Invocations column. You can replace one invocation whenever you gain a Warlock level."
+        },
+        {
+          "name": "Pact Magic",
+          "level": 1,
+          "description": "Charisma is your spellcasting ability. You use an Arcane Focus. You have a limited number of spell slots that are all the same level (scaling up to 5th). Regain slots on a Short or Long Rest. Prepare spells based on the Warlock Features table."
+        },
+        {
+          "name": "Magical Cunning",
+          "level": 2,
+          "action": "1 minute rite",
+          "refresh": "Long Rest",
+          "description": "Regain half your maximum Pact Magic spell slots (round up)."
+        },
+        {
+          "name": "Contact Patron",
+          "level": 9,
+          "refresh": "Long Rest",
+          "description": "Always have Contact Other Plane prepared. Cast once per Long Rest without a slot to contact your patron; automatically succeed on the saving throw."
+        },
+        {
+          "name": "Mystic Arcanum",
+          "level": 11,
+          "refresh": "Long Rest",
+          "description": "Choose one spell of level 6+ (increasing at L13, L15, L17) as an arcanum. Cast each arcanum spell once per Long Rest without a slot. Can replace one on level up."
+        },
+        {
+          "name": "Eldritch Master",
+          "level": 20,
+          "description": "When you use Magical Cunning, regain all expended Pact Magic spell slots."
+        }
+      ],
+      "subclasses_available": [
+        "Archfey Patron",
+        "Celestial Patron",
+        "Fiend Patron",
+        "Great Old One Patron",
+        "Undead Patron"
+      ]
+    },
+    {
+      "name": "Wizard",
+      "slug": "wizard",
+      "source": "PHB 2024",
+      "description": "Wizards are defined by their exhaustive study of magic's inner workings. They cast spells of explosive fire, arcing lightning, subtle deception, and spectacular transformations.",
+      "core_traits": {
+        "primary_ability": "Intelligence",
+        "hit_die": "d6",
+        "saving_throws": ["Intelligence", "Wisdom"],
+        "skill_proficiencies": {
+          "choice": {
+            "count": 2,
+            "options": ["Arcana", "History", "Insight", "Investigation", "Medicine", "Nature", "Religion"]
+          }
+        },
+        "weapon_proficiencies": ["Simple"],
+        "armor_training": [],
+        "starting_equipment": {
+          "options": [
+            {
+              "label": "A",
+              "items": ["2 Daggers", "Arcane Focus (Quarterstaff)", "Robe", "Spellbook", "Scholar's Pack", "5 GP"]
+            },
+            {
+              "label": "B",
+              "gp": 55
+            }
+          ]
+        }
+      },
+      "multiclassing": {
+        "requirements": { "Intelligence": 13 },
+        "traits": ["Hit Point Die"]
+      },
+      "class_table": [
+        { "level": 1, "prof_bonus": "+2", "features": ["Spellcasting", "Ritual Adept", "Arcane Recovery"], "cantrips": 3, "prepared_spells": 4, "spell_slots": { "1": 2 } },
+        { "level": 2, "prof_bonus": "+2", "features": ["Scholar"], "cantrips": 3, "prepared_spells": 5, "spell_slots": { "1": 3 } },
+        { "level": 3, "prof_bonus": "+2", "features": ["Wizard Subclass"], "cantrips": 3, "prepared_spells": 6, "spell_slots": { "1": 4, "2": 2 } },
+        { "level": 4, "prof_bonus": "+2", "features": ["Ability Score Improvement"], "cantrips": 4, "prepared_spells": 7, "spell_slots": { "1": 4, "2": 3 } },
+        { "level": 5, "prof_bonus": "+3", "features": ["Memorize Spell"], "cantrips": 4, "prepared_spells": 9, "spell_slots": { "1": 4, "2": 3, "3": 2 } },
+        { "level": 6, "prof_bonus": "+3", "features": ["Subclass feature"], "cantrips": 4, "prepared_spells": 10, "spell_slots": { "1": 4, "2": 3, "3": 3 } },
+        { "level": 7, "prof_bonus": "+3", "features": [], "cantrips": 4, "prepared_spells": 11, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 1 } },
+        { "level": 8, "prof_bonus": "+3", "features": ["Ability Score Improvement"], "cantrips": 4, "prepared_spells": 12, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 2 } },
+        { "level": 9, "prof_bonus": "+4", "features": [], "cantrips": 4, "prepared_spells": 14, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 } },
+        { "level": 10, "prof_bonus": "+4", "features": ["Subclass feature"], "cantrips": 5, "prepared_spells": 15, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 } },
+        { "level": 11, "prof_bonus": "+4", "features": [], "cantrips": 5, "prepared_spells": 16, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 } },
+        { "level": 12, "prof_bonus": "+4", "features": ["Ability Score Improvement"], "cantrips": 5, "prepared_spells": 16, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 } },
+        { "level": 13, "prof_bonus": "+5", "features": [], "cantrips": 5, "prepared_spells": 17, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 } },
+        { "level": 14, "prof_bonus": "+5", "features": ["Subclass feature"], "cantrips": 5, "prepared_spells": 18, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 } },
+        { "level": 15, "prof_bonus": "+5", "features": [], "cantrips": 5, "prepared_spells": 19, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 } },
+        { "level": 16, "prof_bonus": "+5", "features": ["Ability Score Improvement"], "cantrips": 5, "prepared_spells": 21, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 } },
+        { "level": 17, "prof_bonus": "+6", "features": [], "cantrips": 5, "prepared_spells": 22, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1, "9": 1 } },
+        { "level": 18, "prof_bonus": "+6", "features": ["Spell Mastery"], "cantrips": 5, "prepared_spells": 23, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 1, "7": 1, "8": 1, "9": 1 } },
+        { "level": 19, "prof_bonus": "+6", "features": ["Epic Boon"], "cantrips": 5, "prepared_spells": 24, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 1, "8": 1, "9": 1 } },
+        { "level": 20, "prof_bonus": "+6", "features": ["Signature Spells"], "cantrips": 5, "prepared_spells": 25, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 2, "8": 1, "9": 1 } }
+      ],
+      "features": [
+        {
+          "name": "Spellcasting",
+          "level": 1,
+          "description": "Intelligence is your spellcasting ability. You use an Arcane Focus or your Spellbook. You know cantrips and prepare spells from your Spellbook based on the Wizard Features table. Change your prepared spells on a Long Rest. Replace one cantrip on a Long Rest."
+        },
+        {
+          "name": "Spellbook",
+          "level": 1,
+          "description": "Your spellbook contains 6 level 1 Wizard spells initially. Add 2 spells of eligible level each level up. You can copy found spells (2 hours, 50 GP per level). Prepare your spells from this book."
+        },
+        {
+          "name": "Ritual Adept",
+          "level": 1,
+          "description": "You can cast any spell with the Ritual tag from your spellbook as a ritual, even if not prepared, by reading from the book."
+        },
+        {
+          "name": "Arcane Recovery",
+          "level": 1,
+          "refresh": "Long Rest",
+          "description": "Once per Long Rest, during a Short Rest, recover expended spell slots with a combined level equal to half your Wizard level (round up). Max slot level recovered is 5th."
+        },
+        {
+          "name": "Scholar",
+          "level": 2,
+          "description": "Gain Expertise in one skill: Arcana, History, Investigation, Medicine, Nature, or Religion (must already have proficiency)."
+        },
+        {
+          "name": "Memorize Spell",
+          "level": 5,
+          "description": "When you finish a Short Rest, you can study your spellbook to swap one prepared spell for another."
+        },
+        {
+          "name": "Spell Mastery",
+          "level": 18,
+          "description": "Choose a level 1 and level 2 spell from your spellbook (casting time: action). Always have them prepared, and cast them at their lowest level without expending a slot. Change choices on a Long Rest."
+        },
+        {
+          "name": "Signature Spells",
+          "level": 20,
+          "refresh": "Short or Long Rest",
+          "description": "Choose two level 3 spells. Always have them prepared, and cast each once at level 3 without expending a slot per Short/Long Rest."
+        }
+      ],
+      "subclasses_available": [
+        "Abjurer",
+        "Diviner",
+        "Evoker",
+        "Illusionist"
+      ]
+    },
+    {
+      "name": "Artificer",
+      "slug": "artificer",
+      "source": "Eberron",
+      "description": "Masters of invention, Artificers use ingenuity and magic to unlock extraordinary capabilities in objects, decoding and harnessing magic in their spells and inventions.",
+      "core_traits": {
+        "primary_ability": "Intelligence",
+        "hit_die": "d8",
+        "saving_throws": ["Constitution", "Intelligence"],
+        "skill_proficiencies": {
+          "choice": {
+            "count": 2,
+            "options": ["Arcana", "History", "Investigation", "Medicine", "Nature", "Perception", "Sleight of Hand"]
+          }
+        },
+        "weapon_proficiencies": ["Simple"],
+        "tool_proficiencies": ["Thieves’ Tools", "Tinker’s Tools", { "choice": { "count": 1, "options": "Any Artisan's Tools" } }],
+        "armor_training": ["Light", "Medium", "Shields"],
+        "starting_equipment": {
+          "options": [
+            {
+              "label": "A",
+              "items": ["Studded Leather Armor", "Dagger", "Thieves’ Tools", "Tinker’s Tools", "Dungeoneer’s Pack", "16 GP"]
+            },
+            {
+              "label": "B",
+              "gp": 150
+            }
+          ]
+        }
+      },
+      "multiclassing": {
+        "requirements": { "Intelligence": 13 },
+        "traits": ["Hit Point Die", "Tinker's Tools", "One Skill from Artificer list", "Light armor", "Medium armor", "Shields"],
+        "note": "Add half your Artificer levels (round up) when determining multiclass spell slots."
+      },
+      "class_table": [
+        { "level": 1, "prof_bonus": "+2", "features": ["Spellcasting", "Tinker's Magic"], "plans_known": 0, "magic_items": 0, "cantrips": 2, "prepared_spells": 2, "spell_slots": { "1": 2 } },
+        { "level": 2, "prof_bonus": "+2", "features": ["Replicate Magic Item"], "plans_known": 4, "magic_items": 2, "cantrips": 2, "prepared_spells": 3, "spell_slots": { "1": 2 } },
+        { "level": 3, "prof_bonus": "+2", "features": ["Artificer Subclass"], "plans_known": 4, "magic_items": 2, "cantrips": 2, "prepared_spells": 4, "spell_slots": { "1": 3 } },
+        { "level": 4, "prof_bonus": "+2", "features": ["Ability Score Improvement"], "plans_known": 4, "magic_items": 2, "cantrips": 2, "prepared_spells": 5, "spell_slots": { "1": 3 } },
+        { "level": 5, "prof_bonus": "+3", "features": ["Subclass Feature"], "plans_known": 4, "magic_items": 2, "cantrips": 2, "prepared_spells": 6, "spell_slots": { "1": 4, "2": 2 } },
+        { "level": 6, "prof_bonus": "+3", "features": ["Magic Item Tinker"], "plans_known": 5, "magic_items": 3, "cantrips": 2, "prepared_spells": 6, "spell_slots": { "1": 4, "2": 2 } },
+        { "level": 7, "prof_bonus": "+3", "features": ["Flash of Genius"], "plans_known": 5, "magic_items": 3, "cantrips": 2, "prepared_spells": 7, "spell_slots": { "1": 4, "2": 3 } },
+        { "level": 8, "prof_bonus": "+3", "features": ["Ability Score Improvement"], "plans_known": 5, "magic_items": 3, "cantrips": 2, "prepared_spells": 7, "spell_slots": { "1": 4, "2": 3 } },
+        { "level": 9, "prof_bonus": "+4", "features": ["Subclass Feature"], "plans_known": 5, "magic_items": 3, "cantrips": 2, "prepared_spells": 9, "spell_slots": { "1": 4, "2": 3, "3": 2 } },
+        { "level": 10, "prof_bonus": "+4", "features": ["Magic Item Adept"], "plans_known": 6, "magic_items": 4, "cantrips": 3, "prepared_spells": 9, "spell_slots": { "1": 4, "2": 3, "3": 2 } },
+        { "level": 11, "prof_bonus": "+4", "features": ["Spell-Storing Item"], "plans_known": 6, "magic_items": 4, "cantrips": 3, "prepared_spells": 10, "spell_slots": { "1": 4, "2": 3, "3": 3 } },
+        { "level": 12, "prof_bonus": "+4", "features": ["Ability Score Improvement"], "plans_known": 6, "magic_items": 4, "cantrips": 3, "prepared_spells": 10, "spell_slots": { "1": 4, "2": 3, "3": 3 } },
+        { "level": 13, "prof_bonus": "+5", "features": [], "plans_known": 6, "magic_items": 4, "cantrips": 3, "prepared_spells": 11, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 1 } },
+        { "level": 14, "prof_bonus": "+5", "features": ["Advanced Artifice"], "plans_known": 7, "magic_items": 5, "cantrips": 4, "prepared_spells": 11, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 1 } },
+        { "level": 15, "prof_bonus": "+5", "features": ["Subclass Feature"], "plans_known": 7, "magic_items": 5, "cantrips": 4, "prepared_spells": 12, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 2 } },
+        { "level": 16, "prof_bonus": "+5", "features": ["Ability Score Improvement"], "plans_known": 7, "magic_items": 5, "cantrips": 4, "prepared_spells": 12, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 2 } },
+        { "level": 17, "prof_bonus": "+6", "features": [], "plans_known": 7, "magic_items": 5, "cantrips": 4, "prepared_spells": 14, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 } },
+        { "level": 18, "prof_bonus": "+6", "features": ["Magic Item Master"], "plans_known": 8, "magic_items": 6, "cantrips": 4, "prepared_spells": 14, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 } },
+        { "level": 19, "prof_bonus": "+6", "features": ["Epic Boon"], "plans_known": 8, "magic_items": 6, "cantrips": 4, "prepared_spells": 15, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 } },
+        { "level": 20, "prof_bonus": "+6", "features": ["Soul of Artifice"], "plans_known": 8, "magic_items": 6, "cantrips": 4, "prepared_spells": 15, "spell_slots": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 } }
+      ],
+      "features": [
+        {
+          "name": "Spellcasting",
+          "level": 1,
+          "description": "Intelligence is your spellcasting ability. You must use tools (Thieves’, Tinker’s, or Artisan’s) as a focus. You know cantrips and prepare level 1+ spells from the Artificer list. Change your prepared spells or one cantrip on a Long Rest."
+        },
+        {
+          "name": "Tinker's Magic",
+          "level": 1,
+          "action": "Magic Action",
+          "refresh": "Long Rest",
+          "uses": "Intelligence modifier",
+          "description": "Learn Mending. Create one mundane item (last until Long Rest) from a specified list using Tinker's Tools."
+        },
+        {
+          "name": "Replicate Magic Item",
+          "level": 2,
+          "refresh": "Long Rest",
+          "description": "Learn arcane plans to create temporary magic items. Create specified number of items at the end of a Long Rest. Items last until you die (1d4 days later) or the plan is replaced.",
+          "magic_item_plans": [
+            {
+              "level": 2,
+              "options": [
+                { "name": "Alchemy Jug", "attunement": "No" },
+                { "name": "Bag of Holding", "attunement": "No" },
+                { "name": "Cap of Water Breathing", "attunement": "No" },
+                { "name": "Common magic item (non-consumable, non-cursed)", "attunement": "Varies" },
+                { "name": "Goggles of Night", "attunement": "No" },
+                { "name": "Manifold Tool", "attunement": "Yes" },
+                { "name": "Repeating Shot", "attunement": "Yes" },
+                { "name": "Returning Weapon", "attunement": "No" },
+                { "name": "Rope of Climbing", "attunement": "No" },
+                { "name": "Sending Stones", "attunement": "No" },
+                { "name": "Shield +1", "attunement": "No" },
+                { "name": "Wand of Magic Detection", "attunement": "No" },
+                { "name": "Wand of Secrets", "attunement": "No" },
+                { "name": "Wand of the War Mage +1", "attunement": "Yes" },
+                { "name": "Weapon +1", "attunement": "No" },
+                { "name": "Wraps of Unarmed Power +1", "attunement": "No" }
+              ]
+            },
+            {
+              "level": 6,
+              "options": [
+                { "name": "Armor +1", "attunement": "No" },
+                { "name": "Boots of Elvenkind", "attunement": "No" },
+                { "name": "Boots of the Winding Path", "attunement": "Yes" },
+                { "name": "Cloak of Elvenkind", "attunement": "Yes" },
+                { "name": "Cloak of the Manta Ray", "attunement": "No" },
+                { "name": "Dazzling Weapon", "attunement": "Yes" },
+                { "name": "Eyes of Charming", "attunement": "Yes" },
+                { "name": "Eyes of Minute Seeing", "attunement": "No" },
+                { "name": "Gloves of Thievery", "attunement": "No" },
+                { "name": "Helm of Awareness", "attunement": "No" },
+                { "name": "Lantern of Revealing", "attunement": "No" },
+                { "name": "Mind Sharpener", "attunement": "Yes" },
+                { "name": "Necklace of Adaption", "attunement": "Yes" },
+                { "name": "Pipes of Haunting", "attunement": "No" },
+                { "name": "Repulsion Shield", "attunement": "No" },
+                { "name": "Ring of Swimming", "attunement": "No" },
+                { "name": "Ring of Water Walking", "attunement": "No" },
+                { "name": "Sentinel Shield", "attunement": "No" },
+                { "name": "Spell-Refueling Ring", "attunement": "Yes" },
+                { "name": "Wand of Magic Missiles", "attunement": "No" },
+                { "name": "Wand of Web", "attunement": "Yes" },
+                { "name": "Weapon of Warning", "attunement": "Yes" }
+              ]
+            },
+            {
+              "level": 10,
+              "options": [
+                { "name": "Armor of Resistance", "attunement": "Yes" },
+                { "name": "Dagger of Venom", "attunement": "No" },
+                { "name": "Elven Chain", "attunement": "No" },
+                { "name": "Ring of Feather Falling", "attunement": "Yes" },
+                { "name": "Ring of Jumping", "attunement": "Yes" },
+                { "name": "Ring of Mind Shielding", "attunement": "Yes" },
+                { "name": "Shield +2", "attunement": "No" },
+                { "name": "Uncommon Wondrous Item (non-cursed)", "attunement": "Varies" },
+                { "name": "Wand of the War Mage +2", "attunement": "Yes" },
+                { "name": "Weapon +2", "attunement": "No" },
+                { "name": "Wraps of Unarmed Power +2", "attunement": "No" }
+              ]
+            },
+            {
+              "level": 14,
+              "options": [
+                { "name": "Armor +2", "attunement": "No" },
+                { "name": "Arrow-Catching Shield", "attunement": "Yes" },
+                { "name": "Flame Tongue", "attunement": "Yes" },
+                { "name": "Rare Wondrous Item (non-cursed)", "attunement": "Varies" },
+                { "name": "Ring of Free Action", "attunement": "Yes" },
+                { "name": "Ring of Protection", "attunement": "Yes" },
+                { "name": "Ring of the Ram", "attunement": "Yes" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Magic Item Tinker",
+          "level": 6,
+          "description": "Gain new options for Replicate Magic Item: Charge Item (spend slot to recharge), Drain Item (destroy item for temporary spell slot), or Transmute Item (transform item into another known plan).",
+          "refresh": "Long Rest (for Drain/Transmute)"
+        },
+        {
+          "name": "Flash of Genius",
+          "level": 7,
+          "action": "Reaction",
+          "refresh": "Long Rest",
+          "uses": "Intelligence modifier",
+          "description": "When you or an ally within 30ft fails a check or save, add your Int modifier to the roll."
+        },
+        {
+          "name": "Magic Item Adept",
+          "level": 10,
+          "description": "You can attune to up to four magic items at once."
+        },
+        {
+          "name": "Spell-Storing Item",
+          "level": 11,
+          "refresh": "Long Rest",
+          "uses": "2x Intelligence modifier",
+          "description": "Store a level 1-3 Artificer spell (1 action) in a weapon or focus. A creature can use a Magic action to produce the spell's effect. Replaces any existing stored spell."
+        },
+        {
+          "name": "Advanced Artifice",
+          "level": 14,
+          "description": "Attune to up to five magic items. Regain one use of Flash of Genius on a Short Rest."
+        },
+        {
+          "name": "Magic Item Master",
+          "level": 18,
+          "description": "Attune to up to six magic items at once."
+        },
+        {
+          "name": "Soul of Artifice",
+          "level": 20,
+          "description": "Cheat Death: Disintegrate Uncommon/Rare infusions to drop to 20 HP per item instead of 0. Magical Guidance: Regain all Flash of Genius uses on Short Rest if attuned to at least one magic item."
+        }
+      ],
+      "subclasses_available": [
+        "Alchemist",
+        "Armorer",
+        "Artillerist",
+        "Battle Smith",
+        "Cartographer",
+        "Reanimator"
+      ]
+    }
+  ]
+}

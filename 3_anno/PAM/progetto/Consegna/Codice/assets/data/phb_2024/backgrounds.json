@@ -1,0 +1,20 @@
+{
+  "backgrounds": [
+    { "name": "Acolyte", "stats": ["INTELLIGENCE", "WISDOM", "CHARISMA"], "feat": "Magic Initiate (Cleric)", "skills": ["Insight", "Religion"], "tool": "Calligrapher's Supplies" },
+    { "name": "Artisan", "stats": ["STRENGTH", "DEXTERITY", "INTELLIGENCE"], "feat": "Crafter", "skills": ["Investigation", "Persuasion"], "tool": "Artisan's Tools" },
+    { "name": "Charlatan", "stats": ["DEXTERITY", "CONSTITUTION", "CHARISMA"], "feat": "Skilled", "skills": ["Deception", "Sleight of Hand"], "tool": "Forgery Kit" },
+    { "name": "Criminal", "stats": ["DEXTERITY", "CONSTITUTION", "INTELLIGENCE"], "feat": "Alert", "skills": ["Deception", "Stealth"], "tool": "Thieves' Tools" },
+    { "name": "Entertainer", "stats": ["STRENGTH", "DEXTERITY", "CHARISMA"], "feat": "Musician", "skills": ["Acrobatics", "Performance"], "tool": "Musical Instrument" },
+    { "name": "Farmer", "stats": ["STRENGTH", "CONSTITUTION", "WISDOM"], "feat": "Tough", "skills": ["Animal Handling", "Nature"], "tool": "Carpenter's Tools" },
+    { "name": "Guard", "stats": ["STRENGTH", "INTELLIGENCE", "WISDOM"], "feat": "Alert", "skills": ["Athletics", "Perception"], "tool": "Gaming Set" },
+    { "name": "Guide", "stats": ["DEXTERITY", "CONSTITUTION", "WISDOM"], "feat": "Magic Initiate (Druid)", "skills": ["Stealth", "Survival"], "tool": "Cartographer's Tools" },
+    { "name": "Hermit", "stats": ["CONSTITUTION", "WISDOM", "CHARISMA"], "feat": "Healer", "skills": ["Medicine", "Religion"], "tool": "Herbalism Kit" },
+    { "name": "Merchant", "stats": ["CONSTITUTION", "INTELLIGENCE", "CHARISMA"], "feat": "Lucky", "skills": ["Animal Handling", "Persuasion"], "tool": "Navigator's Tools" },
+    { "name": "Noble", "stats": ["STRENGTH", "INTELLIGENCE", "CHARISMA"], "feat": "Skilled", "skills": ["History", "Persuasion"], "tool": "Gaming Set" },
+    { "name": "Sage", "stats": ["CONSTITUTION", "INTELLIGENCE", "WISDOM"], "feat": "Magic Initiate (Wizard)", "skills": ["Arcana", "History"], "tool": "Calligrapher's Supplies" },
+    { "name": "Sailor", "stats": ["STRENGTH", "DEXTERITY", "WISDOM"], "feat": "Tavern Brawler", "skills": ["Athletics", "Perception"], "tool": "Navigator's Tools" },
+    { "name": "Scribe", "stats": ["DEXTERITY", "INTELLIGENCE", "WISDOM"], "feat": "Skilled", "skills": ["Investigation", "Perception"], "tool": "Calligrapher's Supplies" },
+    { "name": "Soldier", "stats": ["STRENGTH", "DEXTERITY", "CONSTITUTION"], "feat": "Savage Attacker", "skills": ["Athletics", "Intimidation"], "tool": "Gaming Set" },
+    { "name": "Wayfarer", "stats": ["DEXTERITY", "WISDOM", "CHARISMA"], "feat": "Lucky", "skills": ["Insight", "Stealth"], "tool": "Thieves' Tools" }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+    "DEFAULT": {
+        "debug_track_json": false,
+        "log_level": "INFO",
+        "close_console": true,
+        "show_message": true,
+        "fetch_domain_online": true,
+        "auto_update_check": true,
+        "imp_service": ["default"],
+        "installation": "essential"
+    },
+    "OUTPUT": {
+        "root_path": "Video",
+        "movie_folder_name": "Movie",
+        "serie_folder_name": "Serie",
+        "anime_folder_name": "Anime",
+        "movie_format": "%(title_name) (%(title_year))/%(title_name) (%(title_year))",
+        "episode_format": "%(series_name)/S%(season:02d)/%(episode_name) S%(season:02d)E%(episode:02d)"
+    },
+    "DOWNLOAD": {
+        "auto_select": true,
+        "delay_after_download": 1,
+        "skip_download": false,
+        "thread_count": 8,
+        "concurrent_download": true,
+        "select_video": "best",
+        "select_audio": "eng|en",
+        "select_subtitle": "eng|en|ita|it",
+        "cleanup_tmp_folder": true
+    },
+    "PROCESS": {
+        "use_gpu": false,
+        "param_video": ["-c:v","libx265","-crf","28","-preset","medium"],
+        "param_audio": ["-c:a","libopus","-b:a","128k"],
+        "param_final": ["-c","copy"],
+        "audio_order": [],
+        "subtitle_order": [],
+        "subtitle_disposition_language": "eng_forced",
+        "merge_audio": true,
+        "merge_subtitle": true,
+        "force_subtitle": "auto",
+        "extension": "mkv"
+    },
+    "REQUESTS": {
+        "timeout": 20,
+        "max_retry": 8,
+        "use_proxy": false,
+        "proxy": {
+            "http": "http://localhost:8888",
+            "https": "http://localhost:8888"
+        }
+    },
+    "HOOKS": {
+        "pre_run": [],
+        "post_run": [],
+        "post_download": []
+    },
+    "DRM": {
+        "use_cdm": true,
+        "prefer_remote_cdm": false,
+        "vault": {
+            "supa": {
+                "url": "https://crqczuxpqjmrjvdvqvlx.supabase.co",
+                "token": ""
+            }
+        }
+    }
+}

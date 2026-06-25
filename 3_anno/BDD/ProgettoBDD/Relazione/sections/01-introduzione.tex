@@ -1,0 +1,183 @@
+% !TeX root = ../main.tex
+
+\section{Descrizione del problema}
+Si vuole progettare una base di dati relativa ad una \textbf{rete bancaria informatizzata}, costituita da un consorzio di banche 
+che condividono sportelli automatici(Bancomat). L'obiettivo è modellare il sistema per gestire le relazioni tra banche, filiali,
+dipendenti, clienti, conti correnti e operazioni bancarie, includendo la gestione delle carte Bancomat e i relativi costi di commissione.
+
+
+\section{Analisi dei requisiti}
+
+\subsection{Glossario}
+Di seguito sono riportati i termini e le definizioni utilizzate nel progetto, con lo scopo di chiarire i tecnicismi e garantire una comprensione
+uniforme del contenuto, individuando inoltre sinonimi e riferimenti comuni tra i termini.
+
+\begin{table}[H]
+  \centering
+  \footnotesize
+  \renewcommand{\arraystretch}{1.0}
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabularx}{\textwidth}{@{}
+      >{\raggedright\arraybackslash}p{2.3cm}
+      >{\raggedright\arraybackslash}X
+      >{\raggedright\arraybackslash}p{2.6cm}
+      >{\raggedright\arraybackslash}p{3.2cm}
+    @{}}
+    \toprule
+    \textbf{Termine} & \textbf{Descrizione} & \textbf{Sinonimi} & \textbf{Collegamenti} \\
+    \midrule
+    Consorzio & Insieme di banche che condividono un insieme di sportelli automatizzati. & - & Banca, Sportello automatizzato \\
+    \midrule
+
+    Banca & Ente individuato da un codice e dotato di un nome; possiede filiali e impiegati e stabilisce i costi dei prelievi effettuati presso sportelli automatizzati del consorzio o di altre banche. & - & Consorzio, Filiale, Impiegato \\
+    \midrule
+
+    Filiale & Sede di una banca, individuata da un codice e caratterizzata da un indirizzo; possiede conti, postazioni di cassa e sportelli automatizzati e può rilasciare carte Bancomat. & - & Banca, Impiegato, Conto, Cassa, Sportello automatizzato, Carta Bancomat \\
+    \midrule
+
+    Impiegato & Persona di cui si conoscono nome, indirizzo dell'abitazione e data di assunzione; presta servizio presso filiali della stessa banca, con permanenza minima di un mese per filiale. & - & Banca, Filiale, Cliente \\
+    \midrule
+
+    Cliente & Persona di cui si conoscono nome, indirizzo e codice fiscale, che la identifica univocamente; può essere titolare di uno o più conti e possedere una o più carte Bancomat; può anche essere impiegato della stessa banca. & - & Conto, Carta Bancomat, Impiegato \\
+    \midrule
+
+    Conto & Rapporto bancario relativo a uno o più clienti, con data di apertura, eventuale data di estinzione e, se ancora aperto, ammontare totale. & - & Cliente, Filiale, Carta Bancomat, Operazione bancaria \\
+    \midrule
+
+    Carta Bancomat & Carta associata a uno dei conti del cliente, identificata univocamente dalla password e caratterizzata da un limite di spesa giornaliero e da un limite di spesa mensile. & - & Cliente, Conto, Filiale \\
+    \midrule
+
+    Cassa & Punto operativo della filiale presso cui si possono eseguire operazioni bancarie; dispone di una quantità di denaro disponibile aggiornata in caso di depositi e prelievi. & Postazione di cassa & Filiale, Operazione bancaria \\
+    \midrule
+
+    Sportello automatizzato & Dispositivo automatico presso cui si possono eseguire operazioni bancarie; dispone di una quantità di denaro disponibile ed è condiviso nell'ambito del consorzio. Consente deposito, saldo, lista movimenti e prelievo. & Sportello Bancomat, Stazione automatizzata & Consorzio, Filiale, Operazione bancaria \\
+    \midrule
+
+    Operazione bancaria & Operazione eseguita in una certa data e a una certa ora, relativa a un dato conto e svolta presso una cassa o uno sportello automatizzato. & Operazione & Conto, Cassa, Sportello automatizzato \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Glossario dei termini}
+  \label{tab:glossario}
+\end{table}
+
+\subsection{Strutturazione dei requisiti in gruppi di frasi omogenee}
+In questa fase si riorganizzano le frasi del progetto in base ai loro concetti, in modo da ottenere un'organizzazione migliore per il lavoro futuro.
+
+\paragraph{Frasi di carattere generale}
+Si vuole progettare una base di dati relativa ad una rete bancaria informatizzata. La rete bancaria è costituita da un consorzio di banche che condivide un insieme di sportelli automatizzati, ossia gli sportelli Bancomat.
+\paragraph{Frasi relative alle banche}
+Ogni banca è individuata da un codice, ha un proprio nome, un insieme di filiali ed un insieme di impiegati. Alle operazioni di prelievo ogni banca associa due diversi costi: uno per le operazioni di prelievo eseguite presso stazioni automatizzate di banche appartenenti al consorzio e un altro per operazioni eseguite presso stazioni automatizzate di altre banche.
+
+\paragraph{Frasi relative agli impiegati}
+Di ogni impiegato vogliamo conoscere il nome, l'indirizzo dell'abitazione e la data di assunzione. Nel corso della vita lavorativa, un impiegato può prestare servizio in diverse filiali della stessa banca, rispettando il vincolo di una permanenza minima di un mese in una filiale.
+
+\paragraph{Frasi relative alle filiali}
+Ogni filiale è caratterizzata da un codice e possiede un indirizzo, dei propri conti, delle postazioni di cassa e degli sportelli automatizzati; può, inoltre, rilasciare delle carte Bancomat.
+
+\paragraph{Frasi relative ai conti}
+Ogni conto è relativo ad uno o più clienti ed è caratterizzato da una data di apertura, da un'eventuale data di estinzione e (se ancora aperto) da un ammontare totale.
+
+\paragraph{Frasi relative alle carte Bancomat}
+Ogni carta Bancomat è identificata univocamente dalla password ed è contraddistinta da un limite di spesa giornaliero e da un limite di spesa mensile (tali limiti possono variare da una carta all'altra).
+
+\paragraph{Frasi relative ai clienti}
+Ogni cliente ha un nome, un indirizzo e un numero di codice fiscale che lo identifica univocamente. Un cliente può possedere una o più carte Bancomat, ognuna associata ad uno dei suoi conti. Un cliente della banca può anche essere un impiegato della stessa. In tal caso, non ha alcun costo di gestione per le operazioni eseguite presso le filiali della banca stessa o presso gli sportelli automatizzati del consorzio a cui la banca appartiene.
+
+\paragraph{Frasi relative alle interfacce (casse e sportelli)}
+Ogni cassa o sportello automatizzato ha una certa quantità di denaro disponibile, che viene aggiornata in caso di depositi/prelievi. Ovviamente non è possibile effettuare prelievi superiori al denaro disponibile. Sia presso le casse sia presso gli sportelli automatizzati è possibile eseguire operazioni bancarie, le quali avvengono in una certa data ad una certa ora e sono relative ad un dato conto. Attraverso uno sportello automatizzato è possibile effettuare operazioni di deposito, saldo, lista movimenti e prelievo.
+
+\subsection{Lista delle operazioni}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|p{9cm}|c|}
+    \hline
+    \# & Descrizione & Frequenza stimata \\
+    \hline
+    1 & Informazioni di un'interfaccia (compreso \# operazioni effettuate) & $\sim 500$ / giorno \\
+    \hline
+    2 & Inserimento di un'operazione su un'interfaccia, da conto preesistente & $\sim 50{.}000$ / giorno \\
+    \hline
+    3 & Assunzione di un impiegato in una data filiale & $\sim 0{,}5$ / giorno \\
+    \hline
+    4 & Trasferimento di un impiegato in una filiale e controllo vincoli temporali & $\sim 0{,}1$ / giorno \\
+    \hline
+    5 & Licenziamento di un impiegato & $\sim 0{,}011$ / giorno \\
+    \hline
+    6 & Trovare il cliente con l'ammontare complessivo dei conti correnti intestati maggiore & $\sim 0{,}033$ / giorno \\
+    \hline
+    7 & Trovare le filiali con solo operazioni di ammontare $> 20$ & $\sim 0{,}033$ / giorno \\
+    \hline
+    8 & Trovare impiegati-clienti con almeno un conto aperto da 13 anni & $\sim 0{,}033$ / giorno \\
+    \hline
+    9 & Trovare coppie di clienti che hanno cc in esattamente gli stessi insiemi di filiali & $\sim 0{,}033$ / giorno \\
+    \hline
+  \end{tabular}
+  \caption{Operazioni e frequenze stimate}
+\end{table}
+
+\subsection{Volumi dei dati e tavole degli accessi}
+
+Dall'analisi emerge che il carico del sistema è dominato dall'inserimento delle operazioni bancarie, con una frequenza stimata di circa \(50{.}000\) esecuzioni al giorno. Di conseguenza, i costrutti con volume più elevato risultano essere \textbf{Operazione} e le relative associazioni, con cardinalità nell'ordine di \(182{.}500{.}000\) occorrenze su orizzonte decennale. Anche \textbf{Conto}, \textbf{CartaBancomat}, \textbf{Cliente} e le relazioni a essi collegate presentano volumi rilevanti e sono quindi stati considerati con particolare attenzione nelle scelte di indicizzazione.
+
+Le tavole degli accessi mostrano inoltre che le operazioni di consultazione più frequenti coinvolgono in prevalenza \textbf{Interfaccia}, mentre le interrogazioni analitiche meno frequenti richiedono join tra più relazioni, come nel caso di \textbf{Cliente}, \textbf{Conto}, \textbf{Intestato\_A}, \textbf{Filiale} e \textbf{PrestaServizioIn}. Queste stime hanno giustificato l'introduzione di indici sulle principali chiavi esterne e sugli attributi maggiormente coinvolti nelle selezioni e nei collegamenti tra tabelle.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|l|c|}
+    \hline
+    Costrutto & Volume stimato \\
+    \hline
+    Banca & 5 \\
+    Filiale & 100 \\
+    Interfaccia & 500 \\
+    Cliente & 50{.}000 \\
+    Persona & 51{.}000 \\
+    Impiegato & 1{.}000 \\
+    Conto & 60{.}000 \\
+    CartaBancomat & 55{.}000 \\
+    Operazione & 182{.}500{.}000 \\
+    \hline
+  \end{tabular}
+  \caption{Volumi stimati dei principali costrutti}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|l|c|c|}
+    \hline
+    \textbf{Operazione} & \textbf{Versione} & \textbf{Concetto / Costrutto} & \textbf{Accessi} & \textbf{Tipo} \\
+    \hline
+    1 & con counter & Interfaccia (E) & 1 & L \\
+    \hline
+    1 & senza counter & Interfaccia (E) & 1 & L \\
+    1 & senza counter & Effettua (R) & 365000 & L \\
+    1 & senza counter & Operazione (E) & 365000 & L \\
+    \hline
+    2 & con counter & Operazione (E) & 1 & S \\
+    2 & con counter & Relativo\_a (R) & 1 & S \\
+    2 & con counter & Conto (E) & 1 & S \\
+    2 & con counter & Effettua (R) & 1 & S \\
+    2 & con counter & Interfaccia (E) & 1 & S \\
+    \hline
+    2 & senza counter & Operazione (E) & 1 & S \\
+    2 & senza counter & Relativo\_a (R) & 1 & S \\
+    2 & senza counter & Conto (E) & 1 & S \\
+    2 & senza counter & Effettua (R) & 1 & S \\
+    2 & senza counter & Interfaccia (E) & 1 & S \\
+    \hline
+  \end{tabular}
+  \caption{Confronto degli accessi per le operazioni 1 e 2 con e senza contatore del numero di operazioni per interfaccia}
+  \label{tab:counter_accessi}
+\end{table}
+
+La tabella mostra che l'introduzione del contatore \textit{numeroOperazioni} nell'entità \textbf{Interfaccia} è giustificata soprattutto dall'operazione 1, che richiede la visualizzazione
+delle informazioni di un'interfaccia comprensive del numero di operazioni effettuate.
+
+Con il contatore memorizzato, tale informazione si ottiene con un solo accesso all'entità \textbf{Interfaccia}. Senza contatore, invece, è necessario attraversare la relazione
+\textbf{Effettua} e considerare tutte le occorrenze di \textbf{Operazione} associate alla singola interfaccia, con un costo molto più elevato, pari a
+centinaia di migliaia di accessi nel caso medio stimato.
+
+L'operazione 2, pur essendo molto frequente, mantiene un costo sostanzialmente costante anche in presenza del contatore, poiché l'aggiornamento del valore può essere eseguito contestualmente
+all'inserimento della nuova operazione. Di conseguenza, il contatore introduce una rindondanza controllata, ma consente un forte miglioramento nelle interrogazioni di lettura più sensibili,
+risultando quindi una scelta proggettuale conveniente.

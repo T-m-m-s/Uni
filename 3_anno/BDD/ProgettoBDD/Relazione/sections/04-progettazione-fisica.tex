@@ -1,0 +1,258 @@
+% !TeX root = ../main.tex
+
+\section{Progettazione Fisica}
+La progettazione fisica rappresenta la traduzione concreta dello schema logico nel DBMS scelto, nel nostro caso \textbf{PostgreSQL}. In questa fase si definiscono le tabelle effettive, i tipi di dato, i vincoli di integrità esprimibili direttamente nel DDL e gli indici necessari a supportare in modo efficiente le operazioni più frequenti previste dal progetto.
+
+Dal punto di vista operativo, l'infrastruttura del database è stata organizzata mediante una fase iniziale di creazione e reinizializzazione del database, seguita dalla definizione dello schema applicativo \texttt{consorzio}. Tutte le tabelle, i vincoli e la logica successiva vengono infatti collocati all'interno di tale schema, così da mantenere ordinata e separata l'intera base di dati.
+
+\subsection{Scelte implementative e organizzazione dello schema}
+La realizzazione fisica è stata organizzata attorno allo schema \texttt{consorzio}, impostato come \texttt{search\_path} di riferimento per gli script SQL. L'inizializzazione prevede la chiusura delle connessioni attive al database, la sua ricreazione e la definizione dello schema applicativo.
+
+\begin{lstlisting}[caption={Inizializzazione del database e dello schema}]
+SELECT pg_terminate_backend(pg_stat_activity.pid)
+FROM pg_stat_activity
+WHERE pg_stat_activity.datname = '${DB_NAME}' AND pid <> pg_backend_pid();
+
+DROP DATABASE IF EXISTS ${DB_NAME};
+CREATE DATABASE ${DB_NAME};
+
+create schema if not exists consorzio;
+set search_path to consorzio;
+\end{lstlisting}
+
+Per quanto riguarda la modellazione dei domini, si è scelto di sfruttare i tipi enumerativi di PostgreSQL per gli attributi che ammettono un insieme chiuso di valori. In particolare, il tipo di interfaccia e il tipo di operazione sono stati modellati tramite \texttt{ENUM}, evitando così l'uso ripetuto di vincoli \texttt{CHECK} sulle stesse colonne e rendendo il dominio dei valori più esplicito a livello di schema.
+
+\begin{lstlisting}[caption={Definizione dei tipi enumerativi}]
+create type tipo_interfaccia as enum ('cassa', 'sportello');
+create type tipo_operazione as enum ('prelievo', 'deposito', 'saldo', 'lista_movimenti');
+\end{lstlisting}
+
+Dal punto di vista dei tipi di dato:
+\begin{itemize}
+    \item gli identificativi principali del sistema bancario sono stati realizzati prevalentemente come interi autogenerati tramite \texttt{GENERATED ALWAYS AS IDENTITY};
+    \item gli attributi descrittivi, come nomi e indirizzi, sono stati modellati con \texttt{VARCHAR};
+    \item gli importi monetari, i limiti di spesa e le disponibilità sono stati rappresentati tramite \texttt{NUMERIC(x, 2)}, così da evitare approssimazioni indesiderate mantenendo due cifre dopo la virgola;
+    \item le informazioni temporali sono state memorizzate con i tipi \texttt{DATE} e \texttt{TIME}, coerentemente con il modello logico.
+\end{itemize}
+
+Queste scelte permettono di mantenere lo schema aderente al modello progettato e, allo stesso tempo, di sfruttare in modo appropriato le caratteristiche offerte da PostgreSQL.
+
+\subsection{Definizione delle tabelle}
+Le tabelle sono state implementate seguendo la struttura dello schema logico, distinguendo tra organizzazione bancaria, soggetti del sistema, conti e strumenti di pagamento, interfacce operative e registrazione delle operazioni.
+
+\subsubsection{Organizzazione bancaria}
+Le prime due tabelle descrivono la struttura del consorzio bancario: \texttt{banca} rappresenta gli istituti aderenti, mentre \texttt{filiale} modella le sedi operative appartenenti alle singole banche.
+
+\begin{lstlisting}[caption={Tabelle banca e filiale}]
+create table banca (
+    codiceBanca integer generated always as identity primary key,
+    nomeBanca varchar(50) not null,
+    commissioneAltri numeric(4, 2) not null,
+    commissioneConsorzio numeric(4, 2) not null
+);
+
+create table filiale (
+    codiceFiliale integer generated always as identity primary key,
+    indirizzo varchar(100) not null,
+    bancaReferente integer not null,
+    foreign key (bancaReferente) references banca(codiceBanca)
+);
+\end{lstlisting}
+
+In questa fase le commissioni sono memorizzate direttamente nella tabella \texttt{banca}, poiché costituiscono un dato strutturale necessario al successivo calcolo dei costi applicati ai prelievi.
+
+\subsubsection{Soggetti del sistema}
+Per rappresentare correttamente il fatto che una stessa persona possa essere cliente, impiegato, oppure entrambe le cose, la generalizzazione \texttt{Persona} -- \texttt{Cliente}/\texttt{Impiegato} è stata mantenuta mediante tabelle distinte collegate tra loro tramite chiavi esterne.
+
+\begin{lstlisting}[caption={Tabelle persona, cliente e impiegato}]
+create table persona (
+    codiceFiscale varchar(16) primary key,
+    indirizzo varchar(100) not null,
+    nome varchar(30) not null
+);
+
+create table cliente (
+    codiceFiscale_c varchar(16) primary key
+        references persona(codiceFiscale) ON DELETE CASCADE
+);
+
+create table impiegato (
+    codiceFiscale_i varchar(16) primary key
+        references persona(codiceFiscale) ON DELETE CASCADE,
+    idImpiegato integer generated always as identity unique,
+    dataAssunzione date not null
+);
+\end{lstlisting}
+
+L'attributo \texttt{idImpiegato} è stato introdotto come identificatore operativo univoco dell'impiegato. Esso non sostituisce il codice fiscale come chiave primaria della tabella, ma viene utilizzato nelle relazioni operative e nei trigger, risultando più pratico nella gestione interna dei trasferimenti e delle assegnazioni.
+
+La storicizzazione del servizio prestato in filiale è stata implementata tramite la tabella \texttt{presta\_servizio\_in}.
+
+\begin{lstlisting}[caption={Tabella presta\_servizio\_in}]
+create table presta_servizio_in (
+    idImpiegato_psi integer,
+    codiceFiliale_psi integer,
+    dataInizio date not null,
+    dataFine date,
+    primary key (idImpiegato_psi, codiceFiliale_psi),
+    foreign key (idImpiegato_psi) references impiegato(idImpiegato) ON DELETE CASCADE,
+    foreign key (codiceFiliale_psi) references filiale(codiceFiliale) ON DELETE CASCADE
+);
+\end{lstlisting}
+
+La tabella registra il legame tra impiegato e filiale, insieme alle date di inizio e fine del servizio. La chiave primaria composta impedisce che la stessa coppia impiegato-filiale venga registrata più di una volta, mentre i vincoli temporali più specifici vengono demandati a controlli aggiuntivi.
+
+\subsubsection{Conti e carte Bancomat}
+Il nucleo bancario del progetto è rappresentato dalle tabelle \texttt{conto}, \texttt{intestato\_a} e \texttt{cartaBancomat}. La prima descrive il conto corrente, la seconda realizza la cointestazione tra clienti e conti, mentre la terza modella le carte Bancomat associate a un cliente e a un conto.
+
+\begin{lstlisting}[caption={Tabelle conto e intestato\_a}]
+create table conto (
+    numeroConto integer generated always as identity primary key,
+    dataApertura date not null,
+    dataEstinzione date,
+    ammontare numeric(17,2),
+    filialeReferente integer not null,
+    foreign key (filialeReferente) references filiale(codiceFiliale)
+);
+
+create table intestato_a (
+    codiceFiscale_int varchar(16),
+    numeroConto_int integer,
+    primary key (codiceFiscale_int, numeroConto_int),
+    foreign key (codiceFiscale_int) references cliente(codiceFiscale_c) ON DELETE CASCADE,
+    foreign key (numeroConto_int) references conto(numeroConto) ON DELETE CASCADE
+);
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Tabella cartaBancomat}]
+create table cartaBancomat (
+    passwordBancomat varchar(25) primary key,
+    numeroConto_cb integer not null,
+    codiceFiscale_cb varchar(16) not null,
+
+    limiteSpesaGiornaliero numeric(10, 2) not null,
+    limiteSpesaMensile numeric(14, 2) not null,
+
+    spesaGiornaliera numeric(10, 2) default 0 not null,
+    spesaMensile numeric(14, 2) default 0 not null,
+
+    foreign key (numeroConto_cb) references conto(numeroConto) ON DELETE CASCADE,
+    foreign key (codiceFiscale_cb) references cliente(codiceFiscale_c) ON DELETE CASCADE
+);
+\end{lstlisting}
+
+Nella tabella \texttt{cartaBancomat} sono presenti anche gli attributi \texttt{spesaGiornaliera} e \texttt{spesaMensile}, mantenuti direttamente nel database per consentire controlli rapidi sui limiti operativi senza dover ricalcolare ogni volta lo storico delle operazioni effettuate.
+
+\subsubsection{Interfacce e operazioni}
+Le casse e gli sportelli automatici, inizialmente distinti a livello concettuale, sono stati ricondotti all'unica tabella \texttt{interfaccia}, differenziata tramite l'attributo \texttt{tipo}. Allo stesso modo, le operazioni bancarie sono state accorpate nella tabella \texttt{operazione}, con un attributo discriminante anch'esso tipizzato.
+
+\begin{lstlisting}[caption={Tabelle interfaccia e operazione}]
+create table interfaccia (
+    idInterfaccia integer generated always as identity primary key,
+    tipo tipo_interfaccia not null,
+    disponibilita numeric(10, 2) not null,
+    numeroOperazioni integer not null default 0,
+    codiceFiliale_i integer not null,
+    foreign key (codiceFiliale_i) references filiale(codiceFiliale)
+);
+
+create table operazione (
+    idOperazione integer generated always as identity primary key,
+    dataOperazione date default CURRENT_DATE not null,
+    oraOperazione time default CURRENT_TIME not null,
+    tipo tipo_operazione not null,
+    ammontare numeric(10,2),
+    numeroConto_o integer not null,
+    idInterfaccia_o integer not null,
+    passwordBancomat_o varchar(25) not null,
+    foreign key (numeroConto_o) references conto(numeroConto),
+    foreign key (idInterfaccia_o) references interfaccia(idInterfaccia),
+    foreign key (passwordBancomat_o) references cartaBancomat(passwordBancomat)
+
+  ON DELETE CASCADE
+);
+\end{lstlisting}
+
+L'uso dei valori di default per \texttt{dataOperazione} e \texttt{oraOperazione} permette di registrare automaticamente il momento dell'operazione se non specificato esplicitamente. Inoltre, l'attributo \texttt{ammontare} è lasciato opzionale, poiché operazioni come saldo e lista movimenti non richiedono un importo numerico associato.
+
+\subsection{Vincoli di integrità esprimibili nello schema fisico}
+Una parte dei vincoli progettuali è stata implementata direttamente nel DDL mediante chiavi, riferimenti esterni, tipi enumerativi e vincoli aggiuntivi introdotti successivamente con \texttt{ALTER TABLE}.
+
+Oltre ai vincoli già presenti nelle definizioni delle tabelle, nel file \texttt{02\_constraints.sql} sono stati aggiunti due controlli espliciti:
+\begin{itemize}
+    \item un vincolo di non negatività sull'ammontare delle operazioni;
+    \item un vincolo di coerenza temporale sulle date di \texttt{presta\_servizio\_in}.
+\end{itemize}
+
+\begin{lstlisting}[caption={Vincoli aggiuntivi sullo schema fisico}]
+alter table operazione
+    add constraint chk_ammontare_positivo
+    check (ammontare >= 0);
+
+alter table presta_servizio_in
+    add constraint chk_date
+    check (dataFine is null or dataFine >= dataInizio);
+\end{lstlisting}
+
+Questi vincoli impediscono già a livello strutturale:
+\begin{itemize}
+    \item la registrazione di operazioni con importo negativo;
+    \item l'inserimento di intervalli temporali incoerenti nel servizio degli impiegati.
+\end{itemize}
+
+È importante osservare che gli \texttt{ENUM} svolgono anch'essi una funzione di integrità, poiché impediscono l'inserimento di valori arbitrari nei campi \texttt{tipo} di \texttt{interfaccia} e \texttt{operazione}.
+
+\subsection{Indici e ottimizzazione delle interrogazioni}
+Accanto alla definizione delle tabelle e dei vincoli, la progettazione fisica ha incluso anche la creazione di indici su attributi particolarmente rilevanti per le interrogazioni previste dal progetto. La scelta è stata effettuata in coerenza con il carico applicativo descritto nelle sezioni precedenti e con le query effettivamente implementate.
+
+Sono stati introdotti indici sulle principali chiavi esterne, così da velocizzare join e attraversamenti frequenti tra le tabelle.
+
+\begin{lstlisting}[caption={Indici sulle principali chiavi esterne}]
+create index idx_filiale_banca_fk on filiale(bancaReferente);
+create index idx_conto_filiale_fk on conto(filialeReferente);
+create index idx_interfaccia_filiale_fk on interfaccia(codiceFiliale_i);
+create index idx_operazione_conto_fk on operazione(numeroConto_o);
+create index idx_operazione_interfaccia on operazione(idInterfaccia_o);
+create index idx_intestato_conto_fk on intestato_a(numeroConto_int);
+\end{lstlisting}
+
+Oltre a questi, sono stati definiti anche indici specifici per alcune query più selettive:
+
+\begin{lstlisting}[caption={Indici specializzati e parziali}]
+create index idx_conto_attivo_data
+    on conto(dataApertura)
+    where dataEstinzione is null;
+
+create index idx_operazione_ammontare_val
+    on operazione(ammontare);
+
+create index idx_servizio_attivo
+    on presta_servizio_in(idImpiegato_psi)
+    where dataFine is null;
+\end{lstlisting}
+
+In particolare:
+\begin{itemize}
+    \item l'indice parziale su \texttt{conto(dataApertura)} considera soltanto i conti attivi, ottimizzando le interrogazioni che lavorano sui rapporti non estinti;
+    \item l'indice su \texttt{operazione(ammontare)} supporta le query che filtrano o aggregano in base all'importo dell'operazione;
+    \item l'indice parziale su \texttt{presta\_servizio\_in(idImpiegato\_psi)} accelera le interrogazioni sugli impiegati attualmente in servizio, limitando l'indicizzazione alle sole tuple con \texttt{dataFine} nulla.
+\end{itemize}
+
+Queste scelte permettono di migliorare le prestazioni senza introdurre ridondanze aggiuntive nel modello dati.
+
+\subsection{Vincoli non esprimibili mediante solo DDL}
+Non tutti i vincoli richiesti dalla traccia possono essere espressi unicamente mediante \texttt{PRIMARY KEY}, \texttt{FOREIGN KEY}, \texttt{CHECK} o tipi enumerativi. Alcune regole di business dipendono infatti da confronti tra più tabelle, da verifiche sullo stato corrente del database oppure da aggiornamenti automatici conseguenti a una operazione.
+
+Negli script effettivamente adottati, tali aspetti sono demandati a funzioni e trigger \texttt{PL/pgSQL}, che verranno descritti nella fase di implementazione. In particolare, la logica procedurale si occupa di:
+\begin{itemize}
+    \item verificare che la carta Bancomat usata in una operazione sia effettivamente associata al conto su cui si sta operando;
+    \item impedire trasferimenti non validi degli impiegati, sia in caso di ritorno nella stessa filiale sia in caso di permanenza inferiore a un mese;
+    \item calcolare le commissioni sui prelievi in base alla banca del conto e alla banca dell'interfaccia utilizzata;
+    \item bloccare i prelievi che eccedono il saldo del conto, la disponibilità dell'interfaccia o i limiti giornalieri e mensili della carta;
+    \item aggiornare automaticamente, dopo ogni operazione, saldo del conto, disponibilità dell'interfaccia, contatore delle operazioni e spese accumulate sulla carta;
+    \item impedire operazioni su conti già estinti.
+\end{itemize}
+
+Di conseguenza, la progettazione fisica non si limita alla sola definizione delle tabelle, ma prepara anche il terreno alla logica attiva del database, che completa i vincoli statici con controlli dinamici e comportamenti automatici.
+
+Nel complesso, lo schema fisico realizzato in PostgreSQL rimane fedele alla progettazione logica, ma introduce gli strumenti concreti necessari a rendere il sistema eseguibile, coerente e sufficientemente efficiente anche su basi di dati di dimensione non trascurabile.

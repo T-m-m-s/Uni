@@ -1,0 +1,10 @@
+% !TeX root = ../main.tex
+
+\section{Conclusioni}
+Il lavoro svolto ha permesso di affrontare in modo completo le principali fasi di progettazione di una base di dati, partendo dall'analisi dei requisiti fino ad arrivare alla realizzazione dello schema fisico e alla sua implementazione in PostgreSQL.
+
+A livello concettuale, il progetto ha richiesto di individuare con precisione le entità rilevanti del dominio bancario, le loro relazioni e i vincoli più importanti. La successiva ristrutturazione dello schema ER ha reso il modello più semplice da tradurre nel livello logico, mantenendo però le informazioni necessarie per rappresentare correttamente il problema.
+
+La traduzione nel modello relazionale e la progettazione fisica hanno permesso di ottenere uno schema ordinato e coerente, supportato da chiavi esterne, vincoli, tipi enumerativi e indici scelti in funzione delle operazioni previste. Dal punto di vista implementativo, l'uso di trigger e funzioni PL/pgSQL è stato utile per gestire quei controlli che non potevano essere espressi direttamente nel solo DDL.
+
+Infine, la generazione dei dati di test tramite script Python e il successivo caricamento da file CSV hanno reso possibile provare in modo concreto il comportamento del database su una base di dati non banale. Nel complesso, il progetto ha portato alla realizzazione di una soluzione coerente con i requisiti iniziali e utile per mettere in pratica, in modo organico, i concetti affrontati durante il corso.
