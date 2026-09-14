@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "active_profile": "general",
+  "profiles": [
+    {
+      "id": "general",
+      "name": "🌐 Generale",
+      "theme_color": "#1976D2",
+      "keys": [
+        {
+          "id": 0,
+          "name": "Browser",
+          "cmd": "xdg-open https://google.com || sensible-browser"
+        },
+        {
+          "id": 1,
+          "name": "Chat / Discord",
+          "cmd": "vesktop || discord || flatpak run com.discordapp.Discord"
+        },
+        {
+          "id": 2,
+          "name": "Terminale",
+          "cmd": "$TERMINAL || foot || x-terminal-emulator || gnome-terminal || alacritty || kitty || xterm"
+        },
+        {
+          "id": 3,
+          "name": "Mute Audio",
+          "cmd": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle || pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        },
+        {
+          "id": 4,
+          "name": "Mute Mic",
+          "cmd": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle || pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+        },
+        {
+          "id": 5,
+          "name": "Screenshot",
+          "cmd": "grim -g \"$(slurp)\" - | wl-copy || flameshot gui || spectacle -r || gnome-screenshot -i"
+        }
+      ],
+      "knobs": {
+        "knob_0": {
+          "rotate_action": "volume_out",
+          "click_cmd": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle || pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        },
+        "knob_1": {
+          "rotate_action": "volume_mic",
+          "click_cmd": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle || pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+        }
+      }
+    },
+    {
+      "id": "coding",
+      "name": "💻 Dev & Uni",
+      "theme_color": "#388E3C",
+      "keys": [
+        {
+          "id": 0,
+          "name": "Editor / Neovim",
+          "cmd": "$TERMINAL -e nvim || code || $EDITOR || foot -e nvim"
+        },
+        {
+          "id": 1,
+          "name": "Git Status",
+          "cmd": "$TERMINAL -e git status || foot -e git status"
+        },
+        {
+          "id": 2,
+          "name": "Terminale Dev",
+          "cmd": "$TERMINAL || foot || x-terminal-emulator || gnome-terminal || alacritty || xterm"
+        },
+        {
+          "id": 3,
+          "name": "GitHub Repo",
+          "cmd": "xdg-open https://github.com/T-m-m-s/Uni"
+        },
+        {
+          "id": 4,
+          "name": "Mute Mic",
+          "cmd": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle || pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+        },
+        {
+          "id": 5,
+          "name": "Screenshot",
+          "cmd": "grim -g \"$(slurp)\" - | wl-copy || flameshot gui || spectacle -r || gnome-screenshot -i"
+        }
+      ],
+      "knobs": {
+        "knob_0": {
+          "rotate_action": "volume_out",
+          "click_cmd": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle || pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        },
+        "knob_1": {
+          "rotate_action": "volume_mic",
+          "click_cmd": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle || pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+        }
+      }
+    },
+    {
+      "id": "media",
+      "name": "🎵 Media & Stream",
+      "theme_color": "#7B1FA2",
+      "keys": [
+        {
+          "id": 0,
+          "name": "Play / Pausa",
+          "cmd": "playerctl play-pause || spotify || rhythmbox"
+        },
+        {
+          "id": 1,
+          "name": "Traccia Succ.",
+          "cmd": "playerctl next"
+        },
+        {
+          "id": 2,
+          "name": "Traccia Prec.",
+          "cmd": "playerctl previous"
+        },
+        {
+          "id": 3,
+          "name": "Mute Audio",
+          "cmd": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle || pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        },
+        {
+          "id": 4,
+          "name": "Mute Mic",
+          "cmd": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle || pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+        },
+        {
+          "id": 5,
+          "name": "OBS Studio",
+          "cmd": "obs || flatpak run com.obsproject.Studio"
+        }
+      ],
+      "knobs": {
+        "knob_0": {
+          "rotate_action": "volume_out",
+          "click_cmd": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle || pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        },
+        "knob_1": {
+          "rotate_action": "volume_mic",
+          "click_cmd": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle || pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+        }
+      }
+    }
+  ]
+}

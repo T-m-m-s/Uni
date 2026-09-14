@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ctlhub"
+version = "0.1.0"
+description = "Lightweight Linux host bridge and CLI for Ctl_Hub ESP32-S3 Stream Deck"
+authors = [
+    { name = "Leonardo Ciscato Pajello" },
+    { name = "TMS" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "pyserial>=3.5",
+    "psutil>=5.9.0"
+]
+
+[project.scripts]
+ctlhub = "ctlhub.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ctlhub*"]

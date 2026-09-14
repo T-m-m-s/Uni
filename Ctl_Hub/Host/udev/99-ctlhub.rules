@@ -1,0 +1,7 @@
+# Ctl_Hub ESP32-S3 USB Serial Device Rules
+# 1. Matches Espressif ESP32-S3 USB-CDC Native (VID: 303a, PID: 1001)
+# 2. Matches WCH CH343 USB-to-UART Bridge on YD-ESP32-S3 (VID: 1a86, PID: 55d3)
+# Creates persistent symlink: /dev/ctlhub and grants user read/write access (MODE="0666")
+
+SUBSYSTEM=="tty", ATTRS{idVendor}=="303a", ATTRS{idProduct}=="1001", MODE="0666", SYMLINK+="ctlhub", TAG+="uaccess"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="55d3", MODE="0666", SYMLINK+="ctlhub", TAG+="uaccess"

@@ -1,0 +1,72 @@
+Metadata-Version: 2.4
+Name: ctlhub
+Version: 0.1.0
+Summary: Lightweight Linux host bridge and CLI for Ctl_Hub ESP32-S3 Stream Deck
+Author: Leonardo Ciscato Pajello, TMS
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: pyserial>=3.5
+Requires-Dist: psutil>=5.9.0
+
+# CtlHub - Linux Host Bridge & Management Package
+
+Pacchetto Python nativo e leggero per la gestione di **Ctl_Hub (ESP32-S3 Stream Deck)** su Linux.
+
+---
+
+## Caratteristiche
+
+* **Consumo Risorse Minimo:** < 15MB di RAM (nessuna dipendenza da Node.js o browser esterni in esecuzione continua).
+* **Interfaccia Web Locale Integrata (`ctlhub gui`):** Configura profili, macro e colori visivamente con anteprima fedele dello schermo 3.2" ed effettua il sync con un click.
+* **Integrazione PipeWire:** Gestione volume e commutazione mute istantanea (`wpctl`).
+* **Supporto Wayland & X11:** Esecuzione macro con iniezione automatica delle variabili d'ambiente.
+* **Telemetria Display:** Lettura CPU e RAM (`psutil`) e trasmissione in tempo reale al display del deck.
+* **Sincronizzazione Profili:** Upload dei profili JSON direttamente nella flash **LittleFS** dell'ESP32.
+
+---
+
+## Installazione Rapida
+
+Dalla cartella del pacchetto:
+
+```bash
+cd Software/implementation/ctlhub
+
+# Installazione in modalità editabile (per sviluppo)
+pip install -e .
+```
+
+### Regola Udev (Opzionale ma Consigliata per Symlink Fisso `/dev/ctlhub`)
+Copia la regola udev per permettere l'accesso non-root e avere il symlink permanente:
+
+```bash
+sudo cp udev/99-ctlhub.rules /etc/udev/rules.d/
+sudo udevadm control --reload-rules && sudo udevadm trigger
+```
+
+---
+
+## Comandi CLI
+
+### 1. Interfaccia Grafica di Configurazione (Consigliata)
+```bash
+ctlhub gui
+```
+*Apre all'istante l'interfaccia grafica web locale su `http://localhost:8765` nel tuo browser predefinito. Ti permette di creare nuovi profili, modificare i comandi dei 6 tasti e dei 2 knob, personalizzare i colori e sincronizzare con l'ESP32 con un solo click.*
+
+### 2. Avviare il Bridge in Background (Uso Quotidiano)
+```bash
+ctlhub run
+```
+*Si connette automaticamente all'ESP32, gestisce i pulsanti, i knob e trasmette la telemetria ogni 2 secondi.*
+
+### 3. Sincronizzare un File di Profili con l'ESP32 via Terminale
+```bash
+ctlhub sync Software/esp32_config.json
+```
+*Invia il JSON all'ESP32 che lo salva su LittleFS e rinfresca il display immediatamente.*
+
+### 4. Verificare lo Stato della Connessione USB
+```bash
+ctlhub status
+```
